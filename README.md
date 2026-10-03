@@ -8,8 +8,10 @@ Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, ac
 2. [Fase 1 – Ventajas e inconvenientes](#fase-1--ventajas-e-inconvenientes)
 3. [Fase 2 – Tecnologías](#fase-2--tecnologías)
 4. [Fase 3 – Inventario de páginas maestras y páginas](#fase-3--inventario-de-páginas-maestras-y-páginas)
-5. [Decisiones tomadas](#decisiones-tomadas)
-6. [Próximos pasos](#próximos-pasos)
+5. [Fase 4 – Análisis de la prueba de concepto](#fase-4--análisis-de-la-prueba-de-concepto)
+6. [Fase 5 – Estrategia de implementación](#fase-5--estrategia-de-implementación)
+7. [Decisiones tomadas](#decisiones-tomadas)
+8. [Próximos pasos](#próximos-pasos)
 
 ---
 
@@ -82,12 +84,15 @@ Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, ac
 | **MkDocs Material** | Python | Alta | Baja | Básico (plugin blog) | Excelente | Ideal para manuales; menos flexible como web corporativa |
 | **Docusaurus** | JavaScript (React) | Media | Media | Bueno | Excelente | Más pesado; orientado a documentación de software |
 
-### Recomendación: Hugo
+### Decisión: Astro
 
-- Cubre bien la mezcla de la web: páginas institucionales, fichas de hardware, actividades y blog.
-- Compila en segundos, no necesita dependencias (un único binario) y trae de serie categorías, etiquetas, autores, RSS, paginación y procesado de imágenes.
-- Las *page bundles* de Hugo (una carpeta por página con su `index.md`, imágenes y PDFs) encajan con las fichas de hardware y las actividades.
-- El **Manual se mantiene fuera** como está ahora (ya es un sitio estático en GitHub Pages), así que una herramienta centrada en documentación como Starlight o MkDocs no aporta nada.
+La recomendación inicial era Hugo, pero la prueba de concepto ya se ha hecho con **Astro** (ver [Fase 4](#fase-4--análisis-de-la-prueba-de-concepto)) y se mantiene esa elección:
+
+- Ya hay trabajo hecho y experiencia del equipo con Astro; cambiar de generador no aporta lo suficiente.
+- Las ***content collections*** validan el *front matter* con esquemas Zod: si una página está mal configurada, el build falla e indica cuál. Es justo el problema detectado en la prueba.
+- Cada página maestra es un *layout* `.astro`, y los elementos reutilizables (vídeo, galería, descarga, aviso, tarjeta) son componentes que se pueden usar en el contenido con MDX.
+- Tiene RSS, sitemap, paginación y optimización de imágenes, y se integra fácilmente con Pagefind.
+- El **Manual se mantiene fuera** como está ahora (ya es un sitio estático en GitHub Pages).
 - Quienes van a editar conocen Git y GitHub, así que **no hace falta un CMS**: se edita en Markdown y se publica con *push* o *Pull Request*.
 
 ### Piezas complementarias
@@ -95,14 +100,14 @@ Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, ac
 | Necesidad | Solución propuesta |
 |---|---|
 | Alojamiento | **GitHub Pages** |
-| Despliegue | **GitHub Actions**: cada *push* a `main` compila y publica |
+| Despliegue | **GitHub Actions**: compila, comprueba enlaces y publica al crear un tag `v*` (como en la prueba de concepto) |
 | Dominio | `echidna.es` mediante fichero `CNAME` + registros DNS, HTTPS gratuito |
 | Buscador | **Pagefind** |
 | Formulario de contacto (**necesario**) | Servicio externo: **Formspree** o **Web3Forms** (plan gratuito, antispam con *honeypot* / hCaptcha / Turnstile) |
 | Comentarios (opcional) | Giscus, o suprimirlos (los comentarios de WordPress no se migran) |
 | Imágenes | Procesado de imágenes del propio generador (redimensionado, WebP) |
 | Analítica (opcional) | GA4, o alternativas sin cookies (GoatCounter, Plausible) que no requieren banner de consentimiento |
-| Manual | Sin cambios: enlace del menú a `echidnaeducacion.github.io/manual/` |
+| Manual | Sin cambios: el repo `manual` de la organización se sirve automáticamente en `echidna.es/manual/` |
 
 ### Herramientas de migración
 
@@ -110,9 +115,7 @@ Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, ac
 |---|---|
 | Exportación nativa de WordPress (XML) | Origen de entradas, páginas, categorías, etiquetas y autores |
 | `wordpress-export-to-markdown` | Convierte el XML a Markdown con *front matter* y descarga las imágenes |
-| `wp2hugo` | Conversión específica a Hugo |
-| Plugin *Jekyll Exporter* | Alternativa desde el propio WordPress |
-| Scripts propios (Python/regex) | Limpiar shortcodes de Avada/Fusion Builder |
+| **`scripts/wp-import.mjs`** de la prueba de concepto | Descarga páginas, entradas, categorías y medios de la REST API de WordPress y convierte el HTML de Fusion Builder a MDX (**es la herramienta ya usada**) |
 
 ---
 
@@ -149,20 +152,20 @@ Datos obtenidos de los sitemaps de la web (octubre de 2026) y de la revisión de
 
 ### Páginas maestras (plantillas) propuestas
 
-| # | Plantilla (layout Hugo) | Se usa en | Nº páginas |
+| # | Plantilla | Se usa en | Nº páginas |
 |---|---|---|---:|
-| 1 | **Base** (`baseof.html`): cabecera, menú, buscador, pie, redes | Todas | — |
-| 2 | **Portada** (`index.html`): bloques de presentación + últimas entradas | `/` | 1 |
-| 3 | **Índice de sección** (`list.html`): introducción + tarjetas de las páginas hijas | Hardware, Didáctica, A programar, Recursos y sus subsecciones | ~18 |
-| 4 | **Página de contenido** (`single.html`): texto, imágenes, vídeos, descargas | Fichas de hardware, actividades, EchidnaML, Quiénes somos, licencias, etc. | ~58 |
+| 1 | **Base**: cabecera, menú, buscador, pie, redes | Todas | — |
+| 2 | **Portada**: bloques de presentación + últimas entradas | `/` | 1 |
+| 3 | **Índice de sección**: introducción + tarjetas de las páginas hijas | Hardware, Didáctica, A programar, Recursos y sus subsecciones | ~18 |
+| 4 | **Página de contenido**: texto, imágenes, vídeos, descargas | Fichas de hardware, actividades, EchidnaML, Quiénes somos, licencias, etc. | ~58 |
 | 5 | **Contacto**: página de contenido + formulario | `/contacta/` | 1 |
-| 6 | **Entrada de blog** (`posts/single.html`): fecha, autor, categorías, etiquetas | Entradas | 61 |
-| 7 | **Listado / taxonomía** (`posts/list.html`, `taxonomy.html`): listado paginado | Blog, 11 categorías, 59 etiquetas, 5 autores | ~76 (generadas automáticamente) |
+| 6 | **Entrada de blog**: fecha, autor, categorías, etiquetas | Entradas | 61 |
+| 7 | **Listado / taxonomía**: listado paginado | Blog, 11 categorías, 59 etiquetas, 5 autores | ~76 (generadas automáticamente) |
 | 8 | **Error 404** | — | 1 |
 
-Las fichas de hardware y las actividades usan la misma plantilla de contenido. Si se quiere mostrar datos estructurados (nivel, duración, materiales, placa compatible…), se añaden en el *front matter* y la plantilla los pinta como **variante** de la 4, sin crear una maestra nueva.
+> Esta propuesta inicial se ha refinado en la [Fase 5](#fase-5--estrategia-de-implementación), separando ficha de hardware y actividad como maestras propias.
 
-Además se necesitan algunos componentes reutilizables (*shortcodes* de Hugo) para sustituir elementos de Avada: vídeo de YouTube, galería, botón de descarga, aviso destacado y tarjeta.
+Además se necesitan algunos componentes reutilizables (componentes MDX) para sustituir elementos de Avada: vídeo de YouTube, galería, botón de descarga, aviso destacado y tarjeta.
 
 ### Resumen del volumen a migrar
 
@@ -172,7 +175,7 @@ Además se necesitan algunos componentes reutilizables (*shortcodes* de Hugo) pa
 | Entradas de blog | **61** |
 | **Total de ficheros Markdown** | **≈ 140** |
 | Páginas generadas automáticamente (listados, categorías, etiquetas, autores) | ≈ 76 |
-| Páginas maestras | **8** (+ shortcodes) |
+| Páginas maestras | **8** (+ componentes) |
 | Imágenes | ≈ 267 (+ PDFs) |
 | Contenido descartado | 16 FAQ demo, 4 slides, `/inicio2/`, taxonomías internas de Avada |
 
@@ -180,8 +183,8 @@ Además se necesitan algunos componentes reutilizables (*shortcodes* de Hugo) pa
 
 - **Entradas del blog**: no usan Fusion Builder y su conversión a Markdown será casi automática.
 - **Páginas**: muchas están maquetadas con contenedores de Fusion Builder (la portada y las fichas de hardware tienen 8 contenedores cada una), así que necesitarán limpieza manual o semiautomática. Es la parte que más esfuerzo requiere.
-- **URLs**: Hugo puede mantener exactamente las rutas actuales (`/hardware/componentes/leds/`, `/2020/02/slug/`) y así no se pierde posicionamiento ni se rompen enlaces.
-- **Manual**: `/manual/` puede ser una redirección o un enlace del menú directo a `echidnaeducacion.github.io/manual/`.
+- **URLs**: el generador puede mantener exactamente las rutas actuales (`/hardware/componentes/leds/`, `/2020/02/slug/`) y así no se pierde posicionamiento ni se rompen enlaces.
+- **Manual**: `/manual/` lo sirve directamente el repo `manual` de la organización.
 - **Comentarios**: hay formulario de comentarios en las entradas. Hay que decidir si se eliminan o se sustituyen por Giscus.
 - **Analítica**: el ID `UA-…` actual ya no funciona; conviene decidir si se instala GA4 u otra alternativa.
 
@@ -191,17 +194,114 @@ La web es de **tamaño pequeño-medio** (unos 140 ficheros Markdown) y tiene una
 
 ---
 
+## Fase 4 – Análisis de la prueba de concepto
+
+La prueba de concepto está en [EchidnaEducacion/EchidnaEducacion.github.io](https://github.com/EchidnaEducacion/EchidnaEducacion.github.io) y se puede ver publicada en [echidnaeducacion.github.io](https://echidnaeducacion.github.io/). Usa **Astro 7 + MDX + Bun**. Se migró la web entera de forma automática y el resultado tiene muchas páginas mal configuradas. Revisión hecha en octubre de 2026.
+
+### Qué está resuelto y se puede reutilizar
+
+| Elemento | Detalle |
+|---|---|
+| Importador | `scripts/wp-import.mjs`: REST API de WordPress → MDX. 156 entradas escritas y ningún shortcode de Avada sin convertir (`wp-export/import-report.md`) |
+| URLs | Se conservan las de WordPress (`/hardware/…`, `/AAAA/MM/slug/`). `src/data/redirects.json` cubre slugs antiguos y `/inicio2/` redirige a la portada |
+| Control de enlaces | `scripts/check-links.mjs` falla si falta alguna URL de los sitemaps antiguos o hay enlaces internos rotos, y se ejecuta en el deploy |
+| Blog | Entradas, listado paginado, categorías, autores y RSS (`/feed/`, `/blog/feed/`) |
+| Formulario de contacto | Componente `ContactForm` con un servicio externo configurable (`PUBLIC_CONTACT_FORM_URL`) |
+| Despliegue | GitHub Actions al crear un tag `v*`, con `CNAME` → `echidna.es` |
+| Manual | El repo es el sitio de la organización, así que el repo `manual` se sirve en `echidna.es/manual/` sin hacer nada |
+| Diseño | `src/styles/tokens.css` recoge colores y tipografías de Avada (naranja `#e66a00`, Exo, Electrolize, Open Sans, PT Sans) |
+| Multidioma | Estructura preparada para ES/EN (`src/content/*/es/`, campo `translation`) |
+| Documentación | `AGENT.md` describe el modelo de contenido, los componentes y el flujo de trabajo |
+
+### Por qué hay páginas mal configuradas
+
+| # | Problema | Ejemplo |
+|---|---|---|
+| 1 | **Solo hay 3 layouts** (`Base`, `Page`, `Post`): todas las páginas usan la misma plantilla genérica (índices, fichas de hardware, actividades e institucionales) | `src/pages/[...slug].astro` → `Page.astro` |
+| 2 | **La maquetación está dentro del contenido**: la rejilla de Avada se ha copiado con `<Columns>`/`<Column>` en cada página. Hay 128 `.mdx` frente a 30 `.md` | `hardware/componentes/leds/index.mdx` |
+| 3 | **El esquema de páginas es demasiado laxo**: `title` es opcional, el campo `template` está declarado pero no se usa y no hay campos propios para hardware o actividades. Se cuelan valores basura | `description: "﻿"` en `es02-hacemos-un-semaforo` |
+| 4 | **Índices de sección escritos a mano**, que repiten datos de las páginas hijas en vez de generarse a partir de ellas | `hardware/index.mdx` repite las características de cada placa |
+| 5 | **Actividades sin metadatos**: solo contienen un `<Embed>` de Google Slides (sin nivel, placa, duración ni materiales) | `didactica/actividades/*` |
+| 6 | **94 páginas frente a 82 en el sitemap**: hay 12 páginas no indexadas en WordPress (`s01`–`s11`, `p01`, subpáginas de EchidnaScratch, `snap4arduino`) | `didactica/actividades/s01-hola-erizo/` |
+| 7 | **20 imágenes no descargadas**, que ya daban error 404 en WordPress | `import-report.md` |
+| 8 | **Sin buscador**, y la portada está hecha a mano en `src/pages/index.astro` | — |
+
+### Conclusión de la fase 4
+
+La prueba de concepto **valida la viabilidad técnica**: la importación, las URLs, el blog, el formulario y el despliegue funcionan. Los fallos no vienen del generador sino de la **falta de un modelo de contenido y de plantillas específicas**. Al traer el contenido "a lo bruto", la maquetación de Avada se ha metido dentro del Markdown. Esto **confirma la estrategia**: primero el modelo de contenido y las plantillas, después el diseño y por último la migración.
+
+---
+
+## Fase 5 – Estrategia de implementación
+
+La implementación se hace en el repo de la web (no en este). Orden propuesto:
+
+### Paso 1 – Modelo de contenido
+
+- Definir un tipo de contenido por cada página maestra: colecciones separadas, o un campo `template` **obligatorio** en `pages`.
+- Usar esquemas Zod **estrictos**: `title` y `description` obligatorios, sin valores vacíos, y campos con tipo propio por plantilla. Ejemplos:
+  - **Ficha de hardware**: placa(s) compatible(s), tipo (componente/complemento/placa), imagen, pines, descargas.
+  - **Actividad**: código (`ES02`), nivel (primaria/secundaria), placa, herramienta (EchidnaML, Arduino IDE…), duración, presentación embebida, materiales.
+  - **Índice de sección**: introducción y orden; el listado de hijas **se genera solo**.
+- Documentar el modelo en `AGENT.md` y en el README del repo de la web.
+
+### Paso 2 – Páginas maestras
+
+| # | Layout | Uso |
+|---|---|---|
+| 1 | **Base** | Cabecera, menú, buscador (Pagefind), pie |
+| 2 | **Portada** | Bloques de presentación + últimas entradas |
+| 3 | **Índice de sección** | Introducción + tarjetas generadas a partir de las páginas hijas |
+| 4 | **Ficha de hardware** | Componentes, complementos y placas |
+| 5 | **Actividad** | Actividades didácticas con su ficha de datos |
+| 6 | **Página genérica** | Quiénes somos, licencias, política de privacidad, EchidnaML… |
+| 7 | **Contacto** | Página genérica + formulario |
+| 8 | **Entrada de blog** | Fecha, autor, categorías, etiquetas |
+| 9 | **Listado / taxonomía** | Blog, categorías, etiquetas, autores (paginado) |
+| 10 | **Error 404** | — |
+
+La regla es que **los componentes MDX sirven para contenido** (vídeo, galería, descarga, aviso, tarjeta), **no para maquetar**: la disposición en columnas la decide el layout.
+
+### Paso 3 – Diseño
+
+- Para cada página maestra, elegir 1 o 2 páginas reales y limpiarlas a mano para usarlas como banco de pruebas del diseño. Ejemplos: `hardware/componentes/leds`, `didactica/actividades/es02-hacemos-un-semaforo`, una entrada antigua y una reciente.
+- Partir de los tokens de `tokens.css`, revisar móvil y accesibilidad, y cerrar el diseño antes de migrar en bloque.
+
+### Paso 4 – Migración por secciones
+
+1. Hardware (42 páginas)
+2. Didáctica (20 + 12 no indexadas, si se publican)
+3. A programar, Recursos, Quiénes somos y páginas sueltas
+4. Blog (61 entradas, la parte más sencilla)
+
+Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pasar los datos al *front matter* y usar `.md` siempre que no haga falta ningún componente.
+
+**Lista de comprobación por página:**
+
+- [ ] URL igual a la de WordPress (o redirección en `redirects.json`)
+- [ ] *Front matter* válido según el esquema (el build no falla)
+- [ ] Imágenes y PDFs presentes y optimizados
+- [ ] Enlaces internos correctos (`check:links` en verde)
+- [ ] Sin maquetación en el contenido (sin `<Columns>` ni restos de Avada)
+- [ ] Revisión visual en escritorio y móvil
+
+---
+
 ## Decisiones tomadas
 
 - [x] Edición: personal con conocimientos de Git y GitHub, **sin CMS**.
 - [x] **Formulario de contacto necesario**, mediante un servicio externo (Formspree o Web3Forms).
-- [x] El **Manual** sigue en su sitio actual, enlazado desde la web.
+- [x] El **Manual** sigue en su repo actual y se sirve en `echidna.es/manual/`.
 - [x] Acceso completo a WordPress (export XML, `wp-content/uploads`, base de datos).
-- [x] Generador: **Hugo**.
+- [x] Generador: **Astro** (prueba de concepto ya hecha con él).
+- [x] Estrategia: **modelo de contenido → páginas maestras → diseño → migración por secciones**.
+- [x] **Habrá versión en inglés**: el modelo de contenido y las plantillas deben contemplar ES/EN desde el principio (campo `translation`, selector de idioma, rutas `/en/…`, menús y textos de interfaz traducibles).
+- [x] Este repositorio es solo de análisis; la implementación va en `EchidnaEducacion.github.io`.
 
 ## Próximos pasos
 
-- [ ] Decidir sobre comentarios (eliminar o Giscus) y analítica (GA4 o alternativa).
-- [ ] Obtener el export XML de WordPress y la carpeta `uploads`.
-- [ ] Hacer una prueba de concepto: convertir el export a Markdown y montar las 8 plantillas con 3 o 4 páginas reales (una ficha de hardware, una actividad, una entrada y la portada).
-- [ ] Estimar el esfuerzo de limpieza de las páginas de Avada a partir de esa prueba.
+- [ ] Decidir sobre comentarios (eliminar o Giscus).
+- [ ] Decidir sobre analítica (GA4 o alternativa sin cookies).
+- [ ] Decidir si se publican las 12 páginas no indexadas (actividades `s01`–`s11`, `p01`, EchidnaScratch, Snap4Arduino).
+- [ ] Recuperar o sustituir las 20 imágenes perdidas.
+- [ ] Definir los esquemas del modelo de contenido (paso 1).
