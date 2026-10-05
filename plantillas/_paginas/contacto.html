@@ -1,0 +1,76 @@
+<!--
+title: Contacta
+description: Escribe a Echidna Educación para resolver dudas, pedir información sobre las placas o proponer colaboraciones.
+-->
+<main id="contenido">
+  <!--
+    Plantilla: Contacto = página genérica + formulario.
+    El formulario envía a un servicio externo (Formspree / Web3Forms) configurado en PUBLIC_CONTACT_FORM_URL.
+  -->
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href="portada.html">Inicio</a></li>
+          <li><span aria-current="page">Contacta</span></li>
+        </ol>
+      </nav>
+      <h1>Contacta</h1>
+      <p class="lead">¿Tienes dudas, quieres usar Echidna en tu centro o proponer una colaboración? Escríbenos y te responderemos lo antes posible.</p>
+    </div>
+  </header>
+
+  <div class="wrap with-aside">
+    <section class="form-card" aria-labelledby="form-t">
+      <h2 id="form-t" style="font-size:1.4rem">Envíanos un mensaje</h2>
+      <p class="muted">Los campos marcados con <span class="req" style="color:var(--brand-ink)">*</span> son obligatorios.</p>
+      <form class="form" action="#" method="post">
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre <span class="req">*</span></label>
+            <input id="nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto">
+            <option>Duda sobre las placas</option>
+            <option>Quiero una placa para mi centro</option>
+            <option>Formación y talleres</option>
+            <option>Colaboración</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje <span class="req">*</span></label>
+          <textarea id="mensaje" name="mensaje" required aria-describedby="mensaje-hint"></textarea>
+          <span class="hint" id="mensaje-hint">Si es una duda técnica, indica qué placa y qué entorno usas.</span>
+        </div>
+        <!-- Antispam (honeypot): oculto para personas -->
+        <div class="hp" aria-hidden="true"><label>No rellenes este campo <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input type="checkbox" required><span>He leído y acepto la <a href="#">política de privacidad</a>. <span class="req">*</span></span></label>
+        <div><button class="btn" type="submit"><svg aria-hidden="true"><use href="#i-mail"/></svg> Enviar mensaje</button></div>
+      </form>
+    </section>
+
+    <aside class="aside-stack">
+      <h2 style="font-size:1.15rem;margin:0">Quizá te sirva</h2>
+      <a class="contact-option" href="#">
+        <svg aria-hidden="true"><use href="#i-hand"/></svg>
+        <div><strong>Quiero una placa</strong><span>Cómo conseguir o fabricar placas para tu centro.</span></div>
+      </a>
+      <a class="contact-option" href="https://echidna.es/manual/">
+        <svg aria-hidden="true"><use href="#i-book"/></svg>
+        <div><strong>Manual</strong><span>Instalación, primeros pasos y preguntas frecuentes.</span></div>
+      </a>
+      <a class="contact-option" href="https://github.com/EchidnaEducacion">
+        <svg aria-hidden="true"><use href="#i-github"/></svg>
+        <div><strong>¿Has encontrado un error?</strong><span>Abre una <em>issue</em> en GitHub y lo revisamos.</span></div>
+      </a>
+    </aside>
+  </div>
+</main>

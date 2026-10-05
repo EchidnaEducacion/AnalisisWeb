@@ -1,0 +1,90 @@
+<!--
+title: Propuesta de plantillas · Echidna Educación
+description: Prototipos HTML de las páginas maestras de la nueva web estática de Echidna Educación.
+bare: true
+-->
+<main id="contenido">
+  <header class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Migración a web estática · Paso 2 y 3</p>
+      <h1>Propuesta de plantillas</h1>
+      <p class="lead">Prototipos HTML de las 10 páginas maestras definidas en el análisis. Mantienen el naranja y el carácter técnico de la web original, con un diseño más limpio, responsive, accesible y pensado para usar en clase. Servirán de referencia para los layouts <code>.astro</code>.</p>
+    </div>
+  </header>
+  <section class="wrap" style="padding-block:2rem 4.5rem">
+    <div class="tpl-grid">
+      <article class="tpl">
+        <span class="tpl__num">01</span>
+        <h2><a href="portada.html">Base</a></h2>
+        <p>Cabecera fija con menú, buscador (Pagefind), selector ES/EN, modo oscuro y pie. Presente en todas las páginas.</p>
+        <dl><dt>Se usa en</dt><dd>Todas</dd><dt>Archivo</dt><dd><code>portada.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="hardware">
+        <span class="tpl__num">02</span>
+        <h2><a href="portada.html">Portada</a></h2>
+        <p>Héroe, entradas por perfil (docente, estudiante, quiero una placa), pilares, placas, actividades y últimas entradas.</p>
+        <dl><dt>Se usa en</dt><dd>/</dd><dt>Archivo</dt><dd><code>portada.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="hardware">
+        <span class="tpl__num">03</span>
+        <h2><a href="indice-seccion.html">Índice de sección</a></h2>
+        <p>Introducción + subsecciones + tarjetas generadas a partir de las páginas hijas, con filtros.</p>
+        <dl><dt>Se usa en</dt><dd>~18 páginas</dd><dt>Archivo</dt><dd><code>indice-seccion.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="hardware">
+        <span class="tpl__num">04</span>
+        <h2><a href="ficha-hardware.html">Ficha de hardware</a></h2>
+        <p>Ficha rápida, pines, descargas y actividades relacionadas a partir del front matter.</p>
+        <dl><dt>Se usa en</dt><dd>36 páginas</dd><dt>Archivo</dt><dd><code>ficha-hardware.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="didactica">
+        <span class="tpl__num">05</span>
+        <h2><a href="actividad.html">Actividad</a></h2>
+        <p>Código, nivel, duración, placa y herramienta; objetivos, presentación, pasos, materiales y notas docentes. Imprimible.</p>
+        <dl><dt>Se usa en</dt><dd>14 (+12) páginas</dd><dt>Archivo</dt><dd><code>actividad.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="nosotros">
+        <span class="tpl__num">06</span>
+        <h2><a href="pagina.html">Página genérica</a></h2>
+        <p>Texto largo con índice lateral. Quiénes somos, licencias, privacidad, EchidnaML…</p>
+        <dl><dt>Se usa en</dt><dd>~20 páginas</dd><dt>Archivo</dt><dd><code>pagina.html</code></dd></dl>
+      </article>
+      <article class="tpl">
+        <span class="tpl__num">07</span>
+        <h2><a href="contacto.html">Contacto</a></h2>
+        <p>Página genérica + formulario accesible con servicio externo y antispam.</p>
+        <dl><dt>Se usa en</dt><dd>/contacta/</dd><dt>Archivo</dt><dd><code>contacto.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="blog">
+        <span class="tpl__num">08</span>
+        <h2><a href="entrada-blog.html">Entrada de blog</a></h2>
+        <p>Fecha, autor, tiempo de lectura, etiquetas, compartir y entradas relacionadas.</p>
+        <dl><dt>Se usa en</dt><dd>61 entradas</dd><dt>Archivo</dt><dd><code>entrada-blog.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="blog">
+        <span class="tpl__num">09</span>
+        <h2><a href="listado.html">Listado / taxonomía</a></h2>
+        <p>Blog, categorías, etiquetas y autores: entrada destacada, tarjetas y paginación.</p>
+        <dl><dt>Se usa en</dt><dd>~76 generadas</dd><dt>Archivo</dt><dd><code>listado.html</code></dd></dl>
+      </article>
+      <article class="tpl">
+        <span class="tpl__num">10</span>
+        <h2><a href="404.html">Error 404</a></h2>
+        <p>Mensaje amable, buscador y accesos a las secciones.</p>
+        <dl><dt>Se usa en</dt><dd>—</dd><dt>Archivo</dt><dd><code>404.html</code></dd></dl>
+      </article>
+      <article class="tpl">
+        <span class="tpl__num">+</span>
+        <h2><a href="componentes.html">Componentes de contenido</a></h2>
+        <p>Aviso, descarga, vídeo/presentación, galería, tarjeta y estilos de texto para usar en MDX.</p>
+        <dl><dt>Se usa en</dt><dd>Contenido</dd><dt>Archivo</dt><dd><code>componentes.html</code></dd></dl>
+      </article>
+    </div>
+
+    <div class="grid grid--3" style="margin-top:3rem">
+      <div class="feature"><div class="feature__icon"><svg aria-hidden="true"><use href="#i-book"/></svg></div><h3>Legible</h3><p>Atkinson Hyperlegible a 17 px, contraste AA y botones de 48 px: cómodo en proyector, tablet y móvil.</p></div>
+      <div class="feature" data-section="didactica"><div class="feature__icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></div><h3>Orientado</h3><p>Cada sección tiene su color e icono, y hay migas de pan, índices laterales y entradas por perfil.</p></div>
+      <div class="feature" data-section="programar"><div class="feature__icon"><svg aria-hidden="true"><use href="#i-moon"/></svg></div><h3>Preparado</h3><p>Modo oscuro, versión imprimible de fichas y actividades, selector ES/EN y vídeos que solo se cargan al pulsar.</p></div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,107 @@
+<!--
+title: Componentes de contenido
+description: Catálogo de los componentes MDX y estilos de texto disponibles en las páginas de Echidna Educación.
+-->
+<main id="contenido">
+  <!--
+    Catálogo de componentes MDX para el contenido. Regla: sirven para CONTENIDO, no para maquetar
+    (las columnas las decide el layout). Uso en MDX indicado en cada bloque.
+  -->
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol><li><a href="index.html">Plantillas</a></li><li><span aria-current="page">Componentes</span></li></ol>
+      </nav>
+      <h1>Componentes de contenido</h1>
+      <p class="lead">Piezas que sustituyen a los elementos de Avada dentro del Markdown: aviso, descarga, vídeo, galería y tarjeta, además de los estilos de texto normales.</p>
+    </div>
+  </header>
+
+  <div class="wrap with-aside with-aside--left">
+    <nav class="toc" aria-label="Componentes">
+      <h2>Componentes</h2>
+      <ol>
+        <li><a href="#texto">Texto (Markdown)</a></li>
+        <li><a href="#aviso">Aviso</a></li>
+        <li><a href="#descarga">Descarga</a></li>
+        <li><a href="#video">Vídeo / presentación</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#tarjeta">Tarjeta</a></li>
+        <li><a href="#botones">Botones y etiquetas</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h2 id="texto">Texto (Markdown)</h2>
+      <p>Párrafo normal con <strong>negrita</strong>, <em>cursiva</em>, <a href="#">un enlace</a>, <code>código en línea</code> y una tecla <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+      <h3>Subtítulo de nivel 3</h3>
+      <ul><li>Elemento de lista</li><li>Otro elemento con más texto para ver cómo se comporta cuando ocupa más de una línea en pantallas estrechas.</li></ul>
+      <ol><li>Primer paso</li><li>Segundo paso</li></ol>
+      <blockquote>Una cita destacada dentro del contenido.</blockquote>
+      <div class="table-wrap"><table><thead><tr><th>Columna</th><th>Valor</th></tr></thead><tbody><tr><td>Tabla</td><td>Con desplazamiento horizontal en móvil</td></tr><tr><td>Pin</td><td class="pin">A0</td></tr></tbody></table></div>
+<pre><code>// Bloque de código
+digitalWrite(13, HIGH);</code></pre>
+
+      <h2 id="aviso">Aviso</h2>
+      <p><code>&lt;Aviso tipo="info|consejo|atencion" titulo="…"&gt;…&lt;/Aviso&gt;</code></p>
+      <aside class="callout"><svg aria-hidden="true"><use href="#i-info"/></svg><div><p class="callout__title">Información</p><p>Datos complementarios que conviene conocer.</p></div></aside>
+      <aside class="callout callout--tip"><svg aria-hidden="true"><use href="#i-bulb"/></svg><div><p class="callout__title">Consejo para el aula</p><p>Una idea práctica para llevarlo a clase.</p></div></aside>
+      <aside class="callout callout--warn"><svg aria-hidden="true"><use href="#i-alert"/></svg><div><p class="callout__title">Atención</p><p>Algo que puede dañar la placa o hacer que no funcione.</p></div></aside>
+
+      <h2 id="descarga">Descarga</h2>
+      <p><code>&lt;Descarga href="/files/x.pdf" titulo="…" /&gt;</code> — el tipo y el tamaño se calculan al compilar.</p>
+      <div class="download-list">
+        <a class="download" href="#"><span class="download__type">PDF</span><span><span class="download__name">Hoja de características</span><span class="download__meta">DataSheet-LED.pdf · 220 KB</span></span><svg class="icon download__arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+        <a class="download" href="#"><span class="download__type">STL</span><span><span class="download__name">Carcasa Echidna Black</span><span class="download__meta">Release v2.1 en GitHub · 1,4 MB</span></span><svg class="icon download__arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+      </div>
+
+      <h2 id="video">Vídeo / presentación</h2>
+      <p><code>&lt;Video id="YouTubeID" titulo="…" /&gt;</code> · <code>&lt;Presentacion url="…" /&gt;</code> — el iframe solo se carga al pulsar (sin cookies de terceros hasta entonces).</p>
+      <div class="embed">
+        <button class="embed__poster" type="button" data-src="about:blank" data-title="Vídeo de ejemplo">
+          <span class="embed__play"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="embed__caption">Título del vídeo</span>
+          <span class="embed__note">YouTube · se carga al pulsar</span>
+        </button>
+      </div>
+
+      <h2 id="galeria">Galería</h2>
+      <p><code>&lt;Galeria imagenes={[…]} /&gt;</code></p>
+      <ul class="gallery">
+        <li><figure><div class="ph" style="--ratio:1"><svg aria-hidden="true"><use href="#i-chip"/></svg></div><figcaption>Vista superior</figcaption></figure></li>
+        <li><figure><div class="ph" style="--ratio:1"><svg aria-hidden="true"><use href="#i-layers"/></svg></div><figcaption>Vista inferior</figcaption></figure></li>
+        <li><figure><div class="ph" style="--ratio:1"><svg aria-hidden="true"><use href="#i-cube"/></svg></div><figcaption>Con carcasa</figcaption></figure></li>
+      </ul>
+
+      <h2 id="tarjeta">Tarjeta</h2>
+      <p><code>&lt;Tarjeta href="…" titulo="…" imagen="…"&gt;texto&lt;/Tarjeta&gt;</code> — para enlazar a otra página desde el texto. Los listados de los índices no la usan: se generan solos.</p>
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-cube"/></svg></div>
+          <div class="card__body"><h3 class="card__title"><a class="card__link" href="#">Impresión 3D</a></h3><p class="card__text">Carcasas y accesorios para imprimir.</p></div>
+        </article>
+        <article class="card">
+          <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-github"/></svg></div>
+          <div class="card__body"><h3 class="card__title"><a class="card__link" href="#">Repositorio</a></h3><p class="card__text">Diseños, firmware y documentación.</p></div>
+        </article>
+      </div>
+
+      <h2 id="botones">Botones y etiquetas</h2>
+      <div class="btn-row">
+        <a class="btn" href="#">Principal</a>
+        <a class="btn btn--soft" href="#">Suave</a>
+        <a class="btn btn--ghost" href="#">Secundario</a>
+        <a class="btn btn--sm" href="#">Pequeño</a>
+      </div>
+      <ul class="chips" style="margin-top:1rem">
+        <li><span class="chip" data-section="hardware">Hardware</span></li>
+        <li><span class="chip" data-section="didactica">Didáctica</span></li>
+        <li><span class="chip" data-section="programar">A programar</span></li>
+        <li><span class="chip" data-section="recursos">Recursos</span></li>
+        <li><span class="chip" data-section="blog">Blog</span></li>
+        <li><span class="chip" data-section="nosotros">Quiénes somos</span></li>
+        <li><span class="chip chip--outline">Contorno</span></li>
+      </ul>
+    </article>
+  </div>
+</main>

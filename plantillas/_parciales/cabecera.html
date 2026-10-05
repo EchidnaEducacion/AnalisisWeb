@@ -1,0 +1,100 @@
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="portada.html" aria-label="Echidna Educación, ir a la portada">
+      <svg class="brand__mark" aria-hidden="true"><use href="#i-echidna"/></svg>
+      <span class="brand__name">Echidna<small>Educación</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav__list">
+        <li><a class="nav__link{{a:programar}}" href="#">A programar</a></li>
+        <li><a class="nav__link{{a:hardware}}" href="indice-seccion.html">Hardware</a></li>
+        <li><a class="nav__link" href="https://echidna.es/manual/">Manual</a></li>
+        <li class="nav__item--has-sub">
+          <button class="nav__link{{a:didactica}}" type="button" aria-expanded="false" aria-controls="sub-didactica">
+            Didáctica <svg class="chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="subnav" id="sub-didactica">
+            <li><a href="actividad.html"><strong>Actividades</strong><span>Sesiones listas para el aula</span></a></li>
+            <li><a href="#"><strong>REA</strong><span>Recursos educativos abiertos</span></a></li>
+            <li><a href="#"><strong>Talleres</strong><span>Formación para docentes</span></a></li>
+            <li><a href="#"><strong>IDE Arduino</strong><span>Programar con código</span></a></li>
+            <li><a href="#"><strong>Comunidad</strong><span>Propuestas de otros docentes</span></a></li>
+          </ul>
+        </li>
+        <li><a class="nav__link{{a:blog}}" href="listado.html">Blog</a></li>
+        <li><a class="nav__link{{a:recursos}}" href="#">Recursos</a></li>
+        <li><a class="nav__link{{a:nosotros}}" href="pagina.html">Quiénes somos</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-trigger" type="button" data-open-search>
+        <svg aria-hidden="true"><use href="#i-search"/></svg> Buscar <kbd>/</kbd>
+      </button>
+      <button class="icon-btn search-icon-btn" type="button" data-open-search aria-label="Buscar">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+      </button>
+      <div class="lang-switch" role="group" aria-label="Idioma">
+        <a href="#" aria-current="true" hreflang="es" lang="es">ES</a>
+        <a href="#" hreflang="en" lang="en">EN</a>
+      </div>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro">
+        <svg class="sun" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="moon" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Principal (móvil)" hidden>
+  <button class="search-trigger mobile-search" type="button" data-open-search>
+    <svg aria-hidden="true"><use href="#i-search"/></svg> Buscar en Echidna
+  </button>
+  <ul>
+    <li><a href="#"><span class="dot" style="--dot:var(--c-programar)"></span>A programar</a></li>
+    <li><a href="indice-seccion.html"><span class="dot" style="--dot:var(--c-hardware)"></span>Hardware</a></li>
+    <li><a href="https://echidna.es/manual/"><span class="dot" style="--dot:var(--ink-2)"></span>Manual</a></li>
+    <li><a href="#"><span class="dot" style="--dot:var(--c-didactica)"></span>Didáctica</a>
+      <ul>
+        <li><a href="actividad.html">Actividades</a></li>
+        <li><a href="#">REA</a></li>
+        <li><a href="#">Talleres</a></li>
+        <li><a href="#">IDE Arduino</a></li>
+        <li><a href="#">Comunidad</a></li>
+      </ul>
+    </li>
+    <li><a href="listado.html"><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>
+    <li><a href="#"><span class="dot" style="--dot:var(--c-recursos)"></span>Recursos</a></li>
+    <li><a href="pagina.html"><span class="dot" style="--dot:var(--c-nosotros)"></span>Quiénes somos</a></li>
+    <li><a href="contacto.html"><span class="dot"></span>Contacta</a></li>
+  </ul>
+</nav>
+
+<dialog class="search-dialog" id="search-dialog" aria-label="Buscar">
+  <form method="dialog" role="search">
+    <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+    <label class="sr-only" for="q">Buscar en la web</label>
+    <input id="q" type="search" placeholder="Busca placas, actividades, componentes…" autocomplete="off" value="semáforo">
+    <button class="icon-btn" value="cancel" aria-label="Cerrar búsqueda"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </form>
+  <div class="results">
+    <!-- Ejemplo de resultados: en Astro los pintará Pagefind -->
+    <h3>Actividades</h3>
+    <ul>
+      <li><a href="actividad.html">ES02 · Hacemos un semáforo <small>Didáctica › Actividades · Salidas digitales con los LEDs</small></a></li>
+    </ul>
+    <h3>Hardware</h3>
+    <ul>
+      <li><a href="ficha-hardware.html">LEDs <small>Hardware › Componentes · Pines D11~, D12 y D13</small></a></li>
+    </ul>
+    <h3>Blog</h3>
+    <ul>
+      <li><a href="entrada-blog.html">Un semáforo en clase de Tecnología <small>Blog · 12 de marzo de 2024</small></a></li>
+    </ul>
+  </div>
+</dialog>

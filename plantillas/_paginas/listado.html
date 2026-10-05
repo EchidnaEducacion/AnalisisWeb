@@ -1,0 +1,114 @@
+<!--
+title: Blog
+description: Noticias, experiencias de aula, talleres y novedades del proyecto Echidna Educación.
+section: blog
+-->
+<main id="contenido">
+  <!--
+    Plantilla: Listado / taxonomía. Sirve para /blog/, /category/x/, /tag/x/ y /author/x/:
+    cambia la cabecera (tipo + nombre + descripción) y el filtro de entradas. Paginado de 9 en 9.
+  -->
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href="portada.html">Inicio</a></li>
+          <li><span aria-current="page">Blog</span></li>
+        </ol>
+      </nav>
+      <div class="taxonomy-hero">
+        <div>
+          <!-- En una categoría: <span class="taxonomy-kind">Categoría</span> · en una etiqueta: Etiqueta · en un autor: avatar + nombre -->
+          <h1>Blog</h1>
+          <p class="lead">Experiencias de aula, talleres, novedades del proyecto y tutoriales. 61 entradas desde 2018.</p>
+        </div>
+      </div>
+      <nav aria-label="Categorías" style="margin-top:1.5rem">
+        <ul class="chips">
+          <li><a class="chip" href="listado.html" aria-current="page">Todas</a></li>
+          <li><a class="chip chip--outline" href="listado.html">Experiencias</a></li>
+          <li><a class="chip chip--outline" href="listado.html">Talleres</a></li>
+          <li><a class="chip chip--outline" href="listado.html">Novedades</a></li>
+          <li><a class="chip chip--outline" href="listado.html">Tutoriales</a></li>
+          <li><a class="chip chip--outline" href="listado.html">Eventos</a></li>
+          <li><a class="chip chip--outline" href="listado.html">Recursos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding-block:2rem 4.5rem" aria-label="Entradas">
+    <!-- La entrada más reciente se destaca solo en la primera página -->
+    <article class="featured-post card">
+      <div class="ph"><svg aria-hidden="true"><use href="#i-bulb"/></svg></div>
+      <div class="card__body">
+        <a class="chip" href="listado.html">Experiencias</a>
+        <h2 class="card__title"><a class="card__link" href="entrada-blog.html">Un semáforo en clase de Tecnología</a></h2>
+        <p class="card__text">Cómo trabajamos la actividad del semáforo con Echidna en 1.º de ESO y qué aprendimos por el camino.</p>
+        <div class="card__meta"><span class="avatar">EE</span> Equipo Echidna · <time datetime="2024-03-12">12 mar 2024</time></div>
+      </div>
+    </article>
+
+    <div class="grid grid--3">
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Experiencias</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Medimos la luz del patio</a></h3>
+            <div class="card__meta"><time datetime="2023-05-08">8 may 2023</time> · Equipo Echidna</div>
+          </div>
+        </article>
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-cube"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Recursos</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Carcasas impresas en 3D para Echidna Black</a></h3>
+            <div class="card__meta"><time datetime="2022-12-01">1 dic 2022</time> · Equipo Echidna</div>
+          </div>
+        </article>
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Talleres</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Formación Echidna en el CEP de Málaga</a></h3>
+            <div class="card__meta"><time datetime="2023-11-20">20 nov 2023</time> · Equipo Echidna</div>
+          </div>
+        </article>
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-code"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Novedades</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Nueva versión de EchidnaML</a></h3>
+            <div class="card__meta"><time datetime="2023-09-04">4 sep 2023</time> · Equipo Echidna</div>
+          </div>
+        </article>
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-bulb"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Eventos</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Echidna en la feria de ciencia</a></h3>
+            <div class="card__meta"><time datetime="2022-05-14">14 may 2022</time> · Equipo Echidna</div>
+          </div>
+        </article>
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-blocks"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Tutoriales</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Programar con Snap4Arduino</a></h3>
+            <div class="card__meta"><time datetime="2022-02-10">10 feb 2022</time> · Equipo Echidna</div>
+          </div>
+        </article>
+    </div>
+
+    <nav class="pagination" aria-label="Paginación">
+      <span aria-current="page">1</span>
+      <a href="listado.html">2</a>
+      <a href="listado.html">3</a>
+      <span class="gap">…</span>
+      <a href="listado.html">7</a>
+      <a href="listado.html">Siguiente →</a>
+    </nav>
+
+    <p class="muted" style="text-align:center;margin-top:2rem"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg> <a href="#">Suscríbete por RSS</a></p>
+  </section>
+</main>

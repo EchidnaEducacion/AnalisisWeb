@@ -1,0 +1,150 @@
+<!--
+title: LEDs
+description: Los tres LEDs de las placas Echidna: funcionamiento, pines (D11~, D12, D13), programación con EchidnaML y actividades relacionadas.
+section: hardware
+-->
+<main id="contenido">
+  <!--
+    Plantilla: Ficha de hardware.
+    Front matter que la alimenta: tipo, placas, imagen, pines[], descargas[], actividades[].
+    El cuerpo Markdown solo contiene la explicación (Descripción, Funcionamiento, Programación).
+  -->
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href="portada.html">Inicio</a></li>
+          <li><a href="indice-seccion.html">Hardware</a></li>
+          <li><a href="indice-seccion.html">Componentes</a></li>
+          <li><span aria-current="page">LEDs</span></li>
+        </ol>
+      </nav>
+      <div class="hw-head">
+        <div>
+          <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg> Componente · Salida</p>
+          <h1>LEDs</h1>
+          <p class="lead">Tres diodos emisores de luz (verde, naranja y rojo) que sirven como indicadores visuales. Puedes encenderlos y apagarlos o, en el verde, regular su brillo.</p>
+          <div class="compat" aria-label="Placas compatibles">
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Echidna Black</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Echidna Shield</span>
+          </div>
+        </div>
+        <figure style="margin:0">
+          <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-bolt"/></svg><span class="ph__label">leds.webp</span></div>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap with-aside with-aside--facts-first">
+    <article class="prose">
+      <h2 id="descripcion">Descripción</h2>
+      <p>LED son las siglas de <em>Light Emitting Diode</em>, diodo emisor de luz. Funcionan gracias a la <strong>electroluminiscencia</strong>: cuando circula corriente por ellos, emiten luz. Se usan como indicadores y, cada vez más, para iluminar.</p>
+
+      <h2 id="funcionamiento">Funcionamiento</h2>
+      <p>Al aplicar tensión, el LED se enciende. Desde el programa podemos controlarlo de dos formas:</p>
+      <ul>
+        <li><strong>Modo digital</strong>: un <code>1</code> lo enciende y un <code>0</code> lo apaga.</li>
+        <li><strong>Modo PWM</strong>: un valor entre <code>0</code> y <code>255</code> regula el brillo.</li>
+      </ul>
+      <aside class="callout">
+        <svg aria-hidden="true"><use href="#i-info"/></svg>
+        <div>
+          <p class="callout__title">¿Por qué lleva una resistencia?</p>
+          <p>Todos los LEDs necesitan una resistencia en serie que limite la corriente. En las placas Echidna ya está incluida, así que no tienes que añadir nada.</p>
+        </div>
+      </aside>
+
+      <h2 id="pines">Pines</h2>
+      <!-- Esta tabla se genera desde el front matter (pines[]) -->
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Pin</th><th>Color</th><th>Tipo de salida</th></tr></thead>
+          <tbody>
+            <tr><td class="pin">D11~</td><td><span class="swatch" style="background:#2fb344"></span>Verde</td><td>Digital + PWM</td></tr>
+            <tr><td class="pin">D12</td><td><span class="swatch" style="background:#ff9f1a"></span>Naranja</td><td>Digital</td></tr>
+            <tr><td class="pin">D13</td><td><span class="swatch" style="background:#e03131"></span>Rojo</td><td>Digital</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">El símbolo <code>~</code> indica que el pin admite PWM.</p>
+
+      <h2 id="programacion">Cómo se programa</h2>
+      <p>En <strong>EchidnaML</strong> hay bloques específicos para elegir el LED y su estado (encendido o apagado) o, en el verde, su intensidad de 0 a 255.</p>
+      <figure>
+        <div class="ph" style="--ratio:21/9" data-section="programar"><svg aria-hidden="true"><use href="#i-blocks"/></svg><span class="ph__label">bloques-leds.webp</span></div>
+        <figcaption>Bloques de EchidnaML para controlar los LEDs.</figcaption>
+      </figure>
+      <p>Con Arduino IDE el equivalente en código es:</p>
+<pre><code>void setup() {
+  pinMode(13, OUTPUT);       // LED rojo
+}
+
+void loop() {
+  digitalWrite(13, HIGH);    // enciende
+  delay(1000);
+  digitalWrite(13, LOW);     // apaga
+  delay(1000);
+}</code></pre>
+
+      <h2 id="actividades">Actividades que lo usan</h2>
+      <!-- Lista generada: actividades cuyo front matter referencia este componente -->
+      <div class="grid grid--2" data-section="didactica">
+        <article class="card card--row">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
+          <div class="card__body">
+            <span class="chip">ES02</span>
+            <h3 class="card__title"><a class="card__link" href="actividad.html">Hacemos un semáforo</a></h3>
+            <p class="card__text">Salidas digitales · 1–2 sesiones</p>
+          </div>
+        </article>
+        <article class="card card--row">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
+          <div class="card__body">
+            <span class="chip">ES05</span>
+            <h3 class="card__title"><a class="card__link" href="actividad.html">Control de luminosidad</a></h3>
+            <p class="card__text">Salidas analógicas · 1 sesión</p>
+          </div>
+        </article>
+      </div>
+
+      <nav class="pager" aria-label="Otros componentes">
+        <a href="#"><small>← Anterior</small><strong>Joystick</strong></a>
+        <a class="next" href="#"><small>Siguiente →</small><strong>LED RGB</strong></a>
+      </nav>
+    </article>
+
+    <aside class="aside-stack aside-stack--sticky">
+      <section class="factsheet" aria-labelledby="ficha-t">
+        <h2 id="ficha-t">Ficha rápida</h2>
+        <dl>
+          <div><dt>Tipo</dt><dd>Componente de salida</dd></div>
+          <div><dt>Placas</dt><dd>Echidna Black · Echidna Shield</dd></div>
+          <div><dt>Pines</dt><dd><span class="pin">D11~ · D12 · D13</span></dd></div>
+          <div><dt>Se programa con</dt><dd>EchidnaML, Snap4Arduino, Arduino IDE</dd></div>
+          <div><dt>Licencia</dt><dd>CERN OHL-S</dd></div>
+        </dl>
+      </section>
+      <section aria-labelledby="desc-t">
+        <h2 id="desc-t" class="sr-only">Descargas</h2>
+        <div class="download-list">
+          <a class="download" href="https://echidna.es/wp-content/uploads/2020/06/DataSheet-LED.pdf">
+            <span class="download__type">PDF</span>
+            <span><span class="download__name">Hoja de características</span><span class="download__meta">DataSheet-LED.pdf · 220 KB</span></span>
+            <svg class="icon download__arrow" aria-hidden="true"><use href="#i-download"/></svg>
+          </a>
+        </div>
+      </section>
+      <nav class="toc toc--desktop" aria-label="En esta página">
+        <h2>En esta página</h2>
+        <ol>
+          <li><a href="#descripcion">Descripción</a></li>
+          <li><a href="#funcionamiento">Funcionamiento</a></li>
+          <li><a href="#pines">Pines</a></li>
+          <li><a href="#programacion">Cómo se programa</a></li>
+          <li><a href="#actividades">Actividades</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+</main>

@@ -1,0 +1,254 @@
+<!--
+title: Echidna Educación · Programación y robótica educativa libre
+description: Placas, programación y materiales didácticos libres para llevar el pensamiento computacional al aula.
+bare: true
+-->
+<main id="contenido">
+
+  <!-- Héroe -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">Proyecto educativo open source</p>
+        <h1>Aprende a programar <em>tocando</em> el mundo real</h1>
+        <p class="lead">Placas, entornos de programación y actividades libres, creadas por docentes para desarrollar el pensamiento computacional en el aula.</p>
+        <div class="btn-row">
+          <a class="btn" href="actividad.html">Ver actividades <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <a class="btn btn--ghost" href="#">Empieza a programar</a>
+        </div>
+        <div class="hero__badges">
+          <span><svg aria-hidden="true"><use href="#i-check"/></svg>Gratis y libre</span>
+          <span><svg aria-hidden="true"><use href="#i-check"/></svg>Primaria y Secundaria</span>
+          <span><svg aria-hidden="true"><use href="#i-check"/></svg>Bloques o código</span>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <!-- Ilustración de la placa (se sustituirá por una foto/render real) -->
+        <svg class="board" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="440" height="300" rx="28" fill="#1f2b24"/>
+          <rect x="20" y="30" width="440" height="300" rx="28" fill="none" stroke="#e66a00" stroke-width="4"/>
+          <g fill="#c9a227">
+            <rect x="60" y="44" width="300" height="12" rx="3" opacity=".9"/>
+            <rect x="60" y="304" width="300" height="12" rx="3" opacity=".9"/>
+          </g>
+          <g fill="#1f2b24"><circle cx="72" cy="50" r="3"/><circle cx="96" cy="50" r="3"/><circle cx="120" cy="50" r="3"/><circle cx="144" cy="50" r="3"/><circle cx="168" cy="50" r="3"/><circle cx="192" cy="50" r="3"/><circle cx="216" cy="50" r="3"/><circle cx="240" cy="50" r="3"/><circle cx="264" cy="50" r="3"/><circle cx="288" cy="50" r="3"/><circle cx="312" cy="50" r="3"/><circle cx="336" cy="50" r="3"/></g>
+          <!-- semáforo de LEDs -->
+          <g>
+            <circle cx="100" cy="120" r="20" fill="#ff4d4d"/><circle cx="100" cy="120" r="32" fill="#ff4d4d" opacity=".18"/>
+            <circle cx="100" cy="180" r="20" fill="#ff9f1a"/>
+            <circle cx="100" cy="240" r="20" fill="#3ddc84"/><circle cx="100" cy="240" r="32" fill="#3ddc84" opacity=".18"/>
+          </g>
+          <!-- LED RGB -->
+          <circle cx="190" cy="120" r="22" fill="url(#rgb)"/>
+          <defs><linearGradient id="rgb" x1="0" x2="1"><stop offset="0" stop-color="#4dabf7"/><stop offset=".5" stop-color="#da77f2"/><stop offset="1" stop-color="#ff922b"/></linearGradient></defs>
+          <!-- joystick -->
+          <circle cx="320" cy="200" r="58" fill="#2d3b33"/><circle cx="320" cy="200" r="38" fill="#11171a"/><circle cx="330" cy="190" r="14" fill="#3a4a42"/>
+          <!-- pulsadores -->
+          <rect x="170" y="210" width="44" height="44" rx="10" fill="#2d3b33"/><circle cx="192" cy="232" r="12" fill="#e66a00"/>
+          <rect x="230" y="270" width="44" height="44" rx="10" fill="#2d3b33" opacity="0"/>
+          <!-- chip -->
+          <rect x="250" y="80" width="90" height="64" rx="8" fill="#11171a"/>
+          <g stroke="#9aa5a0" stroke-width="3"><path d="M262 76v-8M278 76v-8M294 76v-8M310 76v-8M326 76v-8M262 148v8M278 148v8M294 148v8M310 148v8M326 148v8"/></g>
+          <text x="295" y="118" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#e66a00">ECHIDNA</text>
+          <!-- zumbador y sensor de luz -->
+          <circle cx="410" cy="110" r="22" fill="#11171a"/><circle cx="410" cy="110" r="6" fill="#2d3b33"/>
+          <circle cx="410" cy="270" r="14" fill="#fff3bf"/><path d="M402 270h16M410 262v16" stroke="#c9a227" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entradas por perfil: docentes, estudiantes, conseguir una placa -->
+  <section class="wrap" aria-label="¿Por dónde empiezo?">
+    <div class="paths">
+      <a class="path" href="actividad.html" data-section="didactica">
+        <span class="path__icon"><svg aria-hidden="true"><use href="#i-teacher"/></svg></span>
+        <strong>Soy docente</strong>
+        <span>Actividades con objetivos, materiales y presentación lista para proyectar.</span>
+      </a>
+      <a class="path" href="#" data-section="programar">
+        <span class="path__icon"><svg aria-hidden="true"><use href="#i-student"/></svg></span>
+        <strong>Soy estudiante</strong>
+        <span>Abre EchidnaML en el navegador y enciende tu primer LED.</span>
+      </a>
+      <a class="path" href="#" data-section="hardware">
+        <span class="path__icon"><svg aria-hidden="true"><use href="#i-hand"/></svg></span>
+        <strong>Quiero una placa</strong>
+        <span>Fabrícala tú con los diseños libres o pide una para tu centro.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Pilares del proyecto -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Qué es Echidna</p>
+          <h2>Todo lo que necesitas para programar dispositivos físicos</h2>
+        </div>
+        <p>Un proyecto pensado desde el aula para que el alumnado aprenda programando cosas que se ven, se oyen y se mueven.</p>
+      </div>
+      <div class="grid grid--4">
+        <article class="feature" data-section="hardware">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-chip"/></svg></div>
+          <h3>Hardware</h3>
+          <p>Diseñado a partir de las necesidades y la experiencia en el aula.</p>
+        </article>
+        <article class="feature" data-section="programar">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-blocks"/></svg></div>
+          <h3>Programación</h3>
+          <p>EchidnaML, compatible con entornos de bloques y de texto.</p>
+        </article>
+        <article class="feature" data-section="didactica">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-cap"/></svg></div>
+          <h3>Didáctica</h3>
+          <p>Materiales creados para usar en clase, con licencia CC BY-SA.</p>
+        </article>
+        <article class="feature" data-section="nosotros">
+          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
+          <h3>Equipo docente</h3>
+          <p>Un grupo de profesores y profesoras que comparte lo que funciona.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placas -->
+  <section class="section section--tint" data-section="hardware">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Hardware libre</p>
+          <h2>Elige tu placa</h2>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="indice-seccion.html">Todo el hardware <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="grid grid--2">
+        <article class="board-card">
+          <div class="ph" style="--ratio:1"><svg aria-hidden="true"><use href="#i-chip"/></svg></div>
+          <div>
+            <h3>Echidna Black</h3>
+            <p class="muted">Placa autónoma con microcontrolador, sensores y actuadores integrados. Se conecta por USB y está lista para usar.</p>
+            <ul>
+              <li>LEDs, RGB, zumbador y pulsadores</li>
+              <li>Acelerómetro, joystick y sensor de luz</li>
+              <li>Entradas MKMK para conectar objetos</li>
+            </ul>
+            <a class="btn btn--soft btn--sm" href="ficha-hardware.html">Conocer Echidna Black</a>
+          </div>
+        </article>
+        <article class="board-card">
+          <div class="ph" style="--ratio:1"><svg aria-hidden="true"><use href="#i-layers"/></svg></div>
+          <div>
+            <h3>Echidna Shield</h3>
+            <p class="muted">Escudo que se coloca sobre una Arduino UNO y añade los mismos componentes. Ideal si el centro ya tiene placas Arduino.</p>
+            <ul>
+              <li>Compatible con Arduino UNO</li>
+              <li>Mismos pines y actividades que Black</li>
+              <li>Fácil de fabricar en el aula-taller</li>
+            </ul>
+            <a class="btn btn--soft btn--sm" href="ficha-hardware.html">Conocer Echidna Shield</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actividades destacadas -->
+  <section class="section" data-section="didactica">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Para el aula</p>
+          <h2>Actividades para empezar mañana</h2>
+        </div>
+        <p>Pensadas para una o dos sesiones, con presentación para proyectar y retos para ampliar.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
+          <div class="card__body">
+            <span class="chip">ES01 · Iniciación</span>
+            <h3 class="card__title"><a class="card__link" href="actividad.html">Hola Erizo</a></h3>
+            <p class="card__text">Pon en marcha la placa y el entorno EchidnaML.</p>
+            <div class="card__meta"><span class="chip chip--outline">1 sesión</span><span class="chip chip--outline">Primaria</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
+          <div class="card__body">
+            <span class="chip">ES02 · Salidas digitales</span>
+            <h3 class="card__title"><a class="card__link" href="actividad.html">Hacemos un semáforo</a></h3>
+            <p class="card__text">Enciende y apaga LEDs en orden para simular un semáforo.</p>
+            <div class="card__meta"><span class="chip chip--outline">1–2 sesiones</span><span class="chip chip--outline">Primaria · ESO</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
+          <div class="card__body">
+            <span class="chip">ES04 · Entradas analógicas</span>
+            <h3 class="card__title"><a class="card__link" href="actividad.html">Sensor de luz</a></h3>
+            <p class="card__text">Mide la luz del aula y reacciona cuando oscurece.</p>
+            <div class="card__meta"><span class="chip chip--outline">2 sesiones</span><span class="chip chip--outline">ESO</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Últimas entradas del blog (generado automáticamente) -->
+  <section class="section section--tint" data-section="blog">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Blog</p>
+          <h2>Últimas noticias</h2>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="listado.html">Ver todas <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="grid grid--3">
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-bulb"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Experiencias</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Un semáforo en clase de Tecnología</a></h3>
+            <div class="card__meta"><time datetime="2024-03-12">12 mar 2024</time> · 4 min de lectura</div>
+          </div>
+        </article>
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Talleres</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Formación Echidna en el CEP de Málaga</a></h3>
+            <div class="card__meta"><time datetime="2023-11-20">20 nov 2023</time> · 3 min de lectura</div>
+          </div>
+        </article>
+        <article class="card post-card">
+          <div class="ph"><svg aria-hidden="true"><use href="#i-code"/></svg></div>
+          <div class="card__body">
+            <a class="chip" href="listado.html">Novedades</a>
+            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Nueva versión de EchidnaML</a></h3>
+            <div class="card__meta"><time datetime="2023-09-04">4 sep 2023</time> · 2 min de lectura</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comunidad / open source -->
+  <section class="section">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>Libre para usar, copiar y mejorar</h2>
+          <p>Los diseños de las placas, el software y las actividades están en GitHub. Imprime las carcasas en 3D, adapta los materiales a tu clase y comparte tus propuestas con la comunidad.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="https://github.com/EchidnaEducacion"><svg aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+          <a class="btn btn--ghost" href="#">Diseños 3D</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
