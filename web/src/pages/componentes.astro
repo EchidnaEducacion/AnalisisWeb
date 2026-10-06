@@ -1,7 +1,10 @@
-<!--
-title: Componentes de contenido
-description: Catálogo de los componentes MDX y estilos de texto disponibles en las páginas de Echidna Educación.
--->
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Componentes de contenido"
+  description="Catálogo de los componentes MDX y estilos de texto disponibles en las páginas de Echidna Educación."
+>
 <main id="contenido">
   <!--
     Catálogo de componentes MDX para el contenido. Regla: sirven para CONTENIDO, no para maquetar
@@ -66,7 +69,7 @@ digitalWrite(13, HIGH);</code></pre>
       </div>
 
       <h2 id="galeria">Galería</h2>
-      <p><code>&lt;Galeria imagenes={[…]} /&gt;</code></p>
+      <p><code is:raw>&lt;Galeria imagenes={[…]} /&gt;</code></p>
       <ul class="gallery">
         <li><figure><div class="ph" style="--ratio:1"><svg aria-hidden="true"><use href="#i-chip"/></svg></div><figcaption>Vista superior</figcaption></figure></li>
         <li><figure><div class="ph" style="--ratio:1"><svg aria-hidden="true"><use href="#i-layers"/></svg></div><figcaption>Vista inferior</figcaption></figure></li>
@@ -105,3 +108,4 @@ digitalWrite(13, HIGH);</code></pre>
     </article>
   </div>
 </main>
+</Base>

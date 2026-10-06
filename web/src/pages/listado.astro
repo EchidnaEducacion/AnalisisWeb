@@ -1,8 +1,11 @@
-<!--
-title: Blog
-description: Noticias, experiencias de aula, talleres y novedades del proyecto Echidna Educación.
-section: blog
--->
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Blog"
+  description="Noticias, experiencias de aula, talleres y novedades del proyecto Echidna Educación."
+  section="blog"
+>
 <main id="contenido">
   <!--
     Plantilla: Listado / taxonomía. Sirve para /blog/, /category/x/, /tag/x/ y /author/x/:
@@ -112,3 +115,4 @@ section: blog
     <p class="muted" style="text-align:center;margin-top:2rem"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg> <a href="#">Suscríbete por RSS</a></p>
   </section>
 </main>
+</Base>

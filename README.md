@@ -2,6 +2,8 @@
 
 Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, actualmente construida con WordPress y base de datos, en una **web estática escrita en Markdown, sin base de datos y alojada en GitHub**.
 
+La web (proyecto Astro, empezando por las plantillas propuestas) está en [`web/`](web/) y se pueden ver publicadas en **<https://echidnaeducacion.github.io/AnalisisWeb/>**.
+
 ## Índice
 
 1. [Situación actual](#situación-actual)
@@ -234,7 +236,7 @@ La prueba de concepto **valida la viabilidad técnica**: la importación, las UR
 
 ## Fase 5 – Estrategia de implementación
 
-La implementación se hace en el repo de la web (no en este). Orden propuesto:
+La implementación se hace en este mismo repositorio, en el directorio [`web/`](web/). Orden propuesto:
 
 ### Paso 1 – Modelo de contenido
 
@@ -296,7 +298,7 @@ Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pa
 - [x] Generador: **Astro** (prueba de concepto ya hecha con él).
 - [x] Estrategia: **modelo de contenido → páginas maestras → diseño → migración por secciones**.
 - [x] **Habrá versión en inglés**: el modelo de contenido y las plantillas deben contemplar ES/EN desde el principio (campo `translation`, selector de idioma, rutas `/en/…`, menús y textos de interfaz traducibles).
-- [x] Este repositorio es solo de análisis; la implementación va en `EchidnaEducacion.github.io`.
+- [x] La web se construye **en este repositorio**, en el directorio `web/` (proyecto Astro con Bun), partiendo de las plantillas propuestas. Se publica en GitHub Pages en <https://echidnaeducacion.github.io/AnalisisWeb/>; la prueba de concepto de `EchidnaEducacion.github.io` queda solo como referencia.
 
 ## Próximos pasos
 

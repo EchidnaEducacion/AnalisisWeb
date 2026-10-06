@@ -1,3 +1,9 @@
+---
+// Marca como activa la entrada del menú de la sección actual
+interface Props { section?: string }
+const { section } = Astro.props;
+const activo = (s: string) => (s === section ? ' is-active' : '');
+---
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
   <div class="wrap site-header__inner">
@@ -8,11 +14,11 @@
 
     <nav class="nav" aria-label="Principal">
       <ul class="nav__list">
-        <li><a class="nav__link{{a:programar}}" href="#">A programar</a></li>
-        <li><a class="nav__link{{a:hardware}}" href="indice-seccion.html">Hardware</a></li>
+        <li><a class={"nav__link" + activo("programar")} href="#">A programar</a></li>
+        <li><a class={"nav__link" + activo("hardware")} href="indice-seccion.html">Hardware</a></li>
         <li><a class="nav__link" href="https://echidna.es/manual/">Manual</a></li>
         <li class="nav__item--has-sub">
-          <button class="nav__link{{a:didactica}}" type="button" aria-expanded="false" aria-controls="sub-didactica">
+          <button class={"nav__link" + activo("didactica")} type="button" aria-expanded="false" aria-controls="sub-didactica">
             Didáctica <svg class="chev" aria-hidden="true"><use href="#i-chevron"/></svg>
           </button>
           <ul class="subnav" id="sub-didactica">
@@ -23,9 +29,9 @@
             <li><a href="#"><strong>Comunidad</strong><span>Propuestas de otros docentes</span></a></li>
           </ul>
         </li>
-        <li><a class="nav__link{{a:blog}}" href="listado.html">Blog</a></li>
-        <li><a class="nav__link{{a:recursos}}" href="#">Recursos</a></li>
-        <li><a class="nav__link{{a:nosotros}}" href="pagina.html">Quiénes somos</a></li>
+        <li><a class={"nav__link" + activo("blog")} href="listado.html">Blog</a></li>
+        <li><a class={"nav__link" + activo("recursos")} href="#">Recursos</a></li>
+        <li><a class={"nav__link" + activo("nosotros")} href="pagina.html">Quiénes somos</a></li>
       </ul>
     </nav>
 

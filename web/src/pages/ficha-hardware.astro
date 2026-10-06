@@ -1,8 +1,11 @@
-<!--
-title: LEDs
-description: Los tres LEDs de las placas Echidna: funcionamiento, pines (D11~, D12, D13), programación con EchidnaML y actividades relacionadas.
-section: hardware
--->
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="LEDs"
+  description="Los tres LEDs de las placas Echidna: funcionamiento, pines (D11~, D12, D13), programación con EchidnaML y actividades relacionadas."
+  section="hardware"
+>
 <main id="contenido">
   <!--
     Plantilla: Ficha de hardware.
@@ -76,7 +79,7 @@ section: hardware
         <figcaption>Bloques de EchidnaML para controlar los LEDs.</figcaption>
       </figure>
       <p>Con Arduino IDE el equivalente en código es:</p>
-<pre><code>void setup() {
+<pre><code is:raw>void setup() {
   pinMode(13, OUTPUT);       // LED rojo
 }
 
@@ -148,3 +151,4 @@ void loop() {
     </aside>
   </div>
 </main>
+</Base>

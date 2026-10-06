@@ -1,0 +1,43 @@
+---
+// Layout Base: <head>, iconos, cabecera, pie y scripts comunes a todas las plantillas
+import Iconos from '../components/Iconos.astro';
+import Cabecera from '../components/Cabecera.astro';
+import Pie from '../components/Pie.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Sección del menú: color de acento y entrada activa */
+  section?: string;
+  /** Usa el título tal cual, sin añadir « · Echidna Educación» */
+  bare?: boolean;
+}
+const { title, description = '', section, bare = false } = Astro.props;
+const fullTitle = bare ? title : `${title} · Echidna Educación`;
+// Rutas relativas a la raíz del sitio (respetan `base` en GitHub Pages)
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{fullTitle}</title>
+<meta name="description" content={description}>
+<link rel="alternate" hreflang="en" href="#">
+<script is:inline>try{var t=localStorage.getItem('echidna-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Exo+2:wght@600;700;800&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href={`${base}assets/css/echidna.css`}>
+</head>
+<body data-section={section}>
+<div class="page">
+<Iconos />
+<Cabecera section={section} />
+<slot />
+<Pie />
+<script is:inline src={`${base}assets/js/echidna.js`}></script>
+</div>
+</body>
+</html>
