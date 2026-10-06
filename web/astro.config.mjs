@@ -5,6 +5,6 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://echidnaeducacion.github.io',
   base: '/AnalisisWeb',
-  // Genera portada.html, actividad.html… para que los enlaces entre plantillas sigan funcionando
+  // Genera portada.html, actividad.html… (un fichero por página)
   build: { format: 'file' },
 });

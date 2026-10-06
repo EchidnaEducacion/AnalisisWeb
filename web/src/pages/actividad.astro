@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base
@@ -17,7 +18,7 @@ import Base from '../layouts/Base.astro';
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol>
-          <li><a href="portada.html">Inicio</a></li>
+          <li><a href={url("portada.html")}>Inicio</a></li>
           <li><a href="#">Didáctica</a></li>
           <li><a href="#">Actividades</a></li>
           <li><span aria-current="page">ES02</span></li>
@@ -120,8 +121,8 @@ import Base from '../layouts/Base.astro';
       <section class="factsheet" aria-labelledby="comp-t">
         <h2 id="comp-t">Componentes que se usan</h2>
         <ul class="chips" data-section="hardware">
-          <li><a class="chip" href="ficha-hardware.html">LEDs</a></li>
-          <li><a class="chip" href="ficha-hardware.html">Pulsadores (reto)</a></li>
+          <li><a class="chip" href={url("ficha-hardware.html")}>LEDs</a></li>
+          <li><a class="chip" href={url("ficha-hardware.html")}>Pulsadores (reto)</a></li>
         </ul>
       </section>
       <section aria-label="Descargas">

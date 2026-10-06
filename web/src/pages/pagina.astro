@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base
@@ -15,7 +16,7 @@ import Base from '../layouts/Base.astro';
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol>
-          <li><a href="portada.html">Inicio</a></li>
+          <li><a href={url("portada.html")}>Inicio</a></li>
           <li><span aria-current="page">Quiénes somos</span></li>
         </ol>
       </nav>
@@ -38,7 +39,7 @@ import Base from '../layouts/Base.astro';
     <article class="prose">
       <h2 id="proyecto">El proyecto</h2>
       <p>Echidna nació en 2017 en un aula de Tecnología. Las placas comerciales eran caras, frágiles o demasiado complejas para empezar, así que diseñamos la nuestra: una placa con los sensores y actuadores ya integrados, sin cables ni protoboard, que se programa desde el navegador.</p>
-      <p>Hoy el proyecto incluye <a href="indice-seccion.html">hardware libre</a>, el entorno <a href="#">EchidnaML</a> y un conjunto de <a href="actividad.html">actividades didácticas</a> probadas en clase.</p>
+      <p>Hoy el proyecto incluye <a href={url("indice-seccion.html")}>hardware libre</a>, el entorno <a href="#">EchidnaML</a> y un conjunto de <a href={url("actividad.html")}>actividades didácticas</a> probadas en clase.</p>
 
       <blockquote>Queremos que el alumnado pase de consumir tecnología a crearla.</blockquote>
 
@@ -67,7 +68,7 @@ import Base from '../layouts/Base.astro';
         <svg aria-hidden="true"><use href="#i-bulb"/></svg>
         <div>
           <p class="callout__title">¿Usas Echidna en tu centro?</p>
-          <p>Nos encantaría saberlo. <a href="contacto.html">Escríbenos</a> y cuéntanos tu experiencia: la publicaremos en el blog.</p>
+          <p>Nos encantaría saberlo. <a href={url("contacto.html")}>Escríbenos</a> y cuéntanos tu experiencia: la publicaremos en el blog.</p>
         </div>
       </aside>
 
@@ -75,7 +76,7 @@ import Base from '../layouts/Base.astro';
       <p>Esta web está en GitHub. Si encuentras un error o quieres proponer una actividad, abre una <em>issue</em> o envía un <em>pull request</em>.</p>
       <div class="btn-row">
         <a class="btn" href="https://github.com/EchidnaEducacion"><svg aria-hidden="true"><use href="#i-github"/></svg> Ir a GitHub</a>
-        <a class="btn btn--ghost" href="contacto.html">Contacta</a>
+        <a class="btn btn--ghost" href={url("contacto.html")}>Contacta</a>
       </div>
     </article>
   </div>

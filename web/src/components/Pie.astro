@@ -1,8 +1,11 @@
+---
+import { url } from '../lib/url';
+---
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="brand" href="portada.html">
+        <a class="brand" href={url("portada.html")}>
           <svg class="brand__mark" aria-hidden="true"><use href="#i-echidna"/></svg>
           <span class="brand__name">Echidna<small>Educación</small></span>
         </a>
@@ -17,7 +20,7 @@
       <div>
         <h2>Proyecto</h2>
         <ul>
-          <li><a href="indice-seccion.html">Hardware</a></li>
+          <li><a href={url("indice-seccion.html")}>Hardware</a></li>
           <li><a href="#">A programar</a></li>
           <li><a href="https://echidna.es/manual/">Manual</a></li>
           <li><a href="#">Recursos</a></li>
@@ -26,18 +29,18 @@
       <div>
         <h2>En el aula</h2>
         <ul>
-          <li><a href="actividad.html">Actividades</a></li>
+          <li><a href={url("actividad.html")}>Actividades</a></li>
           <li><a href="#">REA</a></li>
           <li><a href="#">Talleres</a></li>
-          <li><a href="listado.html">Blog</a></li>
+          <li><a href={url("listado.html")}>Blog</a></li>
         </ul>
       </div>
       <div>
         <h2>Echidna</h2>
         <ul>
-          <li><a href="pagina.html">Quiénes somos</a></li>
+          <li><a href={url("pagina.html")}>Quiénes somos</a></li>
           <li><a href="#">Quiero una placa</a></li>
-          <li><a href="contacto.html">Contacta</a></li>
+          <li><a href={url("contacto.html")}>Contacta</a></li>
           <li><a href="#">Licencias</a></li>
         </ul>
       </div>

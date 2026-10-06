@@ -3,6 +3,7 @@
 import Iconos from '../components/Iconos.astro';
 import Cabecera from '../components/Cabecera.astro';
 import Pie from '../components/Pie.astro';
+import { url } from '../lib/url';
 
 interface Props {
   title: string;
@@ -14,8 +15,6 @@ interface Props {
 }
 const { title, description = '', section, bare = false } = Astro.props;
 const fullTitle = bare ? title : `${title} · Echidna Educación`;
-// Rutas relativas a la raíz del sitio (respetan `base` en GitHub Pages)
-const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <!doctype html>
 <html lang="es">
@@ -29,7 +28,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Exo+2:wght@600;700;800&family=JetBrains+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href={`${base}assets/css/echidna.css`}>
+<link rel="stylesheet" href={url("assets/css/echidna.css")}>
 </head>
 <body data-section={section}>
 <div class="page">
@@ -37,7 +36,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 <Cabecera section={section} />
 <slot />
 <Pie />
-<script is:inline src={`${base}assets/js/echidna.js`}></script>
+<script is:inline src={url("assets/js/echidna.js")}></script>
 </div>
 </body>
 </html>

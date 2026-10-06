@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base
@@ -15,7 +16,7 @@ import Base from '../layouts/Base.astro';
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol>
-          <li><a href="portada.html">Inicio</a></li>
+          <li><a href={url("portada.html")}>Inicio</a></li>
           <li><span aria-current="page">Blog</span></li>
         </ol>
       </nav>
@@ -28,13 +29,13 @@ import Base from '../layouts/Base.astro';
       </div>
       <nav aria-label="Categorías" style="margin-top:1.5rem">
         <ul class="chips">
-          <li><a class="chip" href="listado.html" aria-current="page">Todas</a></li>
-          <li><a class="chip chip--outline" href="listado.html">Experiencias</a></li>
-          <li><a class="chip chip--outline" href="listado.html">Talleres</a></li>
-          <li><a class="chip chip--outline" href="listado.html">Novedades</a></li>
-          <li><a class="chip chip--outline" href="listado.html">Tutoriales</a></li>
-          <li><a class="chip chip--outline" href="listado.html">Eventos</a></li>
-          <li><a class="chip chip--outline" href="listado.html">Recursos</a></li>
+          <li><a class="chip" href={url("listado.html")} aria-current="page">Todas</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>Experiencias</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>Talleres</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>Novedades</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>Tutoriales</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>Eventos</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>Recursos</a></li>
         </ul>
       </nav>
     </div>
@@ -45,8 +46,8 @@ import Base from '../layouts/Base.astro';
     <article class="featured-post card">
       <div class="ph"><svg aria-hidden="true"><use href="#i-bulb"/></svg></div>
       <div class="card__body">
-        <a class="chip" href="listado.html">Experiencias</a>
-        <h2 class="card__title"><a class="card__link" href="entrada-blog.html">Un semáforo en clase de Tecnología</a></h2>
+        <a class="chip" href={url("listado.html")}>Experiencias</a>
+        <h2 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Un semáforo en clase de Tecnología</a></h2>
         <p class="card__text">Cómo trabajamos la actividad del semáforo con Echidna en 1.º de ESO y qué aprendimos por el camino.</p>
         <div class="card__meta"><span class="avatar">EE</span> Equipo Echidna · <time datetime="2024-03-12">12 mar 2024</time></div>
       </div>
@@ -56,48 +57,48 @@ import Base from '../layouts/Base.astro';
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Experiencias</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Medimos la luz del patio</a></h3>
+            <a class="chip" href={url("listado.html")}>Experiencias</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Medimos la luz del patio</a></h3>
             <div class="card__meta"><time datetime="2023-05-08">8 may 2023</time> · Equipo Echidna</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-cube"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Recursos</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Carcasas impresas en 3D para Echidna Black</a></h3>
+            <a class="chip" href={url("listado.html")}>Recursos</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Carcasas impresas en 3D para Echidna Black</a></h3>
             <div class="card__meta"><time datetime="2022-12-01">1 dic 2022</time> · Equipo Echidna</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Talleres</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Formación Echidna en el CEP de Málaga</a></h3>
+            <a class="chip" href={url("listado.html")}>Talleres</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Formación Echidna en el CEP de Málaga</a></h3>
             <div class="card__meta"><time datetime="2023-11-20">20 nov 2023</time> · Equipo Echidna</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-code"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Novedades</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Nueva versión de EchidnaML</a></h3>
+            <a class="chip" href={url("listado.html")}>Novedades</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Nueva versión de EchidnaML</a></h3>
             <div class="card__meta"><time datetime="2023-09-04">4 sep 2023</time> · Equipo Echidna</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-bulb"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Eventos</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Echidna en la feria de ciencia</a></h3>
+            <a class="chip" href={url("listado.html")}>Eventos</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Echidna en la feria de ciencia</a></h3>
             <div class="card__meta"><time datetime="2022-05-14">14 may 2022</time> · Equipo Echidna</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-blocks"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Tutoriales</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Programar con Snap4Arduino</a></h3>
+            <a class="chip" href={url("listado.html")}>Tutoriales</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Programar con Snap4Arduino</a></h3>
             <div class="card__meta"><time datetime="2022-02-10">10 feb 2022</time> · Equipo Echidna</div>
           </div>
         </article>
@@ -105,11 +106,11 @@ import Base from '../layouts/Base.astro';
 
     <nav class="pagination" aria-label="Paginación">
       <span aria-current="page">1</span>
-      <a href="listado.html">2</a>
-      <a href="listado.html">3</a>
+      <a href={url("listado.html")}>2</a>
+      <a href={url("listado.html")}>3</a>
       <span class="gap">…</span>
-      <a href="listado.html">7</a>
-      <a href="listado.html">Siguiente →</a>
+      <a href={url("listado.html")}>7</a>
+      <a href={url("listado.html")}>Siguiente →</a>
     </nav>
 
     <p class="muted" style="text-align:center;margin-top:2rem"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg> <a href="#">Suscríbete por RSS</a></p>

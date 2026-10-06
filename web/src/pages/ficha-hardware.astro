@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base
@@ -16,9 +17,9 @@ import Base from '../layouts/Base.astro';
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol>
-          <li><a href="portada.html">Inicio</a></li>
-          <li><a href="indice-seccion.html">Hardware</a></li>
-          <li><a href="indice-seccion.html">Componentes</a></li>
+          <li><a href={url("portada.html")}>Inicio</a></li>
+          <li><a href={url("indice-seccion.html")}>Hardware</a></li>
+          <li><a href={url("indice-seccion.html")}>Componentes</a></li>
           <li><span aria-current="page">LEDs</span></li>
         </ol>
       </nav>
@@ -97,7 +98,7 @@ void loop() {
           <div class="ph"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
           <div class="card__body">
             <span class="chip">ES02</span>
-            <h3 class="card__title"><a class="card__link" href="actividad.html">Hacemos un semáforo</a></h3>
+            <h3 class="card__title"><a class="card__link" href={url("actividad.html")}>Hacemos un semáforo</a></h3>
             <p class="card__text">Salidas digitales · 1–2 sesiones</p>
           </div>
         </article>
@@ -105,7 +106,7 @@ void loop() {
           <div class="ph"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
           <div class="card__body">
             <span class="chip">ES05</span>
-            <h3 class="card__title"><a class="card__link" href="actividad.html">Control de luminosidad</a></h3>
+            <h3 class="card__title"><a class="card__link" href={url("actividad.html")}>Control de luminosidad</a></h3>
             <p class="card__text">Salidas analógicas · 1 sesión</p>
           </div>
         </article>

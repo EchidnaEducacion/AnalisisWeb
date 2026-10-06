@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base
@@ -17,15 +18,15 @@ import Base from '../layouts/Base.astro';
       <div class="wrap post-head">
         <nav class="breadcrumb" aria-label="Migas de pan">
           <ol>
-            <li><a href="portada.html">Inicio</a></li>
-            <li><a href="listado.html">Blog</a></li>
-            <li><a href="listado.html">Experiencias</a></li>
+            <li><a href={url("portada.html")}>Inicio</a></li>
+            <li><a href={url("listado.html")}>Blog</a></li>
+            <li><a href={url("listado.html")}>Experiencias</a></li>
           </ol>
         </nav>
         <h1>Un semáforo en clase de Tecnología</h1>
         <p class="lead" style="margin-inline:auto">Cómo trabajamos la actividad del semáforo con Echidna en 1.º de ESO y qué aprendimos por el camino.</p>
         <div class="post-meta">
-          <a class="author" href="listado.html"><span class="avatar">EE</span>Equipo Echidna</a>
+          <a class="author" href={url("listado.html")}><span class="avatar">EE</span>Equipo Echidna</a>
           <span><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> <time datetime="2024-03-12">12 de marzo de 2024</time></span>
           <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> 4 min de lectura</span>
         </div>
@@ -39,7 +40,7 @@ import Base from '../layouts/Base.astro';
 
     <div class="wrap">
       <div class="post-body prose">
-        <p>Este trimestre hemos llevado la actividad <a href="actividad.html">ES02 · Hacemos un semáforo</a> a tres grupos de 1.º de ESO. Os contamos cómo la organizamos, qué funcionó y qué cambiaríamos.</p>
+        <p>Este trimestre hemos llevado la actividad <a href={url("actividad.html")}>ES02 · Hacemos un semáforo</a> a tres grupos de 1.º de ESO. Os contamos cómo la organizamos, qué funcionó y qué cambiaríamos.</p>
 
         <h2>Organización de la sesión</h2>
         <p>Trabajamos por parejas, con una placa Echidna Black por pareja. Dedicamos los primeros diez minutos a recordar qué es una salida digital usando la presentación de la actividad.</p>
@@ -67,15 +68,15 @@ import Base from '../layouts/Base.astro';
           </button>
         </div>
 
-        <p>Si queréis repetirla, todo el material está en la <a href="actividad.html">página de la actividad</a>. ¡Contadnos cómo os va!</p>
+        <p>Si queréis repetirla, todo el material está en la <a href={url("actividad.html")}>página de la actividad</a>. ¡Contadnos cómo os va!</p>
       </div>
 
       <footer class="post-footer">
         <ul class="chips" aria-label="Etiquetas">
-          <li><a class="chip chip--outline" href="listado.html">#ESO</a></li>
-          <li><a class="chip chip--outline" href="listado.html">#EchidnaBlack</a></li>
-          <li><a class="chip chip--outline" href="listado.html">#salidas-digitales</a></li>
-          <li><a class="chip chip--outline" href="listado.html">#aula</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>#ESO</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>#EchidnaBlack</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>#salidas-digitales</a></li>
+          <li><a class="chip chip--outline" href={url("listado.html")}>#aula</a></li>
         </ul>
         <div class="share">
           <span>Compartir</span>
@@ -85,13 +86,13 @@ import Base from '../layouts/Base.astro';
         <div class="author-box">
           <span class="avatar avatar--lg">EE</span>
           <div>
-            <a href="listado.html"><strong>Equipo Echidna</strong></a>
+            <a href={url("listado.html")}><strong>Equipo Echidna</strong></a>
             <p>Docentes de Primaria, Secundaria y FP que escriben sobre robótica en el aula.</p>
           </div>
         </div>
         <nav class="pager" aria-label="Entradas" style="margin-top:0">
-          <a href="entrada-blog.html"><small>← Anterior</small><strong>Formación Echidna en el CEP de Málaga</strong></a>
-          <a class="next" href="entrada-blog.html"><small>Siguiente →</small><strong>Nueva versión de EchidnaML</strong></a>
+          <a href={url("entrada-blog.html")}><small>← Anterior</small><strong>Formación Echidna en el CEP de Málaga</strong></a>
+          <a class="next" href={url("entrada-blog.html")}><small>Siguiente →</small><strong>Nueva versión de EchidnaML</strong></a>
         </nav>
       </footer>
     </div>
@@ -104,24 +105,24 @@ import Base from '../layouts/Base.astro';
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Experiencias</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Medimos la luz del patio</a></h3>
+            <a class="chip" href={url("listado.html")}>Experiencias</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Medimos la luz del patio</a></h3>
             <div class="card__meta"><time datetime="2023-05-08">8 may 2023</time> · 5 min</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-cube"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Recursos</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Carcasas impresas en 3D para Echidna Black</a></h3>
+            <a class="chip" href={url("listado.html")}>Recursos</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Carcasas impresas en 3D para Echidna Black</a></h3>
             <div class="card__meta"><time datetime="2022-12-01">1 dic 2022</time> · 3 min</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
           <div class="card__body">
-            <a class="chip" href="listado.html">Talleres</a>
-            <h3 class="card__title"><a class="card__link" href="entrada-blog.html">Formación Echidna en el CEP de Málaga</a></h3>
+            <a class="chip" href={url("listado.html")}>Talleres</a>
+            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Formación Echidna en el CEP de Málaga</a></h3>
             <div class="card__meta"><time datetime="2023-11-20">20 nov 2023</time> · 3 min</div>
           </div>
         </article>

@@ -45,6 +45,7 @@ web/
 ├── src/
 │   ├── layouts/Base.astro   # <head>, iconos, cabecera, pie y scripts
 │   ├── components/          # Cabecera (menú activo según `section`), Pie, Iconos (sprite SVG)
+│   ├── lib/url.ts           # url(): rutas internas con el prefijo `base`
 │   └── pages/*.astro        # contenido (<main>) de cada plantilla
 └── public/assets/
     ├── css/echidna.css      # tokens, componentes y estilos de cada plantilla
@@ -61,6 +62,6 @@ Cada página indica sus metadatos como *props* del layout:
 
 `section` fija el color de acento y la entrada activa del menú; `bare` usa el título sin añadir « · Echidna Educación». Las llaves `{ }` literales (p. ej. en bloques de código) deben ir en un elemento con `is:raw`.
 
-Los enlaces entre plantillas son relativos (`portada.html`, `actividad.html`…), por eso se genera un fichero `.html` por página (`build.format: 'file'`).
+Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que antepone `base` (`/AnalisisWeb/`): `href={url("portada.html")}`. Así funcionan igual en local y en GitHub Pages. Se genera un fichero `.html` por página (`build.format: 'file'`).
 
 Las imágenes son marcadores (`.ph`) que se sustituirán por las fotos reales optimizadas por Astro. El buscador muestra resultados de ejemplo; en Astro se conectará con Pagefind.
