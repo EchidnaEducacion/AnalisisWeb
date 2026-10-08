@@ -43,7 +43,7 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 
 ## Plan de implementación
 
-La implementación se hace en este repositorio, en el directorio [`web/`](web/). Orden: **modelo de contenido → páginas maestras → diseño → migración por secciones**.
+La implementación se hace en este repositorio, en el directorio [`web/`](web/). Orden: **modelo de contenido → maquetas de las páginas maestras → plantillas con contenido de ejemplo → migración por secciones**.
 
 ### Paso 1 – Modelo de contenido
 
@@ -69,10 +69,25 @@ La regla es que **los componentes MDX sirven para contenido** (vídeo, galería,
 
 La plantilla que usa cada página de la nueva web está en [`estructura.md`](estructura.md).
 
-### Paso 3 – Diseño
+Las **maquetas** de estas páginas, con contenido escrito a mano, están en [`web/`](web/) (ver [`web/README.md`](web/README.md)) y publicadas en <https://echidnaeducacion.github.io/AnalisisWeb/>. Se prueban y se ajustan antes del paso 3.
 
-- Para cada página maestra, elegir 1 o 2 páginas reales y limpiarlas a mano para usarlas como banco de pruebas del diseño. Ejemplos: `hardware/componentes/leds`, la página de Materiales alumnado, una entrada antigua y una reciente.
-- Partir de los tokens de `tokens.css`, revisar móvil y accesibilidad, y cerrar el diseño antes de migrar en bloque.
+### Paso 3 – Plantillas con contenido de ejemplo
+
+Se hace en el mismo proyecto [`web/`](web/). No hay dos juegos de plantillas: una plantilla real es un *layout* (`web/src/layouts/`) alimentado por su colección (`web/src/content.config.ts`), y el contenido de ejemplo son ficheros Markdown o YAML en `web/src/content/`.
+
+- Crear `web/src/content.config.ts` según [`modelo-contenido.md`](modelo-contenido.md).
+- Pasar cada maqueta a *layout* real alimentado por su colección.
+- Añadir **contenido de ejemplo real**, 1 o 2 páginas por plantilla:
+  - Ecosistema, EchidnaBlack2 y LEDs ROG (hardware);
+  - Materiales alumnado y Recursos docentes, con los recursos de «¿Hace calor aquí?» y de los Proyectos de inicio;
+  - Sobre el proyecto y Contacta;
+  - una entrada antigua y otra reciente del blog, con sus listados;
+  - el 404.
+
+  Es contenido definitivo, no de usar y tirar: es el primer lote de la migración.
+- Mover las maquetas a `web/src/pages/maquetas/` (publicadas en `/maquetas/`) como referencia visual, y borrar cada una cuando su plantilla real la iguale.
+- Revisar el diseño con este contenido (tokens, móvil y accesibilidad) y cerrarlo antes de migrar en bloque.
+- Pasar a URL de carpeta (`build.format: 'directory'`: `/ecosistema/` en vez de `indice-seccion.html`) cuando las páginas salgan de las colecciones.
 
 ### Paso 4 – Migración por secciones
 
@@ -110,6 +125,7 @@ Se reaprovecha el MDX de la prueba de concepto anterior como punto de partida: q
 ## Próximos pasos
 
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
+- [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
 - [ ] Dar de alta la web en GoatCounter, añadir su script en el layout `Base` (`web/src/layouts/Base.astro`) y mencionarlo en la política de privacidad.
 - [ ] Hacer capturas nuevas para 1.1 EchidnaML y 1.1.1 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
