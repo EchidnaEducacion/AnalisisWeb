@@ -1,0 +1,160 @@
+---
+import { url } from '../lib/url';
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Recursos docentes"
+  description="Guías docentes y diapositivas de cada material de Echidna, además del manual, los modelos 3D y las herramientas para comprobar la placa."
+  section="docentes"
+>
+<main id="contenido">
+  <!--
+    Plantilla: Índice de sección, variante agrupada (la misma que Materiales alumnado).
+    Las tarjetas se generan a partir de la colección `recursos` con audience: docentes.
+    Hay un grupo por `material`; la tarjeta «Material del alumnado» se añade sola cuando
+    existe un recurso del alumnado con el mismo `material`.
+  -->
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href={url("portada.html")}>Inicio</a></li>
+          <li><span aria-current="page">Recursos docentes</span></li>
+        </ol>
+      </nav>
+      <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-teacher"/></svg> Recursos docentes</p>
+      <h1>Recursos para docentes</h1>
+      <p class="lead">Todo lo que necesitas para llevar cada material al aula: la guía docente, las diapositivas para proyectar y el enlace al material del alumnado.</p>
+      <nav class="subsections" aria-label="Materiales">
+        <a href="#proyectos-inicio-echidnaml">Proyectos de inicio con EchidnaML</a>
+        <a href="#situaciones-aprendizaje">Situaciones de aprendizaje</a>
+        <a href="#snap">Snap!</a>
+        <a href="#proyectos-inicio-arduino-ide">Proyectos de inicio con Arduino IDE</a>
+        <a href="#otros-recursos">Otros recursos</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding-block:2.5rem 0" aria-labelledby="proyectos-inicio-echidnaml">
+    <h2 id="proyectos-inicio-echidnaml">Proyectos de inicio con EchidnaML</h2>
+    <div class="grid grid--3">
+      <article class="card">
+        <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
+        <div class="card__body">
+          <span class="chip">Diapositivas</span>
+          <h3 class="card__title"><a class="card__link" href="#">Diapositivas para el aula</a></h3>
+          <p class="card__text">Presentaciones para proyectar en clase, sesión a sesión.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
+        <div class="card__body">
+          <span class="chip">Guía docente</span>
+          <h3 class="card__title"><a class="card__link" href="#">Guía docente</a></h3>
+          <p class="card__text">Objetivos, temporalización y orientaciones para cada proyecto.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-student"/></svg></div>
+        <div class="card__body">
+          <span class="chip">Material del alumnado</span>
+          <h3 class="card__title"><a class="card__link" href="https://echidnaeducacion.github.io/GuiaInicioEchidnaML/">Proyectos de inicio con EchidnaML</a></h3>
+          <p class="card__text">La guía que sigue el alumnado.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-block:2.5rem 0" aria-labelledby="situaciones-aprendizaje">
+    <h2 id="situaciones-aprendizaje">Situaciones de aprendizaje</h2>
+    <h3 id="sensor-temperatura">¿Hace calor aquí?</h3>
+    <div class="grid grid--3">
+      <article class="card">
+        <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
+        <div class="card__body">
+          <span class="chip">Guía docente</span>
+          <h4 class="card__title"><a class="card__link" href="#">Guía docente</a></h4>
+          <p class="card__text">Objetivos, temporalización y evaluación de la situación de aprendizaje.</p>
+          <div class="card__meta"><span class="chip chip--outline">Primaria</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-student"/></svg></div>
+        <div class="card__body">
+          <span class="chip">Material del alumnado</span>
+          <h4 class="card__title"><a class="card__link" href={url("alumnado.html#echidnaml")}>¿Hace calor aquí?</a></h4>
+          <p class="card__text">Mide la temperatura con el sensor de la EchidnaBlack2.</p>
+          <div class="card__meta"><span class="chip chip--outline">Primaria</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-block:2.5rem 0" aria-labelledby="snap">
+    <h2 id="snap">Snap!</h2>
+    <aside class="callout">
+      <svg aria-hidden="true"><use href="#i-info"/></svg>
+      <div>
+        <p class="callout__title">Próximamente</p>
+        <p>Estamos preparando los recursos docentes para trabajar con Snap!.</p>
+      </div>
+    </aside>
+  </section>
+
+  <section class="wrap" style="padding-block:2.5rem 0" aria-labelledby="proyectos-inicio-arduino-ide">
+    <h2 id="proyectos-inicio-arduino-ide">Proyectos de inicio con Arduino IDE</h2>
+    <div class="grid grid--3">
+      <article class="card">
+        <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
+        <div class="card__body">
+          <span class="chip">Guía docente</span>
+          <h3 class="card__title"><a class="card__link" href="#">Guía docente</a></h3>
+          <p class="card__text">Orientaciones para trabajar la guía de inicio con Arduino IDE en clase.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-student"/></svg></div>
+        <div class="card__body">
+          <span class="chip">Material del alumnado</span>
+          <h3 class="card__title"><a class="card__link" href="https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/">Proyectos de inicio con Arduino IDE</a></h3>
+          <p class="card__text">La guía que sigue el alumnado.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-block:2.5rem 4.5rem" aria-labelledby="otros-recursos">
+    <h2 id="otros-recursos">Otros recursos</h2>
+    <div class="grid grid--4">
+      <article class="card">
+        <div class="card__body">
+          <span class="chip">Manual</span>
+          <h3 class="card__title"><a class="card__link" href="https://echidna.es/manual/">Manual de usuario</a></h3>
+          <p class="card__text">EchidnaML y EchidnaBlack2: instalación, bloques y preguntas frecuentes.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__body">
+          <span class="chip">Página</span>
+          <h3 class="card__title"><a class="card__link" href="#">Modelos e impresión 3D</a></h3>
+          <p class="card__text">Carcasas y piezas para imprimir en el aula.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__body">
+          <span class="chip">Página</span>
+          <h3 class="card__title"><a class="card__link" href="#">Cómo colaborar</a></h3>
+          <p class="card__text">Cómo proponer mejoras y en qué repositorios se trabaja.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__body">
+          <span class="chip">Página</span>
+          <h3 class="card__title"><a class="card__link" href="#">Comprobar la placa</a></h3>
+          <p class="card__text">Herramientas para comprobar que la placa funciona bien.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+</Base>

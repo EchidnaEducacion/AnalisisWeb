@@ -19,7 +19,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 | 1 | Base (cabecera, menú, buscador, pie) | `src/layouts/Base.astro` | todas |
 | 2 | Portada | `src/pages/portada.astro` | `/` |
 | 3 | Índice de sección | `src/pages/indice-seccion.astro` | `/ecosistema/` |
-| 3 | Índice de sección (agrupado por títulos) | `src/pages/alumnado.astro` | `/alumnado/`, `/docentes/` |
+| 3 | Índice de sección (agrupado por títulos) | `src/pages/alumnado.astro`, `src/pages/docentes.astro` | `/alumnado/`, `/docentes/` |
 | 4 | Ficha de hardware | `src/pages/ficha-hardware.astro` | `/ecosistema/echidnablack2/leds/` |
 | 5 | Página genérica | `src/pages/pagina.astro` | `/quienes-somos/` |
 | 6 | Contacto | `src/pages/contacto.astro` | `/contacta/` |
