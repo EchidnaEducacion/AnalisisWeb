@@ -9,9 +9,10 @@ GitHub Pages no admite redirecciones 301: se generan con `redirects` en `astro.c
 
 1. [Páginas de WordPress](#páginas-de-wordpress)
 2. [Páginas no indexadas](#páginas-no-indexadas)
-3. [Blog y RSS](#blog-y-rss)
-4. [Otros dominios y rutas](#otros-dominios-y-rutas)
-5. [Pendiente](#pendiente)
+3. [URL alternativas de WordPress](#url-alternativas-de-wordpress)
+4. [Blog y RSS](#blog-y-rss)
+5. [Otros dominios y rutas](#otros-dominios-y-rutas)
+6. [Pendiente](#pendiente)
 
 ---
 
@@ -126,6 +127,57 @@ Páginas que existen en WordPress pero no aparecen en el sitemap (localizadas en
 | `/a-programar/echidnascratch/inteligencia-artificial-con-echidna/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML (igual que su página principal) |
 | `/a-programar/snap4arduino/` | `/ecosistema/entornos-compatibles/` | Redirige | Snap4Arduino se describe en 1.4 Entornos compatibles |
 
+## URL alternativas de WordPress
+
+WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categoría intermedia o con `/index.php/`) y las redirige a la URL canónica. Las usan enlaces internos de la web actual y pueden estar enlazadas desde fuera. Se redirigen al mismo destino que su URL canónica. Fuente: informe de importación de la prueba de concepto (`EchidnaEducacion.github.io`, `wp-export/import-report.md`).
+
+| URL antigua | URL nueva | Estado | Nota |
+|---|---|---|---|
+| `/a-programar/echidnascratch/echidnalink/` | `/ecosistema/echidnaml/` | Redirige | Alias de `/a-programar/echidnascratch/como-empezar/echidnalink/` |
+| `/didactica/secundaria/es01-hola-erizo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es01-hola-erizo/` |
+| `/didactica/secundaria/es02-hacemos-un-semaforo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es02-hacemos-un-semaforo/` |
+| `/didactica/secundaria/es03-trabajamos-con-pulsadores/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es03-trabajamos-con-pulsadores/` |
+| `/didactica/secundaria/es04-sensor-luz/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es04-sensor-luz/` |
+| `/didactica/secundaria/es05-control-luminosidad-led/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es05-control-luminosidad-led/` |
+| `/didactica/secundaria/es06-telesketch/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es06-telesketch/` |
+| `/didactica/secundaria/es07-colores-rgb/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es07-colores-rgb/` |
+| `/didactica/secundaria/es08-acelerometro/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es08-acelerometro/` |
+| `/didactica/secundaria/es09-entradas-mkmk/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es09-entradas-mkmk/` |
+| `/didactica/secundaria/es10-representamos-sensores/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/es10-representamos-sensores/` |
+| `/didactica/secundaria/s01-hola-erizo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s01-hola-erizo/` |
+| `/didactica/secundaria/s02-hacemos-un-semaforo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s02-hacemos-un-semaforo/` |
+| `/didactica/secundaria/s03-pulsadores/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s03-pulsadores/` |
+| `/didactica/secundaria/s04-sensor-de-luz/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s04-sensor-de-luz/` |
+| `/didactica/secundaria/s05-control-luminosidad-led/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s05-control-luminosidad-led/` |
+| `/didactica/secundaria/s06-telesketch/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s06-telesketch/` |
+| `/didactica/secundaria/s07-colores-rgb/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s07-colores-rgb/` |
+| `/didactica/secundaria/s08-jugamos-acelerometro/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s08-jugamos-acelerometro/` |
+| `/didactica/secundaria/s09-entradas-mkmk/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s09-entradas-mkmk/` |
+| `/didactica/secundaria/s10-vehiculo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s10-vehiculo/` |
+| `/didactica/secundaria/s11-conectando-app-inventor-y-echidna-bt/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s11-conectando-app-inventor-y-echidna-bt/` |
+| `/hardware/acelerometro/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/componentes/acelerometro-black/` |
+| `/hardware/audio/` | `/ecosistema/echidnablack2/audio/` | Redirige | Alias de `/hardware/componentes/audio/` |
+| `/hardware/conexiones-mkmk/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/componentes/conexiones-mkmk-black/` |
+| `/hardware/echidnablack2/acelerometro-black-i2c` | `/ecosistema/echidnablack2/acelerometro/` | Redirige | Alias de `/hardware/componentes/acelerometro-black-i2c/` |
+| `/hardware/echidnablack2/conexiones-mkmk-black2/` | `/ecosistema/echidnablack2/conexiones-mkmk/` | Redirige | Alias de `/hardware/componentes/conexiones-mkmk-black2/` |
+| `/hardware/echidnablack2/sensor-temperatura-black2/` | `/ecosistema/echidnablack2/sensor-temperatura/` | Redirige | Alias de `/hardware/componentes/sensor-temperatura-black2/` |
+| `/hardware/echidnablack/complementos-echidnablack/bluetooth-black/` | `/ecosistema/echidnablack2/complementos/bluetooth/` | Redirige | Alias de `/hardware/complementos/bluetooth-black/` |
+| `/hardware/echidnablack/complementos-echidnablack/servomotor-continuo-black/` | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Redirige | Alias de `/hardware/complementos/servomotor-continuo-black/` |
+| `/hardware/echidnablack/complementos-echidnablack/servomotor-posicion-black/` | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Redirige | Alias de `/hardware/complementos/servomotor-posicion-black/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/bluetooth-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/bluetooth-shield/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/sensor-temperatura-lm35-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/sensor-temperatura-lm35-shield/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/servomotor-continuo-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/servomotor-continuo-shield/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/servomotor-de-posicion-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/servomotor-de-posicion-shield/` |
+| `/hardware/led-rgb/` | `/ecosistema/echidnablack2/led-rgb/` | Redirige | Alias de `/hardware/componentes/led-rgb/` |
+| `/hardware/leds/` | `/ecosistema/echidnablack2/leds/` | Redirige | Alias de `/hardware/componentes/leds/` |
+| `/impresion-3d/` | `/docentes/impresion-3d/` | Redirige | Alias de `/recursos/impresion-3d/` |
+| `/index.php/hardware/echidnablack/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/echidnablack/` |
+| `/index.php/hardware/echidnablack2/` | `/ecosistema/echidnablack2/` | Redirige | Alias de `/hardware/echidnablack2/` |
+| `/index.php/hardware/echidna-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/echidna-shield/` |
+| `/index.php/hardware/leds/` | `/ecosistema/echidnablack2/leds/` | Redirige | Alias de `/hardware/componentes/leds/` |
+| `/inteligencia-artificial-con-echidna/` | `/ecosistema/echidnaml/` | Redirige | Alias de `/a-programar/echidnascratch/inteligencia-artificial-con-echidna/` |
+| `/proyectos/` | `/category/recursos/proyectos/` | Redirige | Alias de `/recursos/proyectos/` |
+
 ## Blog y RSS
 
 | URL antigua | URL nueva | Estado | Nota |
@@ -144,7 +196,7 @@ Páginas que existen en WordPress pero no aparecen en el sitemap (localizadas en
 | `rea.echidna.es/P4LaTierraSeMueve/` | `/alumnado/situaciones-aprendizaje/la-tierra-se-mueve/` | Redirige | Se configura en el servidor de rea.echidna.es |
 | `rea.echidna.es/nocheydia/` | `/alumnado/situaciones-aprendizaje/noche-y-dia/` | Redirige | Se configura en el servidor de rea.echidna.es |
 | `/alumnado/situaciones-aprendizaje/`, `/alumnado/proyectos/` | `/alumnado/` | Redirige | Rutas intermedias sin página |
-| `/docentes/proyectos-inicio-echidnaml/` | `/docentes/` | Redirige | Solo si 3.1 no tiene página propia |
+| `/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/` | `/docentes/` | Redirige | Rutas intermedias sin página (p. ej. `/docentes/proyectos-inicio-echidnaml/`) |
 | `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | Repos de las guías | Externa | Alias en minúsculas |
 | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | `echidnaeducacion.github.io/<repo>/` | Externa | |
 

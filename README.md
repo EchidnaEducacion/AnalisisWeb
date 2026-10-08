@@ -245,7 +245,6 @@ La implementación se hace en este mismo repositorio, en el directorio [`web/`](
 - Definir un tipo de contenido por cada página maestra: colecciones separadas, o un campo `template` **obligatorio** en `pages`.
 - Usar esquemas Zod **estrictos**: `title` y `description` obligatorios, sin valores vacíos, y campos con tipo propio por plantilla. Ejemplos:
   - **Ficha de hardware**: placa(s) compatible(s), tipo (componente/complemento/placa), imagen, pines, descargas.
-  - **Actividad**: código (`ES02`), nivel (primaria/secundaria), placa, herramienta (EchidnaML, Arduino IDE…), duración, presentación embebida, materiales.
   - **Índice de sección**: introducción y orden; el listado de hijas **se genera solo**.
 - Documentar el modelo en `AGENT.md` y en el README del repo de la web.
 
@@ -255,14 +254,13 @@ La implementación se hace en este mismo repositorio, en el directorio [`web/`](
 |---|---|---|
 | 1 | **Base** | Cabecera, menú, buscador (Pagefind), pie |
 | 2 | **Portada** | Bloques de presentación + últimas entradas |
-| 3 | **Índice de sección** | Introducción + tarjetas generadas a partir de las páginas hijas |
+| 3 | **Índice de sección** | Introducción + tarjetas generadas a partir de las páginas hijas, o agrupadas por títulos (Materiales alumnado y Recursos docentes, que son una sola página) |
 | 4 | **Ficha de hardware** | Componentes, complementos y placas |
-| 5 | **Actividad** | Actividades didácticas con su ficha de datos |
-| 6 | **Página genérica** | Quiénes somos, licencias, política de privacidad, EchidnaML… |
-| 7 | **Contacto** | Página genérica + formulario |
-| 8 | **Entrada de blog** | Fecha, autor, categorías, etiquetas |
-| 9 | **Listado / taxonomía** | Blog, categorías, etiquetas, autores (paginado) |
-| 10 | **Error 404** | — |
+| 5 | **Página genérica** | Quiénes somos, licencias, política de privacidad, EchidnaML… |
+| 6 | **Contacto** | Página genérica + formulario |
+| 7 | **Entrada de blog** | Fecha, autor, categorías, etiquetas |
+| 8 | **Listado / taxonomía** | Blog, categorías, etiquetas, autores (paginado) |
+| 9 | **Error 404** | — |
 
 La regla es que **los componentes MDX sirven para contenido** (vídeo, galería, descarga, aviso, tarjeta), **no para maquetar**: la disposición en columnas la decide el layout.
 
@@ -270,7 +268,7 @@ La plantilla que usa cada página de la nueva web está en [`estructura.md`](est
 
 ### Paso 3 – Diseño
 
-- Para cada página maestra, elegir 1 o 2 páginas reales y limpiarlas a mano para usarlas como banco de pruebas del diseño. Ejemplos: `hardware/componentes/leds`, `didactica/actividades/es02-hacemos-un-semaforo`, una entrada antigua y una reciente.
+- Para cada página maestra, elegir 1 o 2 páginas reales y limpiarlas a mano para usarlas como banco de pruebas del diseño. Ejemplos: `hardware/componentes/leds`, la página de Materiales alumnado, una entrada antigua y una reciente.
 - Partir de los tokens de `tokens.css`, revisar móvil y accesibilidad, y cerrar el diseño antes de migrar en bloque.
 
 ### Paso 4 – Migración por secciones
@@ -312,7 +310,9 @@ Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pa
 - [x] Decidir sobre analítica: GoatCounter.
 - [ ] Dar de alta la web en GoatCounter, añadir su script en el layout `Base` (`web/src/layouts/Base.astro`) y mencionarlo en la política de privacidad.
 - [x] Páginas no indexadas: las actividades pasan a las diapositivas de la Guía de inicio EchidnaML, EchidnaScratch a EchidnaML y Snap4Arduino a Entornos compatibles (ver [`redirecciones.md`](redirecciones.md)).
-- [ ] Recuperar o sustituir las 20 imágenes perdidas.
+- [x] Imágenes perdidas (20, según `wp-export/import-report.md` de la prueba de concepto): 16 son de páginas de EchidnaScratch, que ya no se migran.
+- [ ] Hacer capturas nuevas para 1.1 EchidnaML y 1.1.1 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
+- [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
 - [ ] Definir los esquemas del modelo de contenido (paso 1).
 - [x] Revisar la propuesta de URL y plantillas de [`estructura.md`](estructura.md).
 - [x] Cerrar las redirecciones de las URL de WordPress a las nuevas ([`redirecciones.md`](redirecciones.md)).
