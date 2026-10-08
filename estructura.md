@@ -15,7 +15,7 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 
 ```text
 0. Inicio
-├── 1. Sistema
+├── 1. Ecosistema
 │   ├── 1.1 EchidnaML: descarga y primeros pasos
 │   ├── 1.2 EchidnaBlack2: características y Quiero una
 │   ├── 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield)
@@ -50,24 +50,24 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 | Nivel | Nombre | URL (propuesta) | Plantilla (propuesta) |
 |---|---|---|---|
 | 0 | Inicio | `/` | Portada |
-| 1 | Sistema | `/sistema/` | Índice de sección |
-| 2 | 1.1 EchidnaML: descarga y primeros pasos | `/sistema/echidnaml/` | Página genérica |
-| 2 | 1.2 EchidnaBlack2: características y Quiero una | `/sistema/echidnablack2/` | Ficha de hardware |
-| 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/sistema/placas-anteriores/` | Índice de sección (hijas con Ficha de hardware) |
-| 2 | 1.4 Entornos compatibles | `/sistema/entornos-compatibles/` | Página genérica |
+| 1 | Ecosistema | `/ecosistema/` | Índice de sección |
+| 2 | 1.1 EchidnaML: descarga y primeros pasos | `/ecosistema/echidnaml/` | Página genérica |
+| 2 | 1.2 EchidnaBlack2: características y Quiero una | `/ecosistema/echidnablack2/` | Ficha de hardware |
+| 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/placas-anteriores/` | Índice de sección (hijas con Ficha de hardware) |
+| 2 | 1.4 Entornos compatibles | `/ecosistema/entornos-compatibles/` | Página genérica |
 | 1 | Materiales alumnado | `/alumnado/` | Índice de sección |
 | 2 | 2.1 EchidnaML | `/alumnado/echidnaml/` | Índice de sección |
-| 3 | 2.1.1 Proyectos de inicio con EchidnaML | `/alumnado/echidnaml/proyectos-inicio/` | Índice de sección (hijas con Actividad) |
+| 3 | 2.1.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` (redirección a `echidnaeducacion.github.io/GuiaInicioEchidnaML/`) | — (repo `GuiaInicioEchidnaML`) |
 | 3 | 2.1.2 Situaciones de aprendizaje (REA) | `/alumnado/echidnaml/situaciones-aprendizaje/` | Índice de sección (hijas con Actividad) |
 | 3 | 2.1.3 Proyectos | `/alumnado/echidnaml/proyectos/` | Índice de sección (hijas con Actividad) |
-| 3 | 2.1.4 Manual de usuario (EchidnaML y EchidnaBlack2) | `/manual/` (externo) | — (repo `manual`) |
+| 3 | 2.1.4 Manual de usuario (EchidnaML y EchidnaBlack2) | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
 | 2 | 2.2 Entornos compatibles | `/alumnado/entornos/` | Índice de sección |
 | 3 | 2.2.1 Snap! | `/alumnado/entornos/snap/` | Página genérica |
-| 3 | 2.2.2 Proyectos de inicio con Arduino IDE | `/alumnado/entornos/arduino-ide/` | Índice de sección (hijas con Actividad) |
+| 3 | 2.2.2 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
 | 1 | Recursos docente | `/docentes/` | Índice de sección |
 | 2 | 3.1 Diapositivas para el aula | `/docentes/diapositivas/` | Página genérica |
 | 2 | 3.2 Guías docentes | `/docentes/guias/` | Página genérica |
-| 2 | 3.3 Manual de usuario | `/manual/` (externo) | — (repo `manual`) |
+| 2 | 3.3 Manual de usuario | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
 | 2 | 3.4 Modelos e impresión 3D | `/docentes/impresion-3d/` | Página genérica |
 | 2 | 3.5 Repositorio GitHub | `https://github.com/EchidnaEducacion` (externo) | — |
 | 2 | 3.6 Herramientas de análisis | `/docentes/herramientas-analisis/` | Página genérica |
@@ -79,14 +79,23 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 | 2 | 5.2 Contacto | `/contacto/` | Contacto |
 | — | Error 404 | `/404` | Error 404 |
 
-Las URL del blog se mantienen como en WordPress para no romper enlaces. Las versiones en inglés colgarán de `/en/…`.
+Las URL del blog se mantienen como en WordPress para no romper enlaces. Los repos externos (manual y guías de inicio) mantienen una dirección en `echidna.es` que redirige a su publicación en GitHub Pages. Las versiones en inglés colgarán de `/en/…`.
+
+### Criterio para los recursos externos
+
+El manual y las guías de inicio son **redirecciones a recursos externos**, no páginas de la web. Por eso su URL va en la **raíz** (`echidna.es/<repo>/`) y no se anida bajo la sección donde aparecen:
+
+- **La URL no depende del menú**: el menú puede colgar la guía de Materiales alumnado › EchidnaML aunque su URL esté en la raíz, igual que `/manual/` aparece en dos apartados.
+- **Estabilidad**: si se reorganiza el árbol (por ejemplo, Sistema → Ecosistema), una URL anidada se rompe y la de la raíz no. Es importante porque estas direcciones se imprimen en material físico y en códigos QR.
+- **Coherencia**: los tres recursos siguen el mismo patrón.
 
 ## Cambios respecto al texto original
 
 - «2,1» pasa a 2.1. Los agrupadores «EchidnaML:» y «Entornos compatibles:» de Materiales alumnado pasan a ser las subsecciones 2.1 y 2.2, y sus páginas se renumeran como 2.1.x y 2.2.x (desaparece el hueco del 2.4).
 - Se numeran las entradas que no tenían número: Entornos compatibles (1.4) y Manual de usuario (2.1.4 y 3.3). Recursos docente queda de 3.1 a 3.6.
 - **Manual de usuario** aparece en dos secciones: en ambas es un enlace al manual externo (`/manual/`), no una página duplicada.
-- **Entornos compatibles** aparece dos veces con sentidos distintos: en Sistema (1.4) se describen los entornos y en Materiales alumnado (2.2) están los materiales para cada uno.
+- **Proyectos de inicio** con EchidnaML (2.1.1) y con Arduino IDE (2.2.2) son enlaces a sus repos externos (`GuiaInicioEchidnaML` y `GuiaInicioArduinoIDE`), publicados en GitHub Pages.
+- **Entornos compatibles** aparece dos veces con sentidos distintos: en Ecosistema (1.4) se describen los entornos y en Materiales alumnado (2.2) están los materiales para cada uno.
 
 ## Pendiente
 
