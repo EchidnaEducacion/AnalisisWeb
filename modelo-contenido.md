@@ -1,6 +1,6 @@
 # Modelo de contenido
 
-Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). Cuando se implemente, la referencia será `web/src/content.config.ts`; este documento explica el diseño para quien edita.
+Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). La referencia es `web/src/content.config.ts`, donde ya está implementada la colección `paginas`; las demás se añadirán con su plantilla. Este documento explica el diseño para quien edita.
 
 ## Índice
 

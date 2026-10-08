@@ -1,6 +1,6 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
+import { url } from '../../lib/url';
+import Base from '../../layouts/Base.astro';
 ---
 <Base
   title="Echidna Educación · Programación y robótica educativa libre"
@@ -17,7 +17,7 @@ import Base from '../layouts/Base.astro';
         <h1>Aprende a programar <em>tocando</em> el mundo real</h1>
         <p class="lead">Una placa, un entorno de programación y materiales libres, creados por docentes para desarrollar el pensamiento computacional en el aula.</p>
         <div class="btn-row">
-          <a class="btn" href={url("alumnado.html")}>Ver materiales <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <a class="btn" href={url("maquetas/alumnado/")}>Ver materiales <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
           <a class="btn btn--ghost" href="#">Descarga EchidnaML</a>
         </div>
         <div class="hero__badges">
@@ -65,17 +65,17 @@ import Base from '../layouts/Base.astro';
   <!-- Entradas por perfil: docentes, estudiantes, conseguir una placa -->
   <section class="wrap" aria-label="¿Por dónde empiezo?">
     <div class="paths">
-      <a class="path" href={url("docentes.html")} data-section="docentes">
+      <a class="path" href={url("maquetas/docentes/")} data-section="docentes">
         <span class="path__icon"><svg aria-hidden="true"><use href="#i-teacher"/></svg></span>
         <strong>Soy docente</strong>
         <span>Guías docentes y diapositivas listas para proyectar, organizadas por material.</span>
       </a>
-      <a class="path" href={url("alumnado.html")} data-section="alumnado">
+      <a class="path" href={url("maquetas/alumnado/")} data-section="alumnado">
         <span class="path__icon"><svg aria-hidden="true"><use href="#i-student"/></svg></span>
         <strong>Soy estudiante</strong>
         <span>Proyectos de inicio y situaciones de aprendizaje para hacer con la placa.</span>
       </a>
-      <a class="path" href={url("indice-seccion.html")} data-section="ecosistema">
+      <a class="path" href={url("maquetas/indice-seccion/")} data-section="ecosistema">
         <span class="path__icon"><svg aria-hidden="true"><use href="#i-chip"/></svg></span>
         <strong>Conoce la EchidnaBlack2</strong>
         <span>La placa con sensores y actuadores integrados, lista para programar.</span>
@@ -126,7 +126,7 @@ import Base from '../layouts/Base.astro';
           <p class="eyebrow">Ecosistema</p>
           <h2>La placa EchidnaBlack2</h2>
         </div>
-        <a class="btn btn--ghost btn--sm" href={url("indice-seccion.html")}>Todo el ecosistema <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--ghost btn--sm" href={url("maquetas/indice-seccion/")}>Todo el ecosistema <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="grid grid--2">
         <article class="board-card">
@@ -167,7 +167,7 @@ import Base from '../layouts/Base.astro';
           <p class="eyebrow">Para el aula</p>
           <h2>Materiales para empezar mañana</h2>
         </div>
-        <a class="btn btn--ghost btn--sm" href={url("alumnado.html")}>Todos los materiales <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--ghost btn--sm" href={url("maquetas/alumnado/")}>Todos los materiales <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="grid grid--3">
         <article class="card">
@@ -183,7 +183,7 @@ import Base from '../layouts/Base.astro';
           <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
           <div class="card__body">
             <span class="chip">Situación de aprendizaje</span>
-            <h3 class="card__title"><a class="card__link" href={url("alumnado.html")}>¿Hace calor aquí?</a></h3>
+            <h3 class="card__title"><a class="card__link" href={url("maquetas/alumnado/")}>¿Hace calor aquí?</a></h3>
             <p class="card__text">Mide la temperatura con el sensor de la EchidnaBlack2.</p>
             <div class="card__meta"><span class="chip chip--outline">Primaria</span></div>
           </div>
@@ -192,7 +192,7 @@ import Base from '../layouts/Base.astro';
           <div class="ph" style="--ratio:16/9"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
           <div class="card__body">
             <span class="chip">Situación de aprendizaje</span>
-            <h3 class="card__title"><a class="card__link" href={url("alumnado.html")}>¡La Tierra se mueve!</a></h3>
+            <h3 class="card__title"><a class="card__link" href={url("maquetas/alumnado/")}>¡La Tierra se mueve!</a></h3>
             <p class="card__text">Explora el movimiento de la Tierra programando la placa.</p>
             <div class="card__meta"><span class="chip chip--outline">Primaria</span></div>
           </div>
@@ -209,30 +209,30 @@ import Base from '../layouts/Base.astro';
           <p class="eyebrow">Blog</p>
           <h2>Últimas noticias</h2>
         </div>
-        <a class="btn btn--ghost btn--sm" href={url("listado.html")}>Ver todas <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--ghost btn--sm" href={url("maquetas/listado/")}>Ver todas <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="grid grid--3">
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-bulb"/></svg></div>
           <div class="card__body">
-            <a class="chip" href={url("listado.html")}>Didáctica</a>
-            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Un semáforo en clase de Tecnología</a></h3>
+            <a class="chip" href={url("maquetas/listado/")}>Didáctica</a>
+            <h3 class="card__title"><a class="card__link" href={url("maquetas/entrada-blog/")}>Un semáforo en clase de Tecnología</a></h3>
             <div class="card__meta"><time datetime="2024-03-12">12 mar 2024</time> · 4 min de lectura</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
           <div class="card__body">
-            <a class="chip" href={url("listado.html")}>Talleres</a>
-            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Formación Echidna en el CEP de Málaga</a></h3>
+            <a class="chip" href={url("maquetas/listado/")}>Talleres</a>
+            <h3 class="card__title"><a class="card__link" href={url("maquetas/entrada-blog/")}>Formación Echidna en el CEP de Málaga</a></h3>
             <div class="card__meta"><time datetime="2023-11-20">20 nov 2023</time> · 3 min de lectura</div>
           </div>
         </article>
         <article class="card post-card">
           <div class="ph"><svg aria-hidden="true"><use href="#i-code"/></svg></div>
           <div class="card__body">
-            <a class="chip" href={url("listado.html")}>Noticias</a>
-            <h3 class="card__title"><a class="card__link" href={url("entrada-blog.html")}>Nueva versión de EchidnaML</a></h3>
+            <a class="chip" href={url("maquetas/listado/")}>Noticias</a>
+            <h3 class="card__title"><a class="card__link" href={url("maquetas/entrada-blog/")}>Nueva versión de EchidnaML</a></h3>
             <div class="card__meta"><time datetime="2023-09-04">4 sep 2023</time> · 2 min de lectura</div>
           </div>
         </article>

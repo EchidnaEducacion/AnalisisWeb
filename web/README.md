@@ -1,8 +1,8 @@
-# Plantillas HTML (propuesta de diseño)
+# Web de Echidna (Astro)
 
 Prototipos estáticos de las **9 páginas maestras** definidas en el [plan de implementación](../README.md#plan-de-implementación), con los menús, el pie y los nombres de la estructura de [`estructura.md`](../estructura.md). Sirven para cerrar el diseño y son el punto de partida de la web, que se irá construyendo en este directorio.
 
-Es un proyecto **Astro** mínimo: un layout `Base` y una página por plantilla. Se publica automáticamente en **<https://echidnaeducacion.github.io/AnalisisWeb/>** con cada *push* a `main` que toque `web/`.
+Es un proyecto **Astro**: un layout `Base`, las **maquetas** (una página por plantilla, publicadas en `/maquetas/`) y las primeras **páginas reales**, que salen de las colecciones de contenido (ver [Páginas reales](#páginas-reales)). Se publica automáticamente en **<https://echidnaeducacion.github.io/AnalisisWeb/>** con cada *push* a `main` que toque `web/`.
 
 Para verlas en local se usa [Bun](https://bun.sh) (los scripts ejecutan Astro con el *runtime* de Bun, así que no depende de la versión de Node instalada):
 
@@ -17,16 +17,16 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 | # | Plantilla | Archivo | Ejemplo real |
 |---|---|---|---|
 | 1 | Base (cabecera, menú, buscador, pie) | `src/layouts/Base.astro` | todas |
-| 2 | Portada | `src/pages/portada.astro` | `/` |
-| 3 | Índice de sección | `src/pages/indice-seccion.astro` | `/ecosistema/` |
-| 3 | Índice de sección (agrupado por títulos) | `src/pages/alumnado.astro`, `src/pages/docentes.astro` | `/alumnado/`, `/docentes/` |
-| 4 | Ficha de hardware | `src/pages/ficha-hardware.astro` | `/ecosistema/echidnablack2/leds/` |
-| 5 | Página genérica | `src/pages/pagina.astro` | `/quienes-somos/` |
-| 6 | Contacto | `src/pages/contacto.astro` | `/contacta/` |
-| 7 | Entrada de blog | `src/pages/entrada-blog.astro` | `/AAAA/MM/slug/` |
-| 8 | Listado / taxonomía | `src/pages/listado.astro` | `/blog/`, categorías, etiquetas, autores |
+| 2 | Portada | `src/pages/maquetas/portada.astro` | `/` |
+| 3 | Índice de sección | `src/pages/maquetas/indice-seccion.astro` | `/ecosistema/` |
+| 3 | Índice de sección (agrupado por títulos) | `src/pages/maquetas/alumnado.astro`, `src/pages/maquetas/docentes.astro` | `/alumnado/`, `/docentes/` |
+| 4 | Ficha de hardware | `src/pages/maquetas/ficha-hardware.astro` | `/ecosistema/echidnablack2/leds/` |
+| 5 | Página genérica | `src/pages/maquetas/pagina.astro` | `/quienes-somos/` |
+| 6 | Contacto | `src/pages/maquetas/contacto.astro` | `/contacta/` |
+| 7 | Entrada de blog | `src/pages/maquetas/entrada-blog.astro` | `/AAAA/MM/slug/` |
+| 8 | Listado / taxonomía | `src/pages/maquetas/listado.astro` | `/blog/`, categorías, etiquetas, autores |
 | 9 | Error 404 | `src/pages/404.astro` | — |
-| + | Componentes de contenido (MDX) | `src/pages/componentes.astro` | Aviso, Descarga, Vídeo, Galería, Tarjeta |
+| + | Componentes de contenido (MDX) | `src/pages/maquetas/componentes.astro` | Aviso, Descarga, Vídeo, Galería, Tarjeta |
 
 ## Línea de diseño
 
@@ -34,7 +34,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 - **Lectura fácil**: texto en *Atkinson Hyperlegible* (diseñada para baja visión) a 17 px, contraste AA, botones y zonas táctiles de 44–48 px.
 - **Orientación**: cada sección tiene color propio (`body[data-section]`: `ecosistema`, `alumnado`, `docentes`, `blog`, `nosotros`), migas de pan, índice lateral «En esta página» y entradas por perfil en la portada (docente, estudiante, conoce la EchidnaBlack2).
 - **Pensado para el aula**: los materiales se agrupan por entorno y enlazan con sus recursos docentes; las fichas tienen **versión imprimible**.
-- **Responsive** desde 320 px, **modo oscuro** (automático o manual), selector **ES/EN** y vídeos/presentaciones que solo cargan el iframe al pulsar.
+- **Responsive** desde 320 px, **modo oscuro** (automático o manual), selector **ES/EN** y vídeos/presentaciones que solo cargan el iframe al pulsar. Por debajo de 540 px, el selector de idioma y el de tema pasan de la cabecera al final del menú móvil, para que quepan el logo, la lupa y el menú.
 - **Sin maquetación en el contenido**: las columnas las decide la plantilla; el Markdown solo aporta texto y componentes.
 
 ## Estructura
@@ -44,10 +44,18 @@ web/
 ├── astro.config.mjs         # base /AnalisisWeb y salida en ficheros *.html
 ├── src/
 │   ├── assets/logo/         # SVG original del logo (Illustrator, con todas sus variantes)
-│   ├── layouts/Base.astro   # <head>, iconos, cabecera, pie y scripts
+│   ├── content.config.ts    # colecciones y su esquema (ver modelo-contenido.md)
+│   ├── content/paginas/es/  # páginas en Markdown: la ruta del fichero es la URL
+│   ├── layouts/
+│   │   ├── Base.astro       # <head>, iconos, cabecera, pie y scripts
+│   │   └── Pagina.astro     # plantilla «Página genérica»
 │   ├── components/          # Cabecera (menú activo según `section`), Pie, Iconos (sprite SVG)
-│   ├── lib/url.ts           # url(): rutas internas con el prefijo `base`
-│   └── pages/*.astro        # contenido (<main>) de cada plantilla
+│   ├── lib/                 # url(): rutas con `base`; paginas.ts: URL y sección de cada página
+│   └── pages/
+│       ├── [...slug].astro  # genera las páginas de la colección `paginas`
+│       ├── index.astro      # «Propuesta de plantillas», hasta que exista la portada real
+│       ├── 404.astro
+│       └── maquetas/*.astro # maquetas de cada plantilla, con contenido escrito a mano
 └── public/
     ├── favicon.svg          # erizo del logo; apple-touch-icon.png, su versión en PNG
     └── assets/
@@ -65,6 +73,17 @@ Cada página indica sus metadatos como *props* del layout:
 
 `section` fija el color de acento y la entrada activa del menú; `bare` usa el título sin añadir « · Echidna Educación». Las llaves `{ }` literales (p. ej. en bloques de código) deben ir en un elemento con `is:raw`.
 
-Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que antepone `base` (`/AnalisisWeb/`): `href={url("portada.html")}`. Así funcionan igual en local y en GitHub Pages. Se genera un fichero `.html` por página (`build.format: 'file'`).
+Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que antepone `base` (`/AnalisisWeb/`): `href={url("maquetas/portada/")}`. Así funcionan igual en local y en GitHub Pages. Las URL son de carpeta (`build.format: 'directory'`): `/politica-privacidad/` se genera como `politica-privacidad/index.html`.
+
+## Páginas reales
+
+El contenido está en `src/content/`, validado por el esquema de `src/content.config.ts` (si falta un campo o no cumple el formato, el *build* falla e indica el fichero). Por ahora solo existe la colección `paginas`, con la plantilla «Página genérica».
+
+- **La ruta del fichero es la URL**, dentro de la carpeta del idioma: `src/content/paginas/es/politica-privacidad.md` → `/politica-privacidad/`; `es/quienes-somos/licencias.md` → `/quienes-somos/licencias/`.
+- **Enlaces en el Markdown**: los internos se escriben sin `base` (`[contacto](/contacta/)`); un plugin de Sätteri (el procesador de Markdown de Astro 7), definido en `astro.config.mjs`, se lo añade al compilar.
+- **Índice lateral**: se genera con los `h2` de la página; si no hay ninguno, no aparece.
+- **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
+
+Páginas hechas: Política de privacidad.
 
 Las imágenes son marcadores (`.ph`) que se sustituirán por las fotos reales optimizadas por Astro. El buscador muestra resultados de ejemplo; en Astro se conectará con Pagefind.

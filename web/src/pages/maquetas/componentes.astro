@@ -1,6 +1,6 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
+import { url } from '../../lib/url';
+import Base from '../../layouts/Base.astro';
 ---
 <Base
   title="Componentes de contenido"
@@ -14,7 +14,7 @@ import Base from '../layouts/Base.astro';
   <header class="page-hero">
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Migas de pan">
-        <ol><li><a href={url("index.html")}>Plantillas</a></li><li><span aria-current="page">Componentes</span></li></ol>
+        <ol><li><a href={url()}>Plantillas</a></li><li><span aria-current="page">Componentes</span></li></ol>
       </nav>
       <h1>Componentes de contenido</h1>
       <p class="lead">Piezas que sustituyen a los elementos de Avada dentro del Markdown: aviso, descarga, vídeo, galería y tarjeta, además de los estilos de texto normales.</p>

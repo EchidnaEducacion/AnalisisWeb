@@ -8,6 +8,7 @@
     "preview": "bun --bun astro preview"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.2",
     "astro": "^7.3.5"
   }
 }

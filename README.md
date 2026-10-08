@@ -76,19 +76,19 @@ Las **maquetas** de estas páginas, con contenido escrito a mano, están en [`we
 
 Se hace en el mismo proyecto [`web/`](web/). No hay dos juegos de plantillas: una plantilla real es un *layout* (`web/src/layouts/`) alimentado por su colección (`web/src/content.config.ts`), y el contenido de ejemplo son ficheros Markdown o YAML en `web/src/content/`.
 
-- Crear `web/src/content.config.ts` según [`modelo-contenido.md`](modelo-contenido.md).
-- Pasar cada maqueta a *layout* real alimentado por su colección.
+- [x] Crear `web/src/content.config.ts` según [`modelo-contenido.md`](modelo-contenido.md). Hecho con la colección `paginas`; las demás se añaden con su plantilla.
+- Pasar cada maqueta a *layout* real alimentado por su colección. Hecho: «Página genérica» (`web/src/layouts/Pagina.astro`).
 - Añadir **contenido de ejemplo real**, 1 o 2 páginas por plantilla:
   - Ecosistema, EchidnaBlack2 y LEDs ROG (hardware);
   - Materiales alumnado y Recursos docentes, con los recursos de «¿Hace calor aquí?» y de los Proyectos de inicio;
-  - Sobre el proyecto y Contacta;
+  - Política de privacidad (hecha, la primera), Sobre el proyecto y Contacta;
   - una entrada antigua y otra reciente del blog, con sus listados;
   - el 404.
 
   Es contenido definitivo, no de usar y tirar: es el primer lote de la migración.
-- Mover las maquetas a `web/src/pages/maquetas/` (publicadas en `/maquetas/`) como referencia visual, y borrar cada una cuando su plantilla real la iguale.
+- [x] Mover las maquetas a `web/src/pages/maquetas/` (publicadas en `/maquetas/`) como referencia visual. Falta borrar cada una cuando su plantilla real la iguale.
 - Revisar el diseño con este contenido (tokens, móvil y accesibilidad) y cerrarlo antes de migrar en bloque.
-- Pasar a URL de carpeta (`build.format: 'directory'`: `/ecosistema/` en vez de `indice-seccion.html`) cuando las páginas salgan de las colecciones.
+- [x] Pasar a URL de carpeta (`build.format: 'directory'`: `/ecosistema/` en vez de `indice-seccion.html`).
 
 ### Paso 4 – Migración por secciones
 
@@ -128,7 +128,8 @@ Se reaprovecha el MDX de la prueba de concepto anterior como punto de partida: q
 
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
-- [ ] Dar de alta la web en GoatCounter, añadir su script en el layout `Base` (`web/src/layouts/Base.astro`) y mencionarlo en la política de privacidad.
+- [ ] Dar de alta la web en GoatCounter y añadir su script en el layout `Base` (`web/src/layouts/Base.astro`). La política de privacidad ya lo menciona.
+- [ ] Servir las tipografías desde la propia web en lugar de Google Fonts, para no enviar a Google la IP de las visitas. Después, quitar esa línea de la política de privacidad.
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
 - [ ] Hacer capturas nuevas para 1.1.2 Primeros pasos y 1.1.3 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.

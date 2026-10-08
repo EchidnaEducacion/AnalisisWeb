@@ -8,24 +8,24 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href={url("portada.html")} aria-label="Echidna Educación, ir a la portada">
+    <a class="brand" href={url("maquetas/portada/")} aria-label="Echidna Educación, ir a la portada">
       <svg class="brand__mark" aria-hidden="true"><use href="#i-echidna"/></svg>
       <span class="brand__name"><span class="brand__echidna">Echidna</span>Educación</span>
     </a>
 
     <nav class="nav" aria-label="Principal">
       <ul class="nav__list">
-        <li><a class={"nav__link" + activo("ecosistema")} href={url("indice-seccion.html")}>Ecosistema</a></li>
-        <li><a class={"nav__link" + activo("alumnado")} href={url("alumnado.html")}>Alumnado</a></li>
-        <li><a class={"nav__link" + activo("docentes")} href={url("docentes.html")}>Docentes</a></li>
-        <li><a class={"nav__link" + activo("blog")} href={url("listado.html")}>Blog</a></li>
+        <li><a class={"nav__link" + activo("ecosistema")} href={url("maquetas/indice-seccion/")}>Ecosistema</a></li>
+        <li><a class={"nav__link" + activo("alumnado")} href={url("maquetas/alumnado/")}>Alumnado</a></li>
+        <li><a class={"nav__link" + activo("docentes")} href={url("maquetas/docentes/")}>Docentes</a></li>
+        <li><a class={"nav__link" + activo("blog")} href={url("maquetas/listado/")}>Blog</a></li>
         <li class="nav__item--has-sub">
           <button class={"nav__link" + activo("nosotros")} type="button" aria-expanded="false" aria-controls="sub-nosotros">
             Quiénes somos <svg class="chev" aria-hidden="true"><use href="#i-chevron"/></svg>
           </button>
           <ul class="subnav" id="sub-nosotros">
-            <li><a href={url("pagina.html")}><strong>Sobre el proyecto</strong><span>Quiénes somos y qué hacemos</span></a></li>
-            <li><a href={url("contacto.html")}><strong>Contacta</strong><span>Escríbenos</span></a></li>
+            <li><a href={url("maquetas/pagina/")}><strong>Sobre el proyecto</strong><span>Quiénes somos y qué hacemos</span></a></li>
+            <li><a href={url("maquetas/contacto/")}><strong>Contacta</strong><span>Escríbenos</span></a></li>
             <li><a href="#"><strong>Publicaciones</strong><span>Echidna en los medios</span></a></li>
           </ul>
         </li>
@@ -59,18 +59,29 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
     <svg aria-hidden="true"><use href="#i-search"/></svg> Buscar en Echidna
   </button>
   <ul>
-    <li><a href={url("indice-seccion.html")}><span class="dot" style="--dot:var(--c-ecosistema)"></span>Ecosistema</a></li>
-    <li><a href={url("alumnado.html")}><span class="dot" style="--dot:var(--c-alumnado)"></span>Alumnado</a></li>
-    <li><a href={url("docentes.html")}><span class="dot" style="--dot:var(--c-docentes)"></span>Docentes</a></li>
-    <li><a href={url("listado.html")}><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>
-    <li><a href={url("pagina.html")}><span class="dot" style="--dot:var(--c-nosotros)"></span>Quiénes somos</a>
+    <li><a href={url("maquetas/indice-seccion/")}><span class="dot" style="--dot:var(--c-ecosistema)"></span>Ecosistema</a></li>
+    <li><a href={url("maquetas/alumnado/")}><span class="dot" style="--dot:var(--c-alumnado)"></span>Alumnado</a></li>
+    <li><a href={url("maquetas/docentes/")}><span class="dot" style="--dot:var(--c-docentes)"></span>Docentes</a></li>
+    <li><a href={url("maquetas/listado/")}><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>
+    <li><a href={url("maquetas/pagina/")}><span class="dot" style="--dot:var(--c-nosotros)"></span>Quiénes somos</a>
       <ul>
-        <li><a href={url("pagina.html")}>Sobre el proyecto</a></li>
-        <li><a href={url("contacto.html")}>Contacta</a></li>
+        <li><a href={url("maquetas/pagina/")}>Sobre el proyecto</a></li>
+        <li><a href={url("maquetas/contacto/")}>Contacta</a></li>
         <li><a href="#">Publicaciones</a></li>
       </ul>
     </li>
   </ul>
+  <!-- En pantallas estrechas, el idioma y el tema pasan aquí desde la cabecera -->
+  <div class="mobile-prefs">
+    <div class="lang-switch" role="group" aria-label="Idioma">
+      <a href="#" aria-current="true" hreflang="es" lang="es">ES</a>
+      <a href="#" hreflang="en" lang="en">EN</a>
+    </div>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Cambiar entre modo claro y oscuro">
+      <svg class="sun" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="moon" aria-hidden="true"><use href="#i-sun"/></svg>
+    </button>
+  </div>
 </nav>
 
 <dialog class="search-dialog" id="search-dialog" aria-label="Buscar">
@@ -84,15 +95,15 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
     <!-- Ejemplo de resultados: en Astro los pintará Pagefind -->
     <h3>Ecosistema</h3>
     <ul>
-      <li><a href={url("ficha-hardware.html")}>LEDs ROG <small>Ecosistema › EchidnaBlack2 · Pines D11~, D12 y D13</small></a></li>
+      <li><a href={url("maquetas/ficha-hardware/")}>LEDs ROG <small>Ecosistema › EchidnaBlack2 · Pines D11~, D12 y D13</small></a></li>
     </ul>
     <h3>Materiales alumnado</h3>
     <ul>
-      <li><a href={url("alumnado.html")}>Proyectos de inicio con EchidnaML <small>Materiales alumnado › EchidnaML · Enciende tu primer LED</small></a></li>
+      <li><a href={url("maquetas/alumnado/")}>Proyectos de inicio con EchidnaML <small>Materiales alumnado › EchidnaML · Enciende tu primer LED</small></a></li>
     </ul>
     <h3>Blog</h3>
     <ul>
-      <li><a href={url("entrada-blog.html")}>Un semáforo en clase de Tecnología <small>Blog · 12 de marzo de 2024</small></a></li>
+      <li><a href={url("maquetas/entrada-blog/")}>Un semáforo en clase de Tecnología <small>Blog · 12 de marzo de 2024</small></a></li>
     </ul>
   </div>
 </dialog>

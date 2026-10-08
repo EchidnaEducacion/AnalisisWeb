@@ -301,7 +301,16 @@ body.menu-open { overflow: hidden; }
   .mobile-nav { display: none !important; }
 }
 @media (min-width: 640px) { .search-trigger { display: inline-flex; } .search-icon-btn { display: none; } }
-@media (max-width: 420px) { .brand { gap: .4rem; } .brand__mark { width: 50px; height: 28px; } .brand__name { font-size: 1.1rem; } .lang-switch a { padding: .4rem .45rem; } }
+@media (max-width: 420px) { .brand { gap: .4rem; } .brand__mark { width: 50px; height: 28px; } .brand__name { font-size: 1.1rem; } }
+@media (max-width: 359px) { .site-header__inner { gap: .75rem; } .brand__mark { width: 44px; height: 25px; } .brand__name { font-size: 1rem; } }
+
+/* Idioma y tema: en pantallas estrechas pasan de la cabecera al menú móvil */
+.mobile-prefs { display: none; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+.mobile-prefs .lang-switch a { display: inline-block; padding: .55rem .9rem; font-size: .9rem; }
+@media (max-width: 539px) {
+  .header-actions .lang-switch, .header-actions .theme-toggle { display: none; }
+  .mobile-prefs { display: flex; }
+}
 
 /* Diálogo de búsqueda (Pagefind) */
 .search-dialog {

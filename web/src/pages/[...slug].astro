@@ -1,0 +1,36 @@
+---
+// Genera una página por cada entrada de `paginas` en español con la plantilla «Página genérica».
+// Las demás plantillas (índice, contacto, portada) se añadirán con su layout.
+import { getCollection, render } from 'astro:content';
+import Pagina from '../layouts/Pagina.astro';
+import { rutaDe, seccionDe } from '../lib/paginas';
+import { url } from '../lib/url';
+
+export async function getStaticPaths() {
+  const todas = await getCollection('paginas', (p) => p.id.startsWith('es/') && !p.data.draft);
+  return todas
+    .filter((p) => p.data.template === 'pagina')
+    .map((entry) => ({ params: { slug: rutaDe(entry) }, props: { entry, todas } }));
+}
+
+const { entry, todas } = Astro.props;
+const ruta = rutaDe(entry);
+const { Content, headings } = await render(entry);
+
+// Migas intermedias: las páginas de la colección que cuelgan por encima de esta
+const tramos = ruta.split('/').slice(0, -1);
+const crumbs = tramos.flatMap((_, i) => {
+  const padre = tramos.slice(0, i + 1).join('/');
+  const p = todas.find((t) => rutaDe(t) === padre);
+  return p ? [{ title: p.data.title, href: url(`${padre}/`) }] : [];
+});
+---
+<Pagina
+  title={entry.data.title}
+  description={entry.data.description}
+  section={seccionDe(ruta)}
+  crumbs={crumbs}
+  headings={headings}
+>
+  <Content />
+</Pagina>

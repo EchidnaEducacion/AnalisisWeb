@@ -5,7 +5,7 @@ import { url } from '../lib/url';
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="brand" href={url("portada.html")} aria-label="Echidna Educación, ir a la portada">
+        <a class="brand" href={url("maquetas/portada/")} aria-label="Echidna Educación, ir a la portada">
           <svg class="brand__mark" aria-hidden="true"><use href="#i-echidna"/></svg>
           <span class="brand__name"><span class="brand__echidna">Echidna</span>Educación</span>
         </a>
@@ -21,7 +21,7 @@ import { url } from '../lib/url';
         <h2>Ecosistema</h2>
         <ul>
           <li><a href="#">EchidnaML (descarga)</a></li>
-          <li><a href={url("ficha-hardware.html")}>EchidnaBlack2</a></li>
+          <li><a href={url("maquetas/ficha-hardware/")}>EchidnaBlack2</a></li>
           <li><a href="https://echidna.es/manual/">Manual</a></li>
           <li><a href="#">Comprobar la placa</a></li>
         </ul>
@@ -29,19 +29,19 @@ import { url } from '../lib/url';
       <div>
         <h2>En el aula</h2>
         <ul>
-          <li><a href={url("alumnado.html")}>Materiales alumnado</a></li>
-          <li><a href={url("docentes.html")}>Recursos docentes</a></li>
+          <li><a href={url("maquetas/alumnado/")}>Materiales alumnado</a></li>
+          <li><a href={url("maquetas/docentes/")}>Recursos docentes</a></li>
           <li><a href="https://echidnaeducacion.github.io/GuiaInicioEchidnaML/">Guía de inicio EchidnaML</a></li>
-          <li><a href={url("listado.html")}>Blog</a></li>
+          <li><a href={url("maquetas/listado/")}>Blog</a></li>
         </ul>
       </div>
       <div>
         <h2>Echidna</h2>
         <ul>
-          <li><a href={url("pagina.html")}>Sobre el proyecto</a></li>
+          <li><a href={url("maquetas/pagina/")}>Sobre el proyecto</a></li>
           <li><a href="#">Publicaciones</a></li>
           <li><a href="#">Cómo colaborar</a></li>
-          <li><a href="#">Quiero una</a> · <a href={url("contacto.html")}>Contacta</a></li>
+          <li><a href="#">Quiero una</a> · <a href={url("maquetas/contacto/")}>Contacta</a></li>
         </ul>
       </div>
     </div>
@@ -49,7 +49,7 @@ import { url } from '../lib/url';
       <a class="licenses" href="#" aria-label="Licencias">
         <span>Contenidos CC BY-SA</span><span>Hardware CERN OHL-S</span><span>Software GPL</span>
       </a>
-      <div><a href="#">Política de privacidad</a> · © 2026 Echidna Educación</div>
+      <div><a href={url("politica-privacidad/")}>Política de privacidad</a> · © 2026 Echidna Educación</div>
     </div>
   </div>
 </footer>

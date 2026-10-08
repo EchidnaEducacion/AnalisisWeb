@@ -5,8 +5,8 @@
   const root = document.documentElement;
 
   // Tema claro/oscuro: preferencia guardada por visitante (opcional)
-  const themeBtn = document.querySelector('.theme-toggle');
-  if (themeBtn) {
+  // (hay dos botones: el de la cabecera y el del menú móvil)
+  document.querySelectorAll('.theme-toggle').forEach((themeBtn) => {
     themeBtn.addEventListener('click', () => {
       const isDark = root.dataset.theme
         ? root.dataset.theme === 'dark'
@@ -15,7 +15,7 @@
       root.dataset.theme = next;
       try { localStorage.setItem('echidna-theme', next); } catch (e) {}
     });
-  }
+  });
 
   // Menú móvil
   const menuBtn = document.querySelector('.menu-toggle');

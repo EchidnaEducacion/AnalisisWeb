@@ -19,49 +19,49 @@ import Base from '../layouts/Base.astro';
     <div class="tpl-grid">
       <article class="tpl">
         <span class="tpl__num">01</span>
-        <h2><a href={url("portada.html")}>Base</a></h2>
+        <h2><a href={url("maquetas/portada/")}>Base</a></h2>
         <p>Cabecera fija con menú, buscador (Pagefind), selector ES/EN, modo oscuro y pie. Presente en todas las páginas.</p>
         <dl><dt>Se usa en</dt><dd>Todas</dd><dt>Archivo</dt><dd><code>portada.html</code></dd></dl>
       </article>
       <article class="tpl" data-section="ecosistema">
         <span class="tpl__num">02</span>
-        <h2><a href={url("portada.html")}>Portada</a></h2>
+        <h2><a href={url("maquetas/portada/")}>Portada</a></h2>
         <p>Héroe, entradas por perfil (docente, estudiante, conoce la placa), pilares, la placa, materiales destacados y últimas entradas.</p>
         <dl><dt>Se usa en</dt><dd>/</dd><dt>Archivo</dt><dd><code>portada.html</code></dd></dl>
       </article>
       <article class="tpl" data-section="ecosistema">
         <span class="tpl__num">03</span>
-        <h2><a href={url("indice-seccion.html")}>Índice de sección</a></h2>
-        <p>Introducción + tarjetas generadas a partir de las páginas hijas (<a href={url("indice-seccion.html")}>Ecosistema</a>) o agrupadas por títulos a partir de la colección <code>recursos</code> (<a href={url("alumnado.html")}>Materiales alumnado</a> y <a href={url("docentes.html")}>Recursos docentes</a>).</p>
+        <h2><a href={url("maquetas/indice-seccion/")}>Índice de sección</a></h2>
+        <p>Introducción + tarjetas generadas a partir de las páginas hijas (<a href={url("maquetas/indice-seccion/")}>Ecosistema</a>) o agrupadas por títulos a partir de la colección <code>recursos</code> (<a href={url("maquetas/alumnado/")}>Materiales alumnado</a> y <a href={url("maquetas/docentes/")}>Recursos docentes</a>).</p>
         <dl><dt>Se usa en</dt><dd>Ecosistema, alumnado, docentes, complementos</dd><dt>Archivo</dt><dd><code>indice-seccion.html</code>, <code>alumnado.html</code>, <code>docentes.html</code></dd></dl>
       </article>
       <article class="tpl" data-section="ecosistema">
         <span class="tpl__num">04</span>
-        <h2><a href={url("ficha-hardware.html")}>Ficha de hardware</a></h2>
+        <h2><a href={url("maquetas/ficha-hardware/")}>Ficha de hardware</a></h2>
         <p>Ficha rápida, pines y descargas a partir del front matter.</p>
         <dl><dt>Se usa en</dt><dd>EchidnaBlack2, 10 componentes y 5 complementos</dd><dt>Archivo</dt><dd><code>ficha-hardware.html</code></dd></dl>
       </article>
       <article class="tpl" data-section="nosotros">
         <span class="tpl__num">05</span>
-        <h2><a href={url("pagina.html")}>Página genérica</a></h2>
+        <h2><a href={url("maquetas/pagina/")}>Página genérica</a></h2>
         <p>Texto largo con índice lateral. Sobre el proyecto, licencias, privacidad, EchidnaML…</p>
         <dl><dt>Se usa en</dt><dd>~15 páginas</dd><dt>Archivo</dt><dd><code>pagina.html</code></dd></dl>
       </article>
       <article class="tpl">
         <span class="tpl__num">06</span>
-        <h2><a href={url("contacto.html")}>Contacto</a></h2>
+        <h2><a href={url("maquetas/contacto/")}>Contacto</a></h2>
         <p>Página genérica + formulario accesible con servicio externo y antispam.</p>
         <dl><dt>Se usa en</dt><dd>/contacta/</dd><dt>Archivo</dt><dd><code>contacto.html</code></dd></dl>
       </article>
       <article class="tpl" data-section="blog">
         <span class="tpl__num">07</span>
-        <h2><a href={url("entrada-blog.html")}>Entrada de blog</a></h2>
+        <h2><a href={url("maquetas/entrada-blog/")}>Entrada de blog</a></h2>
         <p>Fecha, autor, tiempo de lectura, etiquetas, compartir y entradas relacionadas.</p>
         <dl><dt>Se usa en</dt><dd>61 entradas</dd><dt>Archivo</dt><dd><code>entrada-blog.html</code></dd></dl>
       </article>
       <article class="tpl" data-section="blog">
         <span class="tpl__num">08</span>
-        <h2><a href={url("listado.html")}>Listado / taxonomía</a></h2>
+        <h2><a href={url("maquetas/listado/")}>Listado / taxonomía</a></h2>
         <p>Blog, categorías, etiquetas y autores: entrada destacada, tarjetas y paginación.</p>
         <dl><dt>Se usa en</dt><dd>Blog y taxonomías (generadas)</dd><dt>Archivo</dt><dd><code>listado.html</code></dd></dl>
       </article>
@@ -73,7 +73,7 @@ import Base from '../layouts/Base.astro';
       </article>
       <article class="tpl">
         <span class="tpl__num">+</span>
-        <h2><a href={url("componentes.html")}>Componentes de contenido</a></h2>
+        <h2><a href={url("maquetas/componentes/")}>Componentes de contenido</a></h2>
         <p>Aviso, descarga, vídeo/presentación, galería, tarjeta y estilos de texto para usar en MDX.</p>
         <dl><dt>Se usa en</dt><dd>Contenido</dd><dt>Archivo</dt><dd><code>componentes.html</code></dd></dl>
       </article>
