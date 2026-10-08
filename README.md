@@ -189,8 +189,8 @@ Además se necesitan algunos componentes reutilizables (componentes MDX) para su
 - **Páginas**: muchas están maquetadas con contenedores de Fusion Builder (la portada y las fichas de hardware tienen 8 contenedores cada una), así que necesitarán limpieza manual o semiautomática. Es la parte que más esfuerzo requiere.
 - **URLs**: el generador puede mantener exactamente las rutas actuales (`/hardware/componentes/leds/`, `/2020/02/slug/`) y así no se pierde posicionamiento ni se rompen enlaces.
 - **Manual**: `/manual/` lo sirve directamente el repo `manual` de la organización.
-- **Comentarios**: hay formulario de comentarios en las entradas. Hay que decidir si se eliminan o se sustituyen por Giscus.
-- **Analítica**: el ID `UA-…` actual ya no funciona; conviene decidir si se instala GA4 u otra alternativa.
+- **Comentarios**: hay formulario de comentarios en las entradas, pero solo 9 comentarios publicados entre 2020 y 2024. Se eliminan (ver [Decisiones tomadas](#decisiones-tomadas)).
+- **Analítica**: el ID `UA-…` actual ya no funciona. Se sustituye por GoatCounter (ver [Decisiones tomadas](#decisiones-tomadas)).
 
 ### Conclusión de la fase 3
 
@@ -303,11 +303,14 @@ Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pa
 - [x] Estrategia: **modelo de contenido → páginas maestras → diseño → migración por secciones**.
 - [x] **Habrá versión en inglés**: el modelo de contenido y las plantillas deben contemplar ES/EN desde el principio (campo `translation`, selector de idioma, rutas `/en/…`, menús y textos de interfaz traducibles).
 - [x] La web se construye **en este repositorio**, en el directorio `web/` (proyecto Astro con Bun), partiendo de las plantillas propuestas. Se publica en GitHub Pages en <https://echidnaeducacion.github.io/AnalisisWeb/>; la prueba de concepto de `EchidnaEducacion.github.io` queda solo como referencia.
+- [x] **Sin comentarios en el blog**: solo hay 9 en 6 años y Giscus obligaría a tener cuenta de GitHub. Los 9 comentarios antiguos se descartan. Al final de cada entrada se invita a escribir desde `/contacta/`.
+- [x] **Analítica con GoatCounter**: gratuito para proyectos sin ánimo de lucro, de código abierto y sin cookies, así que no necesita aviso de consentimiento. Mide visitas, páginas más vistas y procedencia sin datos personales. Se descarta GA4 por las cookies y el envío de datos a Google.
 
 ## Próximos pasos
 
-- [ ] Decidir sobre comentarios (eliminar o Giscus).
-- [ ] Decidir sobre analítica (GA4 o alternativa sin cookies).
+- [x] Decidir sobre comentarios: se eliminan.
+- [x] Decidir sobre analítica: GoatCounter.
+- [ ] Dar de alta la web en GoatCounter, añadir su script en el layout `Base` (`web/src/layouts/Base.astro`) y mencionarlo en la política de privacidad.
 - [x] Páginas no indexadas: las actividades pasan a las diapositivas de la Guía de inicio EchidnaML, EchidnaScratch a EchidnaML y Snap4Arduino a Entornos compatibles (ver [`redirecciones.md`](redirecciones.md)).
 - [ ] Recuperar o sustituir las 20 imágenes perdidas.
 - [ ] Definir los esquemas del modelo de contenido (paso 1).
