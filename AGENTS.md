@@ -13,7 +13,7 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 
 | Documento | Qué va ahí |
 |---|---|
-| [`README.md`](README.md) | Tecnología elegida, plan de implementación, **decisiones tomadas** y **próximos pasos** |
+| [`README.md`](README.md) | Tecnología elegida, plan de implementación, **progreso**, **decisiones tomadas** y **próximos pasos** |
 | [`estructura.md`](estructura.md) | Árbol de páginas, URL, plantillas, criterios (navegación, pie, recursos sin plantilla) y pendientes de la estructura |
 | [`modelo-contenido.md`](modelo-contenido.md) | Colecciones (`paginas`, `hardware`, `recursos`, `blog`) y sus campos |
 | [`redirecciones.md`](redirecciones.md) | Correspondencia entre las URL de WordPress y las nuevas |
@@ -24,6 +24,7 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 
 - Todo en **castellano**.
 - Las decisiones se apuntan en «Decisiones tomadas» del README; las tareas, en «Próximos pasos» o en el «Pendiente» de cada documento.
+- El avance de las plantillas y páginas se registra en «Progreso» del README, en el mismo commit en el que se terminan.
 - `estructura.md` describe **solo la web nueva**: no menciona la web antigua («URL actual», «como en WordPress»…). Todo lo que relaciona lo antiguo con lo nuevo va en `redirecciones.md`.
 - Cada documento tiene índice al principio y los enlaces entre documentos deben seguir funcionando al renombrar apartados.
 

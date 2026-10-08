@@ -9,8 +9,9 @@ La web está en [`web/`](web/) y se puede ver publicada en **<https://echidnaedu
 1. [Documentos](#documentos)
 2. [Tecnología](#tecnología)
 3. [Plan de implementación](#plan-de-implementación)
-4. [Decisiones tomadas](#decisiones-tomadas)
-5. [Próximos pasos](#próximos-pasos)
+4. [Progreso](#progreso)
+5. [Decisiones tomadas](#decisiones-tomadas)
+6. [Próximos pasos](#próximos-pasos)
 
 ---
 
@@ -77,11 +78,11 @@ Las **maquetas** de estas páginas, con contenido escrito a mano, están en [`we
 Se hace en el mismo proyecto [`web/`](web/). No hay dos juegos de plantillas: una plantilla real es un *layout* (`web/src/layouts/`) alimentado por su colección (`web/src/content.config.ts`), y el contenido de ejemplo son ficheros Markdown o YAML en `web/src/content/`.
 
 - [x] Crear `web/src/content.config.ts` según [`modelo-contenido.md`](modelo-contenido.md). Hecho con la colección `paginas`; las demás se añaden con su plantilla.
-- Pasar cada maqueta a *layout* real alimentado por su colección. Hecho: «Página genérica» (`web/src/layouts/Pagina.astro`).
-- Añadir **contenido de ejemplo real**, 1 o 2 páginas por plantilla:
+- Pasar cada maqueta a *layout* real alimentado por su colección (avance en [Progreso](#progreso)).
+- Añadir **contenido de ejemplo real**, 1 o 2 páginas por plantilla (las hechas, en [Progreso](#progreso)):
   - Ecosistema, EchidnaBlack2 y LEDs ROG (hardware);
   - Materiales alumnado y Recursos docentes, con los recursos de «¿Hace calor aquí?» y de los Proyectos de inicio;
-  - Política de privacidad (hecha, la primera), Sobre el proyecto y Contacta;
+  - Política de privacidad, Sobre el proyecto y Contacta;
   - una entrada antigua y otra reciente del blog, con sus listados;
   - el 404.
 
@@ -109,6 +110,28 @@ Se reaprovecha el MDX de la prueba de concepto anterior como punto de partida: q
 - [ ] Revisión visual en escritorio y móvil
 
 ---
+
+## Progreso
+
+Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el que se termina una plantilla o una página. La lista de páginas, sus URL y su plantilla están en [`estructura.md`](estructura.md#tabla).
+
+**Colecciones** (`web/src/content.config.ts`): `paginas` ✅ · `hardware` — · `recursos` — · `blog` —
+
+| Plantilla | Plantilla real | Páginas hechas | Maqueta |
+|---|---|---|---|
+| Base | ✅ `layouts/Base.astro` | Todas | — |
+| Portada | — | — | Se queda |
+| Índice de sección | — | — | Se queda |
+| Ficha de hardware | — | — | Se queda |
+| Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/) | Se queda |
+| Contacto | — | — | Se queda |
+| Entrada de blog | — | — | Se queda |
+| Listado / taxonomía | — | — | Se queda |
+| Error 404 | — | — | Se queda |
+
+**Plantilla real**: ✅ cuando el *layout* está alimentado por su colección. **Maqueta**: «Borrada» cuando la plantilla real la iguala.
+
+Última actualización: 2026-10-08.
 
 ## Decisiones tomadas
 
