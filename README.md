@@ -4,6 +4,8 @@ Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, ac
 
 La web (proyecto Astro, empezando por las plantillas propuestas) está en [`web/`](web/) y se pueden ver publicadas en **<https://echidnaeducacion.github.io/AnalisisWeb/>**.
 
+La estructura propuesta para la nueva web (árbol de páginas, URL y plantillas) está en [`estructura.md`](estructura.md).
+
 ## Índice
 
 1. [Situación actual](#situación-actual)
@@ -264,6 +266,8 @@ La implementación se hace en este mismo repositorio, en el directorio [`web/`](
 
 La regla es que **los componentes MDX sirven para contenido** (vídeo, galería, descarga, aviso, tarjeta), **no para maquetar**: la disposición en columnas la decide el layout.
 
+La plantilla que usa cada página de la nueva web está en [`estructura.md`](estructura.md).
+
 ### Paso 3 – Diseño
 
 - Para cada página maestra, elegir 1 o 2 páginas reales y limpiarlas a mano para usarlas como banco de pruebas del diseño. Ejemplos: `hardware/componentes/leds`, `didactica/actividades/es02-hacemos-un-semaforo`, una entrada antigua y una reciente.
@@ -307,3 +311,5 @@ Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pa
 - [ ] Decidir si se publican las 12 páginas no indexadas (actividades `s01`–`s11`, `p01`, EchidnaScratch, Snap4Arduino).
 - [ ] Recuperar o sustituir las 20 imágenes perdidas.
 - [ ] Definir los esquemas del modelo de contenido (paso 1).
+- [ ] Revisar la propuesta de URL y plantillas de [`estructura.md`](estructura.md).
+- [ ] Definir las redirecciones de las URL de WordPress a las nuevas.
