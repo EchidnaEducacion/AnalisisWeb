@@ -3,14 +3,14 @@ import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base
-  title="LEDs"
-  description="Los tres LEDs de las placas Echidna: funcionamiento, pines (D11~, D12, D13), programación con EchidnaML y actividades relacionadas."
-  section="hardware"
+  title="LEDs ROG"
+  description="Los tres LEDs de la EchidnaBlack2: funcionamiento, pines (D11~, D12, D13) y cómo programarlos con EchidnaML y Arduino IDE."
+  section="ecosistema"
 >
 <main id="contenido">
   <!--
     Plantilla: Ficha de hardware.
-    Front matter que la alimenta: tipo, placas, imagen, pines[], descargas[], actividades[].
+    Front matter que la alimenta (colección hardware): kind, board, image, pins[], downloads[].
     El cuerpo Markdown solo contiene la explicación (Descripción, Funcionamiento, Programación).
   -->
   <header class="page-hero">
@@ -18,19 +18,18 @@ import Base from '../layouts/Base.astro';
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol>
           <li><a href={url("portada.html")}>Inicio</a></li>
-          <li><a href={url("indice-seccion.html")}>Hardware</a></li>
-          <li><a href={url("indice-seccion.html")}>Componentes</a></li>
-          <li><span aria-current="page">LEDs</span></li>
+          <li><a href={url("indice-seccion.html")}>Ecosistema</a></li>
+          <li><a href="#">EchidnaBlack2</a></li>
+          <li><span aria-current="page">LEDs ROG</span></li>
         </ol>
       </nav>
       <div class="hw-head">
         <div>
           <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg> Componente · Salida</p>
-          <h1>LEDs</h1>
+          <h1>LEDs ROG</h1>
           <p class="lead">Tres diodos emisores de luz (verde, naranja y rojo) que sirven como indicadores visuales. Puedes encenderlos y apagarlos o, en el verde, regular su brillo.</p>
           <div class="compat" aria-label="Placas compatibles">
-            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Echidna Black</span>
-            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Echidna Shield</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>EchidnaBlack2</span>
           </div>
         </div>
         <figure style="margin:0">
@@ -55,7 +54,7 @@ import Base from '../layouts/Base.astro';
         <svg aria-hidden="true"><use href="#i-info"/></svg>
         <div>
           <p class="callout__title">¿Por qué lleva una resistencia?</p>
-          <p>Todos los LEDs necesitan una resistencia en serie que limite la corriente. En las placas Echidna ya está incluida, así que no tienes que añadir nada.</p>
+          <p>Todos los LEDs necesitan una resistencia en serie que limite la corriente. En la EchidnaBlack2 ya está incluida, así que no tienes que añadir nada.</p>
         </div>
       </aside>
 
@@ -76,7 +75,7 @@ import Base from '../layouts/Base.astro';
       <h2 id="programacion">Cómo se programa</h2>
       <p>En <strong>EchidnaML</strong> hay bloques específicos para elegir el LED y su estado (encendido o apagado) o, en el verde, su intensidad de 0 a 255.</p>
       <figure>
-        <div class="ph" style="--ratio:21/9" data-section="programar"><svg aria-hidden="true"><use href="#i-blocks"/></svg><span class="ph__label">bloques-leds.webp</span></div>
+        <div class="ph" style="--ratio:21/9" data-section="docentes"><svg aria-hidden="true"><use href="#i-blocks"/></svg><span class="ph__label">bloques-leds.webp</span></div>
         <figcaption>Bloques de EchidnaML para controlar los LEDs.</figcaption>
       </figure>
       <p>Con Arduino IDE el equivalente en código es:</p>
@@ -91,30 +90,9 @@ void loop() {
   delay(1000);
 }</code></pre>
 
-      <h2 id="actividades">Actividades que lo usan</h2>
-      <!-- Lista generada: actividades cuyo front matter referencia este componente -->
-      <div class="grid grid--2" data-section="didactica">
-        <article class="card card--row">
-          <div class="ph"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
-          <div class="card__body">
-            <span class="chip">ES02</span>
-            <h3 class="card__title"><a class="card__link" href={url("actividad.html")}>Hacemos un semáforo</a></h3>
-            <p class="card__text">Salidas digitales · 1–2 sesiones</p>
-          </div>
-        </article>
-        <article class="card card--row">
-          <div class="ph"><svg aria-hidden="true"><use href="#i-slides"/></svg></div>
-          <div class="card__body">
-            <span class="chip">ES05</span>
-            <h3 class="card__title"><a class="card__link" href={url("actividad.html")}>Control de luminosidad</a></h3>
-            <p class="card__text">Salidas analógicas · 1 sesión</p>
-          </div>
-        </article>
-      </div>
-
       <nav class="pager" aria-label="Otros componentes">
-        <a href="#"><small>← Anterior</small><strong>Joystick</strong></a>
-        <a class="next" href="#"><small>Siguiente →</small><strong>LED RGB</strong></a>
+        <a href="#"><small>← Anterior</small><strong>LED RGB</strong></a>
+        <a class="next" href="#"><small>Siguiente →</small><strong>Audio</strong></a>
       </nav>
     </article>
 
@@ -123,9 +101,9 @@ void loop() {
         <h2 id="ficha-t">Ficha rápida</h2>
         <dl>
           <div><dt>Tipo</dt><dd>Componente de salida</dd></div>
-          <div><dt>Placas</dt><dd>Echidna Black · Echidna Shield</dd></div>
+          <div><dt>Placa</dt><dd>EchidnaBlack2</dd></div>
           <div><dt>Pines</dt><dd><span class="pin">D11~ · D12 · D13</span></dd></div>
-          <div><dt>Se programa con</dt><dd>EchidnaML, Snap4Arduino, Arduino IDE</dd></div>
+          <div><dt>Se programa con</dt><dd>EchidnaML, Snap!, Arduino IDE</dd></div>
           <div><dt>Licencia</dt><dd>CERN OHL-S</dd></div>
         </dl>
       </section>
@@ -146,7 +124,6 @@ void loop() {
           <li><a href="#funcionamiento">Funcionamiento</a></li>
           <li><a href="#pines">Pines</a></li>
           <li><a href="#programacion">Cómo se programa</a></li>
-          <li><a href="#actividades">Actividades</a></li>
         </ol>
       </nav>
     </aside>

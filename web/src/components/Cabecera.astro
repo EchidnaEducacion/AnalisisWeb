@@ -15,28 +15,25 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
 
     <nav class="nav" aria-label="Principal">
       <ul class="nav__list">
-        <li><a class={"nav__link" + activo("programar")} href="#">A programar</a></li>
-        <li><a class={"nav__link" + activo("hardware")} href={url("indice-seccion.html")}>Hardware</a></li>
-        <li><a class="nav__link" href="https://echidna.es/manual/">Manual</a></li>
+        <li><a class={"nav__link" + activo("ecosistema")} href={url("indice-seccion.html")}>Ecosistema</a></li>
+        <li><a class={"nav__link" + activo("alumnado")} href={url("alumnado.html")}>Materiales alumnado</a></li>
+        <li><a class={"nav__link" + activo("docentes")} href="#">Recursos docentes</a></li>
+        <li><a class={"nav__link" + activo("blog")} href={url("listado.html")}>Blog</a></li>
         <li class="nav__item--has-sub">
-          <button class={"nav__link" + activo("didactica")} type="button" aria-expanded="false" aria-controls="sub-didactica">
-            Didáctica <svg class="chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          <button class={"nav__link" + activo("nosotros")} type="button" aria-expanded="false" aria-controls="sub-nosotros">
+            Quiénes somos <svg class="chev" aria-hidden="true"><use href="#i-chevron"/></svg>
           </button>
-          <ul class="subnav" id="sub-didactica">
-            <li><a href={url("actividad.html")}><strong>Actividades</strong><span>Sesiones listas para el aula</span></a></li>
-            <li><a href="#"><strong>REA</strong><span>Recursos educativos abiertos</span></a></li>
-            <li><a href="#"><strong>Talleres</strong><span>Formación para docentes</span></a></li>
-            <li><a href="#"><strong>IDE Arduino</strong><span>Programar con código</span></a></li>
-            <li><a href="#"><strong>Comunidad</strong><span>Propuestas de otros docentes</span></a></li>
+          <ul class="subnav" id="sub-nosotros">
+            <li><a href={url("pagina.html")}><strong>Sobre el proyecto</strong><span>Quiénes somos y qué hacemos</span></a></li>
+            <li><a href={url("contacto.html")}><strong>Contacta</strong><span>Escríbenos</span></a></li>
+            <li><a href="#"><strong>Publicaciones</strong><span>Echidna en los medios</span></a></li>
           </ul>
         </li>
-        <li><a class={"nav__link" + activo("blog")} href={url("listado.html")}>Blog</a></li>
-        <li><a class={"nav__link" + activo("recursos")} href="#">Recursos</a></li>
-        <li><a class={"nav__link" + activo("nosotros")} href={url("pagina.html")}>Quiénes somos</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
+      <a class="btn btn--sm header-cta" href="#">Quiero una</a>
       <button class="search-trigger" type="button" data-open-search>
         <svg aria-hidden="true"><use href="#i-search"/></svg> Buscar <kbd>/</kbd>
       </button>
@@ -63,22 +60,18 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
     <svg aria-hidden="true"><use href="#i-search"/></svg> Buscar en Echidna
   </button>
   <ul>
-    <li><a href="#"><span class="dot" style="--dot:var(--c-programar)"></span>A programar</a></li>
-    <li><a href={url("indice-seccion.html")}><span class="dot" style="--dot:var(--c-hardware)"></span>Hardware</a></li>
-    <li><a href="https://echidna.es/manual/"><span class="dot" style="--dot:var(--ink-2)"></span>Manual</a></li>
-    <li><a href="#"><span class="dot" style="--dot:var(--c-didactica)"></span>Didáctica</a>
+    <li><a href={url("indice-seccion.html")}><span class="dot" style="--dot:var(--c-ecosistema)"></span>Ecosistema</a></li>
+    <li><a href={url("alumnado.html")}><span class="dot" style="--dot:var(--c-alumnado)"></span>Materiales alumnado</a></li>
+    <li><a href="#"><span class="dot" style="--dot:var(--c-docentes)"></span>Recursos docentes</a></li>
+    <li><a href={url("listado.html")}><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>
+    <li><a href={url("pagina.html")}><span class="dot" style="--dot:var(--c-nosotros)"></span>Quiénes somos</a>
       <ul>
-        <li><a href={url("actividad.html")}>Actividades</a></li>
-        <li><a href="#">REA</a></li>
-        <li><a href="#">Talleres</a></li>
-        <li><a href="#">IDE Arduino</a></li>
-        <li><a href="#">Comunidad</a></li>
+        <li><a href={url("pagina.html")}>Sobre el proyecto</a></li>
+        <li><a href={url("contacto.html")}>Contacta</a></li>
+        <li><a href="#">Publicaciones</a></li>
       </ul>
     </li>
-    <li><a href={url("listado.html")}><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>
-    <li><a href="#"><span class="dot" style="--dot:var(--c-recursos)"></span>Recursos</a></li>
-    <li><a href={url("pagina.html")}><span class="dot" style="--dot:var(--c-nosotros)"></span>Quiénes somos</a></li>
-    <li><a href={url("contacto.html")}><span class="dot"></span>Contacta</a></li>
+    <li><a href="#"><span class="dot"></span>Quiero una</a></li>
   </ul>
 </nav>
 
@@ -86,18 +79,18 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
   <form method="dialog" role="search">
     <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
     <label class="sr-only" for="q">Buscar en la web</label>
-    <input id="q" type="search" placeholder="Busca placas, actividades, componentes…" autocomplete="off" value="semáforo">
+    <input id="q" type="search" placeholder="Busca componentes, materiales, entradas…" autocomplete="off" value="led">
     <button class="icon-btn" value="cancel" aria-label="Cerrar búsqueda"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
   </form>
   <div class="results">
     <!-- Ejemplo de resultados: en Astro los pintará Pagefind -->
-    <h3>Actividades</h3>
+    <h3>Ecosistema</h3>
     <ul>
-      <li><a href={url("actividad.html")}>ES02 · Hacemos un semáforo <small>Didáctica › Actividades · Salidas digitales con los LEDs</small></a></li>
+      <li><a href={url("ficha-hardware.html")}>LEDs ROG <small>Ecosistema › EchidnaBlack2 · Pines D11~, D12 y D13</small></a></li>
     </ul>
-    <h3>Hardware</h3>
+    <h3>Materiales alumnado</h3>
     <ul>
-      <li><a href={url("ficha-hardware.html")}>LEDs <small>Hardware › Componentes · Pines D11~, D12 y D13</small></a></li>
+      <li><a href={url("alumnado.html")}>Proyectos de inicio con EchidnaML <small>Materiales alumnado › EchidnaML · Enciende tu primer LED</small></a></li>
     </ul>
     <h3>Blog</h3>
     <ul>

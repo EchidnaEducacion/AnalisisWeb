@@ -114,7 +114,5 @@ Se reaprovecha el MDX de la prueba de concepto anterior como punto de partida: q
 - [ ] Hacer capturas nuevas para 1.1 EchidnaML y 1.1.1 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress y guardarlos en `web/public/ecosistema/placas-anteriores/`.
-- [ ] Quitar la maqueta `web/src/pages/actividad.astro`: la plantilla «Actividad» ya no se usa.
-- [ ] Actualizar el pie de la maqueta (`web/src/components/Pie.astro`) según el apartado [«Pie de página»](estructura.md#pie-de-página) de `estructura.md`: columnas nuevas, enlaces reales de YouTube, X y RSS, y franja inferior.
 
 Los puntos pendientes de la estructura están en [`estructura.md`](estructura.md#pendiente).

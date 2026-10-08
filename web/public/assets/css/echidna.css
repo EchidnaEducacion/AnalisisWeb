@@ -32,10 +32,9 @@
   --line-strong: #cfc5b8;
 
   /* Color por sección: ayuda a orientarse dentro de la web */
-  --c-hardware: #e66a00;     --c-hardware-ink: #a34700;   --c-hardware-soft: #fff0e3;
-  --c-didactica: #2b8a3e;    --c-didactica-ink: #22702f;  --c-didactica-soft: #e8f6eb;
-  --c-programar: #3b5bdb;    --c-programar-ink: #3249b8;  --c-programar-soft: #ebefff;
-  --c-recursos: #0c8599;     --c-recursos-ink: #0a6c7c;   --c-recursos-soft: #e3f6f8;
+  --c-ecosistema: #e66a00;     --c-ecosistema-ink: #a34700;   --c-ecosistema-soft: #fff0e3;
+  --c-alumnado: #2b8a3e;    --c-alumnado-ink: #22702f;  --c-alumnado-soft: #e8f6eb;
+  --c-docentes: #3b5bdb;    --c-docentes-ink: #3249b8;  --c-docentes-soft: #ebefff;
   --c-blog: #c2255c;         --c-blog-ink: #a51e4e;       --c-blog-soft: #fdebf1;
   --c-nosotros: #7048e8;     --c-nosotros-ink: #5f3dc4;   --c-nosotros-soft: #f1ecff;
 
@@ -70,10 +69,9 @@
     --brand: #ff8a2a; --brand-strong: #ffa155; --brand-ink: #ffa155; --brand-soft: #3a2413; --on-brand: #1a1209;
     --bg: #14120f; --surface: #1d1a16; --surface-2: #26221d; --ink: #f3eee7; --ink-2: #d6cfc5;
     --muted: #b2a99d; --line: #36302a; --line-strong: #4a423a;
-    --c-hardware: #ff8a2a;  --c-hardware-ink: #ffa155;  --c-hardware-soft: #3a2413;
-    --c-didactica: #51cf66; --c-didactica-ink: #69db7c; --c-didactica-soft: #16301c;
-    --c-programar: #748ffc; --c-programar-ink: #91a7ff; --c-programar-soft: #1c2346;
-    --c-recursos: #3bc9db;  --c-recursos-ink: #66d9e8;  --c-recursos-soft: #10303a;
+    --c-ecosistema: #ff8a2a;  --c-ecosistema-ink: #ffa155;  --c-ecosistema-soft: #3a2413;
+    --c-alumnado: #51cf66; --c-alumnado-ink: #69db7c; --c-alumnado-soft: #16301c;
+    --c-docentes: #748ffc; --c-docentes-ink: #91a7ff; --c-docentes-soft: #1c2346;
     --c-blog: #f06595;      --c-blog-ink: #f783ac;      --c-blog-soft: #3a1626;
     --c-nosotros: #9775fa;  --c-nosotros-ink: #b197fc;  --c-nosotros-soft: #261c45;
     --info: #74c0fc; --info-soft: #132b40; --tip: #69db7c; --tip-soft: #16301c; --warn: #ffc078; --warn-soft: #3a2a12;
@@ -85,10 +83,9 @@
   --brand: #ff8a2a; --brand-strong: #ffa155; --brand-ink: #ffa155; --brand-soft: #3a2413; --on-brand: #1a1209;
   --bg: #14120f; --surface: #1d1a16; --surface-2: #26221d; --ink: #f3eee7; --ink-2: #d6cfc5;
   --muted: #b2a99d; --line: #36302a; --line-strong: #4a423a;
-  --c-hardware: #ff8a2a;  --c-hardware-ink: #ffa155;  --c-hardware-soft: #3a2413;
-  --c-didactica: #51cf66; --c-didactica-ink: #69db7c; --c-didactica-soft: #16301c;
-  --c-programar: #748ffc; --c-programar-ink: #91a7ff; --c-programar-soft: #1c2346;
-  --c-recursos: #3bc9db;  --c-recursos-ink: #66d9e8;  --c-recursos-soft: #10303a;
+  --c-ecosistema: #ff8a2a;  --c-ecosistema-ink: #ffa155;  --c-ecosistema-soft: #3a2413;
+  --c-alumnado: #51cf66; --c-alumnado-ink: #69db7c; --c-alumnado-soft: #16301c;
+  --c-docentes: #748ffc; --c-docentes-ink: #91a7ff; --c-docentes-soft: #1c2346;
   --c-blog: #f06595;      --c-blog-ink: #f783ac;      --c-blog-soft: #3a1626;
   --c-nosotros: #9775fa;  --c-nosotros-ink: #b197fc;  --c-nosotros-soft: #261c45;
   --info: #74c0fc; --info-soft: #132b40; --tip: #69db7c; --tip-soft: #16301c; --warn: #ffc078; --warn-soft: #3a2a12;
@@ -96,10 +93,9 @@
 }
 
 /* Color de acento según la sección de la página (body[data-section]) */
-[data-section="hardware"]  { --accent: var(--c-hardware);  --accent-ink: var(--c-hardware-ink);  --accent-soft: var(--c-hardware-soft); }
-[data-section="didactica"] { --accent: var(--c-didactica); --accent-ink: var(--c-didactica-ink); --accent-soft: var(--c-didactica-soft); }
-[data-section="programar"] { --accent: var(--c-programar); --accent-ink: var(--c-programar-ink); --accent-soft: var(--c-programar-soft); }
-[data-section="recursos"]  { --accent: var(--c-recursos);  --accent-ink: var(--c-recursos-ink);  --accent-soft: var(--c-recursos-soft); }
+[data-section="ecosistema"]  { --accent: var(--c-ecosistema);  --accent-ink: var(--c-ecosistema-ink);  --accent-soft: var(--c-ecosistema-soft); }
+[data-section="alumnado"] { --accent: var(--c-alumnado); --accent-ink: var(--c-alumnado-ink); --accent-soft: var(--c-alumnado-soft); }
+[data-section="docentes"] { --accent: var(--c-docentes); --accent-ink: var(--c-docentes-ink); --accent-soft: var(--c-docentes-soft); }
 [data-section="blog"]      { --accent: var(--c-blog);      --accent-ink: var(--c-blog-ink);      --accent-soft: var(--c-blog-soft); }
 [data-section="nosotros"]  { --accent: var(--c-nosotros);  --accent-ink: var(--c-nosotros-ink);  --accent-soft: var(--c-nosotros-soft); }
 body { --accent: var(--brand); --accent-ink: var(--brand-ink); --accent-soft: var(--brand-soft); }
@@ -489,7 +485,7 @@ tbody tr:last-child td { border-bottom: 0; }
 /* Portada · héroe */
 .hero { position: relative; overflow: hidden; padding-block: clamp(2.5rem, 1.5rem + 5vw, 5.5rem); background:
   radial-gradient(900px 420px at 85% 10%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 70%),
-  radial-gradient(600px 300px at 0% 100%, color-mix(in srgb, var(--c-programar) 10%, transparent), transparent 70%); }
+  radial-gradient(600px 300px at 0% 100%, color-mix(in srgb, var(--c-docentes) 10%, transparent), transparent 70%); }
 .hero__grid { display: grid; gap: 2.5rem; align-items: center; }
 @media (min-width: 900px) { .hero__grid { grid-template-columns: 1.1fr .9fr; } }
 .hero h1 { font-size: clamp(2.3rem, 1.5rem + 3.6vw, 3.9rem); margin-bottom: .4em; }
@@ -498,7 +494,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .hero .lead { max-width: 52ch; margin-bottom: 1.8rem; }
 .hero__badges { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 1.8rem; color: var(--muted); font-size: .92rem; }
 .hero__badges span { display: inline-flex; align-items: center; gap: .4rem; }
-.hero__badges svg { width: 18px; height: 18px; color: var(--c-didactica); }
+.hero__badges svg { width: 18px; height: 18px; color: var(--c-alumnado); }
 .hero__art { position: relative; }
 .hero__art .board { width: 100%; height: auto; filter: drop-shadow(0 24px 40px rgb(31 27 22 / .18)); }
 
@@ -678,3 +674,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .prose > :first-child { margin-top: 0; padding-top: 0; }
 .download > span:nth-child(2) { flex: 1; min-width: 0; }
 @media (max-width: 560px) { .card > .ph { aspect-ratio: 16 / 7; } }
+
+/* Botón «Quiero una» de la cabecera: solo en escritorio (en móvil está en el menú) */
+.header-cta { display: none; }
+@media (min-width: 1100px) { .header-cta { display: inline-flex; margin-right: .25rem; } }

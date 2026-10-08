@@ -1,6 +1,6 @@
 # Plantillas HTML (propuesta de diseño)
 
-Prototipos estáticos de las **10 páginas maestras** definidas en la [Fase 5](../README.md#fase-5--estrategia-de-implementación). Sirven para cerrar el diseño y son el punto de partida de la web, que se irá construyendo en este directorio.
+Prototipos estáticos de las **9 páginas maestras** definidas en el [plan de implementación](../README.md#plan-de-implementación), con los menús, el pie y los nombres de la estructura de [`estructura.md`](../estructura.md). Sirven para cerrar el diseño y son el punto de partida de la web, que se irá construyendo en este directorio.
 
 Es un proyecto **Astro** mínimo: un layout `Base` y una página por plantilla. Se publica automáticamente en **<https://echidnaeducacion.github.io/AnalisisWeb/>** con cada *push* a `main` que toque `web/`.
 
@@ -18,22 +18,22 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 |---|---|---|---|
 | 1 | Base (cabecera, menú, buscador, pie) | `src/layouts/Base.astro` | todas |
 | 2 | Portada | `src/pages/portada.astro` | `/` |
-| 3 | Índice de sección | `src/pages/indice-seccion.astro` | `/hardware/componentes/` |
-| 4 | Ficha de hardware | `src/pages/ficha-hardware.astro` | `/hardware/componentes/leds/` |
-| 5 | Actividad | `src/pages/actividad.astro` | `es02-hacemos-un-semaforo` |
-| 6 | Página genérica | `src/pages/pagina.astro` | `/quienes-somos/` |
-| 7 | Contacto | `src/pages/contacto.astro` | `/contacta/` |
-| 8 | Entrada de blog | `src/pages/entrada-blog.astro` | `/AAAA/MM/slug/` |
-| 9 | Listado / taxonomía | `src/pages/listado.astro` | `/blog/`, categorías, etiquetas, autores |
-| 10 | Error 404 | `src/pages/404.astro` | — |
+| 3 | Índice de sección | `src/pages/indice-seccion.astro` | `/ecosistema/` |
+| 3 | Índice de sección (agrupado por títulos) | `src/pages/alumnado.astro` | `/alumnado/`, `/docentes/` |
+| 4 | Ficha de hardware | `src/pages/ficha-hardware.astro` | `/ecosistema/echidnablack2/leds/` |
+| 5 | Página genérica | `src/pages/pagina.astro` | `/quienes-somos/` |
+| 6 | Contacto | `src/pages/contacto.astro` | `/contacta/` |
+| 7 | Entrada de blog | `src/pages/entrada-blog.astro` | `/AAAA/MM/slug/` |
+| 8 | Listado / taxonomía | `src/pages/listado.astro` | `/blog/`, categorías, etiquetas, autores |
+| 9 | Error 404 | `src/pages/404.astro` | — |
 | + | Componentes de contenido (MDX) | `src/pages/componentes.astro` | Aviso, Descarga, Vídeo, Galería, Tarjeta |
 
 ## Línea de diseño
 
 - **Continuidad con la marca**: naranja `#e66a00` y titulares en *Exo 2* (como la web actual).
 - **Lectura fácil**: texto en *Atkinson Hyperlegible* (diseñada para baja visión) a 17 px, contraste AA, botones y zonas táctiles de 44–48 px.
-- **Orientación**: cada sección tiene color e icono propios (`body[data-section]`), migas de pan, índice lateral «En esta página» y entradas por perfil en la portada (docente, estudiante, quiero una placa).
-- **Pensado para el aula**: las actividades muestran de un vistazo nivel, duración, placa y herramienta; tienen objetivos, pasos numerados, retos, lista de materiales marcable, notas para docentes plegables y **versión imprimible**.
+- **Orientación**: cada sección tiene color propio (`body[data-section]`: `ecosistema`, `alumnado`, `docentes`, `blog`, `nosotros`), migas de pan, índice lateral «En esta página» y entradas por perfil en la portada (docente, estudiante, quiero una).
+- **Pensado para el aula**: los materiales se agrupan por entorno y enlazan con sus recursos docentes; las fichas tienen **versión imprimible**.
 - **Responsive** desde 320 px, **modo oscuro** (automático o manual), selector **ES/EN** y vídeos/presentaciones que solo cargan el iframe al pulsar.
 - **Sin maquetación en el contenido**: las columnas las decide la plantilla; el Markdown solo aporta texto y componentes.
 
@@ -55,7 +55,7 @@ web/
 Cada página indica sus metadatos como *props* del layout:
 
 ```astro
-<Base title="Ficha de hardware" description="…" section="hardware">
+<Base title="Ficha de hardware" description="…" section="ecosistema">
   <main id="contenido">…</main>
 </Base>
 ```

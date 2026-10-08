@@ -3,9 +3,9 @@ import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base
-  title="Componentes"
-  description="Componentes integrados en las placas Echidna Black y Echidna Shield: LEDs, sensores, pulsadores y más."
-  section="hardware"
+  title="Ecosistema"
+  description="El ecosistema Echidna: el entorno EchidnaML, la placa EchidnaBlack2 con sus componentes, las placas anteriores y los entornos compatibles."
+  section="ecosistema"
 >
 <main id="contenido">
   <!-- Plantilla: Índice de sección. La intro viene del Markdown; las tarjetas se generan a partir de las páginas hijas. -->
@@ -14,25 +14,46 @@ import Base from '../layouts/Base.astro';
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol>
           <li><a href={url("portada.html")}>Inicio</a></li>
-          <li><a href={url("indice-seccion.html")}>Hardware</a></li>
-          <li><span aria-current="page">Componentes</span></li>
+          <li><span aria-current="page">Ecosistema</span></li>
         </ol>
       </nav>
-      <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg> Hardware</p>
-      <h1>Componentes</h1>
-      <p class="lead">Cada placa Echidna lleva integrados sensores y actuadores listos para programar, sin cables ni protoboard. Elige un componente para ver cómo funciona, en qué pin está y qué actividades lo usan.</p>
-      <nav class="subsections" aria-label="Subsecciones de Hardware">
-        <a href={url("indice-seccion.html")}>Todo</a>
-        <a href="#">Echidna Black</a>
-        <a href="#">Echidna Black 2</a>
-        <a href="#">Echidna Shield</a>
-        <a href={url("indice-seccion.html")} aria-current="page">Componentes</a>
-        <a href="#">Complementos</a>
-      </nav>
+      <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg> Ecosistema</p>
+      <h1>Ecosistema Echidna</h1>
+      <p class="lead">Todo lo que necesitas para programar dispositivos físicos en el aula: el entorno EchidnaML y la placa EchidnaBlack2, que lleva integrados sensores y actuadores listos para usar, sin cables ni protoboard.</p>
     </div>
   </header>
 
-  <section class="wrap" style="padding-block: 2rem 4.5rem">
+  <section class="wrap" style="padding-block: 2rem 0">
+    <div class="grid grid--4">
+      <article class="card">
+        <div class="card__body">
+          <h2 class="card__title"><a class="card__link" href="#">EchidnaML</a></h2>
+          <p class="card__text">Descarga el entorno de programación y da tus primeros pasos.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__body">
+          <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>EchidnaBlack2</a></h2>
+          <p class="card__text">Características de la placa, sus componentes y complementos.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__body">
+          <h2 class="card__title"><a class="card__link" href="#">Placas anteriores</a></h2>
+          <p class="card__text">Documentación de EchidnaBlack v1 y EchidnaShield en PDF.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__body">
+          <h2 class="card__title"><a class="card__link" href="#">Entornos compatibles</a></h2>
+          <p class="card__text">Snap!, Arduino IDE y otros entornos para programar la placa.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+<section class="wrap" style="padding-block: 3rem 4.5rem">
+    <h2>Componentes de la EchidnaBlack2</h2>
     <div class="filters" data-filter-group data-filter-target="#lista">
       <fieldset>
         <legend>Tipo</legend>
@@ -41,94 +62,88 @@ import Base from '../layouts/Base.astro';
         <button class="chip chip--outline" type="button" data-filter="entrada" aria-pressed="false">Entradas</button>
         <button class="chip chip--outline" type="button" data-filter="sensor" aria-pressed="false">Sensores</button>
       </fieldset>
-      <fieldset>
-        <legend>Placa</legend>
-        <button class="chip chip--outline" type="button" data-filter="black" aria-pressed="false">Black</button>
-        <button class="chip chip--outline" type="button" data-filter="shield" aria-pressed="false">Shield</button>
-      </fieldset>
-      <span class="result-count" data-result-count aria-live="polite">9 resultados</span>
+      <span class="result-count" data-result-count aria-live="polite">10 resultados</span>
     </div>
 
     <div class="grid grid--3" id="lista">
-        <article class="card" data-tags="black shield salida">
+        <article class="card" data-tags="salida">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-bolt"/></svg></div>
           <div class="card__body">
             <span class="chip">Salida</span>
-            <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>LEDs</a></h2>
+            <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>LEDs ROG</a></h2>
             <p class="card__text">Tres LEDs (verde, naranja y rojo) para salidas digitales y PWM.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span><span class="chip chip--outline">Shield</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black shield salida">
+        <article class="card" data-tags="salida">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-bolt"/></svg></div>
           <div class="card__body">
             <span class="chip">Salida</span>
             <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>LED RGB</a></h2>
             <p class="card__text">Mezcla rojo, verde y azul para crear cualquier color.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span><span class="chip chip--outline">Shield</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black shield salida">
+        <article class="card" data-tags="salida">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-bolt"/></svg></div>
           <div class="card__body">
             <span class="chip">Salida</span>
-            <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Zumbador</a></h2>
+            <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Audio</a></h2>
             <p class="card__text">Produce tonos y melodías sencillas.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span><span class="chip chip--outline">Shield</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black shield entrada">
+        <article class="card" data-tags="entrada">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-chip"/></svg></div>
           <div class="card__body">
             <span class="chip">Entrada</span>
             <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Pulsadores</a></h2>
             <p class="card__text">Dos botones para entradas digitales.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span><span class="chip chip--outline">Shield</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black shield entrada sensor">
+        <article class="card" data-tags="entrada sensor">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
           <div class="card__body">
             <span class="chip">Sensor</span>
             <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Sensor de luz (LDR)</a></h2>
             <p class="card__text">Mide la luz ambiente como entrada analógica.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span><span class="chip chip--outline">Shield</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black shield entrada">
+        <article class="card" data-tags="entrada">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-chip"/></svg></div>
           <div class="card__body">
             <span class="chip">Entrada</span>
             <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Joystick</a></h2>
             <p class="card__text">Dos ejes analógicos y un pulsador central.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span><span class="chip chip--outline">Shield</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black sensor">
+        <article class="card" data-tags="sensor">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
           <div class="card__body">
             <span class="chip">Sensor</span>
             <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Acelerómetro</a></h2>
             <p class="card__text">Detecta inclinación y movimiento en tres ejes.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black sensor">
+        <article class="card" data-tags="sensor">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
           <div class="card__body">
             <span class="chip">Sensor</span>
             <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Sensor de temperatura</a></h2>
             <p class="card__text">Lee la temperatura del aula en grados.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span></div>
           </div>
         </article>
-        <article class="card" data-tags="black shield entrada">
+        <article class="card" data-tags="entrada">
           <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-chip"/></svg></div>
           <div class="card__body">
             <span class="chip">Entrada</span>
-            <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Entradas MKMK</a></h2>
+            <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Conexiones MkMk</a></h2>
             <p class="card__text">Convierte frutas o papel de aluminio en botones.</p>
-            <div class="card__meta"><span class="chip chip--outline">Black</span><span class="chip chip--outline">Shield</span></div>
+          </div>
+        </article>
+        <article class="card" data-tags="entrada sensor">
+          <div class="ph" style="--ratio:4/3"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
+          <div class="card__body">
+            <span class="chip">Sensor</span>
+            <h2 class="card__title"><a class="card__link" href={url("ficha-hardware.html")}>Micrófono</a></h2>
+            <p class="card__text">Mide el nivel de sonido del aula.</p>
           </div>
         </article>
     </div>
@@ -137,7 +152,7 @@ import Base from '../layouts/Base.astro';
       <svg aria-hidden="true"><use href="#i-bulb"/></svg>
       <div>
         <p class="callout__title">¿No sabes por dónde empezar?</p>
-        <p>Empieza por los <a href={url("ficha-hardware.html")}>LEDs</a> y la actividad <a href={url("actividad.html")}>ES02 · Hacemos un semáforo</a>: es el «hola mundo» de la robótica.</p>
+        <p>Empieza por los <a href={url("ficha-hardware.html")}>LEDs</a> y la <a href="#">Guía de inicio EchidnaML</a>: encender un LED es el «hola mundo» de la robótica.</p>
       </div>
     </aside>
   </section>
