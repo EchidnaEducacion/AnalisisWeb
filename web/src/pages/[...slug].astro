@@ -30,7 +30,7 @@ const crumbs = tramos.flatMap((_, i) => {
   description={entry.data.description}
   section={seccionDe(ruta)}
   crumbs={crumbs}
-  headings={headings}
+  headings={entry.data.toc ? headings : []}
 >
   <Content />
 </Pagina>
