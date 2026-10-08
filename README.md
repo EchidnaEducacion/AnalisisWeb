@@ -4,7 +4,7 @@ Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, ac
 
 La web (proyecto Astro, empezando por las plantillas propuestas) está en [`web/`](web/) y se pueden ver publicadas en **<https://echidnaeducacion.github.io/AnalisisWeb/>**.
 
-La estructura propuesta para la nueva web (árbol de páginas, URL y plantillas) está en [`estructura.md`](estructura.md).
+La estructura propuesta para la nueva web (árbol de páginas, URL y plantillas) está en [`estructura.md`](estructura.md). La correspondencia entre las URL de WordPress y las nuevas está en [`redirecciones.md`](redirecciones.md).
 
 ## Índice
 
@@ -312,4 +312,4 @@ Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pa
 - [ ] Recuperar o sustituir las 20 imágenes perdidas.
 - [ ] Definir los esquemas del modelo de contenido (paso 1).
 - [ ] Revisar la propuesta de URL y plantillas de [`estructura.md`](estructura.md).
-- [ ] Definir las redirecciones de las URL de WordPress a las nuevas.
+- [ ] Cerrar las redirecciones de las URL de WordPress a las nuevas ([`redirecciones.md`](redirecciones.md)).

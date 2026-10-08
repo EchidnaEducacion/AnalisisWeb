@@ -17,6 +17,7 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 0. Inicio
 ├── 1. Ecosistema
 │   ├── 1.1 EchidnaML: descarga y primeros pasos
+│   │   └── 1.1.1 Instalar StandardFirmata
 │   ├── 1.2 EchidnaBlack2
 │   │   ├── 1.2.1 Pulsadores
 │   │   ├── 1.2.2 Joystick
@@ -51,6 +52,7 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │       └── 2.5 Proyectos de inicio con Arduino IDE
 ├── 3. Recursos docentes
 │   ├── 3.1 Proyectos de inicio con EchidnaML
+│   │   └── Diapositivas
 │   ├── 3.2 Situaciones de aprendizaje
 │   ├── 3.3 Snap!
 │   ├── 3.4 Proyectos de inicio con Arduino IDE
@@ -83,6 +85,7 @@ Pie (fuera del menú, en todas las páginas)
 | 0 | Inicio | `/` | Portada |
 | 1 | Ecosistema | `/ecosistema/` | Índice de sección |
 | 2 | 1.1 EchidnaML: descarga y primeros pasos | `/ecosistema/echidnaml/` | Página genérica |
+| 3 | 1.1.1 Instalar StandardFirmata | `/ecosistema/echidnaml/instalar-standardfirmata/` | Página genérica |
 | 2 | 1.2 EchidnaBlack2 | `/ecosistema/echidnablack2/` | Ficha de hardware (lista sus componentes y páginas hijas) |
 | 3 | 1.2.1 Pulsadores | `/ecosistema/echidnablack2/pulsadores/` | Ficha de hardware |
 | 3 | 1.2.2 Joystick | `/ecosistema/echidnablack2/joystick/` | Ficha de hardware |
@@ -113,7 +116,8 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 2.4 Manual de usuario (EchidnaML y EchidnaBlack2) | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
 | 2 | 2.5 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
 | 1 | Recursos docentes | `/docentes/` | Índice de sección |
-| 2 | 3.1 Proyectos de inicio con EchidnaML | `/docentes/proyectos-inicio-echidnaml/` | Pendiente de decidir |
+| 2 | 3.1 Proyectos de inicio con EchidnaML | `/docentes/proyectos-inicio-echidnaml/` | Pendiente de decidir (incluye las actividades antiguas de `/didactica/actividades/` y diapositivas) |
+| 3 | Diapositivas de la Guía de inicio EchidnaML | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | — (recurso alojado sin plantilla; incluye las actividades antiguas) |
 | 2 | 3.2 Situaciones de aprendizaje | `/docentes/situaciones-aprendizaje/` | Índice de sección (una hija por SdA; plantilla de las hijas pendiente) |
 | 2 | 3.3 Snap! | `/docentes/snap/` | Pendiente de decidir |
 | 2 | 3.4 Proyectos de inicio con Arduino IDE | `/docentes/proyectos-inicio-arduino-ide/` | Pendiente de decidir |
@@ -123,7 +127,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 3.8 Comprobar la placa | `/docentes/comprobar-placa/` | Página genérica (enlaces a los repos de pruebas: `echidna-sensor-test`, `echidna-firmata-test`…) |
 | 1 | Blog | `/blog/` | Listado / taxonomía |
 | 2 | Entradas | `/AAAA/MM/slug/` | Entrada de blog |
-| 2 | Categorías, etiquetas y autores | `/category/…/`, `/tag/…/`, `/author/…/` | Listado / taxonomía |
+| 2 | Categorías, etiquetas y autores | `/category/…/` (con subcategorías de dos niveles, p. ej. `/category/recursos/proyectos/`), `/tag/…/`, `/author/…/` | Listado / taxonomía |
 | 2 | Talleres (categoría) | `/category/talleres/` | Listado / taxonomía |
 | 2 | RSS del blog | `/rss.xml` y copia en `/feed/` (URL actual de WordPress) | — (generado por Astro) |
 | 1 | Quiénes somos | (menú desplegable, sin página propia) | — |
@@ -141,6 +145,8 @@ Las URL del blog se mantienen como en WordPress para no romper enlaces. El RSS s
 ### Recursos alojados sin plantilla
 
 Las situaciones de aprendizaje y los proyectos del alumnado son exportaciones de eXeLearning. Se alojan en el repo de la web, en `web/public/alumnado/situaciones-aprendizaje/<recurso>/` (o `proyectos/`), y Astro las publica tal cual, sin plantilla: por ejemplo, `/alumnado/situaciones-aprendizaje/sensor-temperatura/`. Las URL usan guiones y plural, como el resto. Las rutas intermedias (`/alumnado/situaciones-aprendizaje/`, `/alumnado/proyectos/`) no son páginas y redirigen a `/alumnado/`. Cada exportación pesa (imágenes, JS), así que hay que vigilar el tamaño del repo y decidir si el buscador (Pagefind) las indexa.
+
+Lo mismo vale para los recursos docentes: por ejemplo, las diapositivas de la Guía de inicio EchidnaML van en `web/public/docentes/proyectos-inicio-echidnaml/diapositivas/`. Si un material de la sección 3 no tiene página propia, su ruta intermedia (`/docentes/<material>/`) redirige a `/docentes/`.
 
 ### Criterio de la sección 3
 
@@ -164,7 +170,7 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 
 ## Pendiente
 
-- [ ] Hacer la tabla de redirecciones de las URL de WordPress a las nuevas (la mayoría de las rutas cambian). Ya decididas: `/didactica/talleres/` → `/category/talleres/` y `/didactica/comunidad/` → `/docentes/`.
+- [x] Tabla de redirecciones de las URL de WordPress a las nuevas: [`redirecciones.md`](redirecciones.md). Todas las páginas tienen destino; quedan detalles en su sección «Pendiente».
 - [x] Contenido sin sitio: componentes, páginas de apoyo y complementos cuelgan de 1.2 EchidnaBlack2 (como en la web actual); talleres pasan a categoría del blog; la página de comunidad desaparece; publicaciones pasa a 5.3.
 - [ ] Ubicar los cursos de la comunidad (CATEDU, Programo Ergo Sum) en `/alumnado/` o `/docentes/`, según a quién vayan dirigidos. No tendrán página ni apartado propio: se enlazarán desde los materiales con los que tengan relación.
 - [x] Política de privacidad y licencias: enlazadas en el pie, fuera del menú, con sus URL actuales (`/politica-privacidad/` y `/quienes-somos/licencias/`), así que no necesitan redirección.
@@ -175,6 +181,7 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - [x] GitHub: icono en el pie, junto a las redes sociales. 3.5 pasa a «Cómo colaborar» (`/docentes/colabora/`), una página que explica cómo contribuir y resume los repositorios de la organización.
 - [x] Recursos docentes se organiza por material, no por tipo de recurso: desaparecen «Diapositivas para el aula» y «Guías docentes». «Ficha de hardware» ya tiene uso suficiente con los componentes y complementos.
 - [ ] Decidir la plantilla de las páginas de material de la sección 3 (3.1, 3.3, 3.4 y las hijas de 3.2). Propuesta: plantilla nueva «Recursos docentes», con introducción, enlace al material del alumnado y lista de recursos con descarga, generada desde el front matter. Alternativa: Página genérica.
+- [ ] Decidir si 3.1 Guía de inicio EchidnaML tiene página propia o si `/docentes/` muestra directamente sus 3 recursos (enlace al recurso del alumnado, diapositivas y guía docente). Valorar hacerlo igual para todos los materiales de la sección 3, como en alumnado. Las actividades antiguas pasan a formar parte de su material docente.
 - [x] «Herramientas de análisis» pasa a «3.8 Comprobar la placa» (`/docentes/comprobar-placa/`): página que enlaza a los repos de GitHub para comprobar el funcionamiento de la placa.
 - [x] Las guías tienen además un alias en minúsculas (`/guiainicioechidnaml/`, `/guiainicioarduinoide/`) que redirige al mismo sitio, porque en GitHub Pages las URL distinguen mayúsculas y minúsculas.
 - [x] Placas anteriores (1.3): una sola página con un resumen breve de EchidnaBlack v1 y de EchidnaShield y un PDF con la documentación de cada una. Las URL antiguas de esas placas redirigen a `/ecosistema/placas-anteriores/`.
