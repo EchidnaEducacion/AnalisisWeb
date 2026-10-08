@@ -92,7 +92,7 @@ Se hace en el mismo proyecto [`web/`](web/). No hay dos juegos de plantillas: un
 
 ### Paso 4 – Migración por secciones
 
-1. **Ecosistema**: EchidnaBlack2 con sus componentes y complementos, EchidnaML (1.1 y 1.1.1), Placas anteriores (con sus PDF) y Entornos compatibles.
+1. **Ecosistema**: EchidnaBlack2 con sus componentes y complementos, EchidnaML (1.1 a 1.1.3), Placas anteriores (con sus PDF) y Entornos compatibles.
 2. **Materiales alumnado y Recursos docentes**: fichas de la colección `recursos` y recursos alojados sin plantilla (exportaciones de eXeLearning, diapositivas, guías docentes).
 3. **Quiénes somos, Contacta, Quiero una y pie** (política de privacidad y licencias).
 4. **Blog** (61 entradas, la parte más sencilla).
@@ -128,7 +128,7 @@ Se reaprovecha el MDX de la prueba de concepto anterior como punto de partida: q
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
 - [ ] Dar de alta la web en GoatCounter, añadir su script en el layout `Base` (`web/src/layouts/Base.astro`) y mencionarlo en la política de privacidad.
-- [ ] Hacer capturas nuevas para 1.1 EchidnaML y 1.1.1 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
+- [ ] Hacer capturas nuevas para 1.1.2 Primeros pasos y 1.1.3 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress y guardarlos en `web/public/ecosistema/placas-anteriores/`.
 

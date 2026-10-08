@@ -16,8 +16,10 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 ```text
 0. Inicio
 ├── 1. Ecosistema
-│   ├── 1.1 EchidnaML: descarga y primeros pasos
-│   │   └── 1.1.1 Instalar StandardFirmata
+│   ├── 1.1 EchidnaML
+│   │   ├── 1.1.1 Descarga
+│   │   ├── 1.1.2 Primeros pasos
+│   │   └── 1.1.3 Instalar StandardFirmata
 │   ├── 1.2 EchidnaBlack2
 │   │   ├── 1.2.1 Pulsadores
 │   │   ├── 1.2.2 Joystick
@@ -89,8 +91,10 @@ Pie (fuera del menú, en todas las páginas)
 |---|---|---|---|
 | 0 | Inicio | `/` | Portada |
 | 1 | Ecosistema | `/ecosistema/` | Índice de sección |
-| 2 | 1.1 EchidnaML: descarga y primeros pasos | `/ecosistema/echidnaml/` | Página genérica |
-| 3 | 1.1.1 Instalar StandardFirmata | `/ecosistema/echidnaml/instalar-standardfirmata/` | Página genérica |
+| 2 | 1.1 EchidnaML | `/ecosistema/echidnaml/` | Página genérica (presenta EchidnaML y enlaza a sus páginas hijas) |
+| 3 | 1.1.1 Descarga | `/ecosistema/echidnaml/descarga/` | Página genérica |
+| 3 | 1.1.2 Primeros pasos | `/ecosistema/echidnaml/primeros-pasos/` | Página genérica |
+| 3 | 1.1.3 Instalar StandardFirmata | `/ecosistema/echidnaml/instalar-standardfirmata/` | Página genérica |
 | 2 | 1.2 EchidnaBlack2 | `/ecosistema/echidnablack2/` | Ficha de hardware (lista sus componentes y páginas hijas) |
 | 3 | 1.2.1 Pulsadores | `/ecosistema/echidnablack2/pulsadores/` | Ficha de hardware |
 | 3 | 1.2.2 Joystick | `/ecosistema/echidnablack2/joystick/` | Ficha de hardware |
@@ -171,7 +175,7 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - **Desplegable solo si la sección no tiene página propia**: hoy solo Quiénes somos. Si una sección tiene página con contenido (Ecosistema es un resumen de todo lo que hay), un desplegable invita a saltársela; además, en pantallas táctiles tocar el elemento padre abre el submenú en vez de la página.
 - **Enlace directo** para Ecosistema, Materiales alumnado, Recursos docentes y Blog: su página es la puerta de entrada, con el resumen y tarjetas a las subpáginas.
 - Con 5 elementos, el menú cabe sin desplegables. En el móvil, menú de hamburguesa con lista simple.
-- Para moverse dentro de una sección: **migas de pan** en todas las páginas y, en las secciones con subpáginas (Ecosistema, EchidnaBlack2), enlaces a las páginas hermanas en un lateral o al pie. Lo resuelve el layout, no el menú.
+- Para moverse dentro de una sección: **migas de pan** en todas las páginas y, en las secciones con subpáginas (Ecosistema, EchidnaML, EchidnaBlack2), enlaces a las páginas hermanas en un lateral o al pie. Lo resuelve el layout, no el menú.
 - Si `/docentes/` acaba sin contenido propio, se revisa su caso.
 
 ### Pie de página
@@ -180,7 +184,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 
 | Ecosistema | En el aula | Echidna |
 |---|---|---|
-| EchidnaML (descarga) — `/ecosistema/echidnaml/` | Materiales alumnado — `/alumnado/` | Sobre el proyecto — `/quienes-somos/` |
+| EchidnaML (descarga) — `/ecosistema/echidnaml/descarga/` | Materiales alumnado — `/alumnado/` | Sobre el proyecto — `/quienes-somos/` |
 | EchidnaBlack2 — `/ecosistema/echidnablack2/` | Recursos docentes — `/docentes/` | Publicaciones — `/quienes-somos/publicaciones/` |
 | Manual — `/manual/` | Guía de inicio EchidnaML — `/GuiaInicioEchidnaML/` | Cómo colaborar — `/docentes/colabora/` |
 | Comprobar la placa — `/docentes/comprobar-placa/` | Blog — `/blog/` | Quiero una — `/quiero-una/` · Contacta — `/contacta/` |
