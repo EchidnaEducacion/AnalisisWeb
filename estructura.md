@@ -71,7 +71,7 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
     ├── 5.2 Contacto
     └── 5.3 Publicaciones
 
-Cabecera (botón destacado, fuera del menú; también en la portada y en 1.2)
+Fuera del menú (enlazada desde 1.2 y el pie)
 └── Quiero una
 
 Pie (fuera del menú, en todas las páginas)
@@ -82,7 +82,7 @@ Pie (fuera del menú, en todas las páginas)
 
 ## Tabla
 
-**Nivel**: «Cabecera» = botón destacado en la cabecera, fuera del menú; «Pie» = enlazada solo desde el pie, fuera del menú; 0 = portada, 1 = sección, 2 = subsección, 3 = página dentro de una subsección, 4 = página dentro de una página de nivel 3.
+**Nivel**: «Fuera del menú» = página enlazada desde otras páginas, sin entrada en el menú; «Pie» = enlazada solo desde el pie, fuera del menú; 0 = portada, 1 = sección, 2 = subsección, 3 = página dentro de una subsección, 4 = página dentro de una página de nivel 3.
 **Plantilla**: nombres de las páginas maestras del [README (Fase 5, paso 2)](README.md#paso-2--páginas-maestras).
 
 | Nivel | Nombre | URL (propuesta) | Plantilla (propuesta) |
@@ -140,7 +140,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 5.1 Sobre el Proyecto Echidna | `/quienes-somos/` | Página genérica |
 | 2 | 5.2 Contacto | `/contacta/` | Contacto |
 | 2 | 5.3 Publicaciones | `/quienes-somos/publicaciones/` | Página genérica |
-| Cabecera | Quiero una | `/quiero-una/` | Página genérica (enlaces a los distribuidores) |
+| Fuera del menú | Quiero una | `/quiero-una/` | Página genérica (enlaces a los distribuidores) |
 | Pie | Política de privacidad | `/politica-privacidad/` | Página genérica |
 | Pie | Licencias | `/quienes-somos/licencias/` | Página genérica |
 | Pie | Iconos: GitHub, YouTube, X y RSS | Externos y `/rss.xml` (ver «Pie de página») | — |
@@ -170,7 +170,7 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 
 - **Desplegable solo si la sección no tiene página propia**: hoy solo Quiénes somos. Si una sección tiene página con contenido (Ecosistema es un resumen de todo lo que hay), un desplegable invita a saltársela; además, en pantallas táctiles tocar el elemento padre abre el submenú en vez de la página.
 - **Enlace directo** para Ecosistema, Materiales alumnado, Recursos docentes y Blog: su página es la puerta de entrada, con el resumen y tarjetas a las subpáginas.
-- Con 5 elementos más el botón «Quiero una», el menú cabe sin desplegables. En el móvil, menú de hamburguesa con lista simple.
+- Con 5 elementos, el menú cabe sin desplegables. En el móvil, menú de hamburguesa con lista simple.
 - Para moverse dentro de una sección: **migas de pan** en todas las páginas y, en las secciones con subpáginas (Ecosistema, EchidnaBlack2), enlaces a las páginas hermanas en un lateral o al pie. Lo resuelve el layout, no el menú.
 - Si `/docentes/` acaba sin contenido propio, se revisa su caso.
 
@@ -206,7 +206,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 - [x] «Entornos compatibles» ya no se repite: queda en 1.4 y Materiales alumnado se divide por entorno (después simplificado a una sola página con títulos por entorno).
 - [x] Apartados de EchidnaML en alumnado: «Proyectos de inicio» son ejemplos sencillos que el alumnado hace solo (guía externa); «Situaciones de aprendizaje» son las actividades curriculares (REA); «Proyectos» son proyectos al estilo de la guía rápida. Las situaciones de aprendizaje se quedan en alumnado, y su parte para el docente (guía, evaluación) se enlaza desde su grupo en Recursos docentes.
 - [x] Se mantienen separados Materiales alumnado y Recursos docentes. Para que el docente no tenga que adivinar, la portada y cada sección enlazan a la otra cuando hay material relacionado.
-- [x] «Quiero una» es una página propia con su URL actual (`/quiero-una/`, sin redirección), fuera del menú, con un botón destacado en la cabecera y en la portada, y enlazada desde 1.2. El nombre de 1.2 queda como «EchidnaBlack2».
+- [x] «Quiero una» es una página propia con su URL actual (`/quiero-una/`), fuera del menú. Como somos una asociación sin ánimo de lucro, no lleva botón en la cabecera: se enlaza desde 1.2 y el pie. En la portada, la tercera entrada por perfil es «Conoce la EchidnaBlack2».
 - [x] GitHub: icono en el pie, junto a las redes sociales. «Repositorio GitHub» pasa a «Cómo colaborar» (hoy 3.8, `/docentes/colabora/`), una página que explica cómo contribuir y resume los repositorios de la organización.
 - [x] Recursos docentes se organiza por material, no por tipo de recurso: desaparecen «Diapositivas para el aula» y «Guías docentes». «Ficha de hardware» ya tiene uso suficiente con los componentes y complementos.
 - [x] Plantilla de la sección 3: la misma que alumnado, una sola página (`/docentes/`) con un título por material y sus recursos como tarjetas, alojados sin plantilla.

@@ -674,7 +674,3 @@ tbody tr:last-child td { border-bottom: 0; }
 .prose > :first-child { margin-top: 0; padding-top: 0; }
 .download > span:nth-child(2) { flex: 1; min-width: 0; }
 @media (max-width: 560px) { .card > .ph { aspect-ratio: 16 / 7; } }
-
-/* Botón «Quiero una» de la cabecera: solo en escritorio (en móvil está en el menú) */
-.header-cta { display: none; }
-@media (min-width: 1100px) { .header-cta { display: inline-flex; margin-right: .25rem; } }
