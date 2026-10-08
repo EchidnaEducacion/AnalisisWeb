@@ -23,6 +23,7 @@ La web está en [`web/`](web/) y se puede ver publicada en **<https://echidnaedu
 | [`redirecciones.md`](redirecciones.md) | Correspondencia entre las URL de WordPress y las de la nueva web |
 | [`analisis-previo.md`](analisis-previo.md) | Estudio de viabilidad inicial: situación de partida, ventajas e inconvenientes, tecnologías, inventario y análisis de la prueba de concepto anterior |
 | [`web/README.md`](web/README.md) | Proyecto Astro: cómo ejecutarlo y cómo está organizado |
+| [`AGENTS.md`](AGENTS.md) | Contexto y normas de trabajo para asistentes y personas que colaboren en el repo (`CLAUDE.md` lo importa) |
 
 ## Tecnología
 
@@ -49,7 +50,7 @@ La implementación se hace en este repositorio, en el directorio [`web/`](web/).
 
 El modelo está definido en [`modelo-contenido.md`](modelo-contenido.md): cuatro colecciones (`paginas`, `hardware`, `recursos` y `blog`), campos en inglés, validación estricta con Zod (`title` y `description` obligatorios y sin valores vacíos) e idioma por carpetas.
 
-- Al implementarlo, trasladarlo a `web/src/content.config.ts` y resumirlo en `AGENT.md` y en el README de la web.
+- Al implementarlo, trasladarlo a `web/src/content.config.ts` y resumirlo en [`AGENTS.md`](AGENTS.md) y en el README de la web.
 
 ### Paso 2 – Páginas maestras
 
