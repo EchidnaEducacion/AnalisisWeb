@@ -77,7 +77,7 @@ Cabecera (botón destacado, fuera del menú; también en la portada y en 1.2)
 Pie (fuera del menú, en todas las páginas)
 ├── Política de privacidad
 ├── Licencias
-└── Icono de GitHub
+└── Iconos: GitHub, YouTube, X y RSS
 ```
 
 ## Tabla
@@ -143,7 +143,7 @@ Pie (fuera del menú, en todas las páginas)
 | Cabecera | Quiero una | `/quiero-una/` | Página genérica (enlaces a los distribuidores) |
 | Pie | Política de privacidad | `/politica-privacidad/` | Página genérica |
 | Pie | Licencias | `/quienes-somos/licencias/` | Página genérica |
-| Pie | Icono de GitHub | `https://github.com/EchidnaEducacion` (externo) | — |
+| Pie | Iconos: GitHub, YouTube, X y RSS | Externos y `/rss.xml` (ver «Pie de página») | — |
 | — | Error 404 | `/404` | Error 404 |
 
 Las URL del blog siguen el formato `/AAAA/MM/slug/`. El RSS se publica en `/rss.xml` (enlazado desde el pie y el blog) y se copia en `/feed/` para los suscriptores, porque GitHub Pages no admite redirecciones reales y los lectores de RSS no siguen las de HTML. Los repos externos (manual y guías de inicio) mantienen una dirección en `echidna.es` que redirige a su publicación en GitHub Pages. Las versiones en inglés colgarán de `/en/…`.
@@ -174,6 +174,21 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - Para moverse dentro de una sección: **migas de pan** en todas las páginas y, en las secciones con subpáginas (Ecosistema, EchidnaBlack2), enlaces a las páginas hermanas en un lateral o al pie. Lo resuelve el layout, no el menú.
 - Si `/docentes/` acaba sin contenido propio, se revisa su caso.
 
+### Pie de página
+
+Igual en todas las páginas. No repite el menú principal: lleva a las páginas más buscadas y a las que no están en el menú.
+
+| Ecosistema | En el aula | Echidna |
+|---|---|---|
+| EchidnaML (descarga) — `/ecosistema/echidnaml/` | Materiales alumnado — `/alumnado/` | Sobre el proyecto — `/quienes-somos/` |
+| EchidnaBlack2 — `/ecosistema/echidnablack2/` | Recursos docentes — `/docentes/` | Publicaciones — `/quienes-somos/publicaciones/` |
+| Manual — `/manual/` | Guía de inicio EchidnaML — `/GuiaInicioEchidnaML/` | Cómo colaborar — `/docentes/colabora/` |
+| Comprobar la placa — `/docentes/comprobar-placa/` | Blog — `/blog/` | Quiero una — `/quiero-una/` · Contacta — `/contacta/` |
+
+- **Iconos**, junto a la marca y la descripción de la asociación: GitHub (`https://github.com/EchidnaEducacion`), YouTube (`https://www.youtube.com/channel/UCYmPpIWazAOc7dLs4CZEqew`), X (`https://x.com/EchidnaSTEAM`) y RSS (`/rss.xml`). Sin icono de email: el contacto va por `/contacta/`.
+- **Franja inferior**: las tres licencias (contenidos CC BY-SA, hardware pendiente de confirmar, software GPL) enlazadas a `/quienes-somos/licencias/` · Política de privacidad (`/politica-privacidad/`) · © 2026 Echidna Educación.
+- **No se incluyen**: entradas recientes (ya están en la portada), créditos de diseño ni «Edita esta web en GitHub» (lo cubre «Cómo colaborar»).
+
 ## Cambios respecto al texto original
 
 - «2,1» pasa a 2.1. Los agrupadores «EchidnaML:» y «Entornos compatibles:» de Materiales alumnado pasan a ser subsecciones y sus páginas se renumeran (desaparece el hueco del 2.4). Después, «Entornos compatibles» se dividió por entorno y, al final, Materiales alumnado se simplificó a una sola página con títulos por entorno (EchidnaML, Snap!, Arduino IDE) y recursos numerados de 2.1 a 2.5.
@@ -199,6 +214,7 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - [x] «Herramientas de análisis» pasa a «Comprobar la placa» (hoy 3.9, `/docentes/comprobar-placa/`): página que enlaza a los repos de GitHub para comprobar el funcionamiento de la placa.
 - [x] Las guías tienen además un alias en minúsculas (`/guiainicioechidnaml/`, `/guiainicioarduinoide/`) que redirige al mismo sitio, porque en GitHub Pages las URL distinguen mayúsculas y minúsculas.
 - [x] Placas anteriores (1.3): una sola página con un resumen breve de EchidnaBlack v1 y de EchidnaShield y un PDF con la documentación de cada una. Las URL antiguas de esas placas redirigen a `/ecosistema/placas-anteriores/`.
+- [ ] Confirmar la licencia del hardware para el pie y la página de licencias. La web actual dice «CERN OHL-S con Restricción Comercial», pero la CERN OHL-S no admite restricciones comerciales: puede ser OHL-S sin más, OHL-S con un acuerdo aparte (por ejemplo, de marca) o una licencia distinta.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Se guardan dentro de la web, en `web/public/ecosistema/placas-anteriores/`.
 - [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno. Las situaciones de aprendizaje y los proyectos son exportaciones de eXeLearning alojadas sin plantilla. Snap! no tiene contenido de momento.
 - [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Redirigir `rea.echidna.es/<recurso>/` a las nuevas URL `/alumnado/situaciones-aprendizaje/<recurso>/`.
