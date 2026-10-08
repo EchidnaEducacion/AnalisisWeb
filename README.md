@@ -308,8 +308,8 @@ Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pa
 
 - [ ] Decidir sobre comentarios (eliminar o Giscus).
 - [ ] Decidir sobre analítica (GA4 o alternativa sin cookies).
-- [ ] Decidir si se publican las 12 páginas no indexadas (actividades `s01`–`s11`, `p01`, EchidnaScratch, Snap4Arduino).
+- [x] Páginas no indexadas: las actividades pasan a las diapositivas de la Guía de inicio EchidnaML, EchidnaScratch a EchidnaML y Snap4Arduino a Entornos compatibles (ver [`redirecciones.md`](redirecciones.md)).
 - [ ] Recuperar o sustituir las 20 imágenes perdidas.
 - [ ] Definir los esquemas del modelo de contenido (paso 1).
-- [ ] Revisar la propuesta de URL y plantillas de [`estructura.md`](estructura.md).
-- [ ] Cerrar las redirecciones de las URL de WordPress a las nuevas ([`redirecciones.md`](redirecciones.md)).
+- [x] Revisar la propuesta de URL y plantillas de [`estructura.md`](estructura.md).
+- [x] Cerrar las redirecciones de las URL de WordPress a las nuevas ([`redirecciones.md`](redirecciones.md)).

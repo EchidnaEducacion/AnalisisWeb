@@ -8,9 +8,10 @@ GitHub Pages no admite redirecciones 301: se generan con `redirects` en `astro.c
 ## Índice
 
 1. [Páginas de WordPress](#páginas-de-wordpress)
-2. [Blog y RSS](#blog-y-rss)
-3. [Otros dominios y rutas](#otros-dominios-y-rutas)
-4. [Pendiente](#pendiente)
+2. [Páginas no indexadas](#páginas-no-indexadas)
+3. [Blog y RSS](#blog-y-rss)
+4. [Otros dominios y rutas](#otros-dominios-y-rutas)
+5. [Pendiente](#pendiente)
 
 ---
 
@@ -103,6 +104,28 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 | `/politica-privacidad/` | `/politica-privacidad/` | Igual |  |
 | `/manual/` | `echidnaeducacion.github.io/manual/` | Externa | Redirección al repo `manual` |
 
+## Páginas no indexadas
+
+Páginas que existen en WordPress pero no aparecen en el sitemap (localizadas en la prueba de concepto de `EchidnaEducacion.github.io`): 15 en total.
+
+| URL antigua | URL nueva | Estado | Nota |
+|---|---|---|---|
+| `/didactica/actividades/p01-hola-erizo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s01-hola-erizo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s02-hacemos-un-semaforo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s03-pulsadores/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s04-sensor-de-luz/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s05-control-luminosidad-led/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s06-telesketch/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s07-colores-rgb/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s08-jugamos-acelerometro/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s09-entradas-mkmk/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/didactica/actividades/s10-vehiculo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
+| `/a-programar/echidnascratch/como-empezar/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML (igual que su página principal) |
+| `/a-programar/echidnascratch/como-empezar/echidnalink/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML (igual que su página principal) |
+| `/a-programar/echidnascratch/inteligencia-artificial-con-echidna/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML (igual que su página principal) |
+| `/a-programar/snap4arduino/` | `/ecosistema/entornos-compatibles/` | Redirige | Snap4Arduino se describe en 1.4 Entornos compatibles |
+
 ## Blog y RSS
 
 | URL antigua | URL nueva | Estado | Nota |
@@ -118,8 +141,8 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 |---|---|---|---|
 | `rea.echidna.es/` | `/alumnado/` | Redirige | Hoy su `meta refresh` apunta a `kuku.es`: corregir ya |
 | `rea.echidna.es/02_SensorTemperatura/` | `/alumnado/situaciones-aprendizaje/sensor-temperatura/` | Redirige | Se configura en el servidor de rea.echidna.es |
-| `rea.echidna.es/P4LaTierraSeMueve/` | `/alumnado/situaciones-aprendizaje/la-tierra-se-mueve/` | Redirige | Nombre del recurso por confirmar |
-| `rea.echidna.es/nocheydia/` | `/alumnado/situaciones-aprendizaje/noche-y-dia/` | Redirige | Nombre del recurso por confirmar |
+| `rea.echidna.es/P4LaTierraSeMueve/` | `/alumnado/situaciones-aprendizaje/la-tierra-se-mueve/` | Redirige | Se configura en el servidor de rea.echidna.es |
+| `rea.echidna.es/nocheydia/` | `/alumnado/situaciones-aprendizaje/noche-y-dia/` | Redirige | Se configura en el servidor de rea.echidna.es |
 | `/alumnado/situaciones-aprendizaje/`, `/alumnado/proyectos/` | `/alumnado/` | Redirige | Rutas intermedias sin página |
 | `/docentes/proyectos-inicio-echidnaml/` | `/docentes/` | Redirige | Solo si 3.1 no tiene página propia |
 | `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | Repos de las guías | Externa | Alias en minúsculas |
@@ -127,5 +150,5 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 
 ## Pendiente
 
-- [ ] Revisar las 12 páginas no indexadas (actividades `s01`–`s11`, `p01`, Snap4Arduino), que no están en el sitemap pero existen.
-- [ ] Confirmar los nombres de los recursos de `rea.echidna.es` en la nueva web.
+- [x] Páginas no indexadas: las actividades `s01`–`s10` y `p01` van a las diapositivas de la Guía de inicio EchidnaML; las subpáginas de EchidnaScratch, a 1.1.
+- [x] Nombres de los recursos de `rea.echidna.es` en la nueva web: el nombre de su carpeta en minúsculas y con guiones (`sensor-temperatura`, `la-tierra-se-mueve`, `noche-y-dia`).

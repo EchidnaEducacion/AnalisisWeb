@@ -160,6 +160,14 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - **Estabilidad**: si se reorganiza el árbol (por ejemplo, Sistema → Ecosistema), una URL anidada se rompe y la de la raíz no. Es importante porque estas direcciones se imprimen en material físico y en códigos QR.
 - **Coherencia**: los tres recursos siguen el mismo patrón.
 
+### Criterio de navegación
+
+- **Desplegable solo si la sección no tiene página propia**: hoy solo Quiénes somos. Si una sección tiene página con contenido (Ecosistema es un resumen de todo lo que hay), un desplegable invita a saltársela; además, en pantallas táctiles tocar el elemento padre abre el submenú en vez de la página.
+- **Enlace directo** para Ecosistema, Materiales alumnado, Recursos docentes y Blog: su página es la puerta de entrada, con el resumen y tarjetas a las subpáginas.
+- Con 5 elementos más el botón «Quiero una», el menú cabe sin desplegables. En el móvil, menú de hamburguesa con lista simple.
+- Para moverse dentro de una sección: **migas de pan** en todas las páginas y, en las secciones con subpáginas (Ecosistema, EchidnaBlack2), enlaces a las páginas hermanas en un lateral o al pie. Lo resuelve el layout, no el menú.
+- Si `/docentes/` acaba sin contenido propio, se revisa su caso.
+
 ## Cambios respecto al texto original
 
 - «2,1» pasa a 2.1. Los agrupadores «EchidnaML:» y «Entornos compatibles:» de Materiales alumnado pasan a ser subsecciones y sus páginas se renumeran (desaparece el hueco del 2.4). Después, «Entornos compatibles» se dividió por entorno y, al final, Materiales alumnado se simplificó a una sola página con títulos por entorno (EchidnaML, Snap!, Arduino IDE) y recursos numerados de 2.1 a 2.5.
@@ -192,4 +200,4 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - [ ] En la sección 3, que cada página de situación de aprendizaje use el mismo `<recurso>` que en alumnado.
 - [x] Quiénes somos es un menú desplegable con 5.1, 5.2 y 5.3. 5.1 Sobre el proyecto usa `/quienes-somos/`, así que no hay índice duplicado.
 - [x] Validación de URL y plantillas: blog y taxonomías coinciden con WordPress; 1.3 sin hijas (PDF); alumnado en una página; Contacto mantiene `/contacta/`; Quiénes somos sin índice duplicado; RSS en `/rss.xml` con copia en `/feed/`.
-- [ ] Decidir qué menús del menú principal son desplegables y hasta qué nivel (por ejemplo, si 1.2 EchidnaBlack2, con 15 hijas, se despliega o solo enlaza a su página), y cómo se comportan en el móvil. Ya decidido: Quiénes somos es desplegable.
+- [x] Menús desplegables: solo Quiénes somos, que no tiene página propia. El resto son enlaces directos a su página de sección, con migas de pan y enlaces a las páginas hermanas (ver «Criterio de navegación»).
