@@ -101,4 +101,13 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 
 - [ ] Validar las URL y las plantillas propuestas.
 - [ ] Hacer la tabla de redirecciones de las URL de WordPress a las nuevas (la mayoría de las rutas cambian).
-- [ ] Decidir dónde va el contenido actual que no tiene sitio en la nueva estructura (fichas de componentes y complementos, talleres, comunidad, publicaciones, licencias, política de privacidad…).
+- [ ] Decidir dónde va el contenido actual que no tiene sitio en la nueva estructura: fichas de componentes y complementos (36 páginas), talleres, comunidad y publicaciones.
+- [ ] Añadir en el pie la **política de privacidad** (obligatoria por RGPD/LSSI, más aún con formulario de contacto) y las licencias.
+- [ ] Evitar el doble uso de «Entornos compatibles» (1.4 y 2.2), que mezcla la organización por producto con la organización por público.
+- [ ] Definir qué distingue «Proyectos de inicio», «Situaciones de aprendizaje» y «Proyectos» (2.1), o juntar los dos últimos. Revisar si las situaciones de aprendizaje son material del alumnado o del profesorado.
+- [ ] Valorar si separar Alumnado y Docentes ayuda al visitante habitual (el docente) o si es mejor una sola sección con filtros por público.
+- [ ] Dar a «Quiero una» una URL propia y estable (`/quiero-una/`) y un botón visible en la cabecera o en la portada.
+- [ ] Sacar «Repositorio GitHub» (3.5) del menú y ponerlo como icono en el pie o en la cabecera.
+- [ ] Revisar las plantillas: Diapositivas y Guías docentes son listados de descargas (¿plantilla «Listado de recursos»?). «Ficha de hardware» se queda con pocas páginas.
+- [ ] Revisar los nombres: «Recursos docente» → «Recursos docentes» o «Para docentes». Aclarar qué es «Herramientas de análisis».
+- [ ] Valorar alias en minúsculas para las URL de las guías (`/GuiaInicioEchidnaML/`), porque en GitHub Pages las URL distinguen mayúsculas y minúsculas.
