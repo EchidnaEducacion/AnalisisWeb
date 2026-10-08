@@ -11,5 +11,6 @@ const secciones: Record<string, string> = {
   docentes: 'docentes',
   blog: 'blog',
   'quienes-somos': 'nosotros',
+  contacta: 'nosotros',
 };
 export const seccionDe = (ruta: string) => secciones[ruta.split('/')[0]];

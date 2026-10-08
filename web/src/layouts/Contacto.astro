@@ -1,0 +1,79 @@
+---
+// Plantilla «Contacto»: cabecera, texto opcional del Markdown, formulario y, al lado, enlaces que pueden ahorrar el mensaje.
+// El formulario envía a un servicio externo cuya dirección va en PUBLIC_CONTACT_FORM_URL; sin ella, no envía.
+import Base from './Base.astro';
+import CabeceraPagina from '../components/CabeceraPagina.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  title: string;
+  description: string;
+  section?: string;
+  /** Tramos intermedios de las migas de pan (sin Inicio ni la página actual) */
+  crumbs?: { title: string; href: string }[];
+}
+const { title, description, section, crumbs = [] } = Astro.props;
+const action = import.meta.env.PUBLIC_CONTACT_FORM_URL ?? '#';
+// El cuerpo del Markdown es opcional: si está vacío, no se pinta su contenedor
+const cuerpo = (await Astro.slots.render('default')).trim();
+---
+<Base title={title} description={description} section={section}>
+<main id="contenido">
+  <CabeceraPagina title={title} description={description} crumbs={crumbs} />
+
+  <div class="wrap with-aside">
+    <section class="form-card" aria-labelledby="form-t">
+      {cuerpo && <div class="prose" set:html={cuerpo} />}
+      <h2 id="form-t" class="form-card__title">Envíanos un mensaje</h2>
+      <p class="muted">Los campos marcados con <span class="req">*</span> son obligatorios.</p>
+      <form class="form" action={action} method="post">
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre <span class="req">*</span></label>
+            <input id="nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto">
+            <option>Duda sobre las placas</option>
+            <option>Quiero una placa para mi centro</option>
+            <option>Formación y talleres</option>
+            <option>Colaboración</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje <span class="req">*</span></label>
+          <textarea id="mensaje" name="mensaje" required aria-describedby="mensaje-hint"></textarea>
+          <span class="hint" id="mensaje-hint">Si es una duda técnica, indica qué placa y qué entorno usas.</span>
+        </div>
+        <!-- Antispam (honeypot): oculto para personas -->
+        <div class="hp" aria-hidden="true"><label>No rellenes este campo <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input type="checkbox" name="privacidad" value="aceptada" required><span>He leído y acepto la <a href={url('politica-privacidad/')}>política de privacidad</a>. <span class="req">*</span></span></label>
+        <div><button class="btn" type="submit"><svg aria-hidden="true"><use href="#i-mail"/></svg> Enviar mensaje</button></div>
+      </form>
+    </section>
+
+    <aside class="aside-stack">
+      <h2 class="aside-stack__title">Quizá te sirva</h2>
+      <a class="contact-option" href={url('quiero-una/')}>
+        <svg aria-hidden="true"><use href="#i-hand"/></svg>
+        <div><strong>Quiero una</strong><span>Dónde comprar placas para tu centro.</span></div>
+      </a>
+      <a class="contact-option" href="https://echidnaeducacion.github.io/manual/">
+        <svg aria-hidden="true"><use href="#i-book"/></svg>
+        <div><strong>Manual</strong><span>Instalación, uso de la placa y preguntas frecuentes.</span></div>
+      </a>
+      <a class="contact-option" href={url('docentes/colabora/')}>
+        <svg aria-hidden="true"><use href="#i-github"/></svg>
+        <div><strong>¿Algo que mejorar?</strong><span>Te contamos cómo hacérnoslo llegar en «Cómo colaborar».</span></div>
+      </a>
+    </aside>
+  </div>
+</main>
+</Base>

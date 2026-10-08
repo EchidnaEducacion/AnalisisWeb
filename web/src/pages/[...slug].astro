@@ -1,15 +1,16 @@
 ---
-// Genera una página por cada entrada de `paginas` en español con la plantilla «Página genérica».
-// Las demás plantillas (índice, contacto, portada) se añadirán con su layout.
+// Genera una página por cada entrada de `paginas` en español con las plantillas «Página genérica» y «Contacto».
+// Las demás plantillas (índice, portada) se añadirán con su layout.
 import { getCollection, render } from 'astro:content';
 import Pagina from '../layouts/Pagina.astro';
+import Contacto from '../layouts/Contacto.astro';
 import { rutaDe, seccionDe } from '../lib/paginas';
 import { url } from '../lib/url';
 
 export async function getStaticPaths() {
   const todas = await getCollection('paginas', (p) => p.id.startsWith('es/') && !p.data.draft);
   return todas
-    .filter((p) => p.data.template === 'pagina')
+    .filter((p) => p.data.template === 'pagina' || p.data.template === 'contacto')
     .map((entry) => ({ params: { slug: rutaDe(entry) }, props: { entry, todas } }));
 }
 
@@ -25,12 +26,23 @@ const crumbs = tramos.flatMap((_, i) => {
   return p ? [{ title: p.data.title, href: url(`${padre}/`) }] : [];
 });
 ---
-<Pagina
-  title={entry.data.title}
-  description={entry.data.description}
-  section={seccionDe(ruta)}
-  crumbs={crumbs}
-  headings={entry.data.toc ? headings : []}
->
-  <Content />
-</Pagina>
+{entry.data.template === 'contacto' ? (
+  <Contacto
+    title={entry.data.title}
+    description={entry.data.description}
+    section={seccionDe(ruta)}
+    crumbs={crumbs}
+  >
+    <Content />
+  </Contacto>
+) : (
+  <Pagina
+    title={entry.data.title}
+    description={entry.data.description}
+    section={seccionDe(ruta)}
+    crumbs={crumbs}
+    headings={entry.data.toc ? headings : []}
+  >
+    <Content />
+  </Pagina>
+)}

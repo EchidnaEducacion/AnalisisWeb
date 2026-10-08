@@ -1,0 +1,25 @@
+---
+// Cabecera de las páginas de contenido: migas de pan, título y entradilla
+import { url } from '../lib/url';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Tramos intermedios de las migas de pan (sin Inicio ni la página actual) */
+  crumbs?: { title: string; href: string }[];
+}
+const { title, description, crumbs = [] } = Astro.props;
+---
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Migas de pan">
+      <ol>
+        <li><a href={url()}>Inicio</a></li>
+        {crumbs.map((c) => <li><a href={c.href}>{c.title}</a></li>)}
+        <li><span aria-current="page">{title}</span></li>
+      </ol>
+    </nav>
+    <h1>{title}</h1>
+    <p class="lead">{description}</p>
+  </div>
+</header>

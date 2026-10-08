@@ -2,7 +2,7 @@
 // Plantilla «Página genérica»: título, entradilla, cuerpo Markdown y, si la página lo pide (toc), índice lateral con los h2
 import type { MarkdownHeading } from 'astro';
 import Base from './Base.astro';
-import { url } from '../lib/url';
+import CabeceraPagina from '../components/CabeceraPagina.astro';
 
 interface Props {
   title: string;
@@ -17,19 +17,7 @@ const toc = headings.filter((h) => h.depth === 2);
 ---
 <Base title={title} description={description} section={section}>
 <main id="contenido">
-  <header class="page-hero">
-    <div class="wrap">
-      <nav class="breadcrumb" aria-label="Migas de pan">
-        <ol>
-          <li><a href={url()}>Inicio</a></li>
-          {crumbs.map((c) => <li><a href={c.href}>{c.title}</a></li>)}
-          <li><span aria-current="page">{title}</span></li>
-        </ol>
-      </nav>
-      <h1>{title}</h1>
-      <p class="lead">{description}</p>
-    </div>
-  </header>
+  <CabeceraPagina title={title} description={description} crumbs={crumbs} />
 
   <div class={toc.length ? 'wrap with-aside with-aside--left' : 'wrap with-aside'}>
     {toc.length > 0 && (

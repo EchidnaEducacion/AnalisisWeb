@@ -124,7 +124,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 | Índice de sección | — | — | Se queda |
 | Ficha de hardware | — | — | Se queda |
 | Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/) | Se queda |
-| Contacto | — | — | Se queda |
+| Contacto | ✅ `layouts/Contacto.astro` (sin envío real) | [Contacta](https://echidnaeducacion.github.io/AnalisisWeb/contacta/) | Se queda |
 | Entrada de blog | — | — | Se queda |
 | Listado / taxonomía | — | — | Se queda |
 | Error 404 | — | — | Se queda |
@@ -151,6 +151,10 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
+- [ ] **Envío del formulario de contacto**: elegir el servicio, crear la cuenta con el correo de la asociación y poner su dirección en `PUBLIC_CONTACT_FORM_URL`. Hasta entonces, el formulario de `/contacta/` se ve pero no envía.
+  - **Formspree** (recomendado): encaja con el formulario actual, porque solo pide su dirección (`https://formspree.io/f/…`) y ya entiende el campo antispam `_gotcha`. Guarda los mensajes en un panel. Plan gratuito: unos 50 mensajes al mes.
+  - **Web3Forms**: no pide crear cuenta, solo un correo para obtener la clave. Habría que añadir un campo oculto con la clave y cambiar el antispam por `botcheck`. Plan gratuito: unos 250 mensajes al mes.
+  - Antes de decidir, comprobar en sus webs los límites gratuitos actuales.
 - [ ] Dar de alta la web en GoatCounter y añadir su script en el layout `Base` (`web/src/layouts/Base.astro`). La política de privacidad ya lo menciona.
 - [ ] Servir las tipografías desde la propia web en lugar de Google Fonts, para no enviar a Google la IP de las visitas. Después, quitar esa línea de la política de privacidad.
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
