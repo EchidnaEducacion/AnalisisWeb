@@ -174,6 +174,7 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 
 - **Desplegable solo si la sección no tiene página propia**: hoy solo Quiénes somos. Si una sección tiene página con contenido (Ecosistema es un resumen de todo lo que hay), un desplegable invita a saltársela; además, en pantallas táctiles tocar el elemento padre abre el submenú en vez de la página.
 - **Enlace directo** para Ecosistema, Materiales alumnado, Recursos docentes y Blog: su página es la puerta de entrada, con el resumen y tarjetas a las subpáginas.
+- **Rótulos cortos**: en el menú, Materiales alumnado y Recursos docentes aparecen como «Alumnado» y «Docentes». El título de la página, las migas de pan y el pie usan el nombre completo.
 - Con 5 elementos, el menú cabe sin desplegables. En el móvil, menú de hamburguesa con lista simple.
 - Para moverse dentro de una sección: **migas de pan** en todas las páginas y, en las secciones con subpáginas (Ecosistema, EchidnaML, EchidnaBlack2), enlaces a las páginas hermanas en un lateral o al pie. Lo resuelve el layout, no el menú.
 - Si `/docentes/` acaba sin contenido propio, se revisa su caso.

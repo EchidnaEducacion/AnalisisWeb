@@ -23,11 +23,13 @@ const fullTitle = bare ? title : `${title} · Echidna Educación`;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{fullTitle}</title>
 <meta name="description" content={description}>
+<link rel="icon" href={url("favicon.svg")} type="image/svg+xml">
+<link rel="apple-touch-icon" href={url("apple-touch-icon.png")}>
 <link rel="alternate" hreflang="en" href="#">
 <script is:inline>try{var t=localStorage.getItem('echidna-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Exo+2:wght@600;700;800&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Exo+2:wght@600;700;800&family=JetBrains+Mono:wght@400;700&family=Open+Sans:wght@400&display=swap">
 <link rel="stylesheet" href={url("assets/css/echidna.css")}>
 </head>
 <body data-section={section}>

@@ -39,6 +39,6 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 - Astro con Bun: `cd web && bun install && bun run dev` (<http://localhost:4321/AnalisisWeb/>). Sin Bun, `npm install --no-package-lock` y `npx astro build`.
 - Los enlaces internos se escriben con el helper `url()` de `web/src/lib/url.ts`, que antepone el `base` (`/AnalisisWeb/`).
 - Claves de sección (`section` del layout y `data-section`, que fijan el color): `ecosistema`, `alumnado`, `docentes`, `blog` y `nosotros`.
-- Menú: Ecosistema, Materiales alumnado, Recursos docentes y Blog son enlaces directos; solo Quiénes somos es desplegable. «Quiero una» no va en el menú.
+- Menú: Ecosistema, Alumnado, Docentes y Blog son enlaces directos; solo Quiénes somos es desplegable. «Alumnado» y «Docentes» son los rótulos cortos de Materiales alumnado y Recursos docentes, que mantienen el nombre completo en el resto de la web. «Quiero una» no va en el menú.
 - Las situaciones de aprendizaje, proyectos, diapositivas y guías docentes son **recursos alojados sin plantilla** en `web/public/` (p. ej. `alumnado/situaciones-aprendizaje/<recurso>/`); la web solo los enlaza mediante la colección `recursos`.
 - Las páginas de `web/src/pages/` son **maquetas** con contenido escrito a mano. El siguiente paso es convertirlas en plantillas reales alimentadas por las colecciones (ver el paso 3 del plan en el README).

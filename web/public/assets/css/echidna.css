@@ -221,23 +221,24 @@ a.chip:hover { border-color: currentColor; color: var(--accent-ink); }
 .site-header__inner { display: flex; align-items: center; gap: 1rem; min-height: var(--header-h); }
 .brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ink); margin-right: auto; }
 .brand:hover { color: var(--ink); }
-.brand__mark { width: 40px; height: 40px; flex: none; }
-.brand__name { font-family: var(--font-head); font-weight: 800; font-size: 1.3rem; letter-spacing: -.01em; line-height: 1; }
-.brand__name small { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--brand-ink); margin-top: 3px; }
+/* Logo: erizo (nariz en el color del texto) y «EchidnaEducación» en Open Sans, como el logo original */
+.brand__mark { width: 57px; height: 32px; flex: none; }
+.brand__name { font-family: "Open Sans", var(--font-body); font-weight: 400; font-size: 1.25rem; letter-spacing: -.01em; line-height: 1; white-space: nowrap; }
+.brand__echidna { color: #fe6d04; }
 
 .nav { display: none; }
 .nav__list { display: flex; align-items: center; gap: .15rem; list-style: none; margin: 0; padding: 0; }
 .nav__link {
   position: relative; display: inline-flex; align-items: center; gap: .3rem;
   padding: .55rem .75rem; border-radius: 10px; color: var(--ink-2); text-decoration: none;
-  font-family: var(--font-head); font-weight: 650; font-size: .98rem; background: none; border: 0; cursor: pointer;
+  font-family: var(--font-head); font-weight: 650; font-size: .98rem; background: none; border: 0; cursor: pointer; white-space: nowrap;
 }
 .nav__link:hover { background: var(--surface-2); color: var(--ink); }
 .nav__link[aria-current="page"], .nav__link.is-active { color: var(--accent-ink); }
 .nav__link[aria-current="page"]::after, .nav__link.is-active::after {
   content: ""; position: absolute; left: .75rem; right: .75rem; bottom: 3px; height: 3px; border-radius: 3px; background: var(--accent);
 }
-.nav__link .chev { width: .9em; height: .9em; transition: transform .2s; }
+.nav__link .chev { width: .9em; height: .9em; flex: none; transition: transform .2s; }
 .nav__item--has-sub { position: relative; }
 .subnav {
   position: absolute; top: calc(100% + 6px); left: 0; min-width: 270px; z-index: 5;
@@ -265,7 +266,7 @@ a.chip:hover { border-color: currentColor; color: var(--accent-ink); }
   font: inherit; font-size: .92rem; cursor: pointer;
 }
 .search-trigger:hover { border-color: var(--brand); color: var(--ink); }
-.search-trigger svg { width: 18px; height: 18px; }
+.search-trigger svg { width: 18px; height: 18px; flex: none; }
 .lang-switch { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 10px; overflow: hidden; font-family: var(--font-head); font-weight: 700; font-size: .82rem; }
 .lang-switch a { padding: .45rem .55rem; color: var(--muted); text-decoration: none; }
 .lang-switch a[aria-current] { background: var(--ink); color: var(--bg); }
@@ -300,7 +301,7 @@ body.menu-open { overflow: hidden; }
   .mobile-nav { display: none !important; }
 }
 @media (min-width: 640px) { .search-trigger { display: inline-flex; } .search-icon-btn { display: none; } }
-@media (max-width: 420px) { .brand__name small { display: none; } .lang-switch a { padding: .4rem .45rem; } }
+@media (max-width: 420px) { .brand { gap: .4rem; } .brand__mark { width: 50px; height: 28px; } .brand__name { font-size: 1.1rem; } .lang-switch a { padding: .4rem .45rem; } }
 
 /* Diálogo de búsqueda (Pagefind) */
 .search-dialog {

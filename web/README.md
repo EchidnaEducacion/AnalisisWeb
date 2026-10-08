@@ -43,13 +43,16 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 web/
 ├── astro.config.mjs         # base /AnalisisWeb y salida en ficheros *.html
 ├── src/
+│   ├── assets/logo/         # SVG original del logo (Illustrator, con todas sus variantes)
 │   ├── layouts/Base.astro   # <head>, iconos, cabecera, pie y scripts
 │   ├── components/          # Cabecera (menú activo según `section`), Pie, Iconos (sprite SVG)
 │   ├── lib/url.ts           # url(): rutas internas con el prefijo `base`
 │   └── pages/*.astro        # contenido (<main>) de cada plantilla
-└── public/assets/
-    ├── css/echidna.css      # tokens, componentes y estilos de cada plantilla
-    └── js/echidna.js        # menú, tema, buscador, filtros, embebidos
+└── public/
+    ├── favicon.svg          # erizo del logo; apple-touch-icon.png, su versión en PNG
+    └── assets/
+        ├── css/echidna.css  # tokens, componentes y estilos de cada plantilla
+        └── js/echidna.js    # menú, tema, buscador, filtros, embebidos
 ```
 
 Cada página indica sus metadatos como *props* del layout:
