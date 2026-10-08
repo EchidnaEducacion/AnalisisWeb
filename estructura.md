@@ -176,3 +176,4 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - [ ] Decidir la plantilla de las páginas de material de la sección 3 (3.1, 3.3, 3.4 y las hijas de 3.2). Propuesta: plantilla nueva «Recursos docentes», con introducción, enlace al material del alumnado y lista de recursos con descarga, generada desde el front matter. Alternativa: Página genérica.
 - [ ] Aclarar qué es «Herramientas de análisis» y si el nombre se entiende.
 - [ ] Valorar alias en minúsculas para las URL de las guías (`/GuiaInicioEchidnaML/`), porque en GitHub Pages las URL distinguen mayúsculas y minúsculas.
+- [ ] Decidir qué menús del menú principal son desplegables y hasta qué nivel (por ejemplo, si 1.2 EchidnaBlack2, con 15 hijas, se despliega o solo enlaza a su página), y cómo se comportan en el móvil.
