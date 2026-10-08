@@ -113,6 +113,7 @@ Pie (fuera del menú, en todas las páginas)
 | 4 | 1.2.14.5 Bluetooth | `/ecosistema/echidnablack2/complementos/bluetooth/` | Ficha de hardware |
 | 3 | 1.2.15 Documentación | `/ecosistema/echidnablack2/documentacion/` | Página genérica |
 | 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/placas-anteriores/` | Página genérica (resumen de cada placa y descarga de su PDF; sin hijas) |
+| 3 | PDF de EchidnaBlack v1 y EchidnaShield | `/ecosistema/placas-anteriores/echidnablack.pdf`, `/ecosistema/placas-anteriores/echidnashield.pdf` | — (ficheros en `web/public/ecosistema/placas-anteriores/`) |
 | 2 | 1.4 Entornos compatibles | `/ecosistema/entornos-compatibles/` | Página genérica |
 | 1 | Materiales alumnado | `/alumnado/` | Índice de sección (página única con tarjetas agrupadas por título: EchidnaML, Snap!, Arduino IDE) |
 | 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` y alias `/guiainicioechidnaml/` (redirección a `echidnaeducacion.github.io/GuiaInicioEchidnaML/`) | — (repo `GuiaInicioEchidnaML`) |
@@ -198,7 +199,7 @@ El manual y las guías de inicio son **redirecciones a recursos externos**, no p
 - [x] «Herramientas de análisis» pasa a «Comprobar la placa» (hoy 3.9, `/docentes/comprobar-placa/`): página que enlaza a los repos de GitHub para comprobar el funcionamiento de la placa.
 - [x] Las guías tienen además un alias en minúsculas (`/guiainicioechidnaml/`, `/guiainicioarduinoide/`) que redirige al mismo sitio, porque en GitHub Pages las URL distinguen mayúsculas y minúsculas.
 - [x] Placas anteriores (1.3): una sola página con un resumen breve de EchidnaBlack v1 y de EchidnaShield y un PDF con la documentación de cada una. Las URL antiguas de esas placas redirigen a `/ecosistema/placas-anteriores/`.
-- [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield a partir de las páginas actuales antes de apagar WordPress, y decidir dónde se guardan (en la web o en el repo `recursos`).
+- [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Se guardan dentro de la web, en `web/public/ecosistema/placas-anteriores/`.
 - [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno. Las situaciones de aprendizaje y los proyectos son exportaciones de eXeLearning alojadas sin plantilla. Snap! no tiene contenido de momento.
 - [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Redirigir `rea.echidna.es/<recurso>/` a las nuevas URL `/alumnado/situaciones-aprendizaje/<recurso>/`.
 - [x] La plantilla «Actividad» ya no hace falta: ni alumnado ni docentes la usan. Se quita de las páginas maestras del README.

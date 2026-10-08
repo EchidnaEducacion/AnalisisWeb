@@ -4,7 +4,7 @@ Estudio de viabilidad para transformar **[echidna.es](https://echidna.es/)**, ac
 
 La web (proyecto Astro, empezando por las plantillas propuestas) está en [`web/`](web/) y se pueden ver publicadas en **<https://echidnaeducacion.github.io/AnalisisWeb/>**.
 
-La estructura propuesta para la nueva web (árbol de páginas, URL y plantillas) está en [`estructura.md`](estructura.md). La correspondencia entre las URL de WordPress y las nuevas está en [`redirecciones.md`](redirecciones.md).
+La estructura propuesta para la nueva web (árbol de páginas, URL y plantillas) está en [`estructura.md`](estructura.md). La correspondencia entre las URL de WordPress y las nuevas está en [`redirecciones.md`](redirecciones.md), y los tipos de contenido y sus campos, en [`modelo-contenido.md`](modelo-contenido.md).
 
 ## Índice
 
@@ -242,11 +242,9 @@ La implementación se hace en este mismo repositorio, en el directorio [`web/`](
 
 ### Paso 1 – Modelo de contenido
 
-- Definir un tipo de contenido por cada página maestra: colecciones separadas, o un campo `template` **obligatorio** en `pages`.
-- Usar esquemas Zod **estrictos**: `title` y `description` obligatorios, sin valores vacíos, y campos con tipo propio por plantilla. Ejemplos:
-  - **Ficha de hardware**: placa(s) compatible(s), tipo (componente/complemento/placa), imagen, pines, descargas.
-  - **Índice de sección**: introducción y orden; el listado de hijas **se genera solo**.
-- Documentar el modelo en `AGENT.md` y en el README del repo de la web.
+El modelo está definido en [`modelo-contenido.md`](modelo-contenido.md): cuatro colecciones (`paginas`, `hardware`, `recursos` y `blog`), campos en inglés, validación estricta con Zod (`title` y `description` obligatorios y sin valores vacíos) e idioma por carpetas.
+
+- Al implementarlo, trasladarlo a `web/src/content.config.ts` y resumirlo en `AGENT.md` y en el README de la web.
 
 ### Paso 2 – Páginas maestras
 
@@ -313,6 +311,6 @@ Se reaprovecha el MDX de la prueba como punto de partida: quitar `<Columns>`, pa
 - [x] Imágenes perdidas (20, según `wp-export/import-report.md` de la prueba de concepto): 16 son de páginas de EchidnaScratch, que ya no se migran.
 - [ ] Hacer capturas nuevas para 1.1 EchidnaML y 1.1.1 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
-- [ ] Definir los esquemas del modelo de contenido (paso 1).
+- [x] Definir los esquemas del modelo de contenido (paso 1): [`modelo-contenido.md`](modelo-contenido.md).
 - [x] Revisar la propuesta de URL y plantillas de [`estructura.md`](estructura.md).
 - [x] Cerrar las redirecciones de las URL de WordPress a las nuevas ([`redirecciones.md`](redirecciones.md)).
