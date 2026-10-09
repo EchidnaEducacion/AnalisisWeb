@@ -123,7 +123,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 | Portada | — | — | Se queda |
 | Índice de sección | — | — | Se queda |
 | Ficha de hardware | — | — | Se queda |
-| Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/), [Sobre el proyecto](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/), [Licencias](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/licencias/) | Se queda |
+| Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/), [Sobre el proyecto](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/), [Licencias](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/licencias/) | Borrada |
 | Contacto | ✅ `layouts/Contacto.astro` (sin envío real) | [Contacta](https://echidnaeducacion.github.io/AnalisisWeb/contacta/) | Se queda |
 | Entrada de blog | — | — | Se queda |
 | Listado / taxonomía | — | — | Se queda |
