@@ -559,8 +559,8 @@ tbody tr:last-child td { border-bottom: 0; }
 .factsheet__pins table { font-size: .88rem; }
 .factsheet__pins th, .factsheet__pins td { padding: .5rem .6rem; }
 .prose img { height: auto; }
-/* Lupas sobre la placa (imágenes lupa-*.png): a media columna; en móvil, al menos 320 px */
-.prose img[src*="/lupa-"] { width: max(50%, min(100%, 320px)); }
+/* Lupas sobre la placa (imágenes lupa-*.png): un tercio de la columna; en móvil, 260 px */
+.prose img[src*="/lupa-"] { width: max(35%, min(100%, 260px)); }
 /* Bloques de EchidnaML (imágenes bloque-*.png): todos a la misma altura, sea cual sea la captura */
 .prose img[src*="/bloque-"] { height: 4rem; width: auto; max-width: 100%; object-fit: contain; object-position: left; }
 

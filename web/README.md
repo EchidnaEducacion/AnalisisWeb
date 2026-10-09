@@ -92,7 +92,7 @@ El contenido está en `src/content/`, validado por el esquema de `src/content.co
 - **Enlaces en el Markdown**: los internos se escriben sin `base` (`[contacto](/contacta/)`); un plugin de Sätteri (el procesador de Markdown de Astro 7), definido en `astro.config.mjs`, se lo añade al compilar.
 - **Tablas en el Markdown**: otro plugin de Sätteri las mete en un `div.table-wrap`, como en las plantillas, para que tengan marco y se desplacen dentro de él en móvil en vez de ensanchar la página.
 - **Bloques de EchidnaML**: las capturas de bloques se llaman `bloque-*.png` (p. ej. `bloque-led-verde.png`) y la web las muestra todas a la misma altura, aunque se hayan capturado a escalas distintas.
-- **Lupas sobre la placa**: las imágenes que amplían un componente en la placa se llaman `lupa-*.png` (p. ej. `lupa-leds.png`) y se muestran a media columna.
+- **Lupas sobre la placa**: las imágenes que amplían un componente en la placa se llaman `lupa-*.png` (p. ej. `lupa-leds.png`) y se muestran a un tercio de la columna (260 px en móvil).
 - **Índice lateral** «En esta página»: solo sale si la página lleva `toc: true` en el *front matter* (para páginas largas); se genera con sus `h2`.
 - **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
 

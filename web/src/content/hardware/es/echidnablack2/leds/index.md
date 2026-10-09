@@ -39,13 +39,26 @@ Todos los LED se conectan con una resistencia en serie (Rs) que limita la corrie
 
 ## Cómo se programa
 
-En **EchidnaML** hay un bloque para encender o apagar cada LED: se elige la acción y el color.
+En **EchidnaML** hay dos bloques para los LED.
+
+### Encender y apagar
+
+Para **controlar los LED en digital** se usa este bloque:
 
 ![Bloque de EchidnaML «encender LED rojo», con desplegables para la acción y el color.](./bloque-led.png)
 
-Para el LED verde hay otro bloque que ajusta su brillo entre 0 (apagado) y 255 (máximo brillo).
+Con sus dos desplegables elegimos:
+
+- **El estado**: encender o apagar.
+- **El LED**: verde, naranja o rojo.
+
+### Regular el brillo del LED verde
+
+Para **controlar la intensidad luminosa del LED verde** (PWM) se usa este otro bloque:
 
 ![Bloque de EchidnaML «LED verde 255».](./bloque-led-verde.png)
+
+El valor va de 0 (apagado) a 255 (máxima intensidad luminosa). En el hueco se puede escribir un número o encajar una variable, como en el ejemplo del fundido.
 
 ## Ejemplos
 
