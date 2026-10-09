@@ -24,7 +24,7 @@ Complementan la ficha de la [EchidnaBlack2](/ecosistema/echidnablack2/), donde e
 ## Actuadores
 
 - **LED**: 5 mm, rojo, naranja y verde.
-- **LED RGB**: 65 535 colores. Rojo de 619 a 624 nm, verde de 520 a 540 nm y azul de 460 a 480 nm.
+- **LED RGB**: más de 16 millones de colores (256 niveles por cada color). Rojo de 619 a 624 nm, verde de 520 a 540 nm y azul de 460 a 480 nm.
 - **Audio**: zumbador de 2300 Hz y 85 dB a 10 cm, conexión jack de 3,5 mm y control de volumen con potenciómetro lineal.
 
 ## Conectores
