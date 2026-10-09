@@ -559,7 +559,12 @@ tbody tr:last-child td { border-bottom: 0; }
 /* Tarjetas con imagen (componentes de la placa, hijas de un índice de sección) */
 ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 .indice { padding-block: .75rem 4rem; }
-.indice > .img-cards { margin-top: 2.5rem; }
+.indice .img-cards { margin-top: 2.5rem; }
+.indice.with-aside { padding-block: .75rem 4rem; }
+/* Índice lateral de los índices de sección: páginas hijas y apartados, juntos y fijos al bajar */
+.toc-stack { display: grid; gap: 1.75rem; align-content: start; position: sticky; top: calc(var(--header-h) + 24px); }
+.toc-stack .toc { position: static; }
+@media (max-width: 959px) { .toc-stack { position: static; } }
 .img-cards > li + li { margin-top: 0; }
 .img-cards .card__title { margin-top: 0; font-size: 1.08rem; }
 .img-cards .card__text { font-size: .92rem; }

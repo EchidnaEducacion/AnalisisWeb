@@ -33,7 +33,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `description` | texto no vacío, 50–160 caracteres | Sí | Resumen para buscadores y para la tarjeta en el índice de la sección |
 | `template` | `pagina` · `indice` · `contacto` · `portada` | Sí | Plantilla que usa la página; ninguna cae en una genérica por defecto |
 | `order` | número | No (0) | Orden de la tarjeta en el índice de la sección |
-| `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta |
+| `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta. En los índices de sección añade además, arriba, los enlaces a sus páginas hijas, para que se vean sin bajar hasta las tarjetas (p. ej. Descarga en EchidnaML) |
 | `team` | lista de identificadores de la lista de autores | No | Fichas del equipo al final del texto, en ese orden (en Sobre el proyecto) |
 | `image` | imagen | No | Imagen de la tarjeta y al compartir en redes |
 | `translation` | ruta | No | Versión en el otro idioma |

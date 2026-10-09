@@ -1,6 +1,8 @@
 ---
 // Plantilla «Índice de sección»: cabecera, introducción en Markdown y una tarjeta por cada
-// página hija directa que exista, sea de `paginas` o una ficha de `hardware`, por `order`
+// página hija directa que exista, sea de `paginas` o una ficha de `hardware`, por `order`.
+// Con `toc`, un índice lateral con los apartados del texto y enlaces directos a las hijas.
+import type { MarkdownHeading } from 'astro';
 import { Image } from 'astro:assets';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
@@ -17,8 +19,10 @@ interface Props {
   crumbs?: { title: string; href: string }[];
   /** URL del índice sin base ni barras: ecosistema */
   ruta: string;
+  /** Apartados del texto para el índice lateral; vacío si la página no lleva `toc` */
+  headings?: MarkdownHeading[];
 }
-const { title, description, section, crumbs = [], ruta } = Astro.props;
+const { title, description, section, crumbs = [], ruta, headings = [] } = Astro.props;
 
 type Hija = { ruta: string; data: CollectionEntry<'paginas'>['data'] | CollectionEntry<'hardware'>['data'] };
 const esHija = (r: string) => r.startsWith(`${ruta}/`) && !r.slice(ruta.length + 1).includes('/');
@@ -30,12 +34,35 @@ const hijas: Hija[] = [
 ]
   .filter((h) => esHija(h.ruta))
   .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'));
+const toc = headings.filter((h) => h.depth === 2);
+const conIndice = headings.length > 0;
 ---
 <Base title={title} description={description} section={section}>
 <main id="contenido">
   <CabeceraPagina title={title} description={description} crumbs={crumbs} />
 
-  <div class="wrap indice">
+  <div class={conIndice ? 'wrap indice with-aside with-aside--left' : 'wrap indice'}>
+    {conIndice && (
+      <div class="toc-stack">
+        {hijas.length > 0 && (
+          <nav class="toc" aria-label={`Páginas de ${title}`}>
+            <h2>Páginas de {title}</h2>
+            <ol>
+              {hijas.map((h) => <li><a href={url(`${h.ruta}/`)}>{h.data.title}</a></li>)}
+            </ol>
+          </nav>
+        )}
+        {toc.length > 0 && (
+          <nav class="toc" aria-label="En esta página">
+            <h2>En esta página</h2>
+            <ol>
+              {toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+            </ol>
+          </nav>
+        )}
+      </div>
+    )}
+    <div class="indice__main">
     <div class="prose">
       <slot />
     </div>
@@ -57,6 +84,7 @@ const hijas: Hija[] = [
         ))}
       </ul>
     )}
+    </div>
   </div>
 </main>
 </Base>

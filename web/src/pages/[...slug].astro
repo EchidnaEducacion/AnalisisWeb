@@ -36,6 +36,7 @@ const crumbs = tramos.flatMap((_, i) => {
     section={seccionDe(ruta)}
     crumbs={crumbs}
     ruta={ruta}
+    headings={entry.data.toc ? headings : []}
   >
     <Content />
   </Indice>

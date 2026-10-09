@@ -2,6 +2,7 @@
 title: EchidnaML
 description: El programa para la placa Echidna que une en una sola aplicación la programación por bloques, la robótica y la inteligencia artificial.
 template: indice
+toc: true
 order: 1
 image: ./echidnaml/logo-echidnaml.png
 ---
