@@ -96,6 +96,6 @@ El contenido está en `src/content/`, validado por el esquema de `src/content.co
 - **Índice lateral** «En esta página»: solo sale si la página lleva `toc: true` en el *front matter* (para páginas largas); se genera con sus `h2`.
 - **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
 
-Páginas hechas: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) y Licencias (`quienes-somos/licencias.md`). Fichas hechas: LEDs ROG.
+Páginas hechas: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) Licencias (`quienes-somos/licencias.md`) y Características técnicas de la EchidnaBlack2 (`ecosistema/echidnablack2/caracteristicas-tecnicas.md`, que cuelga de una ficha de hardware: las migas buscan en las dos colecciones). Fichas hechas: EchidnaBlack2 y LEDs ROG.
 
 Las imágenes son marcadores (`.ph`) que se sustituirán por las fotos reales optimizadas por Astro. El buscador muestra resultados de ejemplo; en Astro se conectará con Pagefind.

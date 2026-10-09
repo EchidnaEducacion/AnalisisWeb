@@ -5,6 +5,7 @@ import { getCollection, render } from 'astro:content';
 import Pagina from '../layouts/Pagina.astro';
 import Contacto from '../layouts/Contacto.astro';
 import { rutaDe, seccionDe } from '../lib/paginas';
+import { rutaHardware } from '../lib/hardware';
 import { url } from '../lib/url';
 
 export async function getStaticPaths() {
@@ -17,13 +18,17 @@ export async function getStaticPaths() {
 const { entry, todas } = Astro.props;
 const ruta = rutaDe(entry);
 const { Content, headings } = await render(entry);
+const fichas = await getCollection('hardware', (h) => h.id.startsWith('es/') && !h.data.draft);
 
-// Migas intermedias: las páginas de la colección que cuelgan por encima de esta
+// Migas intermedias: las páginas o fichas de hardware que cuelgan por encima de esta.
+// Ecosistema enlaza a su maqueta, como el menú, hasta que exista la página.
 const tramos = ruta.split('/').slice(0, -1);
 const crumbs = tramos.flatMap((_, i) => {
   const padre = tramos.slice(0, i + 1).join('/');
-  const p = todas.find((t) => rutaDe(t) === padre);
-  return p ? [{ title: p.data.title, href: url(`${padre}/`) }] : [];
+  const p = todas.find((t) => rutaDe(t) === padre) ?? fichas.find((h) => rutaHardware(h) === padre);
+  if (p) return [{ title: p.data.title, href: url(`${padre}/`) }];
+  if (padre === 'ecosistema') return [{ title: 'Ecosistema', href: url('maquetas/indice-seccion/') }];
+  return [];
 });
 ---
 {entry.data.template === 'contacto' ? (

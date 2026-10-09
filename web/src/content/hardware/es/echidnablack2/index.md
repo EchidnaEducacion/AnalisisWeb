@@ -22,6 +22,8 @@ La EchidnaBlack2 es una placa **autónoma** basada en la arquitectura **Arduino*
 - 8 entradas conductivas tipo Makey Makey (MkMk).
 - Conector para un módulo Bluetooth.
 
+Los datos de cada sensor, actuador y conector están en las [características técnicas](/ecosistema/echidnablack2/caracteristicas-tecnicas/).
+
 ## Esquema de componentes
 
 Este esquema muestra dónde está cada componente en la placa y a qué pin va conectado:

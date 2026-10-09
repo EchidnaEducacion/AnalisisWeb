@@ -40,7 +40,8 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   │   │   ├── 1.2.14.3 Infrarrojos distancia
 │   │   │   ├── 1.2.14.4 Complementos conexiones MkMk
 │   │   │   └── 1.2.14.5 Bluetooth
-│   │   └── 1.2.15 Documentación
+│   │   ├── 1.2.15 Documentación
+│   │   └── 1.2.16 Características técnicas
 │   ├── 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield)
 │   └── 1.4 Entornos compatibles
 ├── 2. Materiales alumnado                 (una sola página)
@@ -116,6 +117,7 @@ Pie (fuera del menú, en todas las páginas)
 | 4 | 1.2.14.4 Complementos conexiones MkMk | `/ecosistema/echidnablack2/complementos/conexiones-mkmk/` | Ficha de hardware |
 | 4 | 1.2.14.5 Bluetooth | `/ecosistema/echidnablack2/complementos/bluetooth/` | Ficha de hardware |
 | 3 | 1.2.15 Documentación | `/ecosistema/echidnablack2/documentacion/` | Página genérica |
+| 3 | 1.2.16 Características técnicas | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Página genérica (datos técnicos de la placa, del manual) |
 | 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/placas-anteriores/` | Página genérica (resumen de cada placa y descarga de su PDF; sin hijas) |
 | 3 | PDF de EchidnaBlack v1 y EchidnaShield | `/ecosistema/placas-anteriores/echidnablack.pdf`, `/ecosistema/placas-anteriores/echidnashield.pdf` | — (ficheros en `web/public/ecosistema/placas-anteriores/`) |
 | 2 | 1.4 Entornos compatibles | `/ecosistema/entornos-compatibles/` | Página genérica |
