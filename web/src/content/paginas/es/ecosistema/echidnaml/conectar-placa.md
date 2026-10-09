@@ -4,6 +4,13 @@ description: Cómo conectar la placa al ordenador y empezar a usarla con Echidna
 template: pagina
 order: 2
 toc: true
+cards:
+  - title: Driver CH341
+    text: En Windows, el controlador que necesita el ordenador para reconocer la placa por el USB. Cómo descargarlo e instalarlo.
+    href: /ecosistema/echidnaml/descarga/#controlador-de-la-placa
+  - title: Instalar StandardFirmata
+    text: Si EchidnaML no detecta la placa porque se ha borrado su programa, cómo volver a cargarlo con el IDE de Arduino.
+    href: /ecosistema/echidnaml/instalar-standardfirmata/
 ---
 
 Una vez [descargado e instalado EchidnaML](/ecosistema/echidnaml/descarga/), ya puedes empezar a programar la placa. Es muy sencillo: la placa lleva los sensores y actuadores integrados y el programa la detecta automáticamente.
@@ -45,3 +52,10 @@ Si abriste el programa sin la placa, puedes conectarla después: conéctala al U
 ![Parte superior de EchidnaML: el botón «desconectado» y, a su lado, el selector de puerto con el icono del USB desplegado.](./conectar-placa/reconectar-placa.png)
 
 **Atención**: al reconectar la placa con EchidnaML abierto se pierde el trabajo que no esté guardado. Guárdalo antes para poder recuperarlo.
+
+## Si la placa no se detecta
+
+Si EchidnaML no detecta la placa, revisa estos dos motivos:
+
+- **Falta el driver CH341 (en Windows)**: Windows necesita este controlador para reconocer el puerto serie de la placa. Sin él, el ordenador no la ve aunque esté conectada.
+- **La placa no tiene StandardFirmata**: si has cargado otro programa en la placa, EchidnaML no podrá comunicarse con ella hasta que vuelvas a instalar StandardFirmata.
