@@ -31,4 +31,6 @@ Este esquema muestra dónde está cada componente en la placa y a qué pin va co
 
 ![Esquema de la EchidnaBlack2 con cada componente rotulado y su pin: sensores, actuadores, alimentación, conectividad y selector Sensores/MkMk.](./componentes-placa.png)
 
+Algunos pines se comparten entre los sensores y las entradas MkMk: qué funciona en cada posición del selector se explica en [Modo sensores / Modo MkMk](/ecosistema/echidnablack2/modo-sensores-mkmk/).
+
 Para conectar la placa al ordenador hace falta un cable USB-C.

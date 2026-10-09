@@ -35,10 +35,10 @@ Para usarlas, se conecta un cable a la entrada y otro al común. La placa tiene 
 
 La placa tiene dos modos de funcionamiento, que se eligen con un **conmutador**:
 
-- **Modo sensores**: lee todos los sensores integrados (pulsadores SR y SL, joystick, sensor de temperatura, micrófono y acelerómetro) y todas las conexiones de entrada y salida, incluidas las I2C.
+- **Modo sensores**: lee todos los sensores integrados (pulsadores SR y SL, joystick, sensor de luz, sensor de temperatura, micrófono y acelerómetro) y todas las conexiones de entrada y salida, incluidas las I2C.
 - **Modo MkMk**: da acceso a las 8 entradas MkMk y al resto de entradas que no se usan en este modo.
 
-En los dos modos están disponibles todos los actuadores.
+En los dos modos están disponibles todos los actuadores. Qué funciona en cada modo, pin a pin, se explica en [Modo sensores / Modo MkMk](/ecosistema/echidnablack2/modo-sensores-mkmk/).
 
 Para usar las entradas MkMk hay que poner el conmutador **hacia la derecha**:
 
