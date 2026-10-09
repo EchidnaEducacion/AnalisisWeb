@@ -82,7 +82,7 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 | `/hardware/echidnablack2/` | `/ecosistema/echidnablack2/` | Redirige |  |
 | `/hardware/echidnablack2/alimentacion-echidnablack2/` | `/ecosistema/echidnablack2/alimentacion/` | Redirige |  |
 | `/hardware/echidnablack2/documentacion-echidnablack2/` | `/ecosistema/echidnablack2/documentacion/` | Redirige |  |
-| `/hardware/echidnablack2/modo-sensores-modo-mkmk-black2/` | `/ecosistema/echidnablack2/modo-sensores-mkmk/` | Redirige |  |
+| `/hardware/echidnablack2/modo-sensores-modo-mkmk-black2/` | `/ecosistema/echidnablack2/conexiones-mkmk/` | Redirige | De momento no hay página propia de los modos: se explican en Conexiones MkMk |
 | `/hardware/echidnablack/puesta-en-marcha-echidna-black/` | `/ecosistema/echidnablack2/puesta-en-marcha/` | Redirige | La página de la Black2 enlaza hoy a esta |
 | `/hardware/echidnablack/complementos-echidnablack/` | `/ecosistema/echidnablack2/complementos/` | Redirige | La página de la Black2 enlaza hoy a esta |
 | `/hardware/echidnablack/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |

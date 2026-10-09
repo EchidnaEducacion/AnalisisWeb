@@ -112,7 +112,7 @@ Pie (fuera del menú, en todas las páginas)
 | 3 | 1.2.9 Audio | `/ecosistema/echidnablack2/audio/` | Ficha de hardware |
 | 3 | 1.2.10 Conexiones MkMk | `/ecosistema/echidnablack2/conexiones-mkmk/` | Ficha de hardware |
 | 3 | 1.2.11 Puesta en marcha | `/ecosistema/echidnablack2/puesta-en-marcha/` | Página genérica |
-| 3 | 1.2.12 Modo sensores / Modo MkMk | `/ecosistema/echidnablack2/modo-sensores-mkmk/` | Página genérica |
+| 3 | 1.2.12 Modo sensores / Modo MkMk | `/ecosistema/echidnablack2/modo-sensores-mkmk/` | Página genérica (de momento no se hace: los modos se explican en Conexiones MkMk, 1.2.10) |
 | 3 | 1.2.13 Alimentación | `/ecosistema/echidnablack2/alimentacion/` | Página genérica |
 | 3 | 1.2.14 Complementos | `/ecosistema/echidnablack2/complementos/` | Índice de sección |
 | 4 | 1.2.14.1 Servomotor de posición | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Ficha de hardware |
