@@ -3,7 +3,6 @@ title: Modo sensores / Modo MkMk
 description: Los dos modos de funcionamiento de la EchidnaBlack2, cómo se elige cada uno con el conmutador y qué componentes funcionan en cada modo.
 template: pagina
 order: 2
-toc: true
 ---
 
 La EchidnaBlack2 tiene dos modos de funcionamiento: el **modo sensores** y el **modo MkMk**. Algunos pines de la placa se comparten entre los sensores integrados y las [entradas MkMk](/ecosistema/echidnablack2/conexiones-mkmk/), y el modo decide cuáles de ellos funcionan.
