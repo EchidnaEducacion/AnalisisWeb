@@ -158,6 +158,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [x] **Migrar a GitHub las situaciones de aprendizaje de eXeLearning** de `rea.echidna.es`: están en el repo [`situaciones-aprendizaje`](https://github.com/EchidnaEducacion/situaciones-aprendizaje) y sus tarjetas ya enlazan a GitHub Pages.
 - [ ] **Redirigir `rea.echidna.es`** (quien administre el servidor): 301 de cada carpeta antigua a su copia en GitHub (ver [`redirecciones.md`](redirecciones.md#otros-dominios-y-rutas)) y, después, apagarlo.
 - [ ] **Aclarar con Jorge Lobo la licencia de ¡La Tierra se mueve!**: los créditos dicen CC BY-SA y el pie de algunas páginas, CC BY-NC-SA 4.0.
+- [ ] **Enlace roto en ¿Hace calor aquí?**: en «Créditos», la descarga «Ficha XY-Grid» apunta a `Alhambra2.sb3`, que no existe; hay que conseguir el fichero o quitar el enlace en el `.elp` y volver a exportar.
 - [ ] **Alojar el manual de FP** (Manual EchidnaBlack de Xabier Rosas, PDF de 44 MB) fuera de WordPress antes de apagarlo, por ejemplo como *release* en GitHub (es demasiado grande para el repo de la web).
 - [ ] **Materiales alumnado por hacer**: por ahora solo hay 8 materiales; faltan otros proyectos, Snap!, etc.
 - [ ] **Formato del blog**: pendiente de que lo revise el equipo (entrada con lateral de categorías y recientes, y listado básico en `/blog/` en dos columnas con lateral, como el anterior). Después: páginas de categoría, etiqueta y autor, paginación y migración de las entradas.
