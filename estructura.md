@@ -50,13 +50,15 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   ├── EchidnaML                           (título dentro de la página)
 │   │   ├── Proyectos                       (subtítulo)
 │   │   │   └── 2.1 Proyectos de inicio con EchidnaML
-│   │   └── Situaciones de aprendizaje      (subtítulo)
-│   │       └── 2.2 ¿Hace calor aquí?, Andalucía del alba al anochecer, ¡La Tierra se mueve! y Aprendiendo con robots
+│   │   ├── Situaciones de aprendizaje      (subtítulo)
+│   │   │   └── 2.2 ¿Hace calor aquí?, Andalucía del alba al anochecer, ¡La Tierra se mueve! y Aprendiendo con robots
+│   │   └── Guías                           (subtítulo)
+│   │       └── 2.3 Manual de usuario EchidnaBlack y EchidnaML
 │   └── Arduino IDE                         (título)
 │       ├── Proyectos                       (subtítulo)
-│       │   └── 2.3 Proyectos de inicio con Arduino IDE
+│       │   └── 2.4 Proyectos de inicio con Arduino IDE
 │       └── Guías                           (subtítulo)
-│           └── 2.4 Manual EchidnaBlack para FP
+│           └── 2.5 Manual EchidnaBlack para FP
 ├── 3. Recursos docentes                   (una sola página)
 │   ├── Proyectos de inicio con EchidnaML   (título dentro de la página)
 │   │   ├── 3.1 Diapositivas
@@ -130,8 +132,9 @@ Pie (fuera del menú, en todas las páginas)
 | 1 | Materiales alumnado | `/alumnado/` | Página genérica con la lista de `recursos` (`resources: alumnado`): un título por entorno, un subtítulo por grupo y tarjetas con miniatura |
 | 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` y alias `/guiainicioechidnaml/` (redirección a `echidnaeducacion.github.io/GuiaInicioEchidnaML/`) | — (repo `GuiaInicioEchidnaML`) |
 | 2 | 2.2 Situaciones de aprendizaje (cada una) | `rea.echidna.es/<recurso>/` y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning; pendiente de migrarlas a GitHub) |
-| 2 | 2.3 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
-| 2 | 2.4 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en `echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | — (pendiente de alojarlo fuera de WordPress) |
+| 2 | 2.3 Manual de usuario | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
+| 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
+| 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en `echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | — (pendiente de alojarlo fuera de WordPress) |
 | 1 | Recursos docentes | `/docentes/` | Índice de sección (página única con tarjetas agrupadas por material, igual que alumnado) |
 | 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | — (recurso alojado sin plantilla) |
 | 2 | 3.2 Proyectos de inicio con EchidnaML: guía docente | `/docentes/proyectos-inicio-echidnaml/guia-docente/` | — (recurso alojado sin plantilla) |
@@ -204,9 +207,9 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 ## Cambios respecto al texto original
 
 - «2,1» pasa a 2.1. Los agrupadores «EchidnaML:» y «Entornos compatibles:» de Materiales alumnado pasan a ser subsecciones y sus páginas se renumeran (desaparece el hueco del 2.4). Después, «Entornos compatibles» se dividió por entorno y, al final, Materiales alumnado se simplificó a una sola página con títulos por entorno (EchidnaML, Snap!, Arduino IDE) y recursos numerados de 2.1 a 2.5.
-- Se numeran las entradas que no tenían número: Entornos compatibles (1.4) y Manual de usuario (2.4 y 3.6). En Recursos docentes, «Diapositivas para el aula» y «Guías docentes» se sustituyen por grupos de recursos por material, en una sola página.
+- Se numeran las entradas que no tenían número: Entornos compatibles (1.4) y Manual de usuario (2.3 y 3.6). En Recursos docentes, «Diapositivas para el aula» y «Guías docentes» se sustituyen por grupos de recursos por material, en una sola página.
 - **Manual de usuario** aparece en dos secciones: en ambas es un enlace al manual externo (`/manual/`), no una página duplicada.
-- **Proyectos de inicio** con EchidnaML (2.1) y con Arduino IDE (2.3) son enlaces a sus repos externos (`GuiaInicioEchidnaML` y `GuiaInicioArduinoIDE`), publicados en GitHub Pages.
+- **Proyectos de inicio** con EchidnaML (2.1) y con Arduino IDE (2.4) son enlaces a sus repos externos (`GuiaInicioEchidnaML` y `GuiaInicioArduinoIDE`), publicados en GitHub Pages.
 - **Entornos compatibles** queda solo en Ecosistema (1.4), donde se describen los entornos. En Materiales alumnado cada entorno es un título dentro de su página única (EchidnaML, Snap!, Arduino IDE).
 
 ## Pendiente
