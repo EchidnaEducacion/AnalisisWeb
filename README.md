@@ -93,6 +93,8 @@ Se hace en el mismo proyecto [`web/`](web/). No hay dos juegos de plantillas: un
 
 ### Paso 4 – Migración por secciones
 
+Cada página se migra de una en una, con el flujo de [«Cómo migrar una página»](web/README.md#cómo-migrar-una-página) (material de la web actual y del manual, imágenes, comprobaciones y documentación).
+
 1. **Ecosistema**: EchidnaBlack2 con sus componentes y complementos, EchidnaML (1.1 a 1.1.5), Placas anteriores (con sus PDF) y Entornos compatibles.
 2. **Materiales alumnado y Recursos docentes**: fichas de la colección `recursos` y recursos alojados sin plantilla (exportaciones de eXeLearning, diapositivas, guías docentes).
 3. **Quiénes somos, Contacta, Quiero una y pie** (política de privacidad y licencias).

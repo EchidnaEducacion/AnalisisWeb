@@ -97,6 +97,30 @@ El contenido está en `src/content/`, validado por el esquema de `src/content.co
 - **Índice lateral** «En esta página»: solo sale si la página lleva `toc: true` en el *front matter* (para páginas largas); se genera con sus `h2`. En los índices de sección, encima lleva también los enlaces a las páginas hijas.
 - **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
 
-Páginas hechas: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`), Licencias (`quienes-somos/licencias.md`), Ecosistema y EchidnaML (`ecosistema.md` y `ecosistema/echidnaml.md`, índices de sección con una tarjeta por cada página hija que existe; las imágenes de EchidnaML van en `ecosistema/echidnaml/`) y Características técnicas de la EchidnaBlack2 (`ecosistema/echidnablack2/caracteristicas-tecnicas.md`, que cuelga de una ficha de hardware: las migas buscan en las dos colecciones) y Descarga de EchidnaML (`ecosistema/echidnaml/descarga.md`; la versión va escrita en el texto y los enlaces, y se actualiza a mano con cada versión publicada en `echidnaml-releases`) Conectar EchidnaML y EchidnaBlack (`ecosistema/echidnaml/conectar-placa.md`) Empezar con EchidnaBlocks, Empezar con LearningML e Instalar StandardFirmata (`ecosistema/echidnaml/empezar-echidnablocks.md`, `empezar-learningml.md` e `instalar-standardfirmata.md`). Fichas hechas: EchidnaBlack2, Pulsadores, Sensor de luz LDR, LEDs ROG y Audio.
+Páginas hechas (el avance por plantilla está en «Progreso» del [README](../README.md#progreso)):
 
-Las imágenes son marcadores (`.ph`) que se sustituirán por las fotos reales optimizadas por Astro. El buscador muestra resultados de ejemplo; en Astro se conectará con Pagefind.
+- **Quiénes somos y pie**: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) y Licencias (`quienes-somos/licencias.md`).
+- **Ecosistema**: `ecosistema.md` y `ecosistema/echidnaml.md` son índices de sección, con una tarjeta por cada página hija que existe. Las hijas de EchidnaML están en `ecosistema/echidnaml/` (cada una con su carpeta de imágenes): Descarga (la versión va escrita en el texto y los enlaces, y se actualiza a mano con cada versión publicada en `echidnaml-releases`), Conectar EchidnaML y EchidnaBlack, Empezar con EchidnaBlocks, Empezar con LearningML e Instalar StandardFirmata (`listed: false`).
+- **EchidnaBlack2**: Características técnicas (`ecosistema/echidnablack2/caracteristicas-tecnicas.md`, que cuelga de una ficha de hardware: las migas buscan en las dos colecciones).
+- **Fichas de hardware**: EchidnaBlack2, Pulsadores, Sensor de luz LDR, LEDs ROG y Audio.
+
+## Cómo migrar una página
+
+Las páginas se migran **de una en una**: se redacta, se revisa en local y se sube cuando está dada por buena.
+
+1. **Leer el material**: la página de la web actual (WordPress) y el apartado del [manual](https://github.com/EchidnaEducacion/manual) que le corresponda. El manual suele tener texto e imágenes más actuales; se adapta, no se copia tal cual. Si dos fuentes no coinciden (un pin, un valor), manda lo que se ve en la placa o lo más reciente, y se avisa.
+2. **Preparar las imágenes** en la carpeta de la página, sin metadatos (`convert -strip`) y con nombres descriptivos: `lupa-*`, `bloque-*`, `esquema-*`, `programa-*`. Los diagramas transparentes con texto oscuro se pasan a fondo blanco para que se vean en modo oscuro. Las descargas (hojas de características…) van en `public/` con la ruta de la página.
+3. **Redactar el Markdown** con su *front matter* (`modelo-contenido.md` explica cada campo) y `toc: true` si la página es larga.
+4. **Comprobar**: `npx astro build` sin errores; la página en el **servidor de desarrollo** (`npx astro dev`), que sirve las imágenes con otras direcciones que el *build*; móvil y modo oscuro; y que nada se salga de la pantalla de 320 a 1280 px.
+5. **Documentar** en el mismo commit: «Progreso» del README y la lista de páginas hechas de arriba.
+
+**Fichas de componentes**: se hacen en el orden del manual (LED, pulsadores, zumbador, sensor de luz, joystick, acelerómetro, temperatura, LED RGB, micrófono, entradas MkMk). Cada una lleva:
+
+- la **imagen principal** del componente y el rótulo con su tipo (`kind`, `io`);
+- los apartados **Descripción** (con la lupa al final), **Funcionamiento**, **Cómo se programa** (el bloque de EchidnaML) y **Ejemplos** (los del manual, con la imagen del programa y su lógica explicada);
+- en el lateral, la ficha rápida con los **pines** y datos de las características técnicas, el **esquema** (`schematic`) y la **hoja de características**;
+- `order` según su número en `estructura.md` (1.2.x), que ordena las tarjetas de la placa y el anterior/siguiente.
+
+No llevan ejemplos de Arduino IDE.
+
+En las maquetas, las imágenes son marcadores (`.ph`). El buscador muestra resultados de ejemplo; se conectará con Pagefind.
