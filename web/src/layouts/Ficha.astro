@@ -2,13 +2,14 @@
 // Plantilla «Ficha de hardware»: cabecera con imagen, texto Markdown y, al lado, la ficha rápida
 // (tipo, placa, pines, entornos), las descargas y el índice. Abajo, anterior y siguiente de la misma placa.
 import type { MarkdownHeading } from 'astro';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import { statSync } from 'node:fs';
 import { join } from 'node:path';
 import Base from './Base.astro';
 import { url } from '../lib/url';
 import { placas, rotuloDe, rutaHardware } from '../lib/hardware';
+import { rutaDe } from '../lib/paginas';
 
 interface Props {
   entry: CollectionEntry<'hardware'>;
@@ -29,10 +30,19 @@ const componentes = d.kind === 'placa'
       .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'))
   : [];
 
-// Índice: los h2 del Markdown y, si hay, el apartado de componentes que añade la plantilla
+// En las placas: tarjetas de las páginas de apoyo que cuelgan de ella (características técnicas,
+// modos, alimentación…), por `order`
+const apoyo = d.kind === 'placa'
+  ? (await getCollection('paginas', (p) =>
+      p.id.startsWith(`es/${ruta}/`) && p.id.split('/').length === ruta.split('/').length + 2 && p.data.listed && !p.data.draft))
+      .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'))
+  : [];
+
+// Índice: los h2 del Markdown y, si hay, los apartados de tarjetas que añade la plantilla
 const toc = [
   ...headings.filter((h) => h.depth === 2),
   ...(componentes.length ? [{ slug: 'componentes', text: 'Componentes' }] : []),
+  ...(apoyo.length ? [{ slug: 'mas-sobre-la-placa', text: 'Más sobre la placa' }] : []),
 ];
 
 // Migas: Ecosistema y las fichas que cuelgan por encima
@@ -110,6 +120,27 @@ const descargas = d.downloads.map((dl) => {
                   {c.data.io && <span class="chip">{c.data.io[0].toUpperCase() + c.data.io.slice(1)}</span>}
                   <h3 class="card__title"><a class="card__link" href={url(`${rutaHardware(c)}/`)}>{c.data.title}</a></h3>
                   <p class="card__text">{c.data.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {apoyo.length > 0 && (
+        <>
+          <h2 id="mas-sobre-la-placa">Más sobre la placa</h2>
+          <ul class="img-cards grid grid--4">
+            {apoyo.map((p) => (
+              <li class="card">
+                {p.data.image && (
+                  <div class="img-cards__img">
+                    <Image src={p.data.image} alt="" widths={[240, 480]} sizes="240px" />
+                  </div>
+                )}
+                <div class="card__body">
+                  <h3 class="card__title"><a class="card__link" href={url(`${rutaDe(p)}/`)}>{p.data.title}</a></h3>
+                  <p class="card__text">{p.data.description}</p>
                 </div>
               </li>
             ))}

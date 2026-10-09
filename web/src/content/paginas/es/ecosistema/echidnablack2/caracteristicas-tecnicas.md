@@ -2,6 +2,8 @@
 title: Características técnicas
 description: "Datos técnicos de la placa EchidnaBlack2: microcontrolador, sensores, actuadores, conectores con sus pines y consumo."
 template: pagina
+order: 1
+image: ./caracteristicas-tecnicas/miniatura.png
 toc: true
 ---
 

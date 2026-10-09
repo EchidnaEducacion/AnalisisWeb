@@ -3,6 +3,7 @@ title: Alimentación
 description: Las dos formas de alimentar la EchidnaBlack2, por USB-C o por el jack, y cómo elegir con el selector de dónde reciben la energía las entradas y salidas.
 template: pagina
 order: 3
+image: ./alimentacion/detalle-selector-vin.png
 ---
 
 La EchidnaBlack2 se puede alimentar de dos formas: por el **conector USB-C** o por el **jack de alimentación**, con una fuente externa de 7 a 12 V.
