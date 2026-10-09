@@ -102,7 +102,7 @@ Páginas hechas (el avance por plantilla está en «Progreso» del [README](../R
 - **Quiénes somos y pie**: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) y Licencias (`quienes-somos/licencias.md`).
 - **Ecosistema**: `ecosistema.md` y `ecosistema/echidnaml.md` son índices de sección, con una tarjeta por cada página hija que existe. Las hijas de EchidnaML están en `ecosistema/echidnaml/` (cada una con su carpeta de imágenes): Descarga (la versión va escrita en el texto y los enlaces, y se actualiza a mano con cada versión publicada en `echidnaml-releases`), Conectar EchidnaML y EchidnaBlack, Empezar con EchidnaBlocks, Empezar con LearningML e Instalar StandardFirmata (`listed: false`).
 - **EchidnaBlack2**: Características técnicas (`ecosistema/echidnablack2/caracteristicas-tecnicas.md`, que cuelga de una ficha de hardware: las migas buscan en las dos colecciones).
-- **Fichas de hardware**: EchidnaBlack2, Pulsadores, Sensor de luz LDR, LEDs ROG y Audio.
+- **Fichas de hardware**: EchidnaBlack2, Pulsadores, Joystick, Sensor de luz LDR, LEDs ROG y Audio.
 
 ## Cómo migrar una página
 
