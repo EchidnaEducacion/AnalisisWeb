@@ -1,6 +1,6 @@
 # Modelo de contenido
 
-Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). La referencia es `web/src/content.config.ts`, donde ya están implementadas la colección `paginas` y la lista de autores; las demás se añadirán con su plantilla. Este documento explica el diseño para quien edita.
+Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). La referencia es `web/src/content.config.ts`, donde ya están implementadas las colecciones `paginas` y `hardware` y la lista de autores; las demás se añadirán con su plantilla. Este documento explica el diseño para quien edita.
 
 ## Índice
 
@@ -41,21 +41,28 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 
 ## hardware
 
-Fichas de la placa, sus componentes y sus complementos.
+Fichas de la placa, sus componentes y sus complementos (colección implementada).
 Plantilla: Ficha de hardware.
+
+**La ruta del fichero es la URL bajo `/ecosistema/`**: `hardware/es/echidnablack2/leds/index.md` → `/ecosistema/echidnablack2/leds/`. Cada ficha es una carpeta con su `index.md` y sus imágenes.
 
 | Campo | Tipo | Obligatorio | Para qué |
 |---|---|---|---|
 | `title` | texto no vacío | Sí | Nombre del componente o de la placa |
-| `description` | texto no vacío, 50–160 caracteres | Sí | Resumen para buscadores y para la tarjeta |
+| `description` | texto no vacío, 50–160 caracteres | Sí | Resumen para buscadores y para la tarjeta; es también la entradilla de la ficha |
 | `kind` | `placa` · `componente` · `complemento` | Sí | Dónde aparece: la placa lista sus componentes; la página de complementos, los suyos |
+| `io` | `entrada` · `salida` | No | En los componentes: si es un sensor o pulsador (entrada) o un LED, motor… (salida). Sale en el rótulo («Componente · Salida») |
 | `board` | `echidnablack2` | Sí, salvo en `placa` | Placa a la que pertenece (lista ampliable) |
-| `image` | imagen | Sí | Foto o esquema que la ficha muestra siempre |
-| `pins` | lista de `{ name, pin }` | No | Tabla de pines, igual en todas las fichas (p. ej. `{ name: "Rojo", pin: "D9" }`) |
-| `downloads` | lista de `{ label, file }` | No | Botones de descarga (código de ejemplo, esquemas…) |
-| `order` | número | No (0) | Orden de las tarjetas |
+| `image` | imagen | Sí | Foto o dibujo que la ficha muestra siempre, en la misma carpeta |
+| `imageAlt` | texto no vacío | Sí | Texto alternativo de esa imagen |
+| `pins` | lista de `{ pin, name, mode }` | No | Tabla de pines de la ficha rápida, igual en todas las fichas (p. ej. `{ pin: "D11~", name: "LED verde", mode: "Salida digital y PWM" }`) |
+| `tools` | lista de texto | No | Entornos con los que se programa («Se programa con») |
+| `downloads` | lista de `{ label, file }` | No | Botones de descarga. `file` es la ruta del fichero dentro de `web/public/`, sin `base` (`/ecosistema/echidnablack2/leds/datasheet-led.pdf`); el tipo y el tamaño se calculan solos |
+| `order` | número | No (0) | Orden de las tarjetas y del anterior/siguiente |
 | `translation` | ruta | No | Versión en el otro idioma |
 | `draft` | sí/no | No (no) | Ficha a medias sin publicar |
+
+La ficha rápida no muestra la licencia mientras la del hardware esté pendiente (ver [`estructura.md`](estructura.md#pendiente)).
 
 ## recursos
 

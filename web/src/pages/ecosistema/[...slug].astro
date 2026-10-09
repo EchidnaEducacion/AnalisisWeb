@@ -1,0 +1,20 @@
+---
+// Genera una ficha por cada entrada de `hardware` en español, con la plantilla «Ficha de hardware»
+import { getCollection, render } from 'astro:content';
+import Ficha from '../../layouts/Ficha.astro';
+import { rutaHardware } from '../../lib/hardware';
+
+export async function getStaticPaths() {
+  const todas = await getCollection('hardware', (h) => h.id.startsWith('es/') && !h.data.draft);
+  return todas.map((entry) => ({
+    params: { slug: rutaHardware(entry).replace(/^ecosistema\//, '') },
+    props: { entry, todas },
+  }));
+}
+
+const { entry, todas } = Astro.props;
+const { Content, headings } = await render(entry);
+---
+<Ficha entry={entry} todas={todas} headings={headings}>
+  <Content />
+</Ficha>

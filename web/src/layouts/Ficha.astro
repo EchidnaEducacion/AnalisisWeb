@@ -1,0 +1,140 @@
+---
+// Plantilla «Ficha de hardware»: cabecera con imagen, texto Markdown y, al lado, la ficha rápida
+// (tipo, placa, pines, entornos), las descargas y el índice. Abajo, anterior y siguiente de la misma placa.
+import type { MarkdownHeading } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { statSync } from 'node:fs';
+import { join } from 'node:path';
+import Base from './Base.astro';
+import { url } from '../lib/url';
+import { placas, rotuloDe, rutaHardware } from '../lib/hardware';
+
+interface Props {
+  entry: CollectionEntry<'hardware'>;
+  /** Todas las fichas publicadas, para las migas de pan y el anterior/siguiente */
+  todas: CollectionEntry<'hardware'>[];
+  headings: MarkdownHeading[];
+}
+const { entry, todas, headings } = Astro.props;
+const d = entry.data;
+const ruta = rutaHardware(entry);
+const toc = headings.filter((h) => h.depth === 2);
+const placa = d.board && placas[d.board];
+
+// Migas: Ecosistema (la maqueta, como en el menú, hasta que exista la página) y las fichas que cuelgan por encima
+const tramos = ruta.split('/').slice(1, -1);
+const crumbs = tramos.map((_, i) => {
+  const padre = ['ecosistema', ...tramos.slice(0, i + 1)].join('/');
+  const p = todas.find((t) => rutaHardware(t) === padre);
+  return { title: p?.data.title ?? placas[tramos[i]] ?? tramos[i], href: p ? url(`${padre}/`) : undefined };
+});
+
+// Anterior y siguiente: fichas del mismo tipo y la misma placa, por `order`
+const hermanas = todas
+  .filter((t) => t.data.kind === d.kind && t.data.board === d.board)
+  .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'));
+const i = hermanas.findIndex((t) => t.id === entry.id);
+const anterior = hermanas[i - 1];
+const siguiente = hermanas[i + 1];
+
+// Descargas: tipo y tamaño a partir del fichero en public/
+const kb = (bytes: number) => (bytes < 1024 * 1024 ? `${Math.round(bytes / 1024)} KB` : `${(bytes / 1024 / 1024).toFixed(1)} MB`);
+const descargas = d.downloads.map((dl) => {
+  const nombre = dl.file.split('/').pop()!;
+  return {
+    ...dl,
+    href: url(dl.file.replace(/^\//, '')),
+    tipo: nombre.split('.').pop()!.toUpperCase(),
+    meta: `${nombre} · ${kb(statSync(join(process.cwd(), 'public', dl.file)).size)}`,
+  };
+});
+---
+<Base title={d.title} description={d.description} section="ecosistema">
+<main id="contenido">
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href={url()}>Inicio</a></li>
+          <li><a href={url('maquetas/indice-seccion/')}>Ecosistema</a></li>
+          {crumbs.map((c) => <li>{c.href ? <a href={c.href}>{c.title}</a> : c.title}</li>)}
+          <li><span aria-current="page">{d.title}</span></li>
+        </ol>
+      </nav>
+      <div class="hw-head">
+        <div>
+          <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg> {rotuloDe(d)}</p>
+          <h1>{d.title}</h1>
+          <p class="lead">{d.description}</p>
+          {placa && (
+            <div class="compat" aria-label="Placas compatibles">
+              <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>{placa}</span>
+            </div>
+          )}
+        </div>
+        <figure class="hw-head__img">
+          <Image src={d.image} alt={d.imageAlt} widths={[300, 600]} sizes="300px" />
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap with-aside with-aside--facts-first">
+    <article class="prose">
+      <slot />
+
+      {(anterior || siguiente) && (
+        <nav class="pager" aria-label={`Otras fichas de ${placa ?? 'la placa'}`}>
+          {anterior && <a href={url(`${rutaHardware(anterior)}/`)}><small>← Anterior</small><strong>{anterior.data.title}</strong></a>}
+          {siguiente && <a class="next" href={url(`${rutaHardware(siguiente)}/`)}><small>Siguiente →</small><strong>{siguiente.data.title}</strong></a>}
+        </nav>
+      )}
+    </article>
+
+    <aside class="aside-stack aside-stack--sticky">
+      <section class="factsheet" aria-labelledby="ficha-t">
+        <h2 id="ficha-t">Ficha rápida</h2>
+        <dl>
+          <div><dt>Tipo</dt><dd>{rotuloDe(d)}</dd></div>
+          {placa && <div><dt>Placa</dt><dd>{placa}</dd></div>}
+          {d.tools.length > 0 && <div><dt>Se programa con</dt><dd>{d.tools.join(', ')}</dd></div>}
+        </dl>
+        {d.pins.length > 0 && (
+          <div class="table-wrap factsheet__pins">
+            <table>
+              <caption class="sr-only">Pines</caption>
+              <thead><tr><th scope="col">Pin</th><th scope="col">Qué es</th><th scope="col">Modo</th></tr></thead>
+              <tbody>
+                {d.pins.map((p) => <tr><td class="pin">{p.pin}</td><td>{p.name}</td><td>{p.mode}</td></tr>)}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
+      {descargas.length > 0 && (
+        <section aria-labelledby="desc-t">
+          <h2 id="desc-t" class="sr-only">Descargas</h2>
+          <div class="download-list">
+            {descargas.map((dl) => (
+              <a class="download" href={dl.href} download>
+                <span class="download__type">{dl.tipo}</span>
+                <span><span class="download__name">{dl.label}</span><span class="download__meta">{dl.meta}</span></span>
+                <svg class="icon download__arrow" aria-hidden="true"><use href="#i-download"/></svg>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+      {toc.length > 0 && (
+        <nav class="toc toc--desktop" aria-label="En esta página">
+          <h2>En esta página</h2>
+          <ol>
+            {toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+          </ol>
+        </nav>
+      )}
+    </aside>
+  </div>
+</main>
+</Base>

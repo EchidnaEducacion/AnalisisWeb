@@ -129,7 +129,7 @@ a { color: var(--brand-ink); text-decoration-thickness: .08em; text-underline-of
 a:hover { color: var(--brand-strong); text-decoration-thickness: .14em; }
 :focus-visible { outline: none; box-shadow: var(--focus); border-radius: 6px; }
 
-code, kbd, pre { font-family: var(--font-mono); font-size: .9em; }
+code, kbd, pre { font-family: var(--font-mono); font-size: .9em; font-variant-ligatures: none; } /* sin ligaduras: <= y ++ se ven tal cual se escriben */
 :not(pre) > code { background: var(--surface-2); border: 1px solid var(--line); padding: .08em .38em; border-radius: 6px; }
 kbd { background: var(--surface); border: 1px solid var(--line-strong); border-bottom-width: 3px; border-radius: 6px; padding: .05em .4em; font-size: .82em; }
 pre { background: #1d1a16; color: #f3eee7; padding: 1.1rem 1.25rem; border-radius: var(--radius); overflow-x: auto; line-height: 1.55; }
@@ -552,6 +552,17 @@ tbody tr:last-child td { border-bottom: 0; }
 .hw-head { display: grid; gap: 2rem; align-items: center; }
 @media (min-width: 860px) { .hw-head { grid-template-columns: 1fr 380px; } }
 .compat { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+.hw-head__img { margin: 0; display: grid; place-items: center; padding: 1rem; border-radius: var(--radius-l); background: var(--surface); border: 1px solid var(--line); }
+.hw-head__img img { width: auto; max-width: 100%; max-height: 280px; height: auto; }
+@media (max-width: 859px) { .hw-head__img img { max-height: 200px; } }
+.factsheet__pins { margin: 1.2rem 0 0; }
+.factsheet__pins table { font-size: .88rem; }
+.factsheet__pins th, .factsheet__pins td { padding: .5rem .6rem; }
+.prose img { height: auto; }
+/* Lupas sobre la placa (imágenes lupa-*.png): a media columna; en móvil, al menos 320 px */
+.prose img[src*="/lupa-"] { width: max(50%, min(100%, 320px)); }
+/* Bloques de EchidnaML (imágenes bloque-*.png): todos a la misma altura, sea cual sea la captura */
+.prose img[src*="/bloque-"] { height: 4rem; width: auto; max-width: 100%; object-fit: contain; object-position: left; }
 
 /* Actividad */
 .activity-code { display: inline-grid; place-items: center; min-width: 64px; height: 64px; padding: 0 .6rem; border-radius: 18px; background: var(--accent); color: var(--surface); font-family: var(--font-head); font-weight: 800; font-size: 1.3rem; }

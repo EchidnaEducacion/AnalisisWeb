@@ -52,13 +52,16 @@ web/
 │   ├── content.config.ts    # colecciones y su esquema (ver modelo-contenido.md)
 │   ├── content/paginas/es/  # páginas en Markdown: la ruta del fichero es la URL
 │   ├── content/autores.yaml # autores del blog y equipo de Sobre el proyecto
+│   ├── content/hardware/es/ # fichas de hardware: carpeta con index.md e imágenes, URL bajo /ecosistema/
 │   ├── layouts/
 │   │   ├── Base.astro       # <head>, iconos, cabecera, pie y scripts
-│   │   └── Pagina.astro     # plantilla «Página genérica»
+│   │   ├── Pagina.astro     # plantilla «Página genérica»
+│   │   └── Ficha.astro      # plantilla «Ficha de hardware»
 │   ├── components/          # Cabecera (menú activo según `section`), Pie, Iconos (sprite SVG)
-│   ├── lib/                 # url(): rutas con `base`; paginas.ts: URL y sección de cada página
+│   ├── lib/                 # url(): rutas con `base`; paginas.ts y hardware.ts: URL de cada página o ficha
 │   └── pages/
 │       ├── [...slug].astro  # genera las páginas de la colección `paginas`
+│       ├── ecosistema/[...slug].astro # genera las fichas de la colección `hardware`
 │       ├── index.astro      # «Propuesta de plantillas», hasta que exista la portada real
 │       ├── 404.astro
 │       └── maquetas/*.astro # maquetas de cada plantilla, con contenido escrito a mano
@@ -83,14 +86,16 @@ Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que 
 
 ## Páginas reales
 
-El contenido está en `src/content/`, validado por el esquema de `src/content.config.ts` (si falta un campo o no cumple el formato, el *build* falla e indica el fichero). Por ahora existen la colección `paginas`, con las plantillas «Página genérica» y «Contacto», y la lista `autores`.
+El contenido está en `src/content/`, validado por el esquema de `src/content.config.ts` (si falta un campo o no cumple el formato, el *build* falla e indica el fichero). Por ahora existen la colección `paginas`, con las plantillas «Página genérica» y «Contacto»; la colección `hardware`, con la «Ficha de hardware»; y la lista `autores`.
 
-- **La ruta del fichero es la URL**, dentro de la carpeta del idioma: `src/content/paginas/es/politica-privacidad.md` → `/politica-privacidad/`; `es/quienes-somos/licencias.md` → `/quienes-somos/licencias/`.
+- **La ruta del fichero es la URL**, dentro de la carpeta del idioma: `src/content/paginas/es/politica-privacidad.md` → `/politica-privacidad/`; `es/quienes-somos/licencias.md` → `/quienes-somos/licencias/`. Las fichas de hardware cuelgan de `/ecosistema/` y cada una es una carpeta con sus imágenes: `src/content/hardware/es/echidnablack2/leds/index.md` → `/ecosistema/echidnablack2/leds/`. Sus descargas (PDF…) van en `public/` con la misma ruta.
 - **Enlaces en el Markdown**: los internos se escriben sin `base` (`[contacto](/contacta/)`); un plugin de Sätteri (el procesador de Markdown de Astro 7), definido en `astro.config.mjs`, se lo añade al compilar.
 - **Tablas en el Markdown**: otro plugin de Sätteri las mete en un `div.table-wrap`, como en las plantillas, para que tengan marco y se desplacen dentro de él en móvil en vez de ensanchar la página.
+- **Bloques de EchidnaML**: las capturas de bloques se llaman `bloque-*.png` (p. ej. `bloque-led-verde.png`) y la web las muestra todas a la misma altura, aunque se hayan capturado a escalas distintas.
+- **Lupas sobre la placa**: las imágenes que amplían un componente en la placa se llaman `lupa-*.png` (p. ej. `lupa-leds.png`) y se muestran a media columna.
 - **Índice lateral** «En esta página»: solo sale si la página lleva `toc: true` en el *front matter* (para páginas largas); se genera con sus `h2`.
 - **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
 
-Páginas hechas: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) y Licencias (`quienes-somos/licencias.md`).
+Páginas hechas: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) y Licencias (`quienes-somos/licencias.md`). Fichas hechas: LEDs ROG.
 
 Las imágenes son marcadores (`.ph`) que se sustituirán por las fotos reales optimizadas por Astro. El buscador muestra resultados de ejemplo; en Astro se conectará con Pagefind.
