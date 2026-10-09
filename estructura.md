@@ -92,7 +92,7 @@ Pie (fuera del menú, en todas las páginas)
 |---|---|---|---|
 | 0 | Inicio | `/` | Portada |
 | 1 | Ecosistema | `/ecosistema/` | Índice de sección |
-| 2 | 1.1 EchidnaML | `/ecosistema/echidnaml/` | Página genérica (presenta EchidnaML y enlaza a sus páginas hijas) |
+| 2 | 1.1 EchidnaML | `/ecosistema/echidnaml/` | Índice de sección (presenta EchidnaML y muestra una tarjeta por cada página hija) |
 | 3 | 1.1.1 Descarga | `/ecosistema/echidnaml/descarga/` | Página genérica |
 | 3 | 1.1.2 Primeros pasos | `/ecosistema/echidnaml/primeros-pasos/` | Página genérica |
 | 3 | 1.1.3 Instalar StandardFirmata | `/ecosistema/echidnaml/instalar-standardfirmata/` | Página genérica |
