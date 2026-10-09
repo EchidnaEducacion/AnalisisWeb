@@ -62,6 +62,8 @@ const hardware = defineCollection({
         imageAlt: texto(),
         // Tabla de pines de la ficha rápida, p. ej. { pin: "D11~", name: "LED verde", mode: "Salida digital y PWM" }
         pins: z.array(z.object({ pin: texto(), name: texto(), mode: texto() })).default([]),
+        // Datos de la ficha rápida, p. ej. { label: "Microcontrolador", value: "ATmega328P a 16 MHz" }
+        specs: z.array(z.object({ label: texto(), value: texto() })).default([]),
         // Entornos con los que se programa
         tools: z.array(texto()).default([]),
         // Ficheros en public/: file es la ruta sin base (/ecosistema/…/hoja.pdf)

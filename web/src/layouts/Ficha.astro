@@ -19,8 +19,21 @@ interface Props {
 const { entry, todas, headings } = Astro.props;
 const d = entry.data;
 const ruta = rutaHardware(entry);
-const toc = headings.filter((h) => h.depth === 2);
 const placa = d.board && placas[d.board];
+
+// En las placas: tarjetas de sus componentes (solo los que ya tienen ficha), por `order`
+const idPlaca = ruta.split('/')[1];
+const componentes = d.kind === 'placa'
+  ? todas
+      .filter((t) => t.data.kind === 'componente' && t.data.board === idPlaca)
+      .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'))
+  : [];
+
+// Índice: los h2 del Markdown y, si hay, el apartado de componentes que añade la plantilla
+const toc = [
+  ...headings.filter((h) => h.depth === 2),
+  ...(componentes.length ? [{ slug: 'componentes', text: 'Componentes' }] : []),
+];
 
 // Migas: Ecosistema (la maqueta, como en el menú, hasta que exista la página) y las fichas que cuelgan por encima
 const tramos = ruta.split('/').slice(1, -1);
@@ -84,6 +97,26 @@ const descargas = d.downloads.map((dl) => {
     <article class="prose">
       <slot />
 
+      {componentes.length > 0 && (
+        <>
+          <h2 id="componentes">Componentes</h2>
+          <ul class="hw-cards grid grid--4">
+            {componentes.map((c) => (
+              <li class="card">
+                <div class="hw-cards__img">
+                  <Image src={c.data.image} alt="" widths={[240, 480]} sizes="240px" />
+                </div>
+                <div class="card__body">
+                  {c.data.io && <span class="chip">{c.data.io[0].toUpperCase() + c.data.io.slice(1)}</span>}
+                  <h3 class="card__title"><a class="card__link" href={url(`${rutaHardware(c)}/`)}>{c.data.title}</a></h3>
+                  <p class="card__text">{c.data.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
       {(anterior || siguiente) && (
         <nav class="pager" aria-label={`Otras fichas de ${placa ?? 'la placa'}`}>
           {anterior && <a href={url(`${rutaHardware(anterior)}/`)}><small>← Anterior</small><strong>{anterior.data.title}</strong></a>}
@@ -98,6 +131,7 @@ const descargas = d.downloads.map((dl) => {
         <dl>
           <div><dt>Tipo</dt><dd>{rotuloDe(d)}</dd></div>
           {placa && <div><dt>Placa</dt><dd>{placa}</dd></div>}
+          {d.specs.map((sp) => <div><dt>{sp.label}</dt><dd>{sp.value}</dd></div>)}
           {d.tools.length > 0 && <div><dt>Se programa con</dt><dd>{d.tools.join(', ')}</dd></div>}
         </dl>
         {d.pins.length > 0 && (
@@ -111,6 +145,8 @@ const descargas = d.downloads.map((dl) => {
             </table>
           </div>
         )}
+        {/* En las placas: cómo conseguir una (página «Quiero una», fuera del menú) */}
+        {d.kind === 'placa' && <a class="btn" href={url('quiero-una/')}>Quiero una</a>}
       </section>
       {descargas.length > 0 && (
         <section aria-labelledby="desc-t">
