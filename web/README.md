@@ -24,7 +24,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 | 2 | Portada | `src/pages/maquetas/portada.astro` | `/` |
 | 3 | Índice de sección | `src/pages/maquetas/indice-seccion.astro` | `/ecosistema/` |
 | 3 | Índice de sección (agrupado por títulos) | `src/pages/maquetas/alumnado.astro`, `src/pages/maquetas/docentes.astro` | `/alumnado/`, `/docentes/` |
-| 4 | Ficha de hardware | `src/pages/maquetas/ficha-hardware.astro` | `/ecosistema/echidnablack2/leds/` |
+| 4 | Ficha de hardware | `src/layouts/Ficha.astro` (plantilla real; maqueta borrada) | `/ecosistema/echidnablack2/`, `/ecosistema/echidnablack2/leds/` |
 | 5 | Página genérica | `src/layouts/Pagina.astro` (plantilla real; maqueta borrada) | `/quienes-somos/` |
 | 6 | Contacto | `src/pages/maquetas/contacto.astro` | `/contacta/` |
 | 7 | Entrada de blog | `src/pages/maquetas/entrada-blog.astro` | `/AAAA/MM/slug/` |
