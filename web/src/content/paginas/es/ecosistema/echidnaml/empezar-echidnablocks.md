@@ -4,6 +4,10 @@ description: El entorno de EchidnaBlocks, cómo se comunica con la placa, el men
 template: pagina
 order: 3
 toc: true
+cards:
+  - title: Proyectos de inicio con EchidnaML
+    text: Proyectos sencillos, paso a paso, para seguir aprendiendo a programar la placa con EchidnaBlocks.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/
 ---
 
 **EchidnaBlocks** es una versión de [Scratch](https://scratch.mit.edu/) con bloques propios para controlar la placa EchidnaBlack y para usar modelos de inteligencia artificial creados con LearningML. Si aún no has conectado la placa, empieza por [Conectar EchidnaML y EchidnaBlack](/ecosistema/echidnaml/conectar-placa/).
@@ -47,3 +51,7 @@ El programa empieza con el bloque **al hacer clic en** (la bandera verde): todo 
 2. **esperar 1 segundos**: lo mantiene encendido un segundo.
 3. **apagar LED rojo**: lo apaga.
 4. **esperar 1 segundos**: lo mantiene apagado un segundo antes de volver al paso 1.
+
+## Sigue aprendiendo
+
+Cuando domines el «Hola, mundo», continúa con los proyectos de inicio:

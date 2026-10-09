@@ -35,6 +35,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `order` | número | No (0) | Orden de la tarjeta en el índice de la sección |
 | `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta. En los índices de sección añade además, arriba, los enlaces a sus páginas hijas, para que se vean sin bajar hasta las tarjetas (p. ej. Descarga en EchidnaML) |
 | `team` | lista de identificadores de la lista de autores | No | Fichas del equipo al final del texto, en ese orden (en Sobre el proyecto) |
+| `cards` | lista de `{ title, text, href }` | No | Tarjetas de enlace al final del texto (p. ej. a los Proyectos de inicio con EchidnaML). `href` es una URL externa o una ruta interna sin `base` |
 | `image` | imagen | No | Imagen de la tarjeta y al compartir en redes |
 | `translation` | ruta | No | Versión en el otro idioma |
 | `draft` | sí/no | No (no) | Página a medias sin publicar |

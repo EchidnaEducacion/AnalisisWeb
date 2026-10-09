@@ -1,10 +1,11 @@
 ---
 // Plantilla «Página genérica»: título, entradilla, cuerpo Markdown y, si la página lo pide,
-// índice lateral con los h2 (toc) y fichas del equipo al final (team)
+// índice lateral con los h2 (toc), fichas del equipo (team) y tarjetas de enlace (cards) al final
 import type { MarkdownHeading } from 'astro';
 import Base from './Base.astro';
 import CabeceraPagina from '../components/CabeceraPagina.astro';
 import Equipo from '../components/Equipo.astro';
+import { url } from '../lib/url';
 
 interface Props {
   title: string;
@@ -15,8 +16,12 @@ interface Props {
   headings: MarkdownHeading[];
   /** Equipo que se muestra después del texto */
   team?: { collection: 'autores'; id: string }[];
+  /** Tarjetas de enlace que se muestran después del texto */
+  cards?: { title: string; text: string; href: string }[];
 }
-const { title, description, section, crumbs = [], headings, team } = Astro.props;
+const { title, description, section, crumbs = [], headings, team, cards = [] } = Astro.props;
+// Las rutas internas llevan base; las URL externas, no
+const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
 const toc = headings.filter((h) => h.depth === 2);
 ---
 <Base title={title} description={description} section={section}>
@@ -35,6 +40,18 @@ const toc = headings.filter((h) => h.depth === 2);
     <article class="prose">
       <slot />
       {team && <Equipo ids={team} />}
+      {cards.length > 0 && (
+        <ul class="img-cards grid grid--2">
+          {cards.map((c) => (
+            <li class="card">
+              <div class="card__body">
+                <h2 class="card__title"><a class="card__link" href={enlace(c.href)}>{c.title}</a></h2>
+                <p class="card__text">{c.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </article>
   </div>
 </main>
