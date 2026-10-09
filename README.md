@@ -93,7 +93,7 @@ Se hace en el mismo proyecto [`web/`](web/). No hay dos juegos de plantillas: un
 
 ### Paso 4 – Migración por secciones
 
-1. **Ecosistema**: EchidnaBlack2 con sus componentes y complementos, EchidnaML (1.1 a 1.1.3), Placas anteriores (con sus PDF) y Entornos compatibles.
+1. **Ecosistema**: EchidnaBlack2 con sus componentes y complementos, EchidnaML (1.1 a 1.1.5), Placas anteriores (con sus PDF) y Entornos compatibles.
 2. **Materiales alumnado y Recursos docentes**: fichas de la colección `recursos` y recursos alojados sin plantilla (exportaciones de eXeLearning, diapositivas, guías docentes).
 3. **Quiénes somos, Contacta, Quiero una y pie** (política de privacidad y licencias).
 4. **Blog** (61 entradas, la parte más sencilla).
@@ -159,7 +159,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] Dar de alta la web en GoatCounter y añadir su script en el layout `Base` (`web/src/layouts/Base.astro`). La política de privacidad ya lo menciona.
 - [ ] Servir las tipografías desde la propia web en lugar de Google Fonts, para no enviar a Google la IP de las visitas. Después, quitar esa línea de la política de privacidad.
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
-- [ ] Hacer capturas nuevas para 1.1.2 Primeros pasos y 1.1.3 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
+- [ ] Hacer capturas nuevas para 1.1.4 Empezar con LearningML y 1.1.5 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress y guardarlos en `web/public/ecosistema/placas-anteriores/`.
 - [ ] **Licencia del hardware**: no se permite su reproducción con fines comerciales; falta que el responsable del diseño electrónico elija una licencia compatible con eso. Hay cuatro incoherencias que resolver (web actual, certificación OSHWA, repositorio `recursos` y web nueva), detalladas en [`estructura.md`](estructura.md#pendiente).

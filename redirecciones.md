@@ -27,11 +27,11 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 | `/a-programar/` | `/ecosistema/` | Redirige |  |
 | `/a-programar/echidnaml/` | `/ecosistema/echidnaml/` | Redirige |  |
 | `/a-programar/echidnaml/descarga/` | `/ecosistema/echidnaml/descarga/` | Redirige | Pasa a 1.1.1 |
-| `/a-programar/echidnaml/como-empezar-con-machine-learning-y-echidna/` | `/ecosistema/echidnaml/primeros-pasos/` | Redirige | El contenido pasa a 1.1.2 Primeros pasos |
-| `/a-programar/echidnaml/conectar-echidnaml-y-echidna/` | `/ecosistema/echidnaml/primeros-pasos/` | Redirige | El contenido pasa a 1.1.2 Primeros pasos |
-| `/a-programar/echidnaml/empezar-con-echidnaml-y-echidnablocks/` | `/ecosistema/echidnaml/primeros-pasos/` | Redirige | El contenido pasa a 1.1.2 Primeros pasos |
+| `/a-programar/echidnaml/como-empezar-con-machine-learning-y-echidna/` | `/ecosistema/echidnaml/empezar-learningml/` | Redirige | Pasa a 1.1.4 |
+| `/a-programar/echidnaml/conectar-echidnaml-y-echidna/` | `/ecosistema/echidnaml/conectar-placa/` | Redirige | Pasa a 1.1.2 |
+| `/a-programar/echidnaml/empezar-con-echidnaml-y-echidnablocks/` | `/ecosistema/echidnaml/empezar-echidnablocks/` | Redirige | Pasa a 1.1.3 |
 | `/a-programar/echidnascratch/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML |
-| `/a-programar/instalar-standardfirmata/` | `/ecosistema/echidnaml/instalar-standardfirmata/` | Redirige | Pasa a 1.1.3 |
+| `/a-programar/instalar-standardfirmata/` | `/ecosistema/echidnaml/instalar-standardfirmata/` | Redirige | Pasa a 1.1.5 |
 | `/didactica/` | `/alumnado/` | Redirige |  |
 | `/didactica/actividades/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |
 | `/didactica/actividades/es01-hola-erizo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Actividad antigua, integrada en las diapositivas de la Guía de inicio EchidnaML |

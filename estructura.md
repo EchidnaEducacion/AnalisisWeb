@@ -18,8 +18,10 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 ├── 1. Ecosistema
 │   ├── 1.1 EchidnaML
 │   │   ├── 1.1.1 Descarga
-│   │   ├── 1.1.2 Primeros pasos
-│   │   └── 1.1.3 Instalar StandardFirmata
+│   │   ├── 1.1.2 Conectar EchidnaML y la EchidnaBlack2
+│   │   ├── 1.1.3 Empezar con EchidnaBlocks
+│   │   ├── 1.1.4 Empezar con LearningML
+│   │   └── 1.1.5 Instalar StandardFirmata
 │   ├── 1.2 EchidnaBlack2
 │   │   ├── 1.2.1 Pulsadores
 │   │   ├── 1.2.2 Joystick
@@ -94,8 +96,10 @@ Pie (fuera del menú, en todas las páginas)
 | 1 | Ecosistema | `/ecosistema/` | Índice de sección |
 | 2 | 1.1 EchidnaML | `/ecosistema/echidnaml/` | Índice de sección (presenta EchidnaML y muestra una tarjeta por cada página hija) |
 | 3 | 1.1.1 Descarga | `/ecosistema/echidnaml/descarga/` | Página genérica |
-| 3 | 1.1.2 Primeros pasos | `/ecosistema/echidnaml/primeros-pasos/` | Página genérica |
-| 3 | 1.1.3 Instalar StandardFirmata | `/ecosistema/echidnaml/instalar-standardfirmata/` | Página genérica |
+| 3 | 1.1.2 Conectar EchidnaML y la EchidnaBlack2 | `/ecosistema/echidnaml/conectar-placa/` | Página genérica |
+| 3 | 1.1.3 Empezar con EchidnaBlocks | `/ecosistema/echidnaml/empezar-echidnablocks/` | Página genérica |
+| 3 | 1.1.4 Empezar con LearningML | `/ecosistema/echidnaml/empezar-learningml/` | Página genérica |
+| 3 | 1.1.5 Instalar StandardFirmata | `/ecosistema/echidnaml/instalar-standardfirmata/` | Página genérica |
 | 2 | 1.2 EchidnaBlack2 | `/ecosistema/echidnablack2/` | Ficha de hardware (lista sus componentes y páginas hijas) |
 | 3 | 1.2.1 Pulsadores | `/ecosistema/echidnablack2/pulsadores/` | Ficha de hardware |
 | 3 | 1.2.2 Joystick | `/ecosistema/echidnablack2/joystick/` | Ficha de hardware |
@@ -212,6 +216,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 - [x] Política de privacidad y licencias: enlazadas en el pie, fuera del menú, con sus URL actuales (`/politica-privacidad/` y `/quienes-somos/licencias/`), así que no necesitan redirección.
 - [x] «Entornos compatibles» ya no se repite: queda en 1.4 y Materiales alumnado se divide por entorno (después simplificado a una sola página con títulos por entorno).
 - [x] Apartados de EchidnaML en alumnado: «Proyectos de inicio» son ejemplos sencillos que el alumnado hace solo (guía externa); «Situaciones de aprendizaje» son las actividades curriculares (REA); «Proyectos» son proyectos al estilo de la guía rápida. Las situaciones de aprendizaje se quedan en alumnado, y su parte para el docente (guía, evaluación) se enlaza desde su grupo en Recursos docentes.
+- [x] EchidnaML conserva las páginas de la web actual: Descarga, Conectar EchidnaML y la EchidnaBlack2, Empezar con EchidnaBlocks, Empezar con LearningML e Instalar StandardFirmata (1.1.1 a 1.1.5). No se juntan en una sola página de primeros pasos.
 - [x] Se mantienen separados Materiales alumnado y Recursos docentes. Para que el docente no tenga que adivinar, la portada y cada sección enlazan a la otra cuando hay material relacionado.
 - [x] «Quiero una» es una página propia con su URL actual (`/quiero-una/`), fuera del menú. Como somos una asociación sin ánimo de lucro, no lleva botón en la cabecera: se enlaza desde 1.2 y el pie. En la portada, la tercera entrada por perfil es «Conoce la EchidnaBlack2».
 - [x] GitHub: icono en el pie, junto a las redes sociales. «Repositorio GitHub» pasa a «Cómo colaborar» (hoy 3.8, `/docentes/colabora/`), una página que explica cómo contribuir y resume los repositorios de la organización.
