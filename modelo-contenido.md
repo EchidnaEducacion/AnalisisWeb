@@ -33,6 +33,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `description` | texto no vacío, 50–160 caracteres | Sí | Resumen para buscadores y para la tarjeta en el índice de la sección |
 | `template` | `pagina` · `indice` · `contacto` · `portada` | Sí | Plantilla que usa la página; ninguna cae en una genérica por defecto |
 | `order` | número | No (0) | Orden de la tarjeta en el índice de la sección |
+| `listed` | sí/no | No (sí) | Con `false`, la página no sale en el índice de su sección, ni como tarjeta ni en su índice lateral; se llega a ella por enlaces (p. ej. Instalar StandardFirmata, enlazada desde Conectar EchidnaML y EchidnaBlack) |
 | `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta. En los índices de sección añade además, arriba, los enlaces a sus páginas hijas, para que se vean sin bajar hasta las tarjetas (p. ej. Descarga en EchidnaML) |
 | `team` | lista de identificadores de la lista de autores | No | Fichas del equipo al final del texto, en ese orden (en Sobre el proyecto) |
 | `cards` | lista de `{ title, text, href }` | No | Tarjetas de enlace al final del texto (p. ej. a los Proyectos de inicio con EchidnaML). `href` es una URL externa o una ruta interna sin `base` |

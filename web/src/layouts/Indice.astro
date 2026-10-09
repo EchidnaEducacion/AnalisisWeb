@@ -1,6 +1,6 @@
 ---
 // Plantilla «Índice de sección»: cabecera, introducción en Markdown y una tarjeta por cada
-// página hija directa que exista, sea de `paginas` o una ficha de `hardware`, por `order`.
+// página hija directa que exista (salvo las que llevan `listed: false`), sea de `paginas` o una ficha de `hardware`, por `order`.
 // Con `toc`, un índice lateral con los apartados del texto y enlaces directos a las hijas.
 import type { MarkdownHeading } from 'astro';
 import { Image } from 'astro:assets';
@@ -32,7 +32,7 @@ const hijas: Hija[] = [
   ...paginas.map((p) => ({ ruta: rutaDe(p), data: p.data })),
   ...fichas.map((h) => ({ ruta: rutaHardware(h), data: h.data })),
 ]
-  .filter((h) => esHija(h.ruta))
+  .filter((h) => esHija(h.ruta) && (!('listed' in h.data) || h.data.listed))
   .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'));
 const toc = headings.filter((h) => h.depth === 2);
 const conIndice = headings.length > 0;

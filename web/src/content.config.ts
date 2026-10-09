@@ -19,6 +19,8 @@ const paginas = defineCollection({
         .max(160, 'La descripción no puede pasar de 160 caracteres'),
       template: z.enum(['pagina', 'indice', 'contacto', 'portada']),
       order: z.number().default(0),
+      // false: no sale en el índice de su sección, ni como tarjeta ni en el índice lateral
+      listed: z.boolean().default(true),
       // Índice lateral «En esta página» con los h2: solo en páginas largas
       toc: z.boolean().default(false),
       // Fichas del equipo al final de la página, por id de `autores`

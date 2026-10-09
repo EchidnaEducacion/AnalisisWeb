@@ -3,6 +3,7 @@ title: Instalar StandardFirmata
 description: Qué es Firmata, el programa de la placa que la comunica con EchidnaML, y cómo volver a instalar StandardFirmata con el IDE de Arduino si hace falta.
 template: pagina
 order: 5
+listed: false
 toc: true
 ---
 
