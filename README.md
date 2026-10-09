@@ -127,7 +127,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 | Contacto | ✅ `layouts/Contacto.astro` (sin envío real) | [Contacta](https://echidnaeducacion.github.io/AnalisisWeb/contacta/) | Se queda |
 | Entrada de blog | — | — | Se queda |
 | Listado / taxonomía | — | — | Se queda |
-| Error 404 | — | — | Se queda |
+| Error 404 | ✅ `pages/404.astro` (sin colección) | [Página no encontrada](https://echidnaeducacion.github.io/AnalisisWeb/no-existe/) | Borrada (era la propia página) |
 
 **Plantilla real**: ✅ cuando el *layout* está alimentado por su colección. **Maqueta**: «Borrada» cuando la plantilla real la iguala.
 

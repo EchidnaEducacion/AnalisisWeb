@@ -58,6 +58,13 @@
       if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing)) { e.preventDefault(); open(); }
     });
     dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+    // Formularios de búsqueda de la página (p. ej. el de la 404): abren el buscador con el texto escrito
+    document.querySelectorAll('[data-search-form]').forEach((form) => form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = dialog.querySelector('input');
+      if (q) q.value = form.querySelector('input')?.value.trim() || q.value;
+      open();
+    }));
   }
 
   // Vídeos/presentaciones: el iframe solo se carga al pulsar (privacidad y rendimiento)

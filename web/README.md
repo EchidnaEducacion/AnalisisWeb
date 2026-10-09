@@ -29,7 +29,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 | 6 | Contacto | `src/pages/maquetas/contacto.astro` | `/contacta/` |
 | 7 | Entrada de blog | `src/pages/maquetas/entrada-blog.astro` | `/AAAA/MM/slug/` |
 | 8 | Listado / taxonomía | `src/pages/maquetas/listado.astro` | `/blog/`, categorías, etiquetas, autores |
-| 9 | Error 404 | `src/pages/404.astro` | — |
+| 9 | Error 404 | `src/pages/404.astro` (plantilla real; no usa colección) | cualquier URL que no exista |
 | + | Componentes de contenido (MDX) | `src/pages/maquetas/componentes.astro` | Aviso, Descarga, Vídeo, Galería, Tarjeta |
 
 ## Línea de diseño

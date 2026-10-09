@@ -7,20 +7,19 @@ import Base from '../layouts/Base.astro';
   description="La página que buscas no existe o ha cambiado de dirección."
 >
 <main id="contenido">
-  <!-- Plantilla: Error 404 -->
+  <!-- Plantilla: Error 404. Los enlaces van a las mismas direcciones que el menú -->
   <section class="wrap notfound">
-    <svg class="notfound__art" viewBox="0 0 240 120" aria-hidden="true">
-      <!-- Erizo buscando -->
-      <path fill="currentColor" d="M30 96 38 58l12 14 6-34 14 24 10-34 12 30 14-22 4 28 16-14 6 26c10 2 20 8 20 20z"/>
-      <circle cx="160" cy="88" r="4" fill="var(--bg)"/>
-      <circle cx="198" cy="64" r="16" fill="none" stroke="var(--ink)" stroke-width="6"/>
-      <path d="m210 76 16 16" stroke="var(--ink)" stroke-width="8" stroke-linecap="round"/>
-      <rect x="30" y="100" width="150" height="6" rx="3" fill="currentColor" opacity=".35"/>
+    <svg class="notfound__art" viewBox="0 0 300 140" aria-hidden="true">
+      <!-- El erizo del logo, buscando con la lupa -->
+      <ellipse cx="110" cy="128" rx="100" ry="7" fill="currentColor" opacity=".18"/>
+      <use href="#i-echidna" x="0" y="8" width="212" height="120"/>
+      <circle cx="252" cy="70" r="20" fill="none" stroke="var(--ink)" stroke-width="7"/>
+      <path d="m266 85 18 18" stroke="var(--ink)" stroke-width="9" stroke-linecap="round"/>
     </svg>
     <p class="notfound__code">404</p>
     <h1>Esta página se ha escondido</h1>
     <p class="lead">Puede que haya cambiado de dirección al renovar la web. Prueba a buscarla o vuelve a una de las secciones principales.</p>
-    <form role="search" onsubmit="event.preventDefault();document.querySelector('[data-open-search]').click()">
+    <form role="search" data-search-form>
       <label class="sr-only" for="q404">Buscar</label>
       <input id="q404" type="search" placeholder="¿Qué estabas buscando?">
       <button class="btn" type="submit"><svg aria-hidden="true"><use href="#i-search"/></svg> Buscar</button>
