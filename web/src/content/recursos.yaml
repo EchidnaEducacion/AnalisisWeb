@@ -19,7 +19,7 @@
   environment: EchidnaML
   group: Situaciones de aprendizaje
   type: Situación de aprendizaje
-  url: https://rea.echidna.es/02_SensorTemperatura/
+  url: https://echidnaeducacion.github.io/situaciones-aprendizaje/hace-calor-aqui/
   level: Primaria
   image: ./recursos/hace-calor-aqui.jpg
   order: 1
@@ -31,7 +31,7 @@
   environment: EchidnaML
   group: Situaciones de aprendizaje
   type: Situación de aprendizaje
-  url: https://rea.echidna.es/nocheydia/index.html
+  url: https://echidnaeducacion.github.io/situaciones-aprendizaje/del-alba-al-anochecer/
   level: Primaria
   image: ./recursos/del-alba-al-anochecer.jpg
   order: 2
@@ -43,7 +43,7 @@
   environment: EchidnaML
   group: Situaciones de aprendizaje
   type: Situación de aprendizaje
-  url: https://rea.echidna.es/P4LaTierraSeMueve/index.html
+  url: https://echidnaeducacion.github.io/situaciones-aprendizaje/la-tierra-se-mueve/
   level: Primaria
   image: ./recursos/la-tierra-se-mueve.jpg
   order: 3

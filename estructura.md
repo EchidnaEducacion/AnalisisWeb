@@ -131,7 +131,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 1.4 Entornos compatibles | `/ecosistema/entornos-compatibles/` | Página genérica |
 | 1 | Materiales alumnado | `/alumnado/` | Página genérica con la lista de `recursos` (`resources: alumnado`): un título por entorno, un subtítulo por grupo y tarjetas con miniatura |
 | 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` y alias `/guiainicioechidnaml/` (redirección a `echidnaeducacion.github.io/GuiaInicioEchidnaML/`) | — (repo `GuiaInicioEchidnaML`) |
-| 2 | 2.2 Situaciones de aprendizaje (cada una) | `rea.echidna.es/<recurso>/` y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning; pendiente de migrarlas a GitHub) |
+| 2 | 2.2 Situaciones de aprendizaje (cada una) | `echidnaeducacion.github.io/situaciones-aprendizaje/<recurso>/` y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning, repo `situaciones-aprendizaje`) |
 | 2 | 2.3 Manual de usuario | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
 | 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
 | 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en `echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | — (pendiente de alojarlo fuera de WordPress) |
@@ -164,7 +164,7 @@ Las URL del blog siguen el formato `/AAAA/MM/slug/`. El RSS se publica en `/rss.
 
 ### Recursos alojados sin plantilla
 
-Los materiales del alumnado son **enlaces externos**: la web solo los describe con una tarjeta (colección `recursos`). Las situaciones de aprendizaje son exportaciones de eXeLearning que hoy están en `rea.echidna.es`; se migrarán a GitHub (pendiente en el README) y, entonces, se cambiará la dirección de su tarjeta.
+Los materiales del alumnado son **enlaces externos**: la web solo los describe con una tarjeta (colección `recursos`). Las situaciones de aprendizaje propias son exportaciones de eXeLearning publicadas con GitHub Pages desde el repo [`situaciones-aprendizaje`](https://github.com/EchidnaEducacion/situaciones-aprendizaje), una carpeta por situación; las nuevas se añaden ahí.
 
 Lo mismo vale para los recursos docentes: por ejemplo, las diapositivas de la Guía de inicio EchidnaML van en `web/public/docentes/proyectos-inicio-echidnaml/diapositivas/`. Las rutas intermedias (`/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/`) no son páginas y redirigen a `/docentes/`.
 
@@ -240,7 +240,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
   Al decidirlo, corregir la página de licencias, la tabla de Sobre el proyecto, el pie y el repositorio `recursos`.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Se guardan dentro de la web, en `web/public/ecosistema/placas-anteriores/`.
 - [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno y subtítulos por grupo, y tarjetas con miniatura. Todos sus materiales son enlaces externos (decisión de octubre de 2026): por ahora, los dos Proyectos de inicio, cuatro situaciones de aprendizaje y el manual para FP. El resto (otros proyectos, Snap!…) está por hacer.
-- [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Cuando las situaciones de aprendizaje se migren a GitHub, redirigir `rea.echidna.es/<recurso>/` a su nueva dirección.
+- [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Redirigir `rea.echidna.es/<recurso>/` a su copia en `situaciones-aprendizaje` (ver `redirecciones.md`).
 - [x] La plantilla «Actividad» ya no hace falta: ni alumnado ni docentes la usan. Se quita de las páginas maestras del README.
 - [x] Cada situación de aprendizaje usa el mismo `<recurso>` en `/alumnado/situaciones-aprendizaje/` y en `/docentes/situaciones-aprendizaje/`.
 - [x] Quiénes somos es un menú desplegable con 5.1, 5.2 y 5.3. 5.1 Sobre el proyecto usa `/quienes-somos/`, así que no hay índice duplicado.

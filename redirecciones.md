@@ -192,9 +192,9 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 | URL antigua | URL nueva | Estado | Nota |
 |---|---|---|---|
 | `rea.echidna.es/` | `/alumnado/` | Redirige | Hoy su `meta refresh` apunta a `kuku.es`: corregir ya |
-| `rea.echidna.es/02_SensorTemperatura/` | Su copia en GitHub (dirección por decidir) | Pendiente | Al migrar las exportaciones de eXeLearning a GitHub; mientras, la tarjeta de `/alumnado/` enlaza a `rea.echidna.es` |
-| `rea.echidna.es/P4LaTierraSeMueve/` | Su copia en GitHub (dirección por decidir) | Pendiente | Ídem |
-| `rea.echidna.es/nocheydia/` | Su copia en GitHub (dirección por decidir) | Pendiente | Ídem |
+| `rea.echidna.es/02_SensorTemperatura/` | `echidnaeducacion.github.io/situaciones-aprendizaje/hace-calor-aqui/` | Externa | Copia migrada; falta la 301 en el servidor de `rea.echidna.es` |
+| `rea.echidna.es/P4LaTierraSeMueve/` | `echidnaeducacion.github.io/situaciones-aprendizaje/la-tierra-se-mueve/` | Externa | Ídem |
+| `rea.echidna.es/nocheydia/` | `echidnaeducacion.github.io/situaciones-aprendizaje/del-alba-al-anochecer/` | Externa | Ídem |
 | `/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/` | `/docentes/` | Redirige | Rutas intermedias sin página (p. ej. `/docentes/proyectos-inicio-echidnaml/`) |
 | `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | Repos de las guías | Externa | Alias en minúsculas |
 | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | `echidnaeducacion.github.io/<repo>/` | Externa | |
@@ -202,4 +202,4 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 ## Pendiente
 
 - [x] Páginas no indexadas: las actividades `s01`–`s10` y `p01` van a las diapositivas de la Guía de inicio EchidnaML; las subpáginas de EchidnaScratch, a 1.1.
-- [x] Las situaciones de aprendizaje de `rea.echidna.es` no se alojan en la web nueva: se migrarán a GitHub (octubre de 2026). Al hacerlo, sus nombres serán el de su carpeta en minúsculas y con guiones (`sensor-temperatura`, `la-tierra-se-mueve`, `noche-y-dia`).
+- [x] Las situaciones de aprendizaje de `rea.echidna.es` no se alojan en la web nueva: se migraron a GitHub en octubre de 2026, al repo `situaciones-aprendizaje`, con carpetas nombradas por el título en minúsculas y con guiones (`hace-calor-aqui`, `del-alba-al-anochecer`, `la-tierra-se-mueve`).
