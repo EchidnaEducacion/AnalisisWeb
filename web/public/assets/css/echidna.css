@@ -650,6 +650,13 @@ ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 .featured-post .ph { border-radius: 0; }
 .featured-post .card__body { padding: clamp(1.25rem, 1rem + 2vw, 2.25rem); justify-content: center; gap: .8rem; }
 .featured-post .card__title { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); }
+/* Miniaturas reales de las entradas (en las maquetas son marcadores .ph): 2:1, como las portadas */
+.post-thumb { aspect-ratio: 2 / 1; background: var(--surface-2); overflow: hidden; }
+.post-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Listado del blog: dos columnas de tarjetas junto al lateral, como en la web anterior */
+.blog-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); align-items: start; }
+.blog-list .card__meta { margin: 0; display: block; }
+@media (min-width: 860px) { .featured-post .post-thumb { aspect-ratio: auto; height: 100%; min-height: 320px; } }
 
 .pagination { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; margin-top: 3rem; }
 .pagination a, .pagination span { display: inline-grid; place-items: center; min-width: 46px; height: 46px; padding: 0 .8rem; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); text-decoration: none; color: var(--ink); font-weight: 700; }

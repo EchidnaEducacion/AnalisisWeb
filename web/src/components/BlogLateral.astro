@@ -1,0 +1,52 @@
+---
+// Lateral del blog (entradas y listado): todas las categorías con su número de entradas,
+// con las subcategorías bajo su madre, y las 5 entradas más recientes
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { url } from '../lib/url';
+import { fechaLarga, rutaEntrada } from '../lib/blog';
+
+interface Props {
+  /** Entradas publicadas, de la más reciente a la más antigua */
+  todas: CollectionEntry<'blog'>[];
+  /** Entrada actual, si la hay: se destacan sus categorías y no sale en las recientes */
+  actual?: CollectionEntry<'blog'>;
+}
+const { todas, actual } = Astro.props;
+// Mientras no existan las páginas de categoría, las categorías enlazan al listado
+const blog = url('blog/');
+
+const cuenta = (id: string) => todas.filter((t) => t.data.categories.some((c) => c.id === id)).length;
+const destacadas = new Set(actual?.data.categories.map((c) => c.id) ?? []);
+const categorias = await getCollection('categorias');
+const lista = categorias
+  .filter((c) => !c.data.parent)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'))
+  .flatMap((madre) => [
+    { ...madre, sub: false },
+    ...categorias.filter((c) => c.data.parent === madre.id).map((c) => ({ ...c, sub: true })),
+  ]);
+const recientes = todas.filter((t) => t.id !== actual?.id).slice(0, 5);
+---
+<aside class="aside-stack aside-stack--sticky" aria-label="Más del blog">
+  <section class="factsheet blog-aside" aria-labelledby="cat-t">
+    <h2 id="cat-t">Categorías</h2>
+    <ul class="blog-aside__list">
+      {lista.map((c) => (
+        <li class={c.sub ? 'is-sub' : undefined}>
+          <a href={blog} aria-current={destacadas.has(c.id) ? 'true' : undefined}>{c.data.name}</a>
+          <span class="blog-aside__count">{cuenta(c.id)}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+  {recientes.length > 0 && (
+    <section class="factsheet blog-aside" aria-labelledby="rec-t">
+      <h2 id="rec-t">Entradas recientes</h2>
+      <ul class="blog-aside__list blog-aside__list--recent">
+        {recientes.map((r) => (
+          <li><a href={url(`${rutaEntrada(r)}/`)}>{r.data.title}</a><small>{fechaLarga(r.data.date)}</small></li>
+        ))}
+      </ul>
+    </section>
+  )}
+</aside>
