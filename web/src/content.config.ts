@@ -100,4 +100,35 @@ const publicaciones = defineCollection({
   }),
 });
 
-export const collections = { paginas, autores, hardware, publicaciones };
+// Categorías del blog: el id es el de la URL /category/<id>/
+const categorias = defineCollection({
+  loader: file('./src/content/categorias.yaml'),
+  schema: z.object({
+    name: texto(),
+    parent: z.string().optional(),
+  }),
+});
+
+// Entradas del blog. La URL sale de la carpeta, no de la fecha:
+// es/2026/05/rotografo/index.md → /2026/05/rotografo/ (las imágenes van en la misma carpeta)
+const blog = defineCollection({
+  loader: glob({ base: './src/content/blog', pattern: '**/*.md' }),
+  schema: ({ image }) =>
+    z.object({
+      title: texto(),
+      description: texto()
+        .min(50, 'La descripción debe tener al menos 50 caracteres')
+        .max(160, 'La descripción no puede pasar de 160 caracteres'),
+      date: z.coerce.date(),
+      updated: z.coerce.date().optional(),
+      author: reference('autores'),
+      categories: z.array(reference('categorias')).min(1, 'Al menos una categoría'),
+      tags: z.array(texto()).default([]),
+      image: image().optional(),
+      imageAlt: texto().optional(),
+      translation: z.string().optional(),
+      draft: z.boolean().default(false),
+    }),
+});
+
+export const collections = { paginas, autores, hardware, publicaciones, categorias, blog };

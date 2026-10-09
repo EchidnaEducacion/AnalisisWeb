@@ -1,0 +1,142 @@
+---
+// Plantilla «Entrada de blog»: cabecera con autor, fecha y tiempo de lectura; imagen de portada,
+// texto Markdown y, al pie, categorías, compartir, ficha del autor y anterior/siguiente; en el lateral,
+// las categorías del blog y las entradas recientes
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { getCollection, getEntry, getEntries } from 'astro:content';
+import Base from './Base.astro';
+import { url } from '../lib/url';
+import { fechaLarga, rutaEntrada } from '../lib/blog';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  /** Entradas publicadas, de la más reciente a la más antigua, para el anterior/siguiente */
+  todas: CollectionEntry<'blog'>[];
+}
+const { entry, todas } = Astro.props;
+const d = entry.data;
+const autor = await getEntry(d.author);
+const categorias = await getEntries(d.categories);
+// El listado del blog y sus categorías aún son maqueta: se enlazan como en el menú
+const blog = url('maquetas/listado/');
+
+// Tiempo de lectura: unas 200 palabras por minuto
+const palabras = (entry.body ?? '').split(/\s+/).filter(Boolean).length;
+const minutos = Math.max(1, Math.round(palabras / 200));
+
+// Anterior (más antigua) y siguiente (más reciente)
+const i = todas.findIndex((t) => t.id === entry.id);
+const siguiente = todas[i - 1];
+const anterior = todas[i + 1];
+
+const enlace = new URL(Astro.url.pathname, Astro.site).href;
+const compartirX = `https://x.com/intent/post?text=${encodeURIComponent(d.title)}&url=${encodeURIComponent(enlace)}`;
+const compartirCorreo = `mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(enlace)}`;
+const iniciales = autor.data.name.split(' ').map((p) => p[0]).slice(0, 2).join('');
+
+// Lateral: todas las categorías con su número de entradas (las subcategorías, bajo su madre)
+const cuenta = (id: string) => todas.filter((t) => t.data.categories.some((c) => c.id === id)).length;
+const delaEntrada = new Set(d.categories.map((c) => c.id));
+const todasCategorias = await getCollection('categorias');
+const listaCategorias = todasCategorias
+  .filter((c) => !c.data.parent)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'))
+  .flatMap((madre) => [
+    { ...madre, sub: false },
+    ...todasCategorias.filter((c) => c.data.parent === madre.id).map((c) => ({ ...c, sub: true })),
+  ]);
+// Las 5 entradas más recientes, sin la actual
+const recientes = todas.filter((t) => t.id !== entry.id).slice(0, 5);
+---
+<Base title={d.title} description={d.description} section="blog">
+<main id="contenido">
+  <article>
+    <header class="page-hero">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol>
+            <li><a href={url()}>Inicio</a></li>
+            <li><a href={blog}>Blog</a></li>
+            <li><a href={blog}>{categorias[0].data.name}</a></li>
+          </ol>
+        </nav>
+        <h1>{d.title}</h1>
+        <p class="lead">{d.description}</p>
+        <div class="post-meta post-meta--left">
+          <span class="author">
+            <Image class="avatar" src={autor.data.image} alt="" width={40} height={40} densities={[1, 2]} />
+            {autor.data.name}
+          </span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> <time datetime={d.date.toISOString().slice(0, 10)}>{fechaLarga(d.date)}</time></span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> {minutos} min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap with-aside entrada">
+      <div class="entrada__main">
+      {d.image && (
+        <figure class="post-cover">
+          <Image src={d.image} alt={d.imageAlt ?? ''} widths={[640, 1040, 1600]} sizes="(min-width: 960px) 760px, 100vw" />
+        </figure>
+      )}
+      <div class="prose">
+        <slot />
+      </div>
+
+      <footer class="post-footer">
+        <ul class="chips" aria-label="Categorías">
+          {categorias.map((c) => <li><a class="chip chip--outline" href={blog}>{c.data.name}</a></li>)}
+          {d.tags.map((t) => <li><a class="chip chip--outline" href={blog}>#{t}</a></li>)}
+        </ul>
+        <div class="share">
+          <span>Compartir</span>
+          <a class="btn btn--ghost btn--sm" href={compartirX}><svg aria-hidden="true"><use href="#i-x"/></svg> X</a>
+          <a class="btn btn--ghost btn--sm" href={compartirCorreo}><svg aria-hidden="true"><use href="#i-mail"/></svg> Correo</a>
+        </div>
+        <div class="author-box">
+          {autor.data.image
+            ? <Image class="avatar avatar--lg" src={autor.data.image} alt="" width={64} height={64} densities={[1, 2]} />
+            : <span class="avatar avatar--lg">{iniciales}</span>}
+          <div>
+            <strong>{autor.data.name}</strong>
+            <p>{autor.data.role}. {autor.data.description}</p>
+          </div>
+        </div>
+        {(anterior || siguiente) && (
+          <nav class="pager" aria-label="Entradas" style="margin-top:0">
+            {anterior && <a href={url(`${rutaEntrada(anterior)}/`)}><small>← Anterior</small><strong>{anterior.data.title}</strong></a>}
+            {siguiente && <a class="next" href={url(`${rutaEntrada(siguiente)}/`)}><small>Siguiente →</small><strong>{siguiente.data.title}</strong></a>}
+          </nav>
+        )}
+      </footer>
+      </div>
+
+      <aside class="aside-stack aside-stack--sticky" aria-label="Más del blog">
+        <section class="factsheet blog-aside" aria-labelledby="cat-t">
+          <h2 id="cat-t">Categorías</h2>
+          <ul class="blog-aside__list">
+            {listaCategorias.map((c) => (
+              <li class={c.sub ? 'is-sub' : undefined}>
+                <a href={blog} aria-current={delaEntrada.has(c.id) ? 'true' : undefined}>{c.data.name}</a>
+                <span class="blog-aside__count">{cuenta(c.id)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        {recientes.length > 0 && (
+          <section class="factsheet blog-aside" aria-labelledby="rec-t">
+            <h2 id="rec-t">Entradas recientes</h2>
+            <ul class="blog-aside__list blog-aside__list--recent">
+              {recientes.map((r) => (
+                <li><a href={url(`${rutaEntrada(r)}/`)}>{r.data.title}</a><small>{fechaLarga(r.data.date)}</small></li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </aside>
+    </div>
+  </article>
+</main>
+</Base>

@@ -117,8 +117,8 @@ level: primaria
 
 ## blog
 
-Entradas del blog.
-Plantillas: Entrada de blog y Listado / taxonomía.
+Entradas del blog (colección implementada; la primera es Rotógrafo).
+Plantillas: Entrada de blog (hecha) y Listado / taxonomía.
 
 | Campo | Tipo | Obligatorio | Para qué |
 |---|---|---|---|
@@ -129,9 +129,12 @@ Plantillas: Entrada de blog y Listado / taxonomía.
 | `author` | identificador de la lista de autores | Sí | Autor; se valida contra la lista |
 | `categories` | lista de identificadores de la lista de categorías (al menos 1) | Sí | Categorías, incluidas subcategorías (`recursos/proyectos`); una errata hace fallar la publicación en vez de crear una categoría nueva |
 | `tags` | lista de texto | No | Etiquetas libres |
-| `image` | imagen | No | Imagen destacada para listados y redes |
+| `image` | imagen | No | Imagen destacada para listados y redes; en la entrada, portada bajo el título |
+| `imageAlt` | texto | No | Texto alternativo de la imagen destacada |
 | `translation` | ruta | No | Versión en el otro idioma |
 | `draft` | sí/no | No (no) | Borrador sin publicar |
+
+**Vídeos de YouTube**: un párrafo que solo contiene un enlace a YouTube (`[Título del vídeo](https://www.youtube.com/watch?v=…)`) se convierte en un reproductor que no carga YouTube hasta que se pulsa. **GIF animados**: van en `web/public/` con la ruta de la entrada (`/2026/05/rotografo/rotografo.gif`), porque Astro los convertiría en imágenes fijas.
 
 **La URL sale de la carpeta, no de la fecha**: la entrada `blog/es/2026/05/rotografo/` se publica en `/2026/05/rotografo/`. Si se corrige la fecha, la URL no cambia.
 
@@ -165,7 +168,7 @@ Dos ficheros de datos pequeños que usan las plantillas de listado para generar 
 
 De momento están los cuatro del equipo, por orden alfabético de apellido: `jorge-lobo`, `jose`, `juanda` y `xdesig`. Falta `javier`, que solo firma entradas del blog: se añadirá con la colección `blog`.
 
-**Categorías** (`id`, `name`, `description`, `parent`):
+**Categorías** (`web/src/content/categorias.yaml`, colección `categorias`, ya implementada; campos `id`, `name` y `parent`):
 
 | `id` | `parent` |
 |---|---|

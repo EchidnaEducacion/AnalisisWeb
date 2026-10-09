@@ -1,0 +1,12 @@
+# Categorías del blog. El id es el tramo de la URL /category/<id>/ (con subcategorías: recursos/proyectos).
+- { id: bloques-de-construccion, name: Bloques de construcción }
+- { id: didactica, name: Didáctica }
+- { id: hardware, name: Hardware }
+- { id: noticias, name: Noticias }
+- { id: programacion, name: Programación }
+- { id: publicaciones, name: Publicaciones }
+- { id: rea, name: REA }
+- { id: recursos, name: Recursos }
+- { id: recursos/impresion-3d, name: Impresión 3D, parent: recursos }
+- { id: recursos/proyectos, name: Proyectos, parent: recursos }
+- { id: talleres, name: Talleres }

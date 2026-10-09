@@ -53,6 +53,8 @@ web/
 │   ├── content/paginas/es/  # páginas en Markdown: la ruta del fichero es la URL
 │   ├── content/autores.yaml # autores del blog y equipo de Sobre el proyecto
 │   ├── content/publicaciones.yaml # publicaciones sobre Echidna (página 5.3)
+│   ├── content/categorias.yaml # categorías del blog
+│   ├── content/blog/es/     # entradas del blog: AAAA/MM/slug/index.md → /AAAA/MM/slug/
 │   ├── content/hardware/es/ # fichas de hardware: carpeta con index.md e imágenes, URL bajo /ecosistema/
 │   ├── layouts/
 │   │   ├── Base.astro       # <head>, iconos, cabecera, pie y scripts
@@ -95,6 +97,7 @@ El contenido está en `src/content/`, validado por el esquema de `src/content.co
 - **Tablas en el Markdown**: otro plugin de Sätteri las mete en un `div.table-wrap`, como en las plantillas, para que tengan marco y se desplacen dentro de él en móvil en vez de ensanchar la página.
 - **Bloques de EchidnaML**: las capturas de bloques se llaman `bloque-*.png` (p. ej. `bloque-led-verde.png`) y la web las muestra todas a la misma altura, aunque se hayan capturado a escalas distintas.
 - **Lupas sobre la placa**: las imágenes que amplían un componente en la placa se llaman `lupa-*.png` (p. ej. `lupa-leds.png`) y se muestran centradas, a un tercio de la columna (260 px en móvil).
+- **Vídeos de YouTube**: un párrafo que solo contiene un enlace a YouTube se convierte (con un plugin de `astro.config.mjs`) en un reproductor que no carga YouTube hasta que se pulsa; el texto del enlace es el pie del vídeo.
 - **Índice lateral** «En esta página»: solo sale si la página lleva `toc: true` en el *front matter* (para páginas largas); se genera con sus `h2`. En los índices de sección, encima lleva también los enlaces a las páginas hijas.
 - **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
 
@@ -103,6 +106,7 @@ Páginas hechas (el avance por plantilla está en «Progreso» del [README](../R
 - **Quiénes somos y pie**: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) Licencias (`quienes-somos/licencias.md`) y Publicaciones (`quienes-somos/publicaciones.md`, con `publications: 3`: las tarjetas salen de `src/content/publicaciones.yaml`, agrupadas por año).
 - **Ecosistema**: `ecosistema.md` y `ecosistema/echidnaml.md` son índices de sección, con una tarjeta por cada página hija que existe. Las hijas de EchidnaML están en `ecosistema/echidnaml/` (cada una con su carpeta de imágenes): Descarga (la versión va escrita en el texto y los enlaces, y se actualiza a mano con cada versión publicada en `echidnaml-releases`), Conectar EchidnaML y EchidnaBlack, Empezar con EchidnaBlocks, Empezar con LearningML e Instalar StandardFirmata (`listed: false`).
 - **EchidnaBlack2**: Características técnicas (`ecosistema/echidnablack2/caracteristicas-tecnicas.md`, que cuelga de una ficha de hardware: las migas buscan en las dos colecciones).
+- **Blog**: la entrada Rotógrafo (`blog/es/2026/05/rotografo/`), con la plantilla `layouts/Entrada.astro` y la ruta `pages/[anio]/[mes]/[entrada].astro`. La entrada lleva un lateral con todas las categorías del blog (con su número de entradas; las de la entrada, destacadas) y las 5 entradas más recientes (no sale mientras solo haya una). El listado del blog y las categorías aún enlazan a la maqueta.
 - **Fichas de hardware**: EchidnaBlack2, Pulsadores, Joystick, Sensor de luz LDR, Acelerómetro, Micrófono, Sensor de temperatura, LED RGB, LEDs ROG, Audio y Conexiones MkMk. Con ellas están todos los componentes de la placa.
 
 ## Cómo migrar una página
