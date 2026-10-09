@@ -1,10 +1,13 @@
 ---
 // Plantilla «Página genérica»: título, entradilla, cuerpo Markdown y, si la página lo pide,
-// índice lateral con los h2 (toc), fichas del equipo (team) y tarjetas de enlace (cards) al final
+// índice lateral con los h2 (toc), fichas del equipo (team), tarjetas de enlace (cards) y la lista de
+// publicaciones (publications) al final
 import type { MarkdownHeading } from 'astro';
 import Base from './Base.astro';
 import CabeceraPagina from '../components/CabeceraPagina.astro';
 import Equipo from '../components/Equipo.astro';
+import Publicaciones from '../components/Publicaciones.astro';
+import { publicacionesPorAño } from '../lib/publicaciones';
 import { url } from '../lib/url';
 
 interface Props {
@@ -18,11 +21,20 @@ interface Props {
   team?: { collection: 'autores'; id: string }[];
   /** Tarjetas de enlace que se muestran después del texto */
   cards?: { title: string; text: string; href: string }[];
+  /** Importancia mínima de las publicaciones que se listan al final; sin valor, no hay lista */
+  publications?: number;
+  /** Si la página lleva índice lateral (toc) */
+  conIndice?: boolean;
 }
-const { title, description, section, crumbs = [], headings, team, cards = [] } = Astro.props;
+const { title, description, section, crumbs = [], headings, team, cards = [], publications, conIndice = false } = Astro.props;
 // Las rutas internas llevan base; las URL externas, no
 const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
-const toc = headings.filter((h) => h.depth === 2);
+// Índice: los h2 del Markdown y, si hay lista de publicaciones, sus años
+const años = publications ? (await publicacionesPorAño(publications)).map((g) => g.año) : [];
+const toc = [
+  ...headings.filter((h) => h.depth === 2),
+  ...(conIndice ? años.map((a) => ({ slug: `año-${a}`, text: a })) : []),
+];
 ---
 <Base title={title} description={description} section={section}>
 <main id="contenido">
@@ -52,6 +64,7 @@ const toc = headings.filter((h) => h.depth === 2);
           ))}
         </ul>
       )}
+      {publications && <Publicaciones minimo={publications} />}
     </article>
   </div>
 </main>

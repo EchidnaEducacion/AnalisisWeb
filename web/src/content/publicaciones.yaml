@@ -1,0 +1,209 @@
+# Publicaciones sobre Echidna de otros medios, centros e instituciones (página 5.3).
+# El listado de trabajo, con las que faltan por confirmar y las descartadas, está en publicaciones.md (raíz).
+# date: AAAA-MM-DD, AAAA-MM o AAAA. importance: 1 a 5 (escala en publicaciones.md).
+- id: hisparob-conociendo-echidna
+  title: Conociendo Echidna
+  medium: Hisparob
+  date: "2026-04-28"
+  type: Artículo
+  url: https://robotica-educativa.hisparob.es/conociendo-echidna/
+  importance: 3
+  summary: La EchidnaBlack2 con sus situaciones de aprendizaje como propuesta completa para el aula.
+
+- id: junta-andalucia-ficha-echidnablack2
+  title: Ficha técnica EchidnaBlack2
+  medium: Junta de Andalucía
+  date: "2026-04"
+  type: Recurso educativo
+  url: https://www.juntadeandalucia.es/educacion/eaprendizaje/wp-content/uploads/2026/04/L2P09-PLaca-componentes-IA.pdf
+  importance: 4
+  summary: Ficha de la placa dentro de un recurso educativo abierto sobre componentes e inteligencia artificial.
+
+- id: educacion-3-0
+  title: "Echidna educación: el proyecto que usa herramientas de código abierto para llevar la programación y la robótica al aula"
+  medium: Educación 3.0
+  date: "2026-02-06"
+  type: Artículo
+  url: https://www.educaciontrespuntocero.com/tecnologia/echidna-educacion/
+  importance: 5
+  summary: La revista presenta el proyecto, sus placas y EchidnaML, nacidos de un grupo de docentes.
+
+- id: hisparob-tecnologia-educativa
+  title: "ECHIDNA: tecnología educativa pensada desde el aula"
+  medium: Hisparob
+  date: "2025-12-19"
+  type: Artículo
+  url: https://robotica-educativa.hisparob.es/echidna-tecnologia-educativa-pensada-desde-el-aula/
+  importance: 3
+  summary: El ecosistema Echidna como propuesta hecha por docentes y para docentes.
+
+- id: catedu-codigo-escuela
+  title: Echidna – Programa Código Escuela 4.0
+  medium: CIFE Ana Abarca de Bolea (CATEDU)
+  date: "2025-11-06"
+  type: Recurso de formación
+  url: https://cifeaab.catedu.es/cofotap/programa-codigo-escuela-4-0/robotica/echidna/
+  importance: 4
+  summary: Echidna dentro del programa Código Escuela 4.0 de Aragón para la formación del profesorado.
+
+- id: xtec-modulo-5
+  title: Módulo 5. Robots de suelo y placas educativas
+  medium: Professora sempre aprenent
+  date: "2025-06-03"
+  type: Blog
+  url: https://blocs.xtec.cat/profesempreaprenent/2025/06/03/modulo-5-robots-de-suelo-y-placas-educativas/
+  importance: 2
+  summary: Un apartado sobre Echidna en un módulo de formación sobre placas educativas.
+
+- id: hisparob-ia-machine-learning
+  title: I.A. con Echidna y machine learning
+  medium: Hisparob
+  date: "2024-12-18"
+  type: Artículo
+  url: https://robotica-educativa.hisparob.es/7384-2/
+  importance: 3
+  summary: Actividades de inteligencia artificial con Echidna, como el espantapájaros de Jorge Lobo.
+
+- id: catedu-zgzsur-echidnaml
+  title: EchidnaML
+  medium: CATEDU Zaragoza Sur
+  date: "2024-12-01"
+  type: Blog
+  url: https://wp.catedu.es/zgzsur/echidnaml/
+  importance: 2
+  summary: Presentación de EchidnaML para el profesorado de Zaragoza Sur.
+
+- id: learningml-oshwdem24
+  title: Oshwdem´24 recibe a EchidnaML
+  medium: LearningML
+  date: "2024-10-14"
+  type: Evento
+  url: https://web.learningml.org/oshwdem24-recibe-a-echidnaml/
+  importance: 3
+  summary: LearningML y Echidna presentan juntos EchidnaML en la feria OSHWDEM'24.
+
+- id: umh-tfm-mateo
+  title: Juego de robótica para la ESO con placa Echidna, con marioneta accionada por servos
+  medium: Universidad Miguel Hernández
+  date: "2024-09-20"
+  type: Trabajo fin de máster
+  url: https://dspace.umh.es/handle/11000/33267
+  importance: 3
+  summary: Un juego de robótica para Secundaria con una marioneta movida por servos y la placa Echidna.
+
+- id: umh-tfm-hernandez
+  title: Juego de robótica para la ESO con placa Echidna
+  medium: Universidad Miguel Hernández
+  date: "2024-05"
+  type: Trabajo fin de máster
+  url: https://dspace.umh.es/bitstream/11000/32986/1/TFM%20Hern%C3%A1ndez%20L%C3%B3pez%2c%20Borja.pdf
+  importance: 3
+  summary: Un juego de robótica para Secundaria programado con la placa Echidna.
+
+- id: umh-tfm-maestre
+  title: Juego de robótica para 4º ESO programando con Echidna-Scratch
+  medium: Universidad Miguel Hernández
+  date: "2024-05"
+  type: Trabajo fin de máster
+  url: https://dspace.umh.es/bitstream/11000/33166/1/TFM%20Maestre%20Andreu,%20Jos%C3%A9%20Mar%C3%ADa.pdf
+  importance: 3
+  summary: Un juego de robótica para 4º de ESO programado con Echidna y Scratch.
+
+- id: eslibre-2024
+  title: "EchidnaScratch ML: software de escritorio para robótica e IA en educación"
+  medium: esLibre 2024
+  date: "2024"
+  type: Taller
+  url: https://propuestas.eslib.re/2024/talleres/echidnascratch-ml-software-robotica-ia-educacion
+  importance: 3
+  summary: Taller en el congreso de tecnologías libres esLibre sobre la versión de escritorio de EchidnaScratch ML.
+
+- id: hisparob-paneles-interactivos
+  title: Paneles interactivos con Echidna
+  medium: Hisparob
+  date: "2022-04-11"
+  type: Tutorial
+  url: https://robotica-educativa.hisparob.es/en-el-blog-de-microlog_tecno-paneles-interactivos-con-echidna/
+  importance: 2
+  summary: Un panel de animales que suenan al tocarlos, con las entradas MkMk de Echidna.
+
+- id: programamos-novedades
+  title: Novedades del proyecto Echidna
+  medium: Programamos
+  date: "2020-11-15"
+  type: Artículo
+  url: https://programamos.es/novedades-del-proyecto-echidna/
+  importance: 4
+  summary: Presenta la nueva placa EchidnaBlack, con su propio microcontrolador, y su programación con Snap4Arduino y EchidnaScratch.
+
+- id: juegos-robotica-podcast-42
+  title: "Robótica educativa #42: Echidna White, computación física en clase"
+  medium: Juegos Robótica
+  date: "2020-02-25"
+  type: Pódcast
+  url: https://juegosrobotica.es/podcast-042/
+  importance: 3
+  summary: Prueban el prototipo Echidna White, que después sería la EchidnaBlack.
+
+- id: programar-facil-echidnashield
+  title: EchidnaShield, el Arduino Shield para la educación
+  medium: Programar Fácil
+  date: "2019-06-04"
+  type: Artículo
+  url: https://programarfacil.com/blog/arduino-blog/echidnashield-arduino-shield-para-educacion/
+  importance: 4
+  summary: Un artículo completo sobre la EchidnaShield, con un tutorial de IoT y un vídeo.
+
+- id: descubre-arduino
+  title: Echidna Shield, una placa destinada a enseñar compatible con Arduino
+  medium: Descubre Arduino
+  date: "2018-09-03"
+  type: Artículo
+  url: https://descubrearduino.com/echidna-shield/
+  importance: 2
+  summary: Presentación de la EchidnaShield y de cómo se programa.
+
+- id: oshwdem-2017
+  title: "Taller EchidnaShield: programando sistemas físicos en entornos gráficos"
+  medium: OSHWDEM 2017
+  date: "2017-11-11"
+  type: Taller
+  url: https://www.oshwdem.org/talleres-2017/
+  importance: 3
+  summary: Taller de Jorge Lobo, José Pujol y Xabier Rosas en la feria de hardware libre de A Coruña.
+
+- id: arganbot
+  title: Probamos la placa de prácticas EchidnaShield
+  medium: Arganbot
+  date: "2017-09-12"
+  type: Blog
+  url: http://arganbot.blogspot.com/2017/09/probamos-la-placa-de-practicas.html
+  importance: 2
+  summary: Primeras pruebas del prototipo de la EchidnaShield.
+
+- id: programamos-presentacion
+  title: Echidna, un proyecto para aprender programación de dispositivos físicos
+  medium: Programamos
+  date: "2017-08-07"
+  type: Artículo
+  url: https://programamos.es/echidna-un-proyecto-para-aprender-programacion-de-dispositivos-fisicos/
+  importance: 4
+  summary: La presentación del proyecto Echidna.
+
+- id: juegos-robotica-echidnashield
+  title: EchidnaShield. Completa placa de prácticas para Arduino en educación
+  medium: Juegos Robótica
+  date: "2017-07-25"
+  type: Artículo
+  url: https://juegosrobotica.es/echidnashield/
+  importance: 3
+  summary: Prueban el primer prototipo de la EchidnaShield.
+
+- id: programo-ergo-sum
+  title: Introducción a la robótica educativa con Echidna Shield
+  medium: Programo Ergo Sum
+  date: "2017-06-01"
+  type: Tutorial
+  url: https://www.programoergosum.es/tutoriales/robotica-educativa-con-echidna/
+  importance: 3
+  summary: Tutorial para empezar con la EchidnaShield en el aula.

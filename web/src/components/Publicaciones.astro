@@ -1,0 +1,28 @@
+---
+// Publicaciones sobre Echidna agrupadas por año, de la más reciente a la más antigua.
+// Cada tarjeta enlaza directamente a la publicación.
+import { publicacionesPorAño, fechaLegible } from '../lib/publicaciones';
+
+interface Props {
+  /** Importancia mínima (1 a 5) de las publicaciones que se muestran */
+  minimo: number;
+}
+const grupos = await publicacionesPorAño(Astro.props.minimo);
+---
+{grupos.map(({ año, lista }) => (
+  <>
+    <h2 id={`año-${año}`}>{año}</h2>
+    <ul class="img-cards publicaciones grid grid--3">
+      {lista.map((p) => (
+        <li class="card">
+          <div class="card__body">
+            <span class="chip">{p.medium} · {p.type}</span>
+            <h3 class="card__title"><a class="card__link" href={p.url}>{p.title}</a></h3>
+            <p class="card__text">{p.summary}</p>
+            <p class="publicaciones__fecha"><time datetime={p.date}>{fechaLegible(p.date)}</time></p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </>
+))}

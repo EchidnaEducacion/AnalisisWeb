@@ -52,6 +52,7 @@ web/
 │   ├── content.config.ts    # colecciones y su esquema (ver modelo-contenido.md)
 │   ├── content/paginas/es/  # páginas en Markdown: la ruta del fichero es la URL
 │   ├── content/autores.yaml # autores del blog y equipo de Sobre el proyecto
+│   ├── content/publicaciones.yaml # publicaciones sobre Echidna (página 5.3)
 │   ├── content/hardware/es/ # fichas de hardware: carpeta con index.md e imágenes, URL bajo /ecosistema/
 │   ├── layouts/
 │   │   ├── Base.astro       # <head>, iconos, cabecera, pie y scripts
@@ -99,7 +100,7 @@ El contenido está en `src/content/`, validado por el esquema de `src/content.co
 
 Páginas hechas (el avance por plantilla está en «Progreso» del [README](../README.md#progreso)):
 
-- **Quiénes somos y pie**: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) y Licencias (`quienes-somos/licencias.md`).
+- **Quiénes somos y pie**: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) Licencias (`quienes-somos/licencias.md`) y Publicaciones (`quienes-somos/publicaciones.md`, con `publications: 3`: las tarjetas salen de `src/content/publicaciones.yaml`, agrupadas por año).
 - **Ecosistema**: `ecosistema.md` y `ecosistema/echidnaml.md` son índices de sección, con una tarjeta por cada página hija que existe. Las hijas de EchidnaML están en `ecosistema/echidnaml/` (cada una con su carpeta de imágenes): Descarga (la versión va escrita en el texto y los enlaces, y se actualiza a mano con cada versión publicada en `echidnaml-releases`), Conectar EchidnaML y EchidnaBlack, Empezar con EchidnaBlocks, Empezar con LearningML e Instalar StandardFirmata (`listed: false`).
 - **EchidnaBlack2**: Características técnicas (`ecosistema/echidnablack2/caracteristicas-tecnicas.md`, que cuelga de una ficha de hardware: las migas buscan en las dos colecciones).
 - **Fichas de hardware**: EchidnaBlack2, Pulsadores, Joystick, Sensor de luz LDR, Acelerómetro, Micrófono, Sensor de temperatura, LED RGB, LEDs ROG, Audio y Conexiones MkMk. Con ellas están todos los componentes de la placa.

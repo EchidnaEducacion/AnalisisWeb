@@ -26,7 +26,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
           <ul class="subnav" id="sub-nosotros">
             <li><a href={url("quienes-somos/")}><strong>Sobre el proyecto</strong><span>Quiénes somos y qué hacemos</span></a></li>
             <li><a href={url("contacta/")}><strong>Contacta</strong><span>Escríbenos</span></a></li>
-            <li><a href="#"><strong>Publicaciones</strong><span>Echidna en los medios</span></a></li>
+            <li><a href={url("quienes-somos/publicaciones/")}><strong>Publicaciones</strong><span>Echidna en los medios</span></a></li>
           </ul>
         </li>
       </ul>
@@ -67,7 +67,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
       <ul>
         <li><a href={url("quienes-somos/")}>Sobre el proyecto</a></li>
         <li><a href={url("contacta/")}>Contacta</a></li>
-        <li><a href="#">Publicaciones</a></li>
+        <li><a href={url("quienes-somos/publicaciones/")}>Publicaciones</a></li>
       </ul>
     </li>
   </ul>

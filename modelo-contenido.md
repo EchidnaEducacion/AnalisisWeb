@@ -10,6 +10,7 @@ Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada u
 4. [recursos](#recursos)
 5. [blog](#blog)
 6. [Listas de datos: autores y categorías](#listas-de-datos-autores-y-categorías)
+7. [Publicaciones](#publicaciones)
 
 ---
 
@@ -36,6 +37,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `listed` | sí/no | No (sí) | Con `false`, la página no sale en el índice de su sección, ni como tarjeta ni en su índice lateral; se llega a ella por enlaces (p. ej. Instalar StandardFirmata, enlazada desde Conectar EchidnaML y EchidnaBlack) |
 | `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta. En los índices de sección añade además, arriba, los enlaces a sus páginas hijas, para que se vean sin bajar hasta las tarjetas (p. ej. Descarga en EchidnaML) |
 | `team` | lista de identificadores de la lista de autores | No | Fichas del equipo al final del texto, en ese orden (en Sobre el proyecto) |
+| `publications` | número del 1 al 5 | No | Lista de la colección `publicaciones` al final del texto, con esa importancia mínima, agrupada por año (en Publicaciones, `3`) |
 | `cards` | lista de `{ title, text, href }` | No | Tarjetas de enlace al final del texto (p. ej. a los Proyectos de inicio con EchidnaML). `href` es una URL externa o una ruta interna sin `base` |
 | `image` | imagen | No | Imagen de la tarjeta y al compartir en redes |
 | `translation` | ruta | No | Versión en el otro idioma |
@@ -178,3 +180,19 @@ De momento están los cuatro del equipo, por orden alfabético de apellido: `jor
 | `recursos/impresion-3d` | `recursos` |
 | `recursos/proyectos` | `recursos` |
 | `talleres` | — |
+
+## Publicaciones
+
+Lista de lo publicado sobre Echidna por otros medios, centros e instituciones (`web/src/content/publicaciones.yaml`, colección `publicaciones`). La página 5.3 muestra las que tienen la importancia mínima que indica su campo `publications`, de la más reciente a la más antigua y agrupadas por año. El listado de trabajo, con la escala de importancia, las que faltan por confirmar y las descartadas, está en [`publicaciones.md`](publicaciones.md).
+
+| Campo | Tipo | Obligatorio | Para qué |
+|---|---|---|---|
+| `id` | texto | Sí | Identificador |
+| `title` | texto no vacío | Sí | Título de la publicación |
+| `medium` | texto no vacío | Sí | Medio, centro o institución |
+| `date` | `AAAA-MM-DD`, `AAAA-MM` o `AAAA` | Sí | Fecha de publicación en el medio; ordena la lista |
+| `type` | texto no vacío | Sí | Artículo, pódcast, trabajo fin de máster, taller… |
+| `url` | URL | Sí | Enlace directo a la publicación |
+| `importance` | número del 1 al 5 | Sí | Importancia según la escala de `publicaciones.md` |
+| `summary` | texto no vacío | Sí | Una frase que resume la publicación |
+

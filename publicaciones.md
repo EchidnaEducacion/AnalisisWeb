@@ -1,6 +1,6 @@
 # Publicaciones sobre Echidna
 
-Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicaciones/`). Reúne las publicaciones que enlaza la web actual y las encontradas en una búsqueda en internet (octubre de 2026), ordenadas por fecha de publicación, de la más reciente a la más antigua. Sirve para elegir cuáles entran en la página; el formato de la página se decide después.
+Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicaciones/`). Reúne las publicaciones que enlaza la web actual y las encontradas en una búsqueda en internet (octubre de 2026), ordenadas por fecha de publicación, de la más reciente a la más antigua. Sirve para elegir cuáles entran en la página. **La página ya está hecha**: muestra las de importancia 3 o más, y sus datos están en `web/src/content/publicaciones.yaml`, que hay que actualizar a la vez que este listado.
 
 ## Índice
 
@@ -8,7 +8,7 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 2. [Listado](#listado)
 3. [Por confirmar](#por-confirmar)
 4. [Descartadas](#descartadas)
-5. [Formato propuesto para la página](#formato-propuesto-para-la-página)
+5. [Formato de la página](#formato-de-la-página)
 
 ---
 
@@ -76,6 +76,8 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 - **Microlog** y otras tiendas: venta de la placa.
 - **Webs de centros** (p. ej. Google Sites de un colegio): materiales internos de aula.
 
-## Formato propuesto para la página
+## Formato de la página
 
-Tarjetas que enlazan directamente a la publicación (sin pasar por una entrada del blog), ordenadas por fecha, de la más reciente a la más antigua. Cada tarjeta: medio, título, fecha, tipo y una frase de resumen; imagen solo si la hay. Los datos irían en una lista (como `autores.yaml`) que pinta la plantilla. Se decide al terminar de revisar este listado.
+Hecho: tarjetas agrupadas por año, de la más reciente a la más antigua, con las publicaciones de importancia 3 o más. Cada tarjeta enlaza directamente a la publicación y muestra medio, tipo, título, resumen y fecha, sin imagen. Para cambiar el umbral basta con el campo `publications` de la página.
+
+**Pendiente para el blog**: las 6 entradas antiguas de la categoría «Publicaciones» solo remiten a estas publicaciones. Al migrar el blog, decidir si se mantienen o si redirigen a esta página.

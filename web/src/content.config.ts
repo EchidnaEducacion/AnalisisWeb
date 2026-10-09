@@ -28,6 +28,8 @@ const paginas = defineCollection({
       // Tarjetas de enlace al final del texto: { title, text, href }; href es una URL externa
       // o una ruta interna sin base (/ecosistema/)
       cards: z.array(z.object({ title: texto(), text: texto(), href: texto() })).default([]),
+      // Lista de publicaciones (colección `publicaciones`) al final del texto, con esta importancia mínima
+      publications: z.number().int().min(1).max(5).optional(),
       image: image().optional(),
       translation: z.string().optional(),
       draft: z.boolean().default(false),
@@ -83,4 +85,19 @@ const hardware = defineCollection({
       .refine((d) => d.kind === 'placa' || d.board, { message: 'Los componentes y complementos necesitan `board`', path: ['board'] }),
 });
 
-export const collections = { paginas, autores, hardware };
+// Publicaciones sobre Echidna de otros medios (página 5.3). Una lista YAML; el listado de trabajo está en publicaciones.md
+const publicaciones = defineCollection({
+  loader: file('./src/content/publicaciones.yaml'),
+  schema: z.object({
+    title: texto(),
+    medium: texto(),
+    // AAAA-MM-DD, AAAA-MM o AAAA
+    date: z.string().regex(/^\d{4}(-\d{2}(-\d{2})?)?$/, 'Fecha en formato AAAA-MM-DD, AAAA-MM o AAAA'),
+    type: texto(),
+    url: z.url(),
+    importance: z.number().int().min(1).max(5),
+    summary: texto(),
+  }),
+});
+
+export const collections = { paginas, autores, hardware, publicaciones };
