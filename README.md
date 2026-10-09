@@ -77,14 +77,14 @@ Las **maquetas** de estas páginas, con contenido escrito a mano, están en [`we
 
 Se hace en el mismo proyecto [`web/`](web/). No hay dos juegos de plantillas: una plantilla real es un *layout* (`web/src/layouts/`) alimentado por su colección (`web/src/content.config.ts`), y el contenido de ejemplo son ficheros Markdown o YAML en `web/src/content/`.
 
-- [x] Crear `web/src/content.config.ts` según [`modelo-contenido.md`](modelo-contenido.md). Hecho con la colección `paginas`; las demás se añaden con su plantilla.
+- [x] Crear `web/src/content.config.ts` según [`modelo-contenido.md`](modelo-contenido.md). Hecho con las colecciones `paginas` y `hardware` y la lista de autores; `recursos` y `blog` se añaden con su plantilla.
 - Pasar cada maqueta a *layout* real alimentado por su colección (avance en [Progreso](#progreso)).
 - Añadir **contenido de ejemplo real**, 1 o 2 páginas por plantilla (las hechas, en [Progreso](#progreso)):
-  - Ecosistema, EchidnaBlack2 y LEDs ROG (hardware);
+  - Ecosistema, EchidnaBlack2 y LEDs ROG (hardware) — hechas, además de EchidnaML con sus cinco páginas y Características técnicas;
   - Materiales alumnado y Recursos docentes, con los recursos de «¿Hace calor aquí?» y de los Proyectos de inicio;
-  - Política de privacidad, Sobre el proyecto y Contacta;
+  - Política de privacidad, Sobre el proyecto y Contacta — hechas, además de Licencias;
   - una entrada antigua y otra reciente del blog, con sus listados;
-  - el 404.
+  - el 404 — hecho.
 
   Es contenido definitivo, no de usar y tirar: es el primer lote de la migración.
 - [x] Mover las maquetas a `web/src/pages/maquetas/` (publicadas en `/maquetas/`) como referencia visual. Falta borrar cada una cuando su plantilla real la iguale.
@@ -154,6 +154,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
 - [ ] **Imágenes de las tarjetas**: buscar una imagen para las tarjetas que hoy salen sin ella, empezando por las páginas de EchidnaML (Descarga, Conectar EchidnaML y EchidnaBlack, Empezar con EchidnaBlocks y Empezar con LearningML). Se pone en el campo `image` de cada página.
 - [ ] **Placas anteriores** (1.3) y **Entornos compatibles** (1.4) se dejan para el final de la migración.
+- [ ] **Siguiente**: las fichas de los demás componentes de la EchidnaBlack2, con la plantilla Ficha de hardware y el material del manual (como LEDs ROG). Después, Materiales alumnado y Recursos docentes (colección `recursos`) y el blog.
 - [ ] **Envío del formulario de contacto**: elegir el servicio, crear la cuenta con el correo de la asociación y poner su dirección en `PUBLIC_CONTACT_FORM_URL`. Hasta entonces, el formulario de `/contacta/` se ve pero no envía.
   - **Formspree** (recomendado): encaja con el formulario actual, porque solo pide su dirección (`https://formspree.io/f/…`) y ya entiende el campo antispam `_gotcha`. Guarda los mensajes en un panel. Plan gratuito: unos 50 mensajes al mes.
   - **Web3Forms**: no pide crear cuenta, solo un correo para obtener la clave. Habría que añadir un campo oculto con la clave y cambiar el antispam por `botcheck`. Plan gratuito: unos 250 mensajes al mes.
