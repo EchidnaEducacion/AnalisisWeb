@@ -21,7 +21,3 @@ Integra dos herramientas que trabajan juntas:
 - **Todo en uno**: no hace falta cambiar de programa para pasar de la robótica a crear modelos de inteligencia artificial.
 - **Continuidad**: los modelos creados en LearningML se usan directamente en los proyectos de EchidnaBlocks.
 - **Seguridad**: al ser una aplicación de escritorio, funciona sin conexión y ofrece un entorno controlado para el aula.
-
-## Créditos
-
-EchidnaML lo ha desarrollado [Juan David Rodríguez](https://web.juandarodriguez.es/), del equipo de Echidna. Su código es libre: las licencias de cada parte están en [Licencias](/quienes-somos/licencias/#software).
