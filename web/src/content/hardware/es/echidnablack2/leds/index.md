@@ -6,6 +6,8 @@ io: salida
 board: echidnablack2
 image: ./led.png
 imageAlt: Dibujo de un LED naranja de 5 mm con sus dos patillas.
+schematic: ./esquema-led.png
+schematicAlt: "Esquema: el pin digital Dx va a la resistencia Rs, después al LED y por último a tierra (GND)."
 pins:
   - { pin: "D11~", name: "LED verde", mode: "Salida digital y PWM" }
   - { pin: "D12", name: "LED naranja", mode: "Salida digital" }
@@ -34,8 +36,6 @@ Al aplicarle tensión, el LED se enciende. Desde el programa lo podemos controla
 - **PWM**: un valor entre `0` y `255` regula el brillo. Solo en el LED verde, que está en el pin D11~ (el símbolo `~` indica que el pin admite PWM).
 
 Todos los LED se conectan con una resistencia en serie (Rs) que limita la corriente que los atraviesa. En la EchidnaBlack2 ya está incluida, así que no hay que añadir nada.
-
-![Esquema: el pin digital Dx va a la resistencia Rs, después al LED y por último a tierra (GND).](./esquema-led.png)
 
 ## Cómo se programa
 

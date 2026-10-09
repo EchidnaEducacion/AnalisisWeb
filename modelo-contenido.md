@@ -57,6 +57,7 @@ Plantilla: Ficha de hardware.
 | `board` | `echidnablack2` | Sí, salvo en `placa` | Placa a la que pertenece (lista ampliable) |
 | `image` | imagen | Sí | Foto o dibujo que la ficha muestra siempre, en la misma carpeta |
 | `imageAlt` | texto no vacío | Sí | Texto alternativo de esa imagen |
+| `schematic` y `schematicAlt` | imagen y texto | No | Esquema eléctrico del componente y su texto alternativo; se muestra en el lateral, en un recuadro «Esquema» |
 | `pins` | lista de `{ pin, name, mode }` | No | Tabla de pines de la ficha rápida, igual en todas las fichas (p. ej. `{ pin: "D11~", name: "LED verde", mode: "Salida digital y PWM" }`) |
 | `specs` | lista de `{ label, value }` | No | Otros datos de la ficha rápida, sobre todo en las placas (p. ej. `{ label: "Microcontrolador", value: "ATmega328P a 16 MHz" }`) |
 | `tools` | lista de texto | No | Entornos con los que se programa («Se programa con») |

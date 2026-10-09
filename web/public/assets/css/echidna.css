@@ -573,10 +573,13 @@ ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 .factsheet__pins table { font-size: .88rem; }
 .factsheet__pins th, .factsheet__pins td { padding: .5rem .6rem; }
 .prose img { height: auto; }
-/* Lupas sobre la placa (imágenes lupa-*.png): un tercio de la columna; en móvil, 260 px */
-.prose img[src*="/lupa-"] { width: max(35%, min(100%, 260px)); }
+/* Lupas sobre la placa (imágenes lupa-*.png): un tercio de la columna, centradas; en móvil, 260 px.
+   El nombre va tras «/» en la web publicada y tras «%2F» en el servidor de desarrollo */
+.prose img:is([src*="/lupa-"], [src*="%2Flupa-"]) { display: block; margin-inline: auto; width: max(35%, min(100%, 260px)); }
+/* Esquema eléctrico en el lateral de la ficha */
+.factsheet--schematic img { display: block; margin-inline: auto; max-height: 260px; width: auto; max-width: 100%; height: auto; border-radius: var(--radius); }
 /* Bloques de EchidnaML (imágenes bloque-*.png): todos a la misma altura, sea cual sea la captura */
-.prose img[src*="/bloque-"] { height: 4rem; width: auto; max-width: 100%; object-fit: contain; object-position: left; }
+.prose img:is([src*="/bloque-"], [src*="%2Fbloque-"]) { height: 4rem; width: auto; max-width: 100%; object-fit: contain; object-position: left; }
 
 /* Actividad */
 .activity-code { display: inline-grid; place-items: center; min-width: 64px; height: 64px; padding: 0 .6rem; border-radius: 18px; background: var(--accent); color: var(--surface); font-family: var(--font-head); font-weight: 800; font-size: 1.3rem; }

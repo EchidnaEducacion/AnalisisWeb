@@ -65,6 +65,9 @@ const hardware = defineCollection({
         board: z.enum(['echidnablack2']).optional(),
         image: image(),
         imageAlt: texto(),
+        // Esquema eléctrico del componente: se muestra en el lateral, en un recuadro «Esquema»
+        schematic: image().optional(),
+        schematicAlt: texto().optional(),
         // Tabla de pines de la ficha rápida, p. ej. { pin: "D11~", name: "LED verde", mode: "Salida digital y PWM" }
         pins: z.array(z.object({ pin: texto(), name: texto(), mode: texto() })).default([]),
         // Datos de la ficha rápida, p. ej. { label: "Microcontrolador", value: "ATmega328P a 16 MHz" }

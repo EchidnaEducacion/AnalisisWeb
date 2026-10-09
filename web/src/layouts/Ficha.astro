@@ -148,6 +148,12 @@ const descargas = d.downloads.map((dl) => {
         {/* En las placas: cómo conseguir una (página «Quiero una», fuera del menú) */}
         {d.kind === 'placa' && <a class="btn" href={url('quiero-una/')}>Quiero una</a>}
       </section>
+      {d.schematic && (
+        <section class="factsheet factsheet--schematic" aria-labelledby="esquema-t">
+          <h2 id="esquema-t">Esquema</h2>
+          <Image src={d.schematic} alt={d.schematicAlt ?? ''} widths={[200, 400]} sizes="200px" />
+        </section>
+      )}
       {descargas.length > 0 && (
         <section aria-labelledby="desc-t">
           <h2 id="desc-t" class="sr-only">Descargas</h2>
