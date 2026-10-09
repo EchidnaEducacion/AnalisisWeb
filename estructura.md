@@ -46,15 +46,17 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   │   └── 1.2.16 Características técnicas
 │   ├── 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield)
 │   └── 1.4 Entornos compatibles
-├── 2. Materiales alumnado                 (una sola página)
+├── 2. Materiales alumnado                 (una sola página; todos son enlaces externos)
 │   ├── EchidnaML                           (título dentro de la página)
-│   │   ├── 2.1 Proyectos de inicio con EchidnaML
-│   │   ├── 2.2 Situaciones de aprendizaje  (un recurso por SdA)
-│   │   ├── 2.3 Proyectos                   (un recurso por proyecto)
-│   │   └── 2.4 Manual de usuario (EchidnaML y EchidnaBlack2)
-│   ├── Snap!                               (título; sin contenido de momento)
+│   │   ├── Proyectos                       (subtítulo)
+│   │   │   └── 2.1 Proyectos de inicio con EchidnaML
+│   │   └── Situaciones de aprendizaje      (subtítulo)
+│   │       └── 2.2 ¿Hace calor aquí?, Andalucía del alba al anochecer, ¡La Tierra se mueve! y Aprendiendo con robots
 │   └── Arduino IDE                         (título)
-│       └── 2.5 Proyectos de inicio con Arduino IDE
+│       ├── Proyectos                       (subtítulo)
+│       │   └── 2.3 Proyectos de inicio con Arduino IDE
+│       └── Guías                           (subtítulo)
+│           └── 2.4 Manual EchidnaBlack para FP
 ├── 3. Recursos docentes                   (una sola página)
 │   ├── Proyectos de inicio con EchidnaML   (título dentro de la página)
 │   │   ├── 3.1 Diapositivas
@@ -125,12 +127,11 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/placas-anteriores/` | Página genérica (resumen de cada placa y descarga de su PDF; sin hijas) |
 | 3 | PDF de EchidnaBlack v1 y EchidnaShield | `/ecosistema/placas-anteriores/echidnablack.pdf`, `/ecosistema/placas-anteriores/echidnashield.pdf` | — (ficheros en `web/public/ecosistema/placas-anteriores/`) |
 | 2 | 1.4 Entornos compatibles | `/ecosistema/entornos-compatibles/` | Página genérica |
-| 1 | Materiales alumnado | `/alumnado/` | Índice de sección (página única con tarjetas agrupadas por título: EchidnaML, Snap!, Arduino IDE) |
+| 1 | Materiales alumnado | `/alumnado/` | Página genérica con la lista de `recursos` (`resources: alumnado`): un título por entorno, un subtítulo por grupo y tarjetas con miniatura |
 | 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` y alias `/guiainicioechidnaml/` (redirección a `echidnaeducacion.github.io/GuiaInicioEchidnaML/`) | — (repo `GuiaInicioEchidnaML`) |
-| 2 | 2.2 Situaciones de aprendizaje (cada una) | `/alumnado/situaciones-aprendizaje/<recurso>/` | — (exportación de eXeLearning, sin plantilla) |
-| 2 | 2.3 Proyectos (cada uno) | `/alumnado/proyectos/<recurso>/` | — (exportación de eXeLearning, sin plantilla) |
-| 2 | 2.4 Manual de usuario (EchidnaML y EchidnaBlack2) | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
-| 2 | 2.5 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
+| 2 | 2.2 Situaciones de aprendizaje (cada una) | `rea.echidna.es/<recurso>/` y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning; pendiente de migrarlas a GitHub) |
+| 2 | 2.3 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
+| 2 | 2.4 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en `echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | — (pendiente de alojarlo fuera de WordPress) |
 | 1 | Recursos docentes | `/docentes/` | Índice de sección (página única con tarjetas agrupadas por material, igual que alumnado) |
 | 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | — (recurso alojado sin plantilla) |
 | 2 | 3.2 Proyectos de inicio con EchidnaML: guía docente | `/docentes/proyectos-inicio-echidnaml/guia-docente/` | — (recurso alojado sin plantilla) |
@@ -160,7 +161,7 @@ Las URL del blog siguen el formato `/AAAA/MM/slug/`. El RSS se publica en `/rss.
 
 ### Recursos alojados sin plantilla
 
-Las situaciones de aprendizaje y los proyectos del alumnado son exportaciones de eXeLearning. Se alojan en el repo de la web, en `web/public/alumnado/situaciones-aprendizaje/<recurso>/` (o `proyectos/`), y Astro las publica tal cual, sin plantilla: por ejemplo, `/alumnado/situaciones-aprendizaje/sensor-temperatura/`. Las URL usan guiones y plural, como el resto. Las rutas intermedias (`/alumnado/situaciones-aprendizaje/`, `/alumnado/proyectos/`) no son páginas y redirigen a `/alumnado/`. Cada exportación pesa (imágenes, JS), así que hay que vigilar el tamaño del repo y decidir si el buscador (Pagefind) las indexa.
+Los materiales del alumnado son **enlaces externos**: la web solo los describe con una tarjeta (colección `recursos`). Las situaciones de aprendizaje son exportaciones de eXeLearning que hoy están en `rea.echidna.es`; se migrarán a GitHub (pendiente en el README) y, entonces, se cambiará la dirección de su tarjeta.
 
 Lo mismo vale para los recursos docentes: por ejemplo, las diapositivas de la Guía de inicio EchidnaML van en `web/public/docentes/proyectos-inicio-echidnaml/diapositivas/`. Las rutas intermedias (`/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/`) no son páginas y redirigen a `/docentes/`.
 
@@ -205,7 +206,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 - «2,1» pasa a 2.1. Los agrupadores «EchidnaML:» y «Entornos compatibles:» de Materiales alumnado pasan a ser subsecciones y sus páginas se renumeran (desaparece el hueco del 2.4). Después, «Entornos compatibles» se dividió por entorno y, al final, Materiales alumnado se simplificó a una sola página con títulos por entorno (EchidnaML, Snap!, Arduino IDE) y recursos numerados de 2.1 a 2.5.
 - Se numeran las entradas que no tenían número: Entornos compatibles (1.4) y Manual de usuario (2.4 y 3.6). En Recursos docentes, «Diapositivas para el aula» y «Guías docentes» se sustituyen por grupos de recursos por material, en una sola página.
 - **Manual de usuario** aparece en dos secciones: en ambas es un enlace al manual externo (`/manual/`), no una página duplicada.
-- **Proyectos de inicio** con EchidnaML (2.1) y con Arduino IDE (2.5) son enlaces a sus repos externos (`GuiaInicioEchidnaML` y `GuiaInicioArduinoIDE`), publicados en GitHub Pages.
+- **Proyectos de inicio** con EchidnaML (2.1) y con Arduino IDE (2.3) son enlaces a sus repos externos (`GuiaInicioEchidnaML` y `GuiaInicioArduinoIDE`), publicados en GitHub Pages.
 - **Entornos compatibles** queda solo en Ecosistema (1.4), donde se describen los entornos. En Materiales alumnado cada entorno es un título dentro de su página única (EchidnaML, Snap!, Arduino IDE).
 
 ## Pendiente
@@ -235,8 +236,8 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 
   Al decidirlo, corregir la página de licencias, la tabla de Sobre el proyecto, el pie y el repositorio `recursos`.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Se guardan dentro de la web, en `web/public/ecosistema/placas-anteriores/`.
-- [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno. Las situaciones de aprendizaje y los proyectos son exportaciones de eXeLearning alojadas sin plantilla. Snap! no tiene contenido de momento.
-- [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Redirigir `rea.echidna.es/<recurso>/` a las nuevas URL `/alumnado/situaciones-aprendizaje/<recurso>/`.
+- [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno y subtítulos por grupo, y tarjetas con miniatura. Todos sus materiales son enlaces externos (decisión de octubre de 2026): por ahora, los dos Proyectos de inicio, cuatro situaciones de aprendizaje y el manual para FP. El resto (otros proyectos, Snap!…) está por hacer.
+- [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Cuando las situaciones de aprendizaje se migren a GitHub, redirigir `rea.echidna.es/<recurso>/` a su nueva dirección.
 - [x] La plantilla «Actividad» ya no hace falta: ni alumnado ni docentes la usan. Se quita de las páginas maestras del README.
 - [x] Cada situación de aprendizaje usa el mismo `<recurso>` en `/alumnado/situaciones-aprendizaje/` y en `/docentes/situaciones-aprendizaje/`.
 - [x] Quiénes somos es un menú desplegable con 5.1, 5.2 y 5.3. 5.1 Sobre el proyecto usa `/quienes-somos/`, así que no hay índice duplicado.

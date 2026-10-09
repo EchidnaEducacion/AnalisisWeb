@@ -30,6 +30,8 @@ const paginas = defineCollection({
       cards: z.array(z.object({ title: texto(), text: texto(), href: texto() })).default([]),
       // Lista de publicaciones (colección `publicaciones`) al final del texto, con esta importancia mínima
       publications: z.number().int().min(1).max(5).optional(),
+      // Recursos (colección `recursos`) de este público al final del texto, agrupados por entorno y grupo
+      resources: z.enum(['alumnado', 'docentes']).optional(),
       image: image().optional(),
       translation: z.string().optional(),
       draft: z.boolean().default(false),
@@ -131,4 +133,25 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { paginas, autores, hardware, publicaciones, categorias, blog };
+// Recursos de Materiales alumnado y Recursos docentes: enlaces (casi siempre externos) que la web
+// describe con una tarjeta. Una lista YAML con sus miniaturas en src/content/recursos/
+const recursos = defineCollection({
+  loader: file('./src/content/recursos.yaml'),
+  schema: ({ image }) =>
+    z.object({
+      title: texto(),
+      description: texto(),
+      audience: z.enum(['alumnado', 'docentes']),
+      // Título de entorno (EchidnaML, Arduino IDE…) y subtítulo dentro de él (Proyectos, Situaciones de aprendizaje…)
+      environment: texto(),
+      group: texto(),
+      type: texto(),
+      url: texto(),
+      level: z.enum(['Primaria', 'Secundaria', 'FP']).optional(),
+      image: image().optional(),
+      order: z.number().default(0),
+      draft: z.boolean().default(false),
+    }),
+});
+
+export const collections = { paginas, autores, hardware, publicaciones, categorias, blog, recursos };

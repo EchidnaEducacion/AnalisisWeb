@@ -16,7 +16,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
     <nav class="nav" aria-label="Principal">
       <ul class="nav__list">
         <li><a class={"nav__link" + activo("ecosistema")} href={url("ecosistema/")}>Ecosistema</a></li>
-        <li><a class={"nav__link" + activo("alumnado")} href={url("maquetas/alumnado/")}>Alumnado</a></li>
+        <li><a class={"nav__link" + activo("alumnado")} href={url("alumnado/")}>Alumnado</a></li>
         <li><a class={"nav__link" + activo("docentes")} href={url("maquetas/docentes/")}>Docentes</a></li>
         <li><a class={"nav__link" + activo("blog")} href={url("blog/")}>Blog</a></li>
         <li class="nav__item--has-sub">
@@ -60,7 +60,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
   </button>
   <ul>
     <li><a href={url("ecosistema/")}><span class="dot" style="--dot:var(--c-ecosistema)"></span>Ecosistema</a></li>
-    <li><a href={url("maquetas/alumnado/")}><span class="dot" style="--dot:var(--c-alumnado)"></span>Alumnado</a></li>
+    <li><a href={url("alumnado/")}><span class="dot" style="--dot:var(--c-alumnado)"></span>Alumnado</a></li>
     <li><a href={url("maquetas/docentes/")}><span class="dot" style="--dot:var(--c-docentes)"></span>Docentes</a></li>
     <li><a href={url("blog/")}><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>
     <li><a href={url("quienes-somos/")}><span class="dot" style="--dot:var(--c-nosotros)"></span>Quiénes somos</a>
@@ -99,7 +99,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
     </ul>
     <h3>Materiales alumnado</h3>
     <ul>
-      <li><a href={url("maquetas/alumnado/")}>Proyectos de inicio con EchidnaML <small>Materiales alumnado › EchidnaML · Enciende tu primer LED</small></a></li>
+      <li><a href={url("alumnado/")}>Proyectos de inicio con EchidnaML <small>Materiales alumnado › EchidnaML · Enciende tu primer LED</small></a></li>
     </ul>
     <h3>Blog</h3>
     <ul>

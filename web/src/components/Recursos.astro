@@ -1,0 +1,44 @@
+---
+// Recursos de un público (alumnado o docentes) con un título por entorno, un subtítulo por grupo
+// y una tarjeta con miniatura por recurso. Los recursos son enlaces, casi siempre externos.
+import { Image } from 'astro:assets';
+import { url } from '../lib/url';
+import { anclaEntorno, recursosPorEntorno, sitio } from '../lib/recursos';
+
+interface Props {
+  publico: 'alumnado' | 'docentes';
+}
+const entornos = await recursosPorEntorno(Astro.props.publico);
+// Las rutas internas llevan base; las URL externas, no
+const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
+---
+{entornos.map(({ entorno, grupos }) => (
+  <>
+    <h2 id={anclaEntorno(entorno)}>{entorno}</h2>
+    {grupos.map(({ grupo, lista }) => (
+      <>
+        <h3>{grupo}</h3>
+        <ul class="img-cards recursos grid grid--3">
+          {lista.map((r) => (
+            <li class="card post-card">
+              {r.image && (
+                <div class="post-thumb">
+                  <Image src={r.image} alt="" widths={[400, 800]} sizes="(min-width: 960px) 380px, 100vw" />
+                </div>
+              )}
+              <div class="card__body">
+                <p class="recursos__tags">
+                  <span class="chip">{r.type}</span>
+                  {r.level && <span class="chip chip--outline">{r.level}</span>}
+                </p>
+                <h4 class="card__title"><a class="card__link" href={enlace(r.url)}>{r.title}</a></h4>
+                <p class="card__text">{r.description}</p>
+                {sitio(r.url) && <p class="recursos__sitio">{sitio(r.url)} ↗</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </>
+    ))}
+  </>
+))}

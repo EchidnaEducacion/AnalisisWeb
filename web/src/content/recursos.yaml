@@ -1,0 +1,84 @@
+# Recursos de Materiales alumnado (y, más adelante, de Recursos docentes). Son enlaces externos:
+# la web solo los describe. Las miniaturas están en src/content/recursos/ (2:1, sin metadatos).
+# environment: título de entorno; group: subtítulo dentro del entorno; order: orden en su grupo.
+- id: guia-inicio-echidnaml
+  title: Proyectos de inicio con EchidnaML
+  description: Proyectos sencillos y guiados para dar los primeros pasos con la EchidnaBlack2, EchidnaBlocks y la inteligencia artificial.
+  audience: alumnado
+  environment: EchidnaML
+  group: Proyectos
+  type: Guía
+  url: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/
+  image: ./recursos/guia-inicio-echidnaml.jpg
+  order: 1
+
+- id: hace-calor-aqui
+  title: ¿Hace calor aquí?
+  description: Medir la temperatura con el sensor de la placa, representar los datos en gráficas y analizarlos.
+  audience: alumnado
+  environment: EchidnaML
+  group: Situaciones de aprendizaje
+  type: Situación de aprendizaje
+  url: https://rea.echidna.es/02_SensorTemperatura/
+  level: Primaria
+  image: ./recursos/hace-calor-aqui.jpg
+  order: 1
+
+- id: del-alba-al-anochecer
+  title: Andalucía, del alba al anochecer
+  description: Detectar el día y la noche con el sensor de luz para cambiar unos carteles de forma automática.
+  audience: alumnado
+  environment: EchidnaML
+  group: Situaciones de aprendizaje
+  type: Situación de aprendizaje
+  url: https://rea.echidna.es/nocheydia/index.html
+  level: Primaria
+  image: ./recursos/del-alba-al-anochecer.jpg
+  order: 2
+
+- id: la-tierra-se-mueve
+  title: ¡La Tierra se mueve!
+  description: Conocer los movimientos de la Tierra y simular el de rotación programando la placa.
+  audience: alumnado
+  environment: EchidnaML
+  group: Situaciones de aprendizaje
+  type: Situación de aprendizaje
+  url: https://rea.echidna.es/P4LaTierraSeMueve/index.html
+  level: Primaria
+  image: ./recursos/la-tierra-se-mueve.jpg
+  order: 3
+
+- id: aprendiendo-con-robots
+  title: Aprendiendo con robots
+  description: Cómo funcionan tus sentidos y los de las máquinas. Recurso del programa Código Escuela 4.0 del INTEF.
+  audience: alumnado
+  environment: EchidnaML
+  group: Situaciones de aprendizaje
+  type: Situación de aprendizaje
+  url: https://descargas.intef.es/recursos_educativos/ODES_SGOA/Codigo_Escuela/Aprendiendo_con_robots/index.html
+  level: Primaria
+  image: ./recursos/aprendiendo-con-robots.jpg
+  order: 4
+
+- id: guia-inicio-arduino-ide
+  title: Proyectos de inicio con Arduino IDE
+  description: Proyectos sencillos para empezar a programar la EchidnaBlack2 con código en Arduino IDE.
+  audience: alumnado
+  environment: Arduino IDE
+  group: Proyectos
+  type: Guía
+  url: https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/
+  image: ./recursos/guia-inicio-arduino-ide.jpg
+  order: 1
+
+- id: manual-fp-echidnablack
+  title: Manual EchidnaBlack para FP
+  description: Un manual extenso de Xabier Rosas para programar la placa en lenguaje C en sus clases de Formación Profesional.
+  audience: alumnado
+  environment: Arduino IDE
+  group: Guías
+  type: Manual (PDF, 44 MB)
+  url: https://echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf
+  level: FP
+  image: ./recursos/manual-fp-echidnablack.jpg
+  order: 1

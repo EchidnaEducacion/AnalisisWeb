@@ -1,6 +1,6 @@
 # Modelo de contenido
 
-Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). La referencia es `web/src/content.config.ts`, donde ya están implementadas las colecciones `paginas` y `hardware` y la lista de autores; las demás se añadirán con su plantilla. Este documento explica el diseño para quien edita.
+Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). La referencia es `web/src/content.config.ts`, donde ya están implementadas las colecciones `paginas`, `hardware`, `blog` y `recursos` y las listas de autores, categorías y publicaciones; las demás se añadirán con su plantilla. Este documento explica el diseño para quien edita.
 
 ## Índice
 
@@ -38,6 +38,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta. En los índices de sección añade además, arriba, los enlaces a sus páginas hijas, para que se vean sin bajar hasta las tarjetas (p. ej. Descarga en EchidnaML) |
 | `team` | lista de identificadores de la lista de autores | No | Fichas del equipo al final del texto, en ese orden (en Sobre el proyecto) |
 | `publications` | número del 1 al 5 | No | Lista de la colección `publicaciones` al final del texto, con esa importancia mínima, agrupada por año (en Publicaciones, `3`) |
+| `resources` | `alumnado` · `docentes` | No | Lista de la colección `recursos` de ese público al final del texto, por entorno y grupo (en Materiales alumnado) |
 | `cards` | lista de `{ title, text, href }` | No | Tarjetas de enlace al final del texto (p. ej. a los Proyectos de inicio con EchidnaML). `href` es una URL externa o una ruta interna sin `base` |
 | `image` | imagen | No | Imagen de la tarjeta y al compartir en redes |
 | `translation` | ruta | No | Versión en el otro idioma |
@@ -72,48 +73,24 @@ La ficha rápida no muestra la licencia mientras la del hardware esté pendiente
 
 ## recursos
 
-Ficheros de datos sin texto: cada uno es una tarjeta de `/alumnado/` o `/docentes/`. Los recursos (situaciones de aprendizaje, diapositivas, guías…) se alojan sin plantilla o fuera de la web; aquí solo se describen.
-Plantilla: Índice de sección (agrupado por títulos).
+Lista de los materiales de `/alumnado/` (y, más adelante, de `/docentes/`) en `web/src/content/recursos.yaml` (colección implementada). Son **enlaces externos**: la web solo los describe con una tarjeta, con miniatura. La página los muestra con el campo `resources` de `paginas` (`resources: alumnado`), con un título por entorno y un subtítulo por grupo.
 
 | Campo | Tipo | Obligatorio | Para qué |
 |---|---|---|---|
+| `id` | texto | Sí | Identificador |
 | `title` | texto no vacío | Sí | Título de la tarjeta |
-| `description` | texto no vacío, 50–200 caracteres | Sí | Texto breve de la tarjeta |
+| `description` | texto no vacío | Sí | Una frase que describe el material |
 | `audience` | `alumnado` · `docentes` | Sí | Página en la que aparece |
-| `environment` | `echidnaml` · `snap` · `arduino-ide` · `otros` | Sí | Título bajo el que se agrupa en alumnado y orden de los grupos en docentes |
-| `material` | identificador (p. ej. `proyectos-inicio-echidnaml`, `sensor-temperatura`) | Sí | Agrupa los recursos de un material en docentes y **enlaza alumnado y docentes**: si dos recursos comparten `material`, cada tarjeta lleva a la otra |
-| `type` | `situacion-aprendizaje` · `proyecto` · `guia-inicio` · `manual` · `diapositivas` · `guia-docente` · `pagina` | Sí | Icono y etiqueta de la tarjeta |
-| `url` | ruta interna o dirección externa | Sí | Adónde lleva la tarjeta |
-| `level` | `primaria` · `secundaria` · `ambos` | No | Etiqueta de nivel educativo |
-| `image` | imagen | No | Miniatura de la tarjeta |
+| `environment` | texto (`EchidnaML`, `Arduino IDE`…) | Sí | Título de entorno bajo el que se agrupa |
+| `group` | texto (`Proyectos`, `Situaciones de aprendizaje`, `Guías`…) | Sí | Subtítulo dentro del entorno |
+| `type` | texto (`Guía`, `Situación de aprendizaje`, `Manual (PDF, 44 MB)`…) | Sí | Etiqueta de la tarjeta |
+| `url` | dirección externa o ruta interna sin `base` | Sí | Adónde lleva la tarjeta; si es externa, la tarjeta indica el sitio |
+| `level` | `Primaria` · `Secundaria` · `FP` | No | Etiqueta de nivel educativo |
+| `image` | imagen | No | Miniatura (2:1, en `web/src/content/recursos/`, sin metadatos) |
 | `order` | número | No (0) | Orden dentro de su grupo |
 | `draft` | sí/no | No (no) | Recurso preparado pero oculto |
 
-Ejemplo: la situación de aprendizaje del sensor de temperatura y su guía docente, enlazadas por `material`.
-
-```yaml
-# recursos/es/sensor-temperatura-alumnado.yaml
-title: ¿Hace calor aquí?
-description: Situación de aprendizaje para medir la temperatura con el sensor de la EchidnaBlack2.
-audience: alumnado
-environment: echidnaml
-material: sensor-temperatura
-type: situacion-aprendizaje
-url: /alumnado/situaciones-aprendizaje/sensor-temperatura/
-level: primaria
-```
-
-```yaml
-# recursos/es/sensor-temperatura-guia-docente.yaml
-title: ¿Hace calor aquí? Guía docente
-description: Objetivos, temporalización y evaluación de la situación de aprendizaje del sensor de temperatura.
-audience: docentes
-environment: echidnaml
-material: sensor-temperatura
-type: guia-docente
-url: /docentes/situaciones-aprendizaje/sensor-temperatura/guia-docente/
-level: primaria
-```
+Los entornos y los grupos salen en un orden fijo (`web/src/lib/recursos.ts`): EchidnaML, Snap!, Arduino IDE; Proyectos, Situaciones de aprendizaje, Guías. Para Recursos docentes habrá que añadir cómo se enlaza cada material con su parte del alumnado (el antiguo campo `material`).
 
 ## blog
 
