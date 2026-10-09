@@ -1,9 +1,10 @@
 ---
-// Genera una página por cada entrada de `paginas` en español con las plantillas «Página genérica» y «Contacto».
-// Las demás plantillas (índice, portada) se añadirán con su layout.
+// Genera una página por cada entrada de `paginas` en español con las plantillas «Página genérica»,
+// «Contacto» e «Índice de sección». La portada se añadirá con su layout.
 import { getCollection, render } from 'astro:content';
 import Pagina from '../layouts/Pagina.astro';
 import Contacto from '../layouts/Contacto.astro';
+import Indice from '../layouts/Indice.astro';
 import { rutaDe, seccionDe } from '../lib/paginas';
 import { rutaHardware } from '../lib/hardware';
 import { url } from '../lib/url';
@@ -11,7 +12,7 @@ import { url } from '../lib/url';
 export async function getStaticPaths() {
   const todas = await getCollection('paginas', (p) => p.id.startsWith('es/') && !p.data.draft);
   return todas
-    .filter((p) => p.data.template === 'pagina' || p.data.template === 'contacto')
+    .filter((p) => p.data.template !== 'portada')
     .map((entry) => ({ params: { slug: rutaDe(entry) }, props: { entry, todas } }));
 }
 
@@ -20,18 +21,25 @@ const ruta = rutaDe(entry);
 const { Content, headings } = await render(entry);
 const fichas = await getCollection('hardware', (h) => h.id.startsWith('es/') && !h.data.draft);
 
-// Migas intermedias: las páginas o fichas de hardware que cuelgan por encima de esta.
-// Ecosistema enlaza a su maqueta, como el menú, hasta que exista la página.
+// Migas intermedias: las páginas o fichas de hardware que cuelgan por encima de esta
 const tramos = ruta.split('/').slice(0, -1);
 const crumbs = tramos.flatMap((_, i) => {
   const padre = tramos.slice(0, i + 1).join('/');
   const p = todas.find((t) => rutaDe(t) === padre) ?? fichas.find((h) => rutaHardware(h) === padre);
-  if (p) return [{ title: p.data.title, href: url(`${padre}/`) }];
-  if (padre === 'ecosistema') return [{ title: 'Ecosistema', href: url('maquetas/indice-seccion/') }];
-  return [];
+  return p ? [{ title: p.data.title, href: url(`${padre}/`) }] : [];
 });
 ---
-{entry.data.template === 'contacto' ? (
+{entry.data.template === 'indice' ? (
+  <Indice
+    title={entry.data.title}
+    description={entry.data.description}
+    section={seccionDe(ruta)}
+    crumbs={crumbs}
+    ruta={ruta}
+  >
+    <Content />
+  </Indice>
+) : entry.data.template === 'contacto' ? (
   <Contacto
     title={entry.data.title}
     description={entry.data.description}

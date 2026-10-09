@@ -15,7 +15,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
 
     <nav class="nav" aria-label="Principal">
       <ul class="nav__list">
-        <li><a class={"nav__link" + activo("ecosistema")} href={url("maquetas/indice-seccion/")}>Ecosistema</a></li>
+        <li><a class={"nav__link" + activo("ecosistema")} href={url("ecosistema/")}>Ecosistema</a></li>
         <li><a class={"nav__link" + activo("alumnado")} href={url("maquetas/alumnado/")}>Alumnado</a></li>
         <li><a class={"nav__link" + activo("docentes")} href={url("maquetas/docentes/")}>Docentes</a></li>
         <li><a class={"nav__link" + activo("blog")} href={url("maquetas/listado/")}>Blog</a></li>
@@ -59,7 +59,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
     <svg aria-hidden="true"><use href="#i-search"/></svg> Buscar en Echidna
   </button>
   <ul>
-    <li><a href={url("maquetas/indice-seccion/")}><span class="dot" style="--dot:var(--c-ecosistema)"></span>Ecosistema</a></li>
+    <li><a href={url("ecosistema/")}><span class="dot" style="--dot:var(--c-ecosistema)"></span>Ecosistema</a></li>
     <li><a href={url("maquetas/alumnado/")}><span class="dot" style="--dot:var(--c-alumnado)"></span>Alumnado</a></li>
     <li><a href={url("maquetas/docentes/")}><span class="dot" style="--dot:var(--c-docentes)"></span>Docentes</a></li>
     <li><a href={url("maquetas/listado/")}><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>

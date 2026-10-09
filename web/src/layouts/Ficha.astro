@@ -35,7 +35,7 @@ const toc = [
   ...(componentes.length ? [{ slug: 'componentes', text: 'Componentes' }] : []),
 ];
 
-// Migas: Ecosistema (la maqueta, como en el menú, hasta que exista la página) y las fichas que cuelgan por encima
+// Migas: Ecosistema y las fichas que cuelgan por encima
 const tramos = ruta.split('/').slice(1, -1);
 const crumbs = tramos.map((_, i) => {
   const padre = ['ecosistema', ...tramos.slice(0, i + 1)].join('/');
@@ -70,7 +70,7 @@ const descargas = d.downloads.map((dl) => {
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol>
           <li><a href={url()}>Inicio</a></li>
-          <li><a href={url('maquetas/indice-seccion/')}>Ecosistema</a></li>
+          <li><a href={url('ecosistema/')}>Ecosistema</a></li>
           {crumbs.map((c) => <li>{c.href ? <a href={c.href}>{c.title}</a> : c.title}</li>)}
           <li><span aria-current="page">{d.title}</span></li>
         </ol>
@@ -100,10 +100,10 @@ const descargas = d.downloads.map((dl) => {
       {componentes.length > 0 && (
         <>
           <h2 id="componentes">Componentes</h2>
-          <ul class="hw-cards grid grid--4">
+          <ul class="img-cards grid grid--4">
             {componentes.map((c) => (
               <li class="card">
-                <div class="hw-cards__img">
+                <div class="img-cards__img">
                   <Image src={c.data.image} alt="" widths={[240, 480]} sizes="240px" />
                 </div>
                 <div class="card__body">

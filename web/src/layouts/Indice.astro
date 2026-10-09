@@ -1,0 +1,62 @@
+---
+// Plantilla «Índice de sección»: cabecera, introducción en Markdown y una tarjeta por cada
+// página hija directa que exista, sea de `paginas` o una ficha de `hardware`, por `order`
+import { Image } from 'astro:assets';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+import CabeceraPagina from '../components/CabeceraPagina.astro';
+import { url } from '../lib/url';
+import { rutaDe } from '../lib/paginas';
+import { rutaHardware } from '../lib/hardware';
+
+interface Props {
+  title: string;
+  description: string;
+  section?: string;
+  /** Tramos intermedios de las migas de pan (sin Inicio ni la página actual) */
+  crumbs?: { title: string; href: string }[];
+  /** URL del índice sin base ni barras: ecosistema */
+  ruta: string;
+}
+const { title, description, section, crumbs = [], ruta } = Astro.props;
+
+type Hija = { ruta: string; data: CollectionEntry<'paginas'>['data'] | CollectionEntry<'hardware'>['data'] };
+const esHija = (r: string) => r.startsWith(`${ruta}/`) && !r.slice(ruta.length + 1).includes('/');
+const paginas = await getCollection('paginas', (p) => p.id.startsWith('es/') && !p.data.draft);
+const fichas = await getCollection('hardware', (h) => h.id.startsWith('es/') && !h.data.draft);
+const hijas: Hija[] = [
+  ...paginas.map((p) => ({ ruta: rutaDe(p), data: p.data })),
+  ...fichas.map((h) => ({ ruta: rutaHardware(h), data: h.data })),
+]
+  .filter((h) => esHija(h.ruta))
+  .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'));
+---
+<Base title={title} description={description} section={section}>
+<main id="contenido">
+  <CabeceraPagina title={title} description={description} crumbs={crumbs} />
+
+  <div class="wrap indice">
+    <div class="prose">
+      <slot />
+    </div>
+
+    {hijas.length > 0 && (
+      <ul class="img-cards grid grid--3">
+        {hijas.map((h) => (
+          <li class="card">
+            {h.data.image && (
+              <div class="img-cards__img">
+                <Image src={h.data.image} alt="" widths={[320, 640]} sizes="320px" />
+              </div>
+            )}
+            <div class="card__body">
+              <h2 class="card__title"><a class="card__link" href={url(`${h.ruta}/`)}>{h.data.title}</a></h2>
+              <p class="card__text">{h.data.description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</main>
+</Base>
