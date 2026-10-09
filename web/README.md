@@ -14,6 +14,10 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 
 `bun run build` genera el sitio estático en `web/dist/` y `bun run preview` lo sirve.
 
+- **Si Bun no está instalado**: `curl -fsSL https://bun.sh/install | bash` y abrir una terminal nueva.
+- **Sin Bun, con npm**: `npm install --no-package-lock` y `npx astro dev` (o `npx astro build` y `npx astro preview`). Sin *lockfile* de npm, porque el proyecto usa el de Bun.
+- **Desde VS Code**: los comandos se ejecutan en la terminal integrada (*Terminal → Nueva terminal*, que se abre en la raíz del repositorio). La URL se abre con `Ctrl+clic` o, dentro del editor, con *Simple Browser: Show* (`Ctrl+Shift+P`). La página se recarga al guardar y el servidor se para con `Ctrl+C`.
+
 | # | Plantilla | Archivo | Ejemplo real |
 |---|---|---|---|
 | 1 | Base (cabecera, menú, buscador, pie) | `src/layouts/Base.astro` | todas |
