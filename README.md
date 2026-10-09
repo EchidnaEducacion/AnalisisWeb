@@ -152,6 +152,8 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
+- [ ] **Imágenes de las tarjetas**: buscar una imagen para las tarjetas que hoy salen sin ella, empezando por las páginas de EchidnaML (Descarga, Conectar EchidnaML y EchidnaBlack, Empezar con EchidnaBlocks y Empezar con LearningML). Se pone en el campo `image` de cada página.
+- [ ] **Placas anteriores** (1.3) y **Entornos compatibles** (1.4) se dejan para el final de la migración.
 - [ ] **Envío del formulario de contacto**: elegir el servicio, crear la cuenta con el correo de la asociación y poner su dirección en `PUBLIC_CONTACT_FORM_URL`. Hasta entonces, el formulario de `/contacta/` se ve pero no envía.
   - **Formspree** (recomendado): encaja con el formulario actual, porque solo pide su dirección (`https://formspree.io/f/…`) y ya entiende el campo antispam `_gotcha`. Guarda los mensajes en un panel. Plan gratuito: unos 50 mensajes al mes.
   - **Web3Forms**: no pide crear cuenta, solo un correo para obtener la clave. Habría que añadir un campo oculto con la clave y cambiar el antispam por `botcheck`. Plan gratuito: unos 250 mensajes al mes.
