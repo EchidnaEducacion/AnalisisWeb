@@ -150,7 +150,7 @@ Dos ficheros de datos pequeños que usan las plantillas de listado para generar 
 | `image` | imagen | Sí | Foto cuadrada, en `web/src/assets/autores/` y sin metadatos (EXIF) |
 | `url` | URL | No | Web personal |
 
-De momento están los cuatro del equipo: `jorge-lobo`, `xdesig`, `jose` y `juanda`. Falta `javier`, que solo firma entradas del blog: se añadirá con la colección `blog`.
+De momento están los cuatro del equipo, por orden alfabético de apellido: `jorge-lobo`, `jose`, `juanda` y `xdesig`. Falta `javier`, que solo firma entradas del blog: se añadirá con la colección `blog`.
 
 **Categorías** (`id`, `name`, `description`, `parent`):
 

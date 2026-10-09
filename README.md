@@ -123,7 +123,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 | Portada | — | — | Se queda |
 | Índice de sección | — | — | Se queda |
 | Ficha de hardware | — | — | Se queda |
-| Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/), [Sobre el proyecto](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/) | Se queda |
+| Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/), [Sobre el proyecto](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/), [Licencias](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/licencias/) | Se queda |
 | Contacto | ✅ `layouts/Contacto.astro` (sin envío real) | [Contacta](https://echidnaeducacion.github.io/AnalisisWeb/contacta/) | Se queda |
 | Entrada de blog | — | — | Se queda |
 | Listado / taxonomía | — | — | Se queda |
@@ -146,7 +146,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [x] **Sin comentarios en el blog**: solo hay 9 en 6 años y Giscus obligaría a tener cuenta de GitHub. Los 9 comentarios antiguos se descartan. Al final de cada entrada se invita a escribir desde `/contacta/`.
 - [x] **Analítica con GoatCounter**: gratuito para proyectos sin ánimo de lucro, de código abierto y sin cookies, así que no necesita aviso de consentimiento. Mide visitas, páginas más vistas y procedencia sin datos personales. Se descarta GA4 por las cookies y el envío de datos a Google.
 - [x] **Rótulos cortos en el menú**: «Alumnado» y «Docentes» en lugar de «Materiales alumnado» y «Recursos docentes», para que el menú quepa junto al logo. Las páginas, las migas de pan y el pie mantienen el nombre completo.
-- [x] **Licencias**: contenidos y materiales con CC BY-SA 4.0, hardware con **CERN OHL-S** (sin restricción comercial, que esta licencia no admite) y software con GPL.
+- [x] **Licencias**: contenidos y materiales con CC BY-SA 4.0; software con la licencia de cada programa (GPL-3.0 EchidnaML, AGPL-3.0 el editor de LearningML, BSD-3-Clause los componentes de Scratch). La del hardware está pendiente (ver «Próximos pasos»).
 
 ## Próximos pasos
 
@@ -162,5 +162,6 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] Hacer capturas nuevas para 1.1.2 Primeros pasos y 1.1.3 Instalar StandardFirmata al redactarlas (sustituyen a `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`).
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress y guardarlos en `web/public/ecosistema/placas-anteriores/`.
+- [ ] **Licencia del hardware**: confirmarla con el responsable del diseño electrónico (detalle en [`estructura.md`](estructura.md#pendiente)). La web propone de momento CERN OHL-S v2 con el nombre y el logo fuera de la licencia. Cuando se decida, ponerla también en los diseños del repositorio [`recursos`](https://github.com/EchidnaEducacion/recursos) (`electronica/`), que hoy no tienen fichero de licencia y cuyo README dice que todo es CC BY-SA 4.0.
 
 Los puntos pendientes de la estructura están en [`estructura.md`](estructura.md#pendiente).
