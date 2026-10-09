@@ -22,6 +22,18 @@ const enlacesConBase = {
   },
 };
 
+// Las tablas del Markdown van dentro de .table-wrap, como en las plantillas:
+// borde redondeado y desplazamiento horizontal en móvil en vez de ensanchar la página
+const tablasConMarco = {
+  name: 'tablas-con-marco',
+  element: {
+    filter: ['table'],
+    visit(node, ctx) {
+      ctx.wrapNode(node, { type: 'element', tagName: 'div', properties: { className: ['table-wrap'] }, children: [] });
+    },
+  },
+};
+
 export default defineConfig({
   site: 'https://echidnaeducacion.github.io',
   base,
@@ -33,5 +45,5 @@ export default defineConfig({
     defaultLocale: 'es',
     routing: { prefixDefaultLocale: false },
   },
-  markdown: { processor: satteri({ hastPlugins: [enlacesConBase] }) },
+  markdown: { processor: satteri({ hastPlugins: [enlacesConBase, tablasConMarco] }) },
 });

@@ -1,6 +1,6 @@
 # Modelo de contenido
 
-Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). La referencia es `web/src/content.config.ts`, donde ya está implementada la colección `paginas`; las demás se añadirán con su plantilla. Este documento explica el diseño para quien edita.
+Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada uno, según las plantillas de [`estructura.md`](estructura.md). La referencia es `web/src/content.config.ts`, donde ya están implementadas la colección `paginas` y la lista de autores; las demás se añadirán con su plantilla. Este documento explica el diseño para quien edita.
 
 ## Índice
 
@@ -34,6 +34,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `template` | `pagina` · `indice` · `contacto` · `portada` | Sí | Plantilla que usa la página; ninguna cae en una genérica por defecto |
 | `order` | número | No (0) | Orden de la tarjeta en el índice de la sección |
 | `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta |
+| `team` | lista de identificadores de la lista de autores | No | Fichas del equipo al final del texto, en ese orden (en Sobre el proyecto) |
 | `image` | imagen | No | Imagen de la tarjeta y al compartir en redes |
 | `translation` | ruta | No | Versión en el otro idioma |
 | `draft` | sí/no | No (no) | Página a medias sin publicar |
@@ -138,7 +139,18 @@ image: ./portada.jpg
 
 Dos ficheros de datos pequeños que usan las plantillas de listado para generar `/author/…/` y `/category/…/`.
 
-**Autores** (`id`, `name`, `description`, `image`): `javier`, `jorge-lobo`, `jose`, `juanda`, `xdesig`.
+**Autores** (`web/src/content/autores.yaml`, colección `autores`, ya implementada). También forman el equipo de Sobre el proyecto (campo `team` de `paginas`).
+
+| Campo | Tipo | Obligatorio | Para qué |
+|---|---|---|---|
+| `id` | texto | Sí | Identificador; es el de la URL `/author/<id>/` |
+| `name` | texto no vacío | Sí | Nombre |
+| `role` | texto no vacío | Sí | Cargo (p. ej. «Profesor de Tecnología en Secundaria») |
+| `description` | texto no vacío | Sí | Biografía breve |
+| `image` | imagen | Sí | Foto cuadrada, en `web/src/assets/autores/` y sin metadatos (EXIF) |
+| `url` | URL | No | Web personal |
+
+De momento están los cuatro del equipo: `jorge-lobo`, `xdesig`, `jose` y `juanda`. Falta `javier`, que solo firma entradas del blog: se añadirá con la colección `blog`.
 
 **Categorías** (`id`, `name`, `description`, `parent`):
 

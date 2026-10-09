@@ -115,7 +115,7 @@ Se reaprovecha el MDX de la prueba de concepto anterior como punto de partida: q
 
 Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el que se termina una plantilla o una página. La lista de páginas, sus URL y su plantilla están en [`estructura.md`](estructura.md#tabla).
 
-**Colecciones** (`web/src/content.config.ts`): `paginas` ✅ · `hardware` — · `recursos` — · `blog` —
+**Colecciones** (`web/src/content.config.ts`): `paginas` ✅ · `hardware` — · `recursos` — · `blog` — · lista de `autores` ✅
 
 | Plantilla | Plantilla real | Páginas hechas | Maqueta |
 |---|---|---|---|
@@ -123,7 +123,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 | Portada | — | — | Se queda |
 | Índice de sección | — | — | Se queda |
 | Ficha de hardware | — | — | Se queda |
-| Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/) | Se queda |
+| Página genérica | ✅ `layouts/Pagina.astro` | [Política de privacidad](https://echidnaeducacion.github.io/AnalisisWeb/politica-privacidad/), [Sobre el proyecto](https://echidnaeducacion.github.io/AnalisisWeb/quienes-somos/) | Se queda |
 | Contacto | ✅ `layouts/Contacto.astro` (sin envío real) | [Contacta](https://echidnaeducacion.github.io/AnalisisWeb/contacta/) | Se queda |
 | Entrada de blog | — | — | Se queda |
 | Listado / taxonomía | — | — | Se queda |
@@ -131,7 +131,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 
 **Plantilla real**: ✅ cuando el *layout* está alimentado por su colección. **Maqueta**: «Borrada» cuando la plantilla real la iguala.
 
-Última actualización: 2026-10-08.
+Última actualización: 2026-10-09.
 
 ## Decisiones tomadas
 
@@ -146,6 +146,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [x] **Sin comentarios en el blog**: solo hay 9 en 6 años y Giscus obligaría a tener cuenta de GitHub. Los 9 comentarios antiguos se descartan. Al final de cada entrada se invita a escribir desde `/contacta/`.
 - [x] **Analítica con GoatCounter**: gratuito para proyectos sin ánimo de lucro, de código abierto y sin cookies, así que no necesita aviso de consentimiento. Mide visitas, páginas más vistas y procedencia sin datos personales. Se descarta GA4 por las cookies y el envío de datos a Google.
 - [x] **Rótulos cortos en el menú**: «Alumnado» y «Docentes» en lugar de «Materiales alumnado» y «Recursos docentes», para que el menú quepa junto al logo. Las páginas, las migas de pan y el pie mantienen el nombre completo.
+- [x] **Licencias**: contenidos y materiales con CC BY-SA 4.0, hardware con **CERN OHL-S** (sin restricción comercial, que esta licencia no admite) y software con GPL.
 
 ## Próximos pasos
 

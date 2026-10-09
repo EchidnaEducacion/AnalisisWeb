@@ -1,0 +1,26 @@
+---
+// Fichas del equipo (foto, nombre, cargo, descripción y web) a partir de la colección `autores`
+import { Image } from 'astro:assets';
+import { getEntries } from 'astro:content';
+
+interface Props {
+  /** Referencias a `autores`, en el orden en que se muestran */
+  ids: { collection: 'autores'; id: string }[];
+}
+const personas = await getEntries(Astro.props.ids);
+// Texto del enlace: el dominio de la web, sin www
+const dominio = (u: string) => new URL(u).hostname.replace(/^www\./, '');
+---
+<ul class="team grid grid--2">
+  {personas.map(({ data: p }) => (
+    <li class="author-box">
+      <Image src={p.image} alt="" width={64} height={64} densities={[1, 2]} class="avatar avatar--lg" />
+      <div>
+        <strong>{p.name}</strong>
+        <p class="team__role">{p.role}</p>
+        <p>{p.description}</p>
+        {p.url && <p><a href={p.url}>{dominio(p.url)}</a></p>}
+      </div>
+    </li>
+  ))}
+</ul>

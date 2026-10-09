@@ -191,7 +191,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 | Comprobar la placa — `/docentes/comprobar-placa/` | Blog — `/blog/` | Quiero una — `/quiero-una/` · Contacta — `/contacta/` |
 
 - **Iconos**, junto a la marca y la descripción de la asociación: GitHub (`https://github.com/EchidnaEducacion`), YouTube (`https://www.youtube.com/channel/UCYmPpIWazAOc7dLs4CZEqew`), X (`https://x.com/EchidnaSTEAM`) y RSS (`/rss.xml`). Sin icono de email: el contacto va por `/contacta/`.
-- **Franja inferior**: las tres licencias (contenidos CC BY-SA, hardware pendiente de confirmar, software GPL) enlazadas a `/quienes-somos/licencias/` · Política de privacidad (`/politica-privacidad/`) · © 2026 Echidna Educación.
+- **Franja inferior**: las tres licencias (contenidos CC BY-SA, hardware CERN OHL-S, software GPL) enlazadas a `/quienes-somos/licencias/` · Política de privacidad (`/politica-privacidad/`) · © 2026 Echidna Educación.
 - **No se incluyen**: entradas recientes (ya están en la portada), créditos de diseño ni «Edita esta web en GitHub» (lo cubre «Cómo colaborar»).
 
 ## Cambios respecto al texto original
@@ -219,7 +219,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 - [x] «Herramientas de análisis» pasa a «Comprobar la placa» (hoy 3.9, `/docentes/comprobar-placa/`): página que enlaza a los repos de GitHub para comprobar el funcionamiento de la placa.
 - [x] Las guías tienen además un alias en minúsculas (`/guiainicioechidnaml/`, `/guiainicioarduinoide/`) que redirige al mismo sitio, porque en GitHub Pages las URL distinguen mayúsculas y minúsculas.
 - [x] Placas anteriores (1.3): una sola página con un resumen breve de EchidnaBlack v1 y de EchidnaShield y un PDF con la documentación de cada una. Las URL antiguas de esas placas redirigen a `/ecosistema/placas-anteriores/`.
-- [ ] Confirmar la licencia del hardware para el pie y la página de licencias. La web actual dice «CERN OHL-S con Restricción Comercial», pero la CERN OHL-S no admite restricciones comerciales: puede ser OHL-S sin más, OHL-S con un acuerdo aparte (por ejemplo, de marca) o una licencia distinta.
+- [x] Licencia del hardware: **CERN OHL-S**, sin añadidos (esta licencia no admite restricciones comerciales). Es la que figura en el pie, en Sobre el proyecto y en la página de licencias.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Se guardan dentro de la web, en `web/public/ecosistema/placas-anteriores/`.
 - [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno. Las situaciones de aprendizaje y los proyectos son exportaciones de eXeLearning alojadas sin plantilla. Snap! no tiene contenido de momento.
 - [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Redirigir `rea.echidna.es/<recurso>/` a las nuevas URL `/alumnado/situaciones-aprendizaje/<recurso>/`.

@@ -1,0 +1,29 @@
+# Autores del blog y equipo de «Sobre el proyecto». El id es el de /author/<id>/.
+# Las fotos están en src/assets/autores/, cuadradas y sin metadatos (EXIF).
+- id: jorge-lobo
+  name: Jorge Lobo
+  role: Maestro de Educación Primaria
+  description: Es uno de los maestros pioneros en llevar la robótica educativa y la impresión 3D a Primaria. Imparte cursos de robótica educativa y participa en el proyecto Escornabot.
+  image: ../assets/autores/jorge-lobo.jpg
+  url: http://www.lobotic.es/
+
+- id: xdesig
+  name: Xabier Rosas
+  role: Profesor de Ciclos Formativos de Electrónica
+  description: Tiene una larga trayectoria en el mundo del código abierto. Desarrolló el proyecto Escornabot y es el responsable del diseño electrónico de Echidna. Imparte formación sobre robótica educativa.
+  image: ../assets/autores/xdesig.jpg
+  url: http://carreiros.es/
+
+- id: jose
+  name: Jose Pujol
+  role: Profesor de Tecnología en Secundaria
+  description: Lleva programación y robótica con hardware libre a sus clases desde 2006. Desarrolló el proyecto Kiwibot. Imparte formación sobre robótica educativa.
+  image: ../assets/autores/jose.jpg
+  url: https://tecnopujol.wordpress.com/
+
+- id: juanda
+  name: Juan David Rodríguez
+  role: Profesor de Tecnología en Secundaria
+  description: Desarrolla la plataforma LearningML y, en Echidna, se encarga del desarrollo de software. Imparte cursos sobre robótica educativa.
+  image: ../assets/autores/juanda.jpg
+  url: https://web.juandarodriguez.es/

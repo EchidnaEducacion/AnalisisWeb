@@ -48,8 +48,10 @@ web/
 ├── astro.config.mjs         # base /AnalisisWeb y salida en ficheros *.html
 ├── src/
 │   ├── assets/logo/         # SVG original del logo (Illustrator, con todas sus variantes)
+│   ├── assets/autores/      # fotos de los autores (cuadradas y sin EXIF)
 │   ├── content.config.ts    # colecciones y su esquema (ver modelo-contenido.md)
 │   ├── content/paginas/es/  # páginas en Markdown: la ruta del fichero es la URL
+│   ├── content/autores.yaml # autores del blog y equipo de Sobre el proyecto
 │   ├── layouts/
 │   │   ├── Base.astro       # <head>, iconos, cabecera, pie y scripts
 │   │   └── Pagina.astro     # plantilla «Página genérica»
@@ -81,13 +83,14 @@ Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que 
 
 ## Páginas reales
 
-El contenido está en `src/content/`, validado por el esquema de `src/content.config.ts` (si falta un campo o no cumple el formato, el *build* falla e indica el fichero). Por ahora solo existe la colección `paginas`, con la plantilla «Página genérica».
+El contenido está en `src/content/`, validado por el esquema de `src/content.config.ts` (si falta un campo o no cumple el formato, el *build* falla e indica el fichero). Por ahora existen la colección `paginas`, con las plantillas «Página genérica» y «Contacto», y la lista `autores`.
 
 - **La ruta del fichero es la URL**, dentro de la carpeta del idioma: `src/content/paginas/es/politica-privacidad.md` → `/politica-privacidad/`; `es/quienes-somos/licencias.md` → `/quienes-somos/licencias/`.
 - **Enlaces en el Markdown**: los internos se escriben sin `base` (`[contacto](/contacta/)`); un plugin de Sätteri (el procesador de Markdown de Astro 7), definido en `astro.config.mjs`, se lo añade al compilar.
+- **Tablas en el Markdown**: otro plugin de Sätteri las mete en un `div.table-wrap`, como en las plantillas, para que tengan marco y se desplacen dentro de él en móvil en vez de ensanchar la página.
 - **Índice lateral** «En esta página»: solo sale si la página lleva `toc: true` en el *front matter* (para páginas largas); se genera con sus `h2`.
 - **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
 
-Páginas hechas: Política de privacidad.
+Páginas hechas: Política de privacidad, Contacta y Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`).
 
 Las imágenes son marcadores (`.ph`) que se sustituirán por las fotos reales optimizadas por Astro. El buscador muestra resultados de ejemplo; en Astro se conectará con Pagefind.

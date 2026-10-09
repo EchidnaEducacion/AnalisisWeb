@@ -1,7 +1,7 @@
 // Colecciones de contenido. El diseño de cada una y para qué sirve cada campo
 // está explicado en modelo-contenido.md (raíz del repositorio).
-import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection, reference } from 'astro:content';
+import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 // Texto obligatorio: no vale vacío ni solo espacios
@@ -21,10 +21,26 @@ const paginas = defineCollection({
       order: z.number().default(0),
       // Índice lateral «En esta página» con los h2: solo en páginas largas
       toc: z.boolean().default(false),
+      // Fichas del equipo al final de la página, por id de `autores`
+      team: z.array(reference('autores')).optional(),
       image: image().optional(),
       translation: z.string().optional(),
       draft: z.boolean().default(false),
     }),
 });
 
-export const collections = { paginas };
+// Autores del blog, que forman también el equipo de «Sobre el proyecto».
+// Una lista YAML: el id de cada autor es el de su URL /author/<id>/.
+const autores = defineCollection({
+  loader: file('./src/content/autores.yaml'),
+  schema: ({ image }) =>
+    z.object({
+      name: texto(),
+      role: texto(),
+      description: texto(),
+      image: image(),
+      url: z.url().optional(),
+    }),
+});
+
+export const collections = { paginas, autores };

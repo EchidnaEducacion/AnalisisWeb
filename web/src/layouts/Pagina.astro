@@ -1,8 +1,10 @@
 ---
-// Plantilla «Página genérica»: título, entradilla, cuerpo Markdown y, si la página lo pide (toc), índice lateral con los h2
+// Plantilla «Página genérica»: título, entradilla, cuerpo Markdown y, si la página lo pide,
+// índice lateral con los h2 (toc) y fichas del equipo al final (team)
 import type { MarkdownHeading } from 'astro';
 import Base from './Base.astro';
 import CabeceraPagina from '../components/CabeceraPagina.astro';
+import Equipo from '../components/Equipo.astro';
 
 interface Props {
   title: string;
@@ -11,8 +13,10 @@ interface Props {
   /** Tramos intermedios de las migas de pan (sin Inicio ni la página actual) */
   crumbs?: { title: string; href: string }[];
   headings: MarkdownHeading[];
+  /** Equipo que se muestra después del texto */
+  team?: { collection: 'autores'; id: string }[];
 }
-const { title, description, section, crumbs = [], headings } = Astro.props;
+const { title, description, section, crumbs = [], headings, team } = Astro.props;
 const toc = headings.filter((h) => h.depth === 2);
 ---
 <Base title={title} description={description} section={section}>
@@ -30,6 +34,7 @@ const toc = headings.filter((h) => h.depth === 2);
     )}
     <article class="prose">
       <slot />
+      {team && <Equipo ids={team} />}
     </article>
   </div>
 </main>
