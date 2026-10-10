@@ -21,7 +21,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 | # | Plantilla | Archivo | Ejemplo real |
 |---|---|---|---|
 | 1 | Base (cabecera, menú, buscador, pie) | `src/layouts/Base.astro` | todas |
-| 2 | Portada | `src/pages/maquetas/portada.astro` | `/` |
+| 2 | Portada | `src/pages/index.astro` (plantilla real; la maqueta `src/pages/maquetas/portada.astro` se queda para comparar) | `/` |
 | 3 | Índice de sección | `src/layouts/Indice.astro` (plantilla real; maqueta borrada) | `/ecosistema/` |
 | 3 | Índice de sección (agrupado por títulos) | `src/pages/maquetas/alumnado.astro`, `src/pages/maquetas/docentes.astro` | `/alumnado/`, `/docentes/` |
 | 4 | Ficha de hardware | `src/layouts/Ficha.astro` (plantilla real; maqueta borrada) | `/ecosistema/echidnablack2/`, `/ecosistema/echidnablack2/leds/` |
@@ -67,9 +67,9 @@ web/
 │   └── pages/
 │       ├── [...slug].astro  # genera las páginas de la colección `paginas`
 │       ├── ecosistema/[...slug].astro # genera las fichas de la colección `hardware`
-│       ├── index.astro      # «Propuesta de plantillas», hasta que exista la portada real
+│       ├── index.astro      # portada: textos fijos; placa, materiales destacados y últimas entradas, de sus colecciones
 │       ├── 404.astro
-│       └── maquetas/*.astro # maquetas de cada plantilla, con contenido escrito a mano
+│       └── maquetas/        # index.astro: «Propuesta de plantillas»; el resto, maquetas con contenido escrito a mano
 └── public/
     ├── favicon.svg          # erizo del logo; apple-touch-icon.png, su versión en PNG
     └── assets/

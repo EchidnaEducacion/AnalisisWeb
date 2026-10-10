@@ -1,0 +1,89 @@
+---
+import { url } from '../../lib/url';
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Propuesta de plantillas · Echidna Educación"
+  description="Prototipos HTML de las páginas maestras de la nueva web estática de Echidna Educación."
+  bare
+>
+<main id="contenido">
+  <header class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Migración a web estática · Paso 2 y 3</p>
+      <h1>Propuesta de plantillas</h1>
+      <p class="lead">Prototipos HTML de las 9 páginas maestras definidas en la planificación. Mantienen el naranja y el carácter técnico de la web original, con un diseño más limpio, responsive, accesible y pensado para usar en clase. Servirán de referencia para los layouts <code>.astro</code>.</p>
+    </div>
+  </header>
+  <section class="wrap" style="padding-block:2rem 4.5rem">
+    <div class="tpl-grid">
+      <article class="tpl">
+        <span class="tpl__num">01</span>
+        <h2><a href={url("maquetas/portada/")}>Base</a></h2>
+        <p>Cabecera fija con menú, buscador (Pagefind), selector ES/EN, modo oscuro y pie. Presente en todas las páginas.</p>
+        <dl><dt>Se usa en</dt><dd>Todas</dd><dt>Archivo</dt><dd><code>portada.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="ecosistema">
+        <span class="tpl__num">02</span>
+        <h2><a href={url()}>Portada</a></h2>
+        <p>Héroe, entradas por perfil (docente, estudiante, conoce la placa), pilares, la placa, materiales destacados y últimas entradas.</p>
+        <dl><dt>Se usa en</dt><dd>/</dd><dt>Archivo</dt><dd><code>pages/index.astro</code>; maqueta <a href={url("maquetas/portada/")}><code>portada</code></a></dd></dl>
+      </article>
+      <article class="tpl" data-section="ecosistema">
+        <span class="tpl__num">03</span>
+        <h2><a href={url("ecosistema/")}>Índice de sección</a></h2>
+        <p>Introducción + tarjetas generadas a partir de las páginas hijas (<a href={url("ecosistema/")}>Ecosistema</a>) o agrupadas por títulos a partir de la colección <code>recursos</code> (<a href={url("maquetas/alumnado/")}>Materiales alumnado</a> y <a href={url("maquetas/docentes/")}>Recursos docentes</a>).</p>
+        <dl><dt>Se usa en</dt><dd>Ecosistema, alumnado, docentes, complementos</dd><dt>Archivo</dt><dd><code>layouts/Indice.astro</code>; maquetas <code>alumnado</code> y <code>docentes</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="ecosistema">
+        <span class="tpl__num">04</span>
+        <h2><a href={url("ecosistema/echidnablack2/")}>Ficha de hardware</a></h2>
+        <p>Ficha rápida, pines y descargas a partir del front matter.</p>
+        <dl><dt>Se usa en</dt><dd>EchidnaBlack2, 10 componentes y 5 complementos</dd><dt>Archivo</dt><dd><code>layouts/Ficha.astro</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="nosotros">
+        <span class="tpl__num">05</span>
+        <h2><a href={url("quienes-somos/")}>Página genérica</a></h2>
+        <p>Texto largo con índice lateral. Sobre el proyecto, licencias, privacidad, EchidnaML…</p>
+        <dl><dt>Se usa en</dt><dd>~15 páginas</dd><dt>Archivo</dt><dd><code>layouts/Pagina.astro</code></dd></dl>
+      </article>
+      <article class="tpl">
+        <span class="tpl__num">06</span>
+        <h2><a href={url("maquetas/contacto/")}>Contacto</a></h2>
+        <p>Página genérica + formulario accesible con servicio externo y antispam.</p>
+        <dl><dt>Se usa en</dt><dd>/contacta/</dd><dt>Archivo</dt><dd><code>contacto.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="blog">
+        <span class="tpl__num">07</span>
+        <h2><a href={url("maquetas/entrada-blog/")}>Entrada de blog</a></h2>
+        <p>Fecha, autor, tiempo de lectura, etiquetas, compartir y entradas relacionadas.</p>
+        <dl><dt>Se usa en</dt><dd>61 entradas</dd><dt>Archivo</dt><dd><code>entrada-blog.html</code></dd></dl>
+      </article>
+      <article class="tpl" data-section="blog">
+        <span class="tpl__num">08</span>
+        <h2><a href={url("maquetas/listado/")}>Listado / taxonomía</a></h2>
+        <p>Blog, categorías, etiquetas y autores: entrada destacada, tarjetas y paginación.</p>
+        <dl><dt>Se usa en</dt><dd>Blog y taxonomías (generadas)</dd><dt>Archivo</dt><dd><code>listado.html</code></dd></dl>
+      </article>
+      <article class="tpl">
+        <span class="tpl__num">09</span>
+        <h2><a href={url("404.html")}>Error 404</a></h2>
+        <p>Mensaje amable, buscador y accesos a las secciones.</p>
+        <dl><dt>Se usa en</dt><dd>—</dd><dt>Archivo</dt><dd><code>404.html</code></dd></dl>
+      </article>
+      <article class="tpl">
+        <span class="tpl__num">+</span>
+        <h2><a href={url("maquetas/componentes/")}>Componentes de contenido</a></h2>
+        <p>Aviso, descarga, vídeo/presentación, galería, tarjeta y estilos de texto para usar en MDX.</p>
+        <dl><dt>Se usa en</dt><dd>Contenido</dd><dt>Archivo</dt><dd><code>componentes.html</code></dd></dl>
+      </article>
+    </div>
+
+    <div class="grid grid--3" style="margin-top:3rem">
+      <div class="feature"><div class="feature__icon"><svg aria-hidden="true"><use href="#i-book"/></svg></div><h3>Legible</h3><p>Atkinson Hyperlegible a 17 px, contraste AA y botones de 48 px: cómodo en proyector, tablet y móvil.</p></div>
+      <div class="feature" data-section="alumnado"><div class="feature__icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></div><h3>Orientado</h3><p>Cada sección tiene su color e icono, y hay migas de pan, índices laterales y entradas por perfil.</p></div>
+      <div class="feature" data-section="docentes"><div class="feature__icon"><svg aria-hidden="true"><use href="#i-moon"/></svg></div><h3>Preparado</h3><p>Modo oscuro, versión imprimible de las fichas, selector ES/EN y vídeos que solo se cargan al pulsar.</p></div>
+    </div>
+  </section>
+</main>
+</Base>
