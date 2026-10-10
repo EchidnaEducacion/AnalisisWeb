@@ -40,8 +40,16 @@ const args = process.argv.slice(2);
 const AÑO = args.find((a) => a.startsWith('--año='))?.slice(6);
 const SLUGS = args.filter((a) => a.startsWith('--slug=')).map((a) => a.slice(7));
 const FORZAR = args.includes('--forzar');
-if (!AÑO && !SLUGS.length) {
-  console.error('Indica qué importar: --año=AAAA o --slug=<slug> (y --forzar para sobrescribir).');
+// Páginas sueltas (no entradas del blog), p. ej. la documentación de las placas anteriores:
+//   node wp-import.mjs --pagina=/hardware/echidna-shield/ --salida=../placas-anteriores/paginas
+const PAGINAS = args.filter((a) => a.startsWith('--pagina=')).map((a) => a.slice(9));
+const SALIDA = args.find((a) => a.startsWith('--salida='))?.slice(9);
+if (!AÑO && !SLUGS.length && !PAGINAS.length) {
+  console.error('Indica qué importar: --año=AAAA, --slug=<slug> o --pagina=<ruta> --salida=<carpeta> (y --forzar para sobrescribir).');
+  process.exit(1);
+}
+if (PAGINAS.length && !SALIDA) {
+  console.error('Con --pagina hay que indicar la carpeta de salida con --salida=<carpeta>.');
   process.exit(1);
 }
 
@@ -368,8 +376,44 @@ const descripcion = (post, clave) => {
 
 // ------------------------------------------------------------------ principal
 
+// Páginas sueltas: cada una en <salida>/<slug>/index.md, con todas sus imágenes y ficheros al lado
+// (también los GIF), porque no van a la web sino a un documento propio
+const importaPaginas = async () => {
+  const destino = path.resolve(process.cwd(), SALIDA);
+  for (const ruta of PAGINAS) {
+    const slug = ruta.replace(/\/$/, '').split('/').pop();
+    const encontradas = await (await peticion(`${API}/pages?slug=${encodeURIComponent(slug)}&per_page=100`)).json();
+    const pagina = encontradas.find((p) => new URL(p.link).pathname === ruta);
+    if (!pagina) {
+      console.warn(`  No existe la página ${ruta}`);
+      continue;
+    }
+    const clave = ruta;
+    const carpeta = path.join(destino, slug);
+    if (!FORZAR && (await existe(path.join(carpeta, 'index.md')))) {
+      console.log(`  ${ruta}: ya existe, se deja como está`);
+      continue;
+    }
+    console.log(`  ${ruta}`);
+    const $ = cheerio.load(pagina.content.rendered, null, false);
+    await limpia($, clave);
+    await localiza($, carpeta, carpeta, '.', clave);
+    separaImagenes($);
+    $('a').filter((_, a) => !$(a).text().trim() && !$(a).find('img').length).remove();
+    $('strong, b, em, i').filter((_, e) => !$(e).text().trim() && !$(e).find('img').length).remove();
+    const markdown = aMarkdown($.html());
+    await mkdir(carpeta, { recursive: true });
+    await writeFile(path.join(carpeta, 'index.md'), `# ${decodifica(pagina.title.rendered)}\n\n<!-- ${SITE}${ruta} -->\n\n${markdown}\n`);
+  }
+  const partes = [`# Informe de importación de páginas\n`];
+  for (const [clave, avisos] of informe) partes.push(`## ${clave}\n\n${[...new Set(avisos)].map((a) => `- ${a}`).join('\n')}\n`);
+  await writeFile(path.join(AQUI, 'informe.md'), partes.join('\n'));
+  console.log('Hecho. Avisos en herramientas/wp-import/informe.md');
+};
+
 const main = async () => {
   await leeRedirecciones();
+  if (PAGINAS.length) return importaPaginas();
   const autoresWeb = await readFile(path.join(WEB, 'src/content/autores.yaml'), 'utf8');
   const idsAutores = new Set([...autoresWeb.matchAll(/^- id: (\S+)/gm)].map((m) => m[1]));
 
