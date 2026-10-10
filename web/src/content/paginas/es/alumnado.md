@@ -2,7 +2,6 @@
 title: Materiales alumnado
 description: Proyectos, situaciones de aprendizaje y guías para trabajar con la placa EchidnaBlack2 en clase, ordenados por entorno de programación.
 template: pagina
-toc: true
 resources: alumnado
 ---
 

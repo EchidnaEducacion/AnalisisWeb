@@ -6,12 +6,11 @@
   description: Proyectos sencillos y guiados para dar los primeros pasos con la EchidnaBlack2, EchidnaBlocks y la inteligencia artificial.
   audience: alumnado
   environment: EchidnaML
-  group: Proyectos
+  group: Proyectos y Manual
   type: Guía
   url: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/
   image: ./recursos/guia-inicio-echidnaml.jpg
   order: 1
-  featured: true
 
 - id: hace-calor-aqui
   title: ¿Hace calor aquí?
@@ -66,36 +65,34 @@
   description: Manual completo de la placa EchidnaBlack2 y del entorno EchidnaML, con sus componentes, los bloques y la inteligencia artificial con LearningML.
   audience: alumnado
   environment: EchidnaML
-  group: Guías
+  group: Proyectos y Manual
   type: Manual
   url: https://echidnaeducacion.github.io/manual/
   image: ./recursos/manual-echidnaml.png
-  order: 1
-  featured: true
+  order: 2
 
 - id: guia-inicio-arduino-ide
   title: Proyectos de inicio con Arduino IDE
   description: Proyectos sencillos para empezar a programar la EchidnaBlack2 con código en Arduino IDE.
   audience: alumnado
   environment: Arduino IDE
-  group: Proyectos
+  group: Proyectos y Manual
   type: Guía
   url: https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/
   image: ./recursos/guia-inicio-arduino-ide.jpg
   order: 1
-  featured: true
 
 - id: manual-fp-echidnablack
   title: Manual EchidnaBlack para FP
   description: Un manual extenso de Xabier Rosas para programar la placa en lenguaje C en sus clases de Formación Profesional.
   audience: alumnado
   environment: Arduino IDE
-  group: Guías
+  group: Proyectos y Manual
   type: Manual (PDF, 44 MB)
   url: https://echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf
   level: FP
   image: ./recursos/manual-fp-echidnablack.jpg
-  order: 1
+  order: 2
 
 # Recursos docentes: environment es el material de alumnado al que acompañan; sin group
 - id: docentes-inicio-echidnaml-material

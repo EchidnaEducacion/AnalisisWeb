@@ -48,16 +48,14 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   └── 1.4 Entornos compatibles
 ├── 2. Materiales alumnado                 (una sola página; todos son enlaces externos)
 │   ├── EchidnaML                           (título dentro de la página)
-│   │   ├── Proyectos                       (subtítulo)
-│   │   │   └── 2.1 Proyectos de inicio con EchidnaML
-│   │   ├── Situaciones de aprendizaje      (subtítulo)
-│   │   │   └── 2.2 ¿Hace calor aquí?, Andalucía del alba al anochecer, ¡La Tierra se mueve! y Aprendiendo con robots
-│   │   └── Guías                           (subtítulo)
-│   │       └── 2.3 Manual de usuario EchidnaBlack y EchidnaML
+│   │   ├── Proyectos y Manual              (subtítulo)
+│   │   │   ├── 2.1 Proyectos de inicio con EchidnaML
+│   │   │   └── 2.3 Manual de usuario EchidnaBlack y EchidnaML
+│   │   └── Situaciones de aprendizaje      (subtítulo)
+│   │       └── 2.2 ¿Hace calor aquí?, Andalucía del alba al anochecer, ¡La Tierra se mueve! y Aprendiendo con robots
 │   └── Arduino IDE                         (título)
-│       ├── Proyectos                       (subtítulo)
-│       │   └── 2.4 Proyectos de inicio con Arduino IDE
-│       └── Guías                           (subtítulo)
+│       └── Proyectos y Manual              (subtítulo)
+│           ├── 2.4 Proyectos de inicio con Arduino IDE
 │           └── 2.5 Manual EchidnaBlack para FP
 ├── 3. Recursos docentes                   (una sola página)
 │   ├── Proyectos de inicio con EchidnaML   (título dentro de la página; tarjeta del material del alumnado, 2.1)

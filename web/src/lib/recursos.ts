@@ -11,7 +11,7 @@ const ordenEntornos = [
   'Proyectos de inicio con EchidnaML', 'Situaciones de aprendizaje', 'Proyectos de inicio con Arduino IDE',
   'Otros recursos',
 ];
-const ordenGrupos = ['Proyectos', 'Situaciones de aprendizaje', 'Guías'];
+const ordenGrupos = ['Proyectos y Manual', 'Proyectos', 'Situaciones de aprendizaje', 'Guías'];
 const posicion = (lista: string[], valor: string) => (lista.includes(valor) ? lista.indexOf(valor) : lista.length);
 const porLista = (lista: string[]) => (a: string, b: string) =>
   posicion(lista, a) - posicion(lista, b) || a.localeCompare(b, 'es');
