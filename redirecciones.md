@@ -125,7 +125,7 @@ Páginas que existen en WordPress pero no aparecen en el sitemap (localizadas en
 | `/a-programar/echidnascratch/como-empezar/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML (igual que su página principal) |
 | `/a-programar/echidnascratch/como-empezar/echidnalink/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML (igual que su página principal) |
 | `/a-programar/echidnascratch/inteligencia-artificial-con-echidna/` | `/ecosistema/echidnaml/` | Redirige | EchidnaScratch, sustituido por EchidnaML (igual que su página principal) |
-| `/a-programar/snap4arduino/` | `/ecosistema/` | Redirige | Provisional: cuando Snap! tenga página en «Entornos de programación compatibles», redirigir a ella |
+| `/a-programar/snap4arduino/` | `/ecosistema/snap/` | Redirige | Snap! en «Entornos de programación compatibles» |
 
 ## URL alternativas de WordPress
 
