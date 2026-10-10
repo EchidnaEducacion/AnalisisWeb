@@ -18,6 +18,7 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 | [`modelo-contenido.md`](modelo-contenido.md) | Colecciones (`paginas`, `hardware`, `recursos`, `blog`) y sus campos |
 | [`publicaciones.md`](publicaciones.md) | Listado de trabajo de publicaciones sobre Echidna para la página 5.3 |
 | [`redirecciones.md`](redirecciones.md) | Correspondencia entre las URL de WordPress y las nuevas |
+| [`traslado-repo.md`](traslado-repo.md) | Plan para servir la web en la raíz desde el repo `EchidnaEducacion.github.io` |
 | [`analisis-previo.md`](analisis-previo.md) | Estudio de viabilidad inicial; referencia histórica, no se actualiza |
 | [`web/README.md`](web/README.md) | Proyecto Astro: maquetas, estructura, cómo ejecutarlo y **cómo migrar una página** |
 
