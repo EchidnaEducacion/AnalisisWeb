@@ -33,17 +33,15 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   │   ├── 1.2.8 LEDs ROG
 │   │   ├── 1.2.9 Audio
 │   │   ├── 1.2.10 Conexiones MkMk
-│   │   ├── 1.2.11 Puesta en marcha
-│   │   ├── 1.2.12 Modo sensores / Modo MkMk
-│   │   ├── 1.2.13 Alimentación
-│   │   ├── 1.2.14 Complementos
-│   │   │   ├── 1.2.14.1 Servomotor de posición
-│   │   │   ├── 1.2.14.2 Servomotor continuo
-│   │   │   ├── 1.2.14.3 Infrarrojos distancia
-│   │   │   ├── 1.2.14.4 Complementos conexiones MkMk
-│   │   │   └── 1.2.14.5 Bluetooth
-│   │   ├── 1.2.15 Documentación
-│   │   └── 1.2.16 Características técnicas
+│   │   ├── 1.2.11 Modo sensores / Modo MkMk
+│   │   ├── 1.2.12 Alimentación
+│   │   ├── 1.2.13 Complementos
+│   │   │   ├── 1.2.13.1 Servomotor de posición
+│   │   │   ├── 1.2.13.2 Servomotor continuo
+│   │   │   ├── 1.2.13.3 Infrarrojos distancia
+│   │   │   ├── 1.2.13.4 Complementos conexiones MkMk
+│   │   │   └── 1.2.13.5 Bluetooth
+│   │   └── 1.2.14 Características técnicas
 │   ├── Entornos de programación compatibles  (título dentro del índice de Ecosistema)
 │   │   ├── 1.4.1 Arduino IDE
 │   │   └── 1.4.2 Snap!                 (materiales en preparación)
@@ -116,17 +114,15 @@ Pie (fuera del menú, en todas las páginas)
 | 3 | 1.2.8 LEDs ROG | `/ecosistema/echidnablack2/leds/` | Ficha de hardware |
 | 3 | 1.2.9 Audio | `/ecosistema/echidnablack2/audio/` | Ficha de hardware |
 | 3 | 1.2.10 Conexiones MkMk | `/ecosistema/echidnablack2/conexiones-mkmk/` | Ficha de hardware |
-| 3 | 1.2.11 Puesta en marcha | `/ecosistema/echidnablack2/puesta-en-marcha/` | Página genérica |
-| 3 | 1.2.12 Modo sensores / Modo MkMk | `/ecosistema/echidnablack2/modo-sensores-mkmk/` | Página genérica |
-| 3 | 1.2.13 Alimentación | `/ecosistema/echidnablack2/alimentacion/` | Página genérica |
-| 3 | 1.2.14 Complementos | `/ecosistema/echidnablack2/complementos/` | Índice de sección |
-| 4 | 1.2.14.1 Servomotor de posición | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Ficha de hardware |
-| 4 | 1.2.14.2 Servomotor continuo | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Ficha de hardware |
-| 4 | 1.2.14.3 Infrarrojos distancia | `/ecosistema/echidnablack2/complementos/infrarrojos-distancia/` | Ficha de hardware |
-| 4 | 1.2.14.4 Complementos conexiones MkMk | `/ecosistema/echidnablack2/complementos/conexiones-mkmk/` | Ficha de hardware |
-| 4 | 1.2.14.5 Bluetooth | `/ecosistema/echidnablack2/complementos/bluetooth/` | Ficha de hardware |
-| 3 | 1.2.15 Documentación | `/ecosistema/echidnablack2/documentacion/` | Página genérica |
-| 3 | 1.2.16 Características técnicas | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Página genérica (datos técnicos de la placa, del manual) |
+| 3 | 1.2.11 Modo sensores / Modo MkMk | `/ecosistema/echidnablack2/modo-sensores-mkmk/` | Página genérica |
+| 3 | 1.2.12 Alimentación | `/ecosistema/echidnablack2/alimentacion/` | Página genérica |
+| 3 | 1.2.13 Complementos | `/ecosistema/echidnablack2/complementos/` | Índice de sección |
+| 4 | 1.2.13.1 Servomotor de posición | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Ficha de hardware |
+| 4 | 1.2.13.2 Servomotor continuo | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Ficha de hardware |
+| 4 | 1.2.13.3 Infrarrojos distancia | `/ecosistema/echidnablack2/complementos/infrarrojos-distancia/` | Ficha de hardware |
+| 4 | 1.2.13.4 Complementos conexiones MkMk | `/ecosistema/echidnablack2/complementos/conexiones-mkmk/` | Ficha de hardware |
+| 4 | 1.2.13.5 Bluetooth | `/ecosistema/echidnablack2/complementos/bluetooth/` | Ficha de hardware |
+| 3 | 1.2.14 Características técnicas | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Página genérica (datos técnicos de la placa, del manual) |
 | 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/#placas-anteriores` | — (título del índice de Ecosistema con dos tarjetas que enlazan a los PDF; sin página propia) |
 | 3 | PDF de EchidnaBlack v1 y EchidnaShield | `/ecosistema/placas-anteriores/echidnablack.pdf`, `/ecosistema/placas-anteriores/echidnashield.pdf` | — (ficheros en `web/public/ecosistema/placas-anteriores/`) |
 | 2 | 1.4.1 Arduino IDE (en «Entornos de programación compatibles») | `/ecosistema/arduino-ide/` | Página genérica |
