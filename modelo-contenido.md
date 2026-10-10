@@ -90,6 +90,7 @@ Lista de los materiales de `/alumnado/` (y, más adelante, de `/docentes/`) en `
 | `level` | `Primaria` · `Secundaria` · `FP` | No | Etiqueta de nivel educativo |
 | `image` | imagen | No | Miniatura (2:1, en `web/src/content/recursos/`, sin metadatos) |
 | `order` | número | No (0) | Orden dentro de su grupo |
+| `featured` | sí/no | No (no) | Tarjeta destacada: ocupa todo el ancho de su grupo, con la imagen al lado del texto (Proyectos de inicio con EchidnaML) |
 | `draft` | sí/no | No (no) | Recurso preparado pero oculto |
 
 Los entornos y los grupos salen en un orden fijo (`web/src/lib/recursos.ts`): EchidnaML, Snap!, Arduino IDE; Proyectos, Situaciones de aprendizaje, Guías. Para Recursos docentes habrá que añadir cómo se enlaza cada material con su parte del alumnado (el antiguo campo `material`).

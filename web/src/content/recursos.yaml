@@ -11,6 +11,7 @@
   url: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/
   image: ./recursos/guia-inicio-echidnaml.jpg
   order: 1
+  featured: true
 
 - id: hace-calor-aqui
   title: ¿Hace calor aquí?
@@ -70,6 +71,7 @@
   url: https://echidnaeducacion.github.io/manual/
   image: ./recursos/manual-echidnaml.jpg
   order: 1
+  featured: true
 
 - id: guia-inicio-arduino-ide
   title: Proyectos de inicio con Arduino IDE
@@ -81,6 +83,7 @@
   url: https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/
   image: ./recursos/guia-inicio-arduino-ide.jpg
   order: 1
+  featured: true
 
 - id: manual-fp-echidnablack
   title: Manual EchidnaBlack para FP

@@ -20,7 +20,7 @@ const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : hr
         <h3>{grupo}</h3>
         <ul class="img-cards recursos grid grid--3">
           {lista.map((r) => (
-            <li class="card post-card">
+            <li class={r.featured ? 'card post-card recursos__destacado' : 'card post-card'}>
               {r.image && (
                 <div class="post-thumb">
                   <Image src={r.image} alt="" widths={[400, 800]} sizes="(min-width: 960px) 380px, 100vw" />

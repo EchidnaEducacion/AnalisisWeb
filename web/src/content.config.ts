@@ -155,6 +155,8 @@ const recursos = defineCollection({
       level: z.enum(['Primaria', 'Secundaria', 'FP']).optional(),
       image: image().optional(),
       order: z.number().default(0),
+      // Tarjeta destacada: ocupa todo el ancho de su grupo, con la imagen al lado del texto
+      featured: z.boolean().default(false),
       draft: z.boolean().default(false),
     }),
 });
