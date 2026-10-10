@@ -133,30 +133,34 @@ const ultimas = await Promise.all(
       </div>
       <div class="grid grid--2">
         <article class="board-card">
-          <Image src={placa.data.image!} alt="" widths={[220, 440]} sizes="220px" />
-          <div>
-            <h3>EchidnaBlack2</h3>
-            <p class="muted">{placa.data.description}</p>
-            <ul>
-              <li>LED, LED RGB, audio y pulsadores</li>
-              <li>Joystick, acelerómetro y sensores de luz, temperatura y sonido</li>
-              <li>Entradas MkMk para convertir objetos en botones</li>
-            </ul>
-            <a class="btn btn--soft btn--sm" href={url('ecosistema/echidnablack2/')}>Conocer la EchidnaBlack2</a>
+          <div class="board-card__head">
+            <Image src={placa.data.image!} alt="" widths={[200, 400]} sizes="(min-width: 520px) 160px, 200px" />
+            <div>
+              <h3>EchidnaBlack2</h3>
+              <p class="muted">{placa.data.description}</p>
+            </div>
           </div>
+          <ul>
+            <li>LED, LED RGB, audio y pulsadores</li>
+            <li>Joystick, acelerómetro y sensores de luz, temperatura y sonido</li>
+            <li>Entradas MkMk para convertir objetos en botones</li>
+          </ul>
+          <a class="btn btn--soft btn--sm" href={url('ecosistema/echidnablack2/')}>Conocer la EchidnaBlack2</a>
         </article>
         <article class="board-card">
-          <Image src={programa.data.image} alt="" widths={[220, 440]} sizes="220px" />
-          <div>
-            <h3>EchidnaML</h3>
-            <p class="muted">{programa.data.description}</p>
-            <ul>
-              <li>EchidnaBlocks: Scratch con bloques para la placa</li>
-              <li>LearningML: modelos de inteligencia artificial sin salir del programa</li>
-              <li>Para GNU/Linux, Windows y macOS, y funciona sin conexión</li>
-            </ul>
-            <a class="btn btn--soft btn--sm" href={url('ecosistema/echidnaml/')}>Conocer EchidnaML</a>
+          <div class="board-card__head">
+            <Image src={programa.data.image} alt="" widths={[200, 400]} sizes="(min-width: 520px) 160px, 200px" />
+            <div>
+              <h3>EchidnaML</h3>
+              <p class="muted">{programa.data.description}</p>
+            </div>
           </div>
+          <ul>
+            <li>EchidnaBlocks: Scratch con bloques para la placa</li>
+            <li>LearningML: modelos de inteligencia artificial sin salir del programa</li>
+            <li>Para GNU/Linux, Windows y macOS, y funciona sin conexión</li>
+          </ul>
+          <a class="btn btn--soft btn--sm" href={url('ecosistema/echidnaml/')}>Conocer EchidnaML</a>
         </article>
       </div>
     </div>

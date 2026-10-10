@@ -522,9 +522,15 @@ tbody tr:last-child td { border-bottom: 0; }
 .path span { color: var(--muted); font-size: .95rem; }
 
 /* Portada · placas */
-.board-card { display: grid; gap: 1.5rem; padding: clamp(1.25rem, 1rem + 1.5vw, 2rem); border-radius: var(--radius-l); background: var(--surface); border: 1px solid var(--line); }
-@media (min-width: 720px) { .board-card { grid-template-columns: 220px 1fr; align-items: center; } }
-.board-card ul { margin: .5rem 0 1.2rem; padding-left: 1.2rem; color: var(--ink-2); }
+/* Arriba, la imagen junto al título y la descripción; debajo, la lista y el botón a todo el ancho.
+   El botón queda abajo para que las dos tarjetas lo tengan a la misma altura */
+.board-card { display: grid; grid-template-rows: auto 1fr auto; gap: 1rem; padding: clamp(1.25rem, 1rem + 1.5vw, 2rem); border-radius: var(--radius-l); background: var(--surface); border: 1px solid var(--line); }
+.board-card__head { display: grid; gap: 1rem; align-items: center; }
+@media (min-width: 520px) { .board-card__head { grid-template-columns: 160px 1fr; } }
+.board-card__head img { width: 100%; max-width: 200px; height: auto; justify-self: center; }
+.board-card__head p { margin: 0; }
+.board-card ul { margin: 0; padding-left: 1.2rem; color: var(--ink-2); }
+.board-card > .btn { justify-self: start; }
 .board-card ul li::marker { color: var(--brand); }
 
 /* Portada · banda de comunidad */
