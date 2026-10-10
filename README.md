@@ -22,6 +22,7 @@ La web está en [`web/`](web/) y se puede ver publicada en **<https://echidnaedu
 | [`estructura.md`](estructura.md) | Árbol de páginas, URL, plantillas, criterios de navegación y puntos pendientes de la estructura |
 | [`modelo-contenido.md`](modelo-contenido.md) | Colecciones de contenido y sus campos (`paginas`, `hardware`, `recursos`, `blog`) |
 | [`redirecciones.md`](redirecciones.md) | Correspondencia entre las URL de WordPress y las de la nueva web |
+| [`traslado-repo.md`](traslado-repo.md) | Plan para servir la web en la raíz (<https://echidnaeducacion.github.io/>) desde el repo `EchidnaEducacion.github.io` |
 | [`analisis-previo.md`](analisis-previo.md) | Estudio de viabilidad inicial: situación de partida, ventajas e inconvenientes, tecnologías, inventario y análisis de la prueba de concepto anterior |
 | [`web/README.md`](web/README.md) | Proyecto Astro: cómo ejecutarlo y cómo está organizado |
 | [`AGENTS.md`](AGENTS.md) | Contexto y normas de trabajo para asistentes y personas que colaboren en el repo (`CLAUDE.md` lo importa) |
@@ -152,6 +153,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 
 ## Próximos pasos
 
+- [ ] **Trasladar la web a la raíz**: renombrar este repo a `EchidnaEducacion.github.io`, archivar la prueba de concepto y quitar el `base` `/AnalisisWeb`, según [`traslado-repo.md`](traslado-repo.md).
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
 - [ ] **Imágenes de las tarjetas**: buscar una imagen para las tarjetas que hoy salen sin ella (las de EchidnaML ya la tienen). Se pone en el campo `image` de cada página.
