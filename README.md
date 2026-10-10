@@ -188,6 +188,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
   - Medir el ancho mejor que el alto: es mayor, así que el error pesa menos, y el alto incluye la curva superior.
   - Los programas que no empiezan con la bandera verde (p. ej. con «al presionar tecla») necesitan otra referencia, como el alto de un bloque normal de una línea.
   - No ampliar ficheros (se ven borrosos). Dos opciones: reducir los ficheros a la escala elegida, o dejarlos como están y fijar en la web el ancho de cada uno (ancho natural × escala).
+- [ ] **Número del certificado CE de la EchidnaBlack2**: falta en el apartado Certificaciones de Características técnicas. El que daba la web anterior (AT1813C601983126) es de otra placa.
 - [ ] **Siguiente**: completar Recursos docentes (`/docentes/`) material a material. Después, Complementos de la EchidnaBlack2 (con sus cinco páginas).
 - [x] **RSS del blog**: las 20 últimas entradas en `/rss.xml` y una copia en `/feed/` (la dirección de WordPress), enlazado desde el pie, el lateral del blog y el `<head>`. Generado en `web/src/lib/rss.ts`, sin dependencias.
 - [ ] **Montar las redirecciones** de [`redirecciones.md`](redirecciones.md) (`redirects` en `astro.config.mjs`): todavía no hay ninguna. Son imprescindibles antes de trasladar la web a echidna.es; entre ellas, las 47 de etiquetas del blog.

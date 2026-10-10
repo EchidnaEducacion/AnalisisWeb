@@ -1,6 +1,6 @@
 ---
 title: Características técnicas
-description: "Datos técnicos de la placa EchidnaBlack2: microcontrolador, sensores, actuadores, conectores con sus pines y consumo."
+description: "Datos técnicos de la placa EchidnaBlack2: microcontrolador, sensores, actuadores, conectores con sus pines, consumo y certificaciones."
 template: pagina
 order: 1
 image: ./caracteristicas-tecnicas/miniatura.png
@@ -44,3 +44,10 @@ Complementan la ficha de la [EchidnaBlack2](/ecosistema/echidnablack2/), donde e
 
 - Conectada por USB: 0,150 W.
 - Con alimentación externa: 0,160 W.
+
+## Certificaciones
+
+- **CE**: cumple la directiva de compatibilidad electromagnética 2014/30/UE, según las normas:
+  - **EN 55032:2015+A11:2020**: compatibilidad electromagnética de equipos multimedia, requisitos de emisión.
+  - **EN 55035:2017+A11:2020**: compatibilidad electromagnética de equipos multimedia, requisitos de inmunidad.
+- **RoHS**: los componentes y las soldaduras cumplen la normativa RoHS.

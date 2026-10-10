@@ -81,7 +81,7 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 | `/hardware/complementos/servomotor-de-posicion-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/hardware/echidnablack2/` | `/ecosistema/echidnablack2/` | Redirige |  |
 | `/hardware/echidnablack2/alimentacion-echidnablack2/` | `/ecosistema/echidnablack2/alimentacion/` | Redirige |  |
-| `/hardware/echidnablack2/documentacion-echidnablack2/` | `/quienes-somos/licencias/` | Redirige | Sin página propia: trataba de certificaciones y licencias |
+| `/hardware/echidnablack2/documentacion-echidnablack2/` | `/ecosistema/echidnablack2/caracteristicas-tecnicas/#certificaciones` | Redirige | Sin página propia: las certificaciones CE y RoHS están en Características técnicas; las licencias, en `/quienes-somos/licencias/` |
 | `/hardware/echidnablack2/modo-sensores-modo-mkmk-black2/` | `/ecosistema/echidnablack2/modo-sensores-mkmk/` | Redirige |  |
 | `/hardware/echidnablack/puesta-en-marcha-echidna-black/` | `/ecosistema/echidnaml/conectar-placa/` | Redirige | Sin página propia: la puesta en marcha está en Conectar EchidnaML y EchidnaBlack. La página de la Black2 enlaza hoy a esta |
 | `/hardware/echidnablack/complementos-echidnablack/` | `/ecosistema/echidnablack2/complementos/` | Redirige | La página de la Black2 enlaza hoy a esta |
