@@ -28,6 +28,8 @@ const paginas = defineCollection({
       // Tarjetas de enlace al final del texto: { title, text, href }; href es una URL externa
       // o una ruta interna sin base (/ecosistema/)
       cards: z.array(z.object({ title: texto(), text: texto(), href: texto() })).default([]),
+      // En los índices: título del apartado de tarjetas de las páginas hijas («Primeros pasos»)
+      cardsTitle: texto().optional(),
       // Lista de publicaciones (colección `publicaciones`) al final del texto, con esta importancia mínima
       publications: z.number().int().min(1).max(5).optional(),
       // Recursos (colección `recursos`) de este público al final del texto, agrupados por entorno y grupo

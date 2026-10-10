@@ -21,8 +21,10 @@ interface Props {
   ruta: string;
   /** Apartados del texto para el índice lateral; vacío si la página no lleva `toc` */
   headings?: MarkdownHeading[];
+  /** Título del apartado de tarjetas de las hijas; sin él, las tarjetas van sin título */
+  cardsTitle?: string;
 }
-const { title, description, section, crumbs = [], ruta, headings = [] } = Astro.props;
+const { title, description, section, crumbs = [], ruta, headings = [], cardsTitle } = Astro.props;
 
 type Hija = { ruta: string; data: CollectionEntry<'paginas'>['data'] | CollectionEntry<'hardware'>['data'] };
 const esHija = (r: string) => r.startsWith(`${ruta}/`) && !r.slice(ruta.length + 1).includes('/');
@@ -34,7 +36,13 @@ const hijas: Hija[] = [
 ]
   .filter((h) => esHija(h.ruta) && (!('listed' in h.data) || h.data.listed))
   .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'));
-const toc = headings.filter((h) => h.depth === 2);
+const idTarjetas = 'paginas-hijas';
+const toc = [
+  ...headings.filter((h) => h.depth === 2),
+  ...(cardsTitle && hijas.length ? [{ slug: idTarjetas, text: cardsTitle }] : []),
+];
+// Con título de apartado, los títulos de las tarjetas bajan un nivel
+const TituloTarjeta = cardsTitle ? 'h3' : 'h2';
 const conIndice = headings.length > 0;
 ---
 <Base title={title} description={description} section={section}>
@@ -67,6 +75,7 @@ const conIndice = headings.length > 0;
       <slot />
     </div>
 
+    {hijas.length > 0 && cardsTitle && <h2 class="indice__cards-title" id={idTarjetas}>{cardsTitle}</h2>}
     {hijas.length > 0 && (
       <ul class="img-cards grid grid--3">
         {hijas.map((h) => (
@@ -77,7 +86,7 @@ const conIndice = headings.length > 0;
               </div>
             )}
             <div class="card__body">
-              <h2 class="card__title"><a class="card__link" href={url(`${h.ruta}/`)}>{h.data.title}</a></h2>
+              <TituloTarjeta class="card__title"><a class="card__link" href={url(`${h.ruta}/`)}>{h.data.title}</a></TituloTarjeta>
               <p class="card__text">{h.data.description}</p>
             </div>
           </li>

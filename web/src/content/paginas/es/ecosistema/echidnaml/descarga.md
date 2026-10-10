@@ -3,6 +3,7 @@ title: Descarga
 description: Descarga EchidnaML para GNU/Linux, Windows o macOS e instálalo paso a paso. Versión actual, 1.6.2.
 template: pagina
 order: 1
+image: ./descarga/sistemas-operativos.svg
 toc: true
 ---
 
