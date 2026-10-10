@@ -156,7 +156,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 5.1 Sobre el Proyecto Echidna | `/quienes-somos/` | Página genérica |
 | 2 | 5.2 Contacto | `/contacta/` | Contacto |
 | 2 | 5.3 Publicaciones | `/quienes-somos/publicaciones/` | Página genérica |
-| Fuera del menú | Quiero una | `/quiero-una/` | Página genérica (enlaces a los distribuidores) |
+| Fuera del menú | Quiero una | `/quiero-una/` | Página genérica (dónde comprar la EchidnaBlack2, en Leal Educa, y qué hace falta para empezar) |
 | Pie | Política de privacidad | `/politica-privacidad/` | Página genérica |
 | Pie | Licencias | `/quienes-somos/licencias/` | Página genérica |
 | Pie | Iconos: GitHub, YouTube, X y RSS | Externos y `/rss.xml` (ver «Pie de página») | — |
