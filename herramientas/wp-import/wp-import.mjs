@@ -25,6 +25,17 @@ const PUBLIC = path.join(WEB, 'public');
 const CACHE = path.join(AQUI, '.cache');
 const OPTIMIZABLE = /\.(jpe?g|png|webp)$/i;
 
+// Correspondencia de direcciones antiguas y nuevas, leída de las tablas de redirecciones.md:
+// «| `/a-programar/echidnaml/` | `/ecosistema/echidnaml/` |» y las de rea.echidna.es a GitHub
+const redirecciones = new Map();
+const leeRedirecciones = async () => {
+  const md = await readFile(path.resolve(AQUI, '../../redirecciones.md'), 'utf8');
+  for (const [, antigua, nueva] of md.matchAll(/^\| `([^`]+)` \| `([^`]+)` \|/gm)) {
+    if (nueva.startsWith('/')) redirecciones.set(antigua, nueva);
+    else if (/^[\w.-]+\.\w+\//.test(nueva)) redirecciones.set(antigua, `https://${nueva}`);
+  }
+};
+
 const args = process.argv.slice(2);
 const AÑO = args.find((a) => a.startsWith('--año='))?.slice(6);
 const SLUGS = args.filter((a) => a.startsWith('--slug=')).map((a) => a.slice(7));
@@ -152,7 +163,7 @@ const limpia = async ($, clave) => {
       destino.replaceWith(`<p><a href="https://www.youtube.com/watch?v=${id}">${titulo || 'Vídeo'}</a></p>`);
       if (!titulo) avisa(clave, `Vídeo de YouTube sin título (${id}): poner el título en el enlace`);
     } else if (/docs\.google\.com\/presentation/.test(src)) {
-      destino.replaceWith(`<p><a href="${src.replace('/pubembed', '/pub')}">Ver la presentación (Google Slides)</a></p>`);
+      destino.replaceWith(`<p><a href="${src.replace(/\/(pub)?embed\b/, '/pub')}">Ver la presentación (Google Slides)</a></p>`);
       avisa(clave, 'Presentación de Google incrustada: queda como enlace');
     } else if (src) {
       destino.replaceWith(`<p><a href="${src}">${titulo || 'Ver el contenido incrustado'}</a></p>`);
@@ -259,6 +270,12 @@ const localiza = async ($, carpeta, publica, rutaPublica, clave) => {
   for (const el of $('a[href]').toArray()) {
     const $a = $(el);
     const href = $a.attr('href');
+    // Situaciones de aprendizaje de rea.echidna.es: a su copia en GitHub
+    const rea = href.match(/^https?:\/\/rea\.echidna\.es(\/[^/?#]+\/)/);
+    if (rea && redirecciones.has(`rea.echidna.es${rea[1]}`)) {
+      $a.attr('href', redirecciones.get(`rea.echidna.es${rea[1]}`));
+      continue;
+    }
     if (!esInterno(href)) continue;
     // Enlace a la propia imagen alrededor de ella (lightbox): solo la imagen
     if (esSubida(href) && /\.(jpe?g|png|webp|gif)$/i.test(href) && $a.find('img').length) {
@@ -269,8 +286,13 @@ const localiza = async ($, carpeta, publica, rutaPublica, clave) => {
       if (esSubida(href)) $a.attr('href', await aPublic(href));
       else {
         const u = new URL(href, SITE);
-        $a.attr('href', `${u.pathname}${u.hash}`);
-        avisa(clave, `Enlace interno a revisar: ${u.pathname}${u.hash}`);
+        const nueva = redirecciones.get(u.pathname);
+        if (nueva) $a.attr('href', `${nueva}${nueva.startsWith('/') ? u.hash : ''}`);
+        else {
+          $a.attr('href', `${u.pathname}${u.hash}`);
+          // Las entradas del blog conservan su dirección; el resto hay que comprobarlo
+          if (!/^\/\d{4}\/\d{2}\/[^/]+\/$/.test(u.pathname)) avisa(clave, `Enlace interno sin redirección conocida: ${u.pathname}${u.hash}`);
+        }
       }
     } catch (error) {
       avisa(clave, `No se ha podido descargar ${href} (${error.message})`);
@@ -327,7 +349,8 @@ const descripcion = (post, clave) => {
   if (!d) {
     const $ = cheerio.load(post.content.rendered);
     const texto = $('p').toArray().map((p) => $(p).text().replace(/\s+/g, ' ').trim()).filter(Boolean).join(' ');
-    const frases = texto.match(/[^.!?]+[.!?]+(\s|$)/g) ?? [texto];
+    // Una frase termina en . ! o ?, quizá seguidos de comillas de cierre
+    const frases = texto.match(/[^.!?]+[.!?]+[»”"')]*(\s|$)/g) ?? [texto];
     d = '';
     for (const f of frases) {
       if ((d + f).trim().length > 160) break;
@@ -346,6 +369,7 @@ const descripcion = (post, clave) => {
 // ------------------------------------------------------------------ principal
 
 const main = async () => {
+  await leeRedirecciones();
   const autoresWeb = await readFile(path.join(WEB, 'src/content/autores.yaml'), 'utf8');
   const idsAutores = new Set([...autoresWeb.matchAll(/^- id: (\S+)/gm)].map((m) => m[1]));
 
@@ -390,6 +414,9 @@ const main = async () => {
     const restos = [...new Set($('[class*="fusion-"], [class*="awb-"]').toArray().flatMap((el) => ($(el).attr('class') ?? '').split(/\s+/).filter((c) => /^(fusion|awb)-/.test(c))))];
     if (restos.length) avisa(clave, `Quedan clases de Avada sin convertir: ${restos.join(', ')}`);
     separaImagenes($);
+    // Enlaces y negritas que se han quedado vacíos al sacar las imágenes
+    $('a').filter((_, a) => !$(a).text().trim() && !$(a).find('img').length).remove();
+    $('strong, b, em, i').filter((_, e) => !$(e).text().trim() && !$(e).find('img').length).remove();
     let markdown = aMarkdown($.html());
     if (/\[\/?(fusion|awb)_/.test(markdown)) avisa(clave, 'Quedan shortcodes [fusion_…] sin convertir');
 

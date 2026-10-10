@@ -30,6 +30,8 @@ Sin `--forzar` no toca las entradas que ya existen, para no perder las revisione
   - Las presentaciones de Google quedan como enlace.
   - Las galerías se convierten en imágenes seguidas.
   - Las imágenes van en su propio párrafo.
+- Aplica las redirecciones de [`redirecciones.md`](../../redirecciones.md): los enlaces a páginas antiguas de la web y a `rea.echidna.es` pasan a su dirección nueva. Los enlaces a otras entradas del blog se dejan igual, porque conservan su dirección.
+- No importa las entradas cuyo autor no está en `web/src/content/autores.yaml` (la web no se construiría); las anota en el informe.
 - Rellena el *front matter*: título, una descripción de 50 a 160 caracteres (la de SEO o el principio del texto), fecha, autor, categorías (`recursos/proyectos`…), etiquetas y portada.
 - Escribe `informe.md` con lo que hay que revisar a mano en cada entrada.
 
@@ -38,6 +40,7 @@ Sin `--forzar` no toca las entradas que ya existen, para no perder las revisione
 Antes de subir una tanda, repasa `informe.md` y cada entrada en el servidor de desarrollo:
 
 - **Textos alternativos:** en WordPress casi ninguna imagen los tiene. Hay que escribirlos, junto con el `imageAlt` de la portada.
+- **Portada en GIF:** no se importa; se puede usar el primer fotograma (`convert 'portada.gif[0]' portada.png`).
 - **Descripción:** si se ha recortado o es demasiado corta.
 - **Autores:** que estén en `web/src/content/autores.yaml`.
 - **Enlaces internos:** que lleven a páginas que existen en la web nueva.

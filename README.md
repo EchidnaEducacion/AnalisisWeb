@@ -167,9 +167,9 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] **Recursos docentes**: terminar las diapositivas (PDF) y la programación didáctica de Proyectos de inicio con EchidnaML (hoy «Próximamente»; al terminarlas, poner su `url` en `recursos.yaml`) y añadir los demás materiales: situaciones de aprendizaje, Snap!, Proyectos de inicio con Arduino IDE y Otros recursos.
 - [ ] **Materiales alumnado por hacer**: por ahora solo hay 8 materiales; faltan otros proyectos, Snap!, etc.
 - [x] **Formato del blog**: aprobado por el equipo (octubre de 2026), con el lateral de categorías, últimas entradas y etiquetas.
-- [ ] **Migrar las entradas del blog** con el importador de [`herramientas/wp-import/`](herramientas/wp-import/), por años y revisando cada tanda (textos alternativos, descripciones, enlaces). **2026 hecho** (10 entradas; Rotógrafo, a mano). Quedan 2025 a 2017 (51). Antes de importar las suyas, añadir a **Javier Álvarez** (3 entradas, de años anteriores) a `autores.yaml`: cargo, descripción y foto. Al importar 2025, comprobar el enlace de Estatuas musicales a «Construye un gallo que canta al amanecer». La paginación está sin probar con más de 12 entradas.
-- [ ] **Revisar las entradas importadas de prueba**:
-  - Arte cinético y El Laboratorio del Dr. Frankestein incrustaban sus instrucciones de montaje (presentaciones de Google); ahora son un enlace. Decidir si se incrustan.
+- [ ] **Migrar las entradas del blog** con el importador de [`herramientas/wp-import/`](herramientas/wp-import/), por años y revisando cada tanda (textos alternativos, descripciones, enlaces). **2026 y 2025 hechos** (20 entradas; Rotógrafo, a mano). Quedan 2024 a 2017 (41). Antes de importar las suyas, añadir a **Javier Álvarez** (3 entradas) a `autores.yaml`: cargo, descripción y foto. IA: alimento de perros y gatos enlaza a entradas de 2024 y 2021 que aún no están. Hay 5 presentaciones de Google más que quedan como enlace (Halloween, El corazón delator, Return of the Yodi, Barrera de garaje con IA e IA: alimento de perros y gatos).
+- [ ] **Revisar las entradas importadas**:
+  - Varias entradas incrustaban presentaciones de Google (instrucciones de montaje…); ahora son un enlace. Decidir si se incrustan.
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
   - La descripción de Caja fuerte sale recortada con «…»: escribir una más corta.
 - [ ] **Placas anteriores** (1.3) y **Entornos compatibles** (1.4) se dejan para el final de la migración.
