@@ -1,5 +1,5 @@
 ---
-// Portada (/): héroe, qué es Echidna, la placa y EchidnaML, materiales destacados, últimas
+// Portada (/): héroe, la placa y EchidnaML, materiales destacados, últimas
 // entradas del blog y llamada a colaborar. Los textos van aquí; la placa, EchidnaML, los materiales y
 // las entradas salen de sus colecciones, así que se actualizan solos.
 import { Image } from 'astro:assets';
@@ -61,41 +61,6 @@ const ultimas = await Promise.all(
       </div>
       <div class="hero__art">
         <Image class="board" src={placa.data.image!} alt={placa.data.imageAlt ?? ''} widths={[480, 960]} sizes="(min-width: 900px) 520px, 100vw" loading="eager" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Qué es Echidna -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Qué es Echidna</p>
-          <h2>Todo lo que necesitas para programar dispositivos físicos</h2>
-        </div>
-        <p>Un proyecto pensado desde el aula para que el alumnado aprenda programando cosas que se ven, se oyen y se mueven.</p>
-      </div>
-      <div class="grid grid--4">
-        <article class="feature" data-section="ecosistema">
-          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-chip"/></svg></div>
-          <h3><a href={url('ecosistema/echidnablack2/')}>EchidnaBlack2</a></h3>
-          <p>Placa autónoma compatible con Arduino, con sensores y actuadores integrados: sin cables ni protoboard.</p>
-        </article>
-        <article class="feature" data-section="ecosistema">
-          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-blocks"/></svg></div>
-          <h3><a href={url('ecosistema/echidnaml/')}>EchidnaML</a></h3>
-          <p>Programación por bloques e inteligencia artificial en un solo entorno. La placa también se programa con Snap! y Arduino IDE.</p>
-        </article>
-        <article class="feature" data-section="alumnado">
-          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-cap"/></svg></div>
-          <h3><a href={url('alumnado/')}>Materiales para el aula</a></h3>
-          <p>Para el alumnado y para docentes, con licencia CC BY-SA 4.0.</p>
-        </article>
-        <article class="feature" data-section="nosotros">
-          <div class="feature__icon"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
-          <h3><a href={url('quienes-somos/')}>Equipo docente</a></h3>
-          <p>Una asociación sin ánimo de lucro de profesores y profesoras que comparte lo que funciona en clase.</p>
-        </article>
       </div>
     </div>
   </section>
