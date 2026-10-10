@@ -28,6 +28,9 @@ const paginas = defineCollection({
       // Tarjetas de enlace al final del texto: { title, text, href }; href es una URL externa
       // o una ruta interna sin base (/ecosistema/)
       cards: z.array(z.object({ title: texto(), text: texto(), href: texto() })).default([]),
+      // Tarjeta lateral de resumen (como la ficha rápida de las fichas): { label, value }. Solo en
+      // páginas sin `toc`, porque ocupa el mismo lateral
+      summary: z.array(z.object({ label: texto(), value: texto() })).default([]),
       // En los índices: título del apartado de tarjetas de las páginas hijas («Primeros pasos»)
       cardsTitle: texto().optional(),
       // Lista de publicaciones (colección `publicaciones`) al final del texto, con esta importancia mínima

@@ -41,6 +41,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `resources` | `alumnado` · `docentes` | No | Lista de la colección `recursos` de ese público al final del texto, por entorno y grupo (en Materiales alumnado) |
 | `cards` | lista de `{ title, text, href }` | No | Tarjetas de enlace al final del texto (p. ej. a los Proyectos de inicio con EchidnaML). `href` es una URL externa o una ruta interna sin `base` |
 | `cardsTitle` | texto | No | En los índices, título del apartado de tarjetas de las páginas hijas (p. ej. «Primeros pasos» en EchidnaML); sale también en el índice lateral |
+| `summary` | lista de `{ label, value }` | No | Tarjeta lateral «En resumen», como la ficha rápida de las fichas (p. ej. en Alimentación). Solo en páginas sin `toc`, porque ocupa el mismo lateral |
 | `image` | imagen | No | Imagen de la tarjeta y al compartir en redes. Las páginas que cuelgan de una placa (`/ecosistema/echidnablack2/…`) salen como tarjeta en su apartado «Más sobre la placa», ordenadas por `order` |
 | `translation` | ruta | No | Versión en el otro idioma |
 | `draft` | sí/no | No (no) | Página a medias sin publicar |

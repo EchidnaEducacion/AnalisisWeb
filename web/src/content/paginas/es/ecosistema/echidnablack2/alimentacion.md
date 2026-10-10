@@ -4,6 +4,12 @@ description: Las dos formas de alimentar la EchidnaBlack2, por USB-C o por el ja
 template: pagina
 order: 3
 image: ./alimentacion/detalle-selector-vin.png
+summary:
+  - { label: "Por USB-C", value: "5 V, normalmente hasta 500 mA (lo limita el puerto)" }
+  - { label: "Por el jack", value: "De 7 a 12 V; la placa la regula a 5 V, con un máximo de 1 A" }
+  - { label: "Protección", value: "Fusible rearmable" }
+  - { label: "Selector de las entradas y salidas", value: "5V (hasta 300 mA recomendados) o Vin (de la fuente del jack)" }
+  - { label: "Con EchidnaML", value: "Siempre con el cable USB-C conectado" }
 ---
 
 La EchidnaBlack2 se puede alimentar de dos formas: por el **conector USB-C** o por el **jack de alimentación**, con una fuente externa de 7 a 12 V.

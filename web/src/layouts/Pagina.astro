@@ -29,8 +29,10 @@ interface Props {
   resources?: 'alumnado' | 'docentes';
   /** Si la página lleva índice lateral (toc) */
   conIndice?: boolean;
+  /** Tarjeta lateral de resumen; solo en páginas sin índice lateral */
+  summary?: { label: string; value: string }[];
 }
-const { title, description, section, crumbs = [], headings, team, cards = [], publications, resources, conIndice = false } = Astro.props;
+const { title, description, section, crumbs = [], headings, team, cards = [], publications, resources, conIndice = false, summary = [] } = Astro.props;
 // Las rutas internas llevan base; las URL externas, no
 const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
 // Índice: los h2 del Markdown y, si hay lista de publicaciones, sus años
@@ -46,7 +48,7 @@ const toc = [
 <main id="contenido">
   <CabeceraPagina title={title} description={description} crumbs={crumbs} />
 
-  <div class={toc.length ? 'wrap with-aside with-aside--left' : 'wrap with-aside'}>
+  <div class={toc.length ? 'wrap with-aside with-aside--left' : summary.length ? 'wrap with-aside with-aside--facts-first' : 'wrap with-aside'}>
     {toc.length > 0 && (
       <nav class="toc" aria-label="En esta página">
         <h2>En esta página</h2>
@@ -73,6 +75,16 @@ const toc = [
       {publications && <Publicaciones minimo={publications} />}
       {resources && <Recursos publico={resources} />}
     </article>
+    {summary.length > 0 && toc.length === 0 && (
+      <aside class="aside-stack aside-stack--sticky">
+        <section class="factsheet" aria-labelledby="resumen-t">
+          <h2 id="resumen-t">En resumen</h2>
+          <dl>
+            {summary.map((s) => <div><dt>{s.label}</dt><dd>{s.value}</dd></div>)}
+          </dl>
+        </section>
+      </aside>
+    )}
   </div>
 </main>
 </Base>
