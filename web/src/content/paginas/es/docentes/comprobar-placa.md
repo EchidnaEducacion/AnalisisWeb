@@ -23,9 +23,9 @@ Si la placa no responde, sigue estos pasos en orden, empezando por lo más senci
 ## Comprobaciones rápidas
 
 - **El cable**: algunos cables USB-C solo sirven para cargar y no transmiten datos. Prueba con otro cable y con otro puerto USB del ordenador.
-- **El LED de encendido**: al conectar la placa se enciende el LED rotulado **ON**, en el centro, dentro del engranaje del logo de hardware libre. Si no se enciende, la placa no recibe corriente: revisa el cable y el puerto.
+- **El LED de encendido**: al conectar la placa se enciende en verde el LED rotulado **ON**, en el centro, dentro del engranaje del logo de hardware libre. Si no se enciende, la placa no recibe corriente: revisa el cable y el puerto.
 
-![Detalle del centro de la EchidnaBlack2 con el LED de encendido, rotulado ON, dentro del engranaje del logo de hardware libre.](./comprobar-placa/detalle-led-on.png)
+![Detalle del centro de la EchidnaBlack2 con el LED de encendido, rotulado ON, iluminado en verde dentro del engranaje del logo de hardware libre.](./comprobar-placa/detalle-led-on.png)
 
 - **El modo**: si el conmutador está en **modo MkMk**, el joystick, el sensor de luz, el de temperatura, el micrófono y los pulsadores no funcionan. Se explica en [Modo sensores / Modo MkMk](/ecosistema/echidnablack2/modo-sensores-mkmk/).
 
