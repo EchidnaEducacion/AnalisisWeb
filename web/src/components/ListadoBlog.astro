@@ -1,0 +1,90 @@
+---
+// Listado de entradas del blog (/blog/, categorías, etiquetas y autores): cabecera, tarjetas en dos
+// columnas (imagen, título, autor, fecha, categorías y extracto), paginación y el lateral del blog
+import { Image } from 'astro:assets';
+import { getEntries, getEntry, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import BlogLateral from './BlogLateral.astro';
+import { url } from '../lib/url';
+import { fechaLarga, rutaEntrada } from '../lib/blog';
+
+interface Props {
+  title: string;
+  /** Entradilla de la cabecera y descripción de la página */
+  lead: string;
+  /** Tramos intermedios de las migas de pan (sin Inicio ni la página actual) */
+  crumbs?: { title: string; href: string }[];
+  /** Entradas de esta página */
+  entradas: CollectionEntry<'blog'>[];
+  /** Todas las entradas publicadas, para el lateral */
+  todas: CollectionEntry<'blog'>[];
+  /** Ruta del listado sin base ni barras (blog, category/recursos/proyectos…) */
+  base: string;
+  pagina: number;
+  total: number;
+}
+const { title, lead, crumbs = [], entradas, todas, base, pagina, total } = Astro.props;
+const conDatos = await Promise.all(
+  entradas.map(async (e) => ({
+    entry: e,
+    autor: await getEntry(e.data.author),
+    categorias: await getEntries(e.data.categories),
+  })),
+);
+const rutaPagina = (n: number) => url(n === 1 ? `${base}/` : `${base}/page/${n}/`);
+const titulo = pagina > 1 ? `${title} (página ${pagina})` : title;
+---
+<Base title={titulo} description={lead} section="blog">
+<main id="contenido">
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href={url()}>Inicio</a></li>
+          {crumbs.map((c) => <li><a href={c.href}>{c.title}</a></li>)}
+          <li><span aria-current="page">{title}</span></li>
+        </ol>
+      </nav>
+      <h1>{title}</h1>
+      <p class="lead">{lead}</p>
+      <slot name="cabecera" />
+    </div>
+  </header>
+
+  <div class="wrap with-aside">
+    <section aria-label="Entradas">
+      {conDatos.length === 0 && <p class="muted">Todavía no hay entradas.</p>}
+      <ul class="blog-list">
+        {conDatos.map(({ entry, autor, categorias }) => (
+          <li class="card post-card">
+            {entry.data.image && (
+              <div class="post-thumb">
+                <Image src={entry.data.image} alt="" widths={[400, 800]} sizes="(min-width: 960px) 380px, 100vw" />
+              </div>
+            )}
+            <div class="card__body">
+              <h2 class="card__title"><a class="card__link" href={url(`${rutaEntrada(entry)}/`)}>{entry.data.title}</a></h2>
+              <p class="card__meta">
+                {autor.data.name} · <time datetime={entry.data.date.toISOString().slice(0, 10)}>{fechaLarga(entry.data.date)}</time>{' · '}{categorias.map((c) => c.data.name).join(', ')}
+              </p>
+              <p class="card__text">{entry.data.description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      {total > 1 && (
+        <nav class="pagination" aria-label="Paginación">
+          {pagina > 1 && <a href={rutaPagina(pagina - 1)}>← Anterior</a>}
+          {Array.from({ length: total }, (_, i) => i + 1).map((n) =>
+            n === pagina ? <span aria-current="page">{n}</span> : <a href={rutaPagina(n)}>{n}</a>,
+          )}
+          {pagina < total && <a href={rutaPagina(pagina + 1)}>Siguiente →</a>}
+        </nav>
+      )}
+    </section>
+
+    <BlogLateral todas={todas} />
+  </div>
+</main>
+</Base>

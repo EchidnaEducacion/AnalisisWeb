@@ -8,7 +8,7 @@ import { getEntry, getEntries } from 'astro:content';
 import Base from './Base.astro';
 import BlogLateral from '../components/BlogLateral.astro';
 import { url } from '../lib/url';
-import { fechaLarga, rutaEntrada } from '../lib/blog';
+import { fechaLarga, rutaAutor, rutaCategoria, rutaEntrada, rutaEtiqueta } from '../lib/blog';
 
 interface Props {
   entry: CollectionEntry<'blog'>;
@@ -19,7 +19,6 @@ const { entry, todas } = Astro.props;
 const d = entry.data;
 const autor = await getEntry(d.author);
 const categorias = await getEntries(d.categories);
-// El listado del blog y sus categorías aún son maqueta: se enlazan como en el menú
 const blog = url('blog/');
 
 // Tiempo de lectura: unas 200 palabras por minuto
@@ -46,7 +45,7 @@ const iniciales = autor.data.name.split(' ').map((p) => p[0]).slice(0, 2).join('
           <ol>
             <li><a href={url()}>Inicio</a></li>
             <li><a href={blog}>Blog</a></li>
-            <li><a href={blog}>{categorias[0].data.name}</a></li>
+            <li><a href={url(`${rutaCategoria(categorias[0].id)}/`)}>{categorias[0].data.name}</a></li>
           </ol>
         </nav>
         <h1>{d.title}</h1>
@@ -54,7 +53,7 @@ const iniciales = autor.data.name.split(' ').map((p) => p[0]).slice(0, 2).join('
         <div class="post-meta post-meta--left">
           <span class="author">
             <Image class="avatar" src={autor.data.image} alt="" width={40} height={40} densities={[1, 2]} />
-            {autor.data.name}
+            <a href={url(`${rutaAutor(autor.id)}/`)}>{autor.data.name}</a>
           </span>
           <span><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> <time datetime={d.date.toISOString().slice(0, 10)}>{fechaLarga(d.date)}</time></span>
           <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> {minutos} min de lectura</span>
@@ -75,8 +74,8 @@ const iniciales = autor.data.name.split(' ').map((p) => p[0]).slice(0, 2).join('
 
       <footer class="post-footer">
         <ul class="chips" aria-label="Categorías">
-          {categorias.map((c) => <li><a class="chip chip--outline" href={blog}>{c.data.name}</a></li>)}
-          {d.tags.map((t) => <li><a class="chip chip--outline" href={blog}>#{t}</a></li>)}
+          {categorias.map((c) => <li><a class="chip chip--outline" href={url(`${rutaCategoria(c.id)}/`)}>{c.data.name}</a></li>)}
+          {d.tags.map((t) => <li><a class="chip chip--outline" href={url(`${rutaEtiqueta(t)}/`)}>#{t}</a></li>)}
         </ul>
         <div class="share">
           <span>Compartir</span>
@@ -88,7 +87,7 @@ const iniciales = autor.data.name.split(' ').map((p) => p[0]).slice(0, 2).join('
             ? <Image class="avatar avatar--lg" src={autor.data.image} alt="" width={64} height={64} densities={[1, 2]} />
             : <span class="avatar avatar--lg">{iniciales}</span>}
           <div>
-            <strong>{autor.data.name}</strong>
+            <strong><a href={url(`${rutaAutor(autor.id)}/`)}>{autor.data.name}</a></strong>
             <p>{autor.data.role}. {autor.data.description}</p>
           </div>
         </div>

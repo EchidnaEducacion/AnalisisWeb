@@ -1,0 +1,39 @@
+---
+// Listado de las entradas de un autor: /author/<id>/ y sus páginas siguientes, con su ficha en la cabecera
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import ListadoBlog from '../../components/ListadoBlog.astro';
+import { url } from '../../lib/url';
+import { entradasPublicadas, paginar, rutaAutor } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const todas = await entradasPublicadas();
+  const autores = await getCollection('autores');
+  return autores.flatMap((autor) =>
+    paginar(todas.filter((e) => e.data.author.id === autor.id)).map((p) => ({
+      params: { ruta: [autor.id, p.tramo].filter(Boolean).join('/') },
+      props: { ...p, todas, autor },
+    })),
+  );
+}
+const { entradas, pagina, total, todas, autor } = Astro.props;
+---
+<ListadoBlog
+  title={autor.data.name}
+  lead={`Entradas del blog de ${autor.data.name}.`}
+  crumbs={[{ title: 'Blog', href: url('blog/') }]}
+  entradas={entradas}
+  todas={todas}
+  base={rutaAutor(autor.id)}
+  pagina={pagina}
+  total={total}
+>
+  <div class="author-box author-box--hero" slot="cabecera">
+    <Image class="avatar avatar--lg" src={autor.data.image} alt="" width={64} height={64} densities={[1, 2]} />
+    <div>
+      <strong>{autor.data.role}</strong>
+      <p>{autor.data.description}</p>
+      {autor.data.url && <p><a href={autor.data.url}>{autor.data.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></p>}
+    </div>
+  </div>
+</ListadoBlog>

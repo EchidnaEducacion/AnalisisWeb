@@ -1,0 +1,28 @@
+---
+// Listado de una etiqueta del blog: /tag/<etiqueta>/ y sus páginas siguientes
+import ListadoBlog from '../../components/ListadoBlog.astro';
+import { url } from '../../lib/url';
+import { entradasPublicadas, paginar, rutaEtiqueta, slugEtiqueta } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const todas = await entradasPublicadas();
+  const etiquetas = [...new Set(todas.flatMap((e) => e.data.tags))];
+  return etiquetas.flatMap((etiqueta) =>
+    paginar(todas.filter((e) => e.data.tags.includes(etiqueta))).map((p) => ({
+      params: { ruta: [slugEtiqueta(etiqueta), p.tramo].filter(Boolean).join('/') },
+      props: { ...p, todas, etiqueta },
+    })),
+  );
+}
+const { entradas, pagina, total, todas, etiqueta } = Astro.props;
+---
+<ListadoBlog
+  title={etiqueta}
+  lead={`Entradas del blog con la etiqueta ${etiqueta}.`}
+  crumbs={[{ title: 'Blog', href: url('blog/') }]}
+  entradas={entradas}
+  todas={todas}
+  base={rutaEtiqueta(etiqueta)}
+  pagina={pagina}
+  total={total}
+/>

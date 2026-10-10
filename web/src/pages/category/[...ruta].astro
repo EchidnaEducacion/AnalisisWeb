@@ -1,0 +1,37 @@
+---
+// Listado de una categoría del blog: /category/<id>/ (también subcategorías, /category/recursos/proyectos/)
+// y sus páginas siguientes. Una categoría madre incluye las entradas de sus subcategorías.
+import { getCollection } from 'astro:content';
+import ListadoBlog from '../../components/ListadoBlog.astro';
+import { url } from '../../lib/url';
+import { entradasPublicadas, paginar, rutaCategoria } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const todas = await entradasPublicadas();
+  const categorias = await getCollection('categorias');
+  return categorias.flatMap((cat) => {
+    const ids = new Set([cat.id, ...categorias.filter((c) => c.data.parent === cat.id).map((c) => c.id)]);
+    const madre = categorias.find((c) => c.id === cat.data.parent);
+    const entradas = todas.filter((e) => e.data.categories.some((c) => ids.has(c.id)));
+    return paginar(entradas).map((p) => ({
+      params: { ruta: [rutaCategoria(cat.id).replace(/^category\//, ''), p.tramo].filter(Boolean).join('/') },
+      props: { ...p, todas, id: cat.id, nombre: cat.data.name, madre: madre && { id: madre.id, nombre: madre.data.name } },
+    }));
+  });
+}
+const { entradas, pagina, total, todas, id, nombre, madre } = Astro.props;
+const crumbs = [
+  { title: 'Blog', href: url('blog/') },
+  ...(madre ? [{ title: madre.nombre, href: url(`${rutaCategoria(madre.id)}/`) }] : []),
+];
+---
+<ListadoBlog
+  title={nombre}
+  lead={`Entradas del blog en la categoría ${nombre}.`}
+  crumbs={crumbs}
+  entradas={entradas}
+  todas={todas}
+  base={rutaCategoria(id)}
+  pagina={pagina}
+  total={total}
+/>

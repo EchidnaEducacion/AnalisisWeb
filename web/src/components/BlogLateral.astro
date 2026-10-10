@@ -4,7 +4,7 @@
 // etiquetas con su número de entradas
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { url } from '../lib/url';
-import { fechaLarga, rutaEntrada } from '../lib/blog';
+import { fechaLarga, rutaCategoria, rutaEntrada, rutaEtiqueta } from '../lib/blog';
 
 interface Props {
   /** Entradas publicadas, de la más reciente a la más antigua */
@@ -13,8 +13,6 @@ interface Props {
   actual?: CollectionEntry<'blog'>;
 }
 const { todas, actual } = Astro.props;
-// Mientras no existan las páginas de categoría, las categorías enlazan al listado
-const blog = url('blog/');
 
 const cuenta = (id: string) => todas.filter((t) => t.data.categories.some((c) => c.id === id)).length;
 const destacadas = new Set(actual?.data.categories.map((c) => c.id) ?? []);
@@ -39,7 +37,7 @@ const delActual = new Set(actual?.data.tags ?? []);
     <ul class="blog-aside__list">
       {lista.map((c) => (
         <li class={c.sub ? 'is-sub' : undefined}>
-          <a href={blog} aria-current={destacadas.has(c.id) ? 'true' : undefined}>{c.data.name}</a>
+          <a href={url(`${rutaCategoria(c.id)}/`)} aria-current={destacadas.has(c.id) ? 'true' : undefined}>{c.data.name}</a>
           <span class="blog-aside__count">{cuenta(c.id)}</span>
         </li>
       ))}
@@ -60,7 +58,7 @@ const delActual = new Set(actual?.data.tags ?? []);
       <h2 id="tag-t">Etiquetas</h2>
       <ul class="blog-aside__tags">
         {etiquetas.map(({ tag, n }) => (
-          <li><a class="chip chip--outline" href={blog} aria-current={delActual.has(tag) ? 'true' : undefined}>{tag} <span class="blog-aside__count">{n}</span></a></li>
+          <li><a class="chip chip--outline" href={url(`${rutaEtiqueta(tag)}/`)} aria-current={delActual.has(tag) ? 'true' : undefined}>{tag} <span class="blog-aside__count">{n}</span></a></li>
         ))}
       </ul>
     </section>

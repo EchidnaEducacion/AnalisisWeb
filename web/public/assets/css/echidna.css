@@ -666,6 +666,8 @@ ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 .blog-aside__tags a[aria-current] .blog-aside__count { color: var(--accent-ink); }
 .author-box { display: flex; gap: 1rem; align-items: start; padding: 1.3rem; border-radius: var(--radius-l); background: var(--surface-2); }
 .author-box p { margin: .25rem 0 0; color: var(--muted); font-size: .95rem; }
+/* Ficha del autor en la cabecera de su listado (/author/<id>/) */
+.author-box--hero { margin-top: 1.5rem; max-width: 62ch; background: var(--surface); }
 .share { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 .share > span { font-weight: 700; margin-right: .25rem; }
 

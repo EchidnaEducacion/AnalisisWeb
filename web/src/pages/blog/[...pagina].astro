@@ -1,0 +1,20 @@
+---
+// Plantilla «Listado» para /blog/ y sus páginas siguientes (/blog/page/2/…)
+import ListadoBlog from '../../components/ListadoBlog.astro';
+import { entradasPublicadas, paginar } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const todas = await entradasPublicadas();
+  return paginar(todas).map((p) => ({ params: { pagina: p.tramo }, props: { ...p, todas } }));
+}
+const { entradas, pagina, total, todas } = Astro.props;
+---
+<ListadoBlog
+  title="Blog"
+  lead="Experiencias de aula, proyectos, talleres y novedades del proyecto."
+  entradas={entradas}
+  todas={todas}
+  base="blog"
+  pagina={pagina}
+  total={total}
+/>
