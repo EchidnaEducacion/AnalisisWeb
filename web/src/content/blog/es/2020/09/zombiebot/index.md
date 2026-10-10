@@ -18,7 +18,7 @@ Como habéis podido comprobar, los materiales que necesitamos son muy sencillos,
 
 [Ver la presentación (Google Slides)](https://docs.google.com/presentation/d/e/2PACX-1vThg7jrINddiEy0cHGsPXKL4xGePZtZUC_kVnsX0yCzMBJlPBX2zHhx3602fK8t6Wt-aEfciceWfvM6/pub?start=false&loop=false&delayms=3000)
 
-Para finalizar os dejo un vídeo de ejemplo de una sencilla programación usando la placa [EchidnaBlack](/ecosistema/placas-anteriores/) con los nuevos bloques para las placas de Echidna Steam que incorpora la última versión de [Snap4Arduino.](http://snap4arduino.rocks/) En este caso utilizaremos dos **servomotores** y los **diodos LED**.
+Para finalizar os dejo un vídeo de ejemplo de una sencilla programación usando la placa [EchidnaBlack](/ecosistema/#placas-anteriores) con los nuevos bloques para las placas de Echidna Steam que incorpora la última versión de [Snap4Arduino.](http://snap4arduino.rocks/) En este caso utilizaremos dos **servomotores** y los **diodos LED**.
 
 Espero que os guste.
 

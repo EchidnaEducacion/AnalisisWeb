@@ -172,12 +172,11 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] **Revisar las entradas importadas**:
   - «Posta en marcha e proxectos con EchidnaBlack» (2022) enlaza al manual en gallego (`Manual_EchidnaBlack_001_Gal.pdf`), que ya no está en el repo `recursos`: recuperarlo o quitar el enlace.
   - «ROBÓTICA EDUCATIVA + IA CON ECHIDNA en #eslibre2023» no tenía categoría en WordPress: se le ha puesto Talleres.
-  - Perrobot (2021), Elefante con sensores y Zombiebot (2020) enlazan a Placas anteriores, que aún no existe.
   - Las galerías de WordPress quedan como imágenes seguidas (p. ej. las 6 fotos de la OSHWDem 2024): valorar mostrarlas en rejilla.
   - Varias entradas incrustaban presentaciones de Google (instrucciones de montaje…); ahora son un enlace. Decidir si se incrustan.
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
   - La descripción de Caja fuerte sale recortada con «…»: escribir una más corta.
-- [ ] **Placas anteriores** (1.3) se deja para el final de la migración.
+- [x] **Placas anteriores** (1.3): título en el índice de Ecosistema con las tarjetas de los PDF de EchidnaShield y EchidnaBlack v1.
 - [ ] **Snap!** (1.4.2): la página está hecha con la descripción del entorno; faltan la librería de bloques para la EchidnaBlack2 (repo `S4A-EchidnaBlack2C`) y una guía para el aula.
 - [ ] **Correcciones en el [manual](https://github.com/EchidnaEducacion/manual)**: en los modos de funcionamiento (2.2), la lista del modo sensores no incluye el sensor de luz (A3), que también comparte pin con una entrada MkMk; en el acelerómetro (4.1.6), la lista de valores dice que el eje Z baja de −2 al subir la placa rápidamente, pero el ejemplo y la física dicen que sube (más de 1,5); en la clasificación por función de la placa (2.1), el diagrama habla de «LED amarillo» en vez de naranja; en las características técnicas (7), el LED RGB da «65 535 colores», cuando son 256 × 256 × 256, más de 16 millones (en nuestra página Características técnicas ya está corregido).
 - [ ] **Ficha Micrófono**: confirmar si la EchidnaBlack2 tiene el puente de soldadura que cambia la señal del micrófono (lo explicaba la web anterior, con su esquema, pero el manual no lo menciona). Si lo tiene, añadir el apartado y el esquema.
@@ -193,7 +192,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
 - [x] Capturas de 1.1.4 Empezar con LearningML y 1.1.5 Instalar StandardFirmata: se usan las del manual, más actuales que `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`.
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog: `Icono_Scratch-1024x948.png` (*EchidnaScratch, el erizo y el gato se hacen amigos*) y `ObradoiroTadega.png` (*Obradoiro Tadega 2019*, aunque su portada sí está). Al importar se han quitado de las entradas; si aparecen, volver a ponerlas.
-- [x] Generar los PDF de EchidnaBlack v1 y EchidnaShield (con [`herramientas/placas-anteriores/`](herramientas/placas-anteriores/)), guardados en `web/public/ecosistema/placas-anteriores/`. Falta la página Placas anteriores que los enlace.
+- [x] Generar los PDF de EchidnaBlack v1 y EchidnaShield (con [`herramientas/placas-anteriores/`](herramientas/placas-anteriores/)), guardados en `web/public/ecosistema/placas-anteriores/` y enlazados desde el índice de Ecosistema.
 - [ ] **Licencia del hardware**: no se permite su reproducción con fines comerciales; falta que el responsable del diseño electrónico elija una licencia compatible con eso. Hay cuatro incoherencias que resolver (web actual, certificación OSHWA, repositorio `recursos` y web nueva), detalladas en [`estructura.md`](estructura.md#pendiente).
 
 Los puntos pendientes de la estructura están en [`estructura.md`](estructura.md#pendiente).

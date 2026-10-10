@@ -21,7 +21,7 @@ Como habéis podido comprobar, con muy pocos materiales, y además bastante comu
 
 [Ver la presentación (Google Slides)](https://docs.google.com/presentation/d/e/2PACX-1vT0wr8xkJkQsirZtLVMv9GWpV7jpeqEfFyfdwYbqxfvAGDQWMSNntjbYcFM2qi8W6JjfVroxFRoH19Y/pub?start=false&loop=false&delayms=3000)
 
-Aquí os dejo un vídeo de ejemplo de una sencilla programación usando la placa [EchidnaBlack](/ecosistema/placas-anteriores/) con EchidnaScratch:
+Aquí os dejo un vídeo de ejemplo de una sencilla programación usando la placa [EchidnaBlack](/ecosistema/#placas-anteriores) con EchidnaScratch:
 
 [Programación Perrobot con EchidnaScratch](https://www.youtube.com/watch?v=Qmojby52QME)
 

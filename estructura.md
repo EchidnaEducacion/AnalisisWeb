@@ -44,10 +44,11 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   │   │   └── 1.2.14.5 Bluetooth
 │   │   ├── 1.2.15 Documentación
 │   │   └── 1.2.16 Características técnicas
-│   ├── 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield)
-│   └── Entornos de programación compatibles  (título dentro del índice de Ecosistema)
-│       ├── 1.4.1 Arduino IDE
-│       └── 1.4.2 Snap!                 (materiales en preparación)
+│   ├── Entornos de programación compatibles  (título dentro del índice de Ecosistema)
+│   │   ├── 1.4.1 Arduino IDE
+│   │   └── 1.4.2 Snap!                 (materiales en preparación)
+│   └── Placas anteriores                  (título dentro del índice de Ecosistema)
+│       └── 1.3 PDF de EchidnaShield y de EchidnaBlack v1
 ├── 2. Materiales alumnado                 (una sola página; todos son enlaces externos)
 │   ├── EchidnaML                           (título dentro de la página)
 │   │   ├── Proyectos y Manual              (subtítulo)
@@ -126,7 +127,7 @@ Pie (fuera del menú, en todas las páginas)
 | 4 | 1.2.14.5 Bluetooth | `/ecosistema/echidnablack2/complementos/bluetooth/` | Ficha de hardware |
 | 3 | 1.2.15 Documentación | `/ecosistema/echidnablack2/documentacion/` | Página genérica |
 | 3 | 1.2.16 Características técnicas | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Página genérica (datos técnicos de la placa, del manual) |
-| 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/placas-anteriores/` | Página genérica (resumen de cada placa y descarga de su PDF; sin hijas) |
+| 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/#placas-anteriores` | — (título del índice de Ecosistema con dos tarjetas que enlazan a los PDF; sin página propia) |
 | 3 | PDF de EchidnaBlack v1 y EchidnaShield | `/ecosistema/placas-anteriores/echidnablack.pdf`, `/ecosistema/placas-anteriores/echidnashield.pdf` | — (ficheros en `web/public/ecosistema/placas-anteriores/`) |
 | 2 | 1.4.1 Arduino IDE (en «Entornos de programación compatibles») | `/ecosistema/arduino-ide/` | Página genérica |
 | 2 | 1.4.2 Snap! (en «Entornos de programación compatibles») | `/ecosistema/snap/` | Página genérica |
@@ -230,7 +231,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
 - [x] Los materiales de la sección 3 no tienen página propia: `/docentes/` muestra directamente sus recursos (enlace al material del alumnado, diapositivas, guía docente).
 - [x] «Herramientas de análisis» pasa a «Comprobar la placa» (hoy 3.9, `/docentes/comprobar-placa/`): página que enlaza a los repos de GitHub para comprobar el funcionamiento de la placa.
 - [x] Las guías tienen además un alias en minúsculas (`/guiainicioechidnaml/`, `/guiainicioarduinoide/`) que redirige al mismo sitio, porque en GitHub Pages las URL distinguen mayúsculas y minúsculas.
-- [x] Placas anteriores (1.3): una sola página con un resumen breve de EchidnaBlack v1 y de EchidnaShield y un PDF con la documentación de cada una. Las URL antiguas de esas placas redirigen a `/ecosistema/placas-anteriores/`.
+- [x] Placas anteriores (1.3): sin página propia. En el índice de Ecosistema, un título «Placas anteriores» con dos tarjetas que enlazan al PDF con la documentación de EchidnaShield y de EchidnaBlack v1. Las URL antiguas de esas placas redirigen a `/ecosistema/#placas-anteriores`.
 - [ ] Licencia del hardware, pendiente del responsable del diseño electrónico. **Decidido**: no se permite reproducir el hardware con fines comerciales sin acuerdo. **Falta** elegir una licencia compatible con eso (opciones: CC BY-NC-SA 4.0 o un texto propio). Incoherencias que hay que resolver al decidirlo:
   - **Web actual (WordPress)**: dice «CERN OHL-S con Restricción Comercial», que es contradictorio: la CERN OHL-S permite fabricar y vender y no admite restricciones añadidas.
   - **Certificación OSHWA**: la web actual dice que la EchidnaBlack2 tiene la certificación Open Source Hardware de OSHWA (UID ES000010). Esa certificación exige una licencia abierta que permita el uso comercial, así que choca con la restricción. Hay que decidir si se mantiene la certificación (y entonces no cabe la restricción) o se renuncia a ella. La ficha nueva de EchidnaBlack2 no la menciona.

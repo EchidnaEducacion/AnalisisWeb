@@ -64,36 +64,36 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 | `/hardware/componentes/acelerometro-black-i2c/` | `/ecosistema/echidnablack2/acelerometro/` | Redirige | Acelerómetro de la Black2 |
 | `/hardware/componentes/sensor-temperatura-black2/` | `/ecosistema/echidnablack2/sensor-temperatura/` | Redirige |  |
 | `/hardware/componentes/conexiones-mkmk-black2/` | `/ecosistema/echidnablack2/conexiones-mkmk/` | Redirige |  |
-| `/hardware/componentes/acelerometro-black/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/componentes/acelerometro-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/componentes/conexiones-mkmk-black/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/componentes/conexiones-mkmk-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/componentes/sensor-temperatura-lm35/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
+| `/hardware/componentes/acelerometro-black/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/componentes/acelerometro-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/componentes/conexiones-mkmk-black/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/componentes/conexiones-mkmk-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/componentes/sensor-temperatura-lm35/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/hardware/complementos/` | `/ecosistema/echidnablack2/complementos/` | Redirige |  |
 | `/hardware/complementos/bluetooth-black/` | `/ecosistema/echidnablack2/complementos/bluetooth/` | Redirige |  |
 | `/hardware/complementos/servomotor-continuo-black/` | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Redirige |  |
 | `/hardware/complementos/servomotor-posicion-black/` | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Redirige |  |
 | `/hardware/complementos/infrarrojos-distancia/` | `/ecosistema/echidnablack2/complementos/infrarrojos-distancia/` | Redirige |  |
 | `/hardware/complementos/complementos-conexiones-mkmk/` | `/ecosistema/echidnablack2/complementos/conexiones-mkmk/` | Redirige |  |
-| `/hardware/complementos/bluetooth-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/complementos/sensor-temperatura-lm35-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/complementos/servomotor-continuo-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/complementos/servomotor-de-posicion-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
+| `/hardware/complementos/bluetooth-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/complementos/sensor-temperatura-lm35-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/complementos/servomotor-continuo-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/complementos/servomotor-de-posicion-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/hardware/echidnablack2/` | `/ecosistema/echidnablack2/` | Redirige |  |
 | `/hardware/echidnablack2/alimentacion-echidnablack2/` | `/ecosistema/echidnablack2/alimentacion/` | Redirige |  |
 | `/hardware/echidnablack2/documentacion-echidnablack2/` | `/ecosistema/echidnablack2/documentacion/` | Redirige |  |
 | `/hardware/echidnablack2/modo-sensores-modo-mkmk-black2/` | `/ecosistema/echidnablack2/modo-sensores-mkmk/` | Redirige |  |
 | `/hardware/echidnablack/puesta-en-marcha-echidna-black/` | `/ecosistema/echidnablack2/puesta-en-marcha/` | Redirige | La página de la Black2 enlaza hoy a esta |
 | `/hardware/echidnablack/complementos-echidnablack/` | `/ecosistema/echidnablack2/complementos/` | Redirige | La página de la Black2 enlaza hoy a esta |
-| `/hardware/echidnablack/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidnablack/alimentacion-echidnablack/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidnablack/documentacion-echidnablack/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidnablack/modo-sensores-modo-mkmk-black/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidna-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidna-shield/alimentacion-echidnashield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidna-shield/complementos-echidna-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidna-shield/documentacion-echidnashield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
-| `/hardware/echidna-shield/modo-sensores-modo-mkmk-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidnablack/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidnablack/alimentacion-echidnablack/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidnablack/documentacion-echidnablack/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidnablack/modo-sensores-modo-mkmk-black/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidna-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidna-shield/alimentacion-echidnashield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidna-shield/complementos-echidna-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidna-shield/documentacion-echidnashield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
+| `/hardware/echidna-shield/modo-sensores-modo-mkmk-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/recursos/` | `/docentes/` | Redirige |  |
 | `/recursos/impresion-3d/` | `/docentes/impresion-3d/` | Redirige |  |
 | `/recursos/proyectos/` | `/category/recursos/proyectos/` | Redirige | Los proyectos son entradas del blog y se quedan en su categoría |
@@ -155,25 +155,25 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 | `/didactica/secundaria/s09-entradas-mkmk/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s09-entradas-mkmk/` |
 | `/didactica/secundaria/s10-vehiculo/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s10-vehiculo/` |
 | `/didactica/secundaria/s11-conectando-app-inventor-y-echidna-bt/` | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Redirige | Alias de `/didactica/actividades/s11-conectando-app-inventor-y-echidna-bt/` |
-| `/hardware/acelerometro/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/componentes/acelerometro-black/` |
+| `/hardware/acelerometro/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/componentes/acelerometro-black/` |
 | `/hardware/audio/` | `/ecosistema/echidnablack2/audio/` | Redirige | Alias de `/hardware/componentes/audio/` |
-| `/hardware/conexiones-mkmk/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/componentes/conexiones-mkmk-black/` |
+| `/hardware/conexiones-mkmk/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/componentes/conexiones-mkmk-black/` |
 | `/hardware/echidnablack2/acelerometro-black-i2c` | `/ecosistema/echidnablack2/acelerometro/` | Redirige | Alias de `/hardware/componentes/acelerometro-black-i2c/` |
 | `/hardware/echidnablack2/conexiones-mkmk-black2/` | `/ecosistema/echidnablack2/conexiones-mkmk/` | Redirige | Alias de `/hardware/componentes/conexiones-mkmk-black2/` |
 | `/hardware/echidnablack2/sensor-temperatura-black2/` | `/ecosistema/echidnablack2/sensor-temperatura/` | Redirige | Alias de `/hardware/componentes/sensor-temperatura-black2/` |
 | `/hardware/echidnablack/complementos-echidnablack/bluetooth-black/` | `/ecosistema/echidnablack2/complementos/bluetooth/` | Redirige | Alias de `/hardware/complementos/bluetooth-black/` |
 | `/hardware/echidnablack/complementos-echidnablack/servomotor-continuo-black/` | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Redirige | Alias de `/hardware/complementos/servomotor-continuo-black/` |
 | `/hardware/echidnablack/complementos-echidnablack/servomotor-posicion-black/` | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Redirige | Alias de `/hardware/complementos/servomotor-posicion-black/` |
-| `/hardware/echidna-shield/complementos-echidna-shield/bluetooth-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/bluetooth-shield/` |
-| `/hardware/echidna-shield/complementos-echidna-shield/sensor-temperatura-lm35-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/sensor-temperatura-lm35-shield/` |
-| `/hardware/echidna-shield/complementos-echidna-shield/servomotor-continuo-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/servomotor-continuo-shield/` |
-| `/hardware/echidna-shield/complementos-echidna-shield/servomotor-de-posicion-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/complementos/servomotor-de-posicion-shield/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/bluetooth-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/complementos/bluetooth-shield/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/sensor-temperatura-lm35-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/complementos/sensor-temperatura-lm35-shield/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/servomotor-continuo-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/complementos/servomotor-continuo-shield/` |
+| `/hardware/echidna-shield/complementos-echidna-shield/servomotor-de-posicion-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/complementos/servomotor-de-posicion-shield/` |
 | `/hardware/led-rgb/` | `/ecosistema/echidnablack2/led-rgb/` | Redirige | Alias de `/hardware/componentes/led-rgb/` |
 | `/hardware/leds/` | `/ecosistema/echidnablack2/leds/` | Redirige | Alias de `/hardware/componentes/leds/` |
 | `/impresion-3d/` | `/docentes/impresion-3d/` | Redirige | Alias de `/recursos/impresion-3d/` |
-| `/index.php/hardware/echidnablack/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/echidnablack/` |
+| `/index.php/hardware/echidnablack/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/echidnablack/` |
 | `/index.php/hardware/echidnablack2/` | `/ecosistema/echidnablack2/` | Redirige | Alias de `/hardware/echidnablack2/` |
-| `/index.php/hardware/echidna-shield/` | `/ecosistema/placas-anteriores/` | Redirige | Alias de `/hardware/echidna-shield/` |
+| `/index.php/hardware/echidna-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/echidna-shield/` |
 | `/index.php/hardware/leds/` | `/ecosistema/echidnablack2/leds/` | Redirige | Alias de `/hardware/componentes/leds/` |
 | `/inteligencia-artificial-con-echidna/` | `/ecosistema/echidnaml/` | Redirige | Alias de `/a-programar/echidnascratch/inteligencia-artificial-con-echidna/` |
 | `/proyectos/` | `/category/recursos/proyectos/` | Redirige | Alias de `/recursos/proyectos/` |

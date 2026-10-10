@@ -2,7 +2,8 @@
 // Plantilla «Índice de sección»: cabecera, introducción en Markdown y una tarjeta por cada
 // página hija directa que exista (salvo las que llevan `listed: false`), sea de `paginas` o una ficha de `hardware`, por `order`.
 // Con `toc`, un índice lateral con los apartados del texto y enlaces directos a las hijas.
-import type { MarkdownHeading } from 'astro';
+// Con `cards`, además, tarjetas sueltas (p. ej. a un PDF), en su grupo o con las hijas sin grupo.
+import type { ImageMetadata, MarkdownHeading } from 'astro';
 import { Image } from 'astro:assets';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
@@ -23,8 +24,10 @@ interface Props {
   headings?: MarkdownHeading[];
   /** Título del apartado de tarjetas de las hijas; sin él, las tarjetas van sin título */
   cardsTitle?: string;
+  /** Tarjetas sueltas, que no son páginas hijas: { title, text, href, image?, group? } */
+  cards?: { title: string; text: string; href: string; image?: ImageMetadata; group?: string }[];
 }
-const { title, description, section, crumbs = [], ruta, headings = [], cardsTitle } = Astro.props;
+const { title, description, section, crumbs = [], ruta, headings = [], cardsTitle, cards = [] } = Astro.props;
 
 type Hija = { ruta: string; data: CollectionEntry<'paginas'>['data'] | CollectionEntry<'hardware'>['data'] };
 const esHija = (r: string) => r.startsWith(`${ruta}/`) && !r.slice(ruta.length + 1).includes('/');
@@ -36,18 +39,31 @@ const hijas: Hija[] = [
 ]
   .filter((h) => esHija(h.ruta) && (!('listed' in h.data) || h.data.listed))
   .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'));
-// Apartados de tarjetas: primero las hijas sin grupo (con cardsTitle, si lo hay) y después un apartado
-// por cada grupo, en el orden de su primera hija. Con título de apartado, las tarjetas llevan h3.
-const grupo = (h: Hija) => ('group' in h.data ? h.data.group : undefined);
+// Tarjetas: las de las hijas y, detrás, las sueltas. Las rutas internas llevan base; las URL externas, no.
+type Tarjeta = { href: string; titulo: string; texto: string; image?: ImageMetadata; group?: string };
+const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
+const tarjetas: Tarjeta[] = [
+  ...hijas.map((h) => ({
+    href: url(`${h.ruta}/`),
+    titulo: h.data.title,
+    texto: h.data.description,
+    image: h.data.image,
+    group: 'group' in h.data ? h.data.group : undefined,
+  })),
+  ...cards.map((c) => ({ href: enlace(c.href), titulo: c.title, texto: c.text, image: c.image, group: c.group })),
+];
+// Apartados de tarjetas: primero las que no tienen grupo (con cardsTitle, si lo hay) y después un apartado
+// por cada grupo, en el orden de su primera tarjeta. Con título de apartado, las tarjetas llevan h3.
+const grupo = (t: Tarjeta) => t.group;
 const anclaGrupo = (g: string) =>
   g.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const sinGrupo = hijas.filter((h) => !grupo(h));
+const sinGrupo = tarjetas.filter((t) => !grupo(t));
 const apartados = [
   ...(sinGrupo.length ? [{ titulo: cardsTitle, id: 'paginas-hijas', lista: sinGrupo }] : []),
-  ...[...new Set(hijas.map(grupo).filter((g): g is string => Boolean(g)))].map((g) => ({
+  ...[...new Set(tarjetas.map(grupo).filter((g): g is string => Boolean(g)))].map((g) => ({
     titulo: g,
     id: anclaGrupo(g),
-    lista: hijas.filter((h) => grupo(h) === g),
+    lista: tarjetas.filter((t) => grupo(t) === g),
   })),
 ];
 const toc = [
@@ -92,16 +108,16 @@ const conIndice = headings.length > 0;
       <>
       {titulo && <h2 class="indice__cards-title" id={id}>{titulo}</h2>}
       <ul class="img-cards grid grid--3">
-        {lista.map((h) => (
+        {lista.map((t) => (
           <li class="card">
-            {h.data.image && (
+            {t.image && (
               <div class="img-cards__img">
-                <Image src={h.data.image} alt="" widths={[320, 640]} sizes="320px" />
+                <Image src={t.image} alt="" widths={[320, 640]} sizes="320px" />
               </div>
             )}
             <div class="card__body">
-              <TituloTarjeta class="card__title"><a class="card__link" href={url(`${h.ruta}/`)}>{h.data.title}</a></TituloTarjeta>
-              <p class="card__text">{h.data.description}</p>
+              <TituloTarjeta class="card__title"><a class="card__link" href={t.href}>{t.titulo}</a></TituloTarjeta>
+              <p class="card__text">{t.texto}</p>
             </div>
           </li>
         ))}

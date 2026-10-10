@@ -10,7 +10,7 @@ image: ./elefante.png
 imageAlt: "Un elefante y el erizo de Echidna en un prado bajo el sol."
 ---
 
-Muchas veces hemos hablado [@jcarolinares](https://twitter.com/jcarolinares) y yo de las implicaciones de la A en STEAM, y de lo interesante que sería tener un repositorio de prácticas con materiales sencillos e incluso reutilizados. Pensando en esto se me ocurrió preparar un proyectito en esta dirección para probar el funcionamiento de los **sensores** de la placa [EchidnaBlack](/ecosistema/placas-anteriores/) en el nuevo entorno de programación por bloques [EchidnaScrach](/ecosistema/). No es más que una forma un poco más entretenida de probar un **servomotor**, pero como seguro que a alguien le interesa para replicarlo o para mejorar la idea, aquí lo dejo documentado. Espero que os guste.
+Muchas veces hemos hablado [@jcarolinares](https://twitter.com/jcarolinares) y yo de las implicaciones de la A en STEAM, y de lo interesante que sería tener un repositorio de prácticas con materiales sencillos e incluso reutilizados. Pensando en esto se me ocurrió preparar un proyectito en esta dirección para probar el funcionamiento de los **sensores** de la placa [EchidnaBlack](/ecosistema/#placas-anteriores) en el nuevo entorno de programación por bloques [EchidnaScrach](/ecosistema/). No es más que una forma un poco más entretenida de probar un **servomotor**, pero como seguro que a alguien le interesa para replicarlo o para mejorar la idea, aquí lo dejo documentado. Espero que os guste.
 
 [Elefante con sensores](https://www.youtube.com/watch?v=907YVs2AwuM)
 

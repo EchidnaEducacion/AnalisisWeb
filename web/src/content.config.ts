@@ -27,7 +27,8 @@ const paginas = defineCollection({
       team: z.array(reference('autores')).optional(),
       // Tarjetas de enlace al final del texto: { title, text, href, image? }; href es una URL externa
       // o una ruta interna sin base (/ecosistema/)
-      cards: z.array(z.object({ title: texto(), text: texto(), href: texto(), image: image().optional() })).default([]),
+      // En los índices, `group` pone la tarjeta bajo ese título, junto a las hijas del mismo grupo
+      cards: z.array(z.object({ title: texto(), text: texto(), href: texto(), image: image().optional(), group: texto().optional() })).default([]),
       // Tarjeta lateral de resumen (como la ficha rápida de las fichas): { label, value }. Solo en
       // páginas sin `toc`, porque ocupa el mismo lateral
       summary: z.array(z.object({ label: texto(), value: texto() })).default([]),
