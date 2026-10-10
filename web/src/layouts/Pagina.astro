@@ -2,15 +2,15 @@
 // Plantilla «Página genérica»: título, entradilla, cuerpo Markdown y, si la página lo pide,
 // índice lateral con los h2 (toc), fichas del equipo (team), tarjetas de enlace (cards) y la lista de
 // publicaciones (publications) al final
-import type { MarkdownHeading } from 'astro';
+import type { ImageMetadata, MarkdownHeading } from 'astro';
 import Base from './Base.astro';
 import CabeceraPagina from '../components/CabeceraPagina.astro';
 import Equipo from '../components/Equipo.astro';
 import Publicaciones from '../components/Publicaciones.astro';
 import Recursos from '../components/Recursos.astro';
+import Tarjetas from '../components/Tarjetas.astro';
 import { anclaEntorno, recursosPorEntorno } from '../lib/recursos';
 import { publicacionesPorAño } from '../lib/publicaciones';
-import { url } from '../lib/url';
 
 interface Props {
   title: string;
@@ -22,7 +22,7 @@ interface Props {
   /** Equipo que se muestra después del texto */
   team?: { collection: 'autores'; id: string }[];
   /** Tarjetas de enlace que se muestran después del texto */
-  cards?: { title: string; text: string; href: string }[];
+  cards?: { title: string; text: string; href: string; image?: ImageMetadata }[];
   /** Importancia mínima de las publicaciones que se listan al final; sin valor, no hay lista */
   publications?: number;
   /** Público de los recursos que se listan al final, agrupados por entorno; sin valor, no hay lista */
@@ -33,13 +33,13 @@ interface Props {
   summary?: { label: string; value: string }[];
 }
 const { title, description, section, crumbs = [], headings, team, cards = [], publications, resources, conIndice = false, summary = [] } = Astro.props;
-// Las rutas internas llevan base; las URL externas, no
-const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
 // Índice: los h2 del Markdown y, si hay lista de publicaciones, sus años
 const años = publications ? (await publicacionesPorAño(publications)).map((g) => g.año) : [];
 const entornos = resources ? (await recursosPorEntorno(resources)).map((g) => g.entorno) : [];
 // Sin lateral, los recursos salen debajo, a todo el ancho, para que quepan tres tarjetas por fila
 const recursosAncho = Boolean(resources) && !conIndice && summary.length === 0;
+// Igual con las tarjetas con imagen (Modelos e impresión 3D): a todo el ancho, tres por fila
+const tarjetasAncho = cards.some((c) => c.image) && !conIndice && summary.length === 0;
 const toc = [
   ...headings.filter((h) => h.depth === 2),
   ...(conIndice ? años.map((a) => ({ slug: `año-${a}`, text: a })) : []),
@@ -62,18 +62,7 @@ const toc = [
     <article class="prose">
       <slot />
       {team && <Equipo ids={team} />}
-      {cards.length > 0 && (
-        <ul class="img-cards grid grid--2">
-          {cards.map((c) => (
-            <li class="card">
-              <div class="card__body">
-                <h2 class="card__title"><a class="card__link" href={enlace(c.href)}>{c.title}</a></h2>
-                <p class="card__text">{c.text}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
+      {cards.length > 0 && !tarjetasAncho && <Tarjetas cards={cards} />}
       {publications && <Publicaciones minimo={publications} />}
       {resources && !recursosAncho && <Recursos publico={resources} />}
     </article>
@@ -88,6 +77,11 @@ const toc = [
       </aside>
     )}
   </div>
+  {tarjetasAncho && (
+    <div class="wrap recursos-ancho">
+      <Tarjetas cards={cards} columnas={3} />
+    </div>
+  )}
   {recursosAncho && (
     <div class="wrap recursos-ancho">
       <div class="prose prose--ancha">

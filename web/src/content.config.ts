@@ -25,9 +25,9 @@ const paginas = defineCollection({
       toc: z.boolean().default(false),
       // Fichas del equipo al final de la página, por id de `autores`
       team: z.array(reference('autores')).optional(),
-      // Tarjetas de enlace al final del texto: { title, text, href }; href es una URL externa
+      // Tarjetas de enlace al final del texto: { title, text, href, image? }; href es una URL externa
       // o una ruta interna sin base (/ecosistema/)
-      cards: z.array(z.object({ title: texto(), text: texto(), href: texto() })).default([]),
+      cards: z.array(z.object({ title: texto(), text: texto(), href: texto(), image: image().optional() })).default([]),
       // Tarjeta lateral de resumen (como la ficha rápida de las fichas): { label, value }. Solo en
       // páginas sin `toc`, porque ocupa el mismo lateral
       summary: z.array(z.object({ label: texto(), value: texto() })).default([]),

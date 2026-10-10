@@ -125,3 +125,13 @@
   type: Programación didáctica
   image: ./recursos/docentes-programacion.svg
   order: 3
+
+- id: docentes-impresion-3d
+  title: Modelos e impresión 3D
+  description: Diseños 3D para imprimir que complementan la placa, en formato STL.
+  audience: docentes
+  environment: Otros recursos
+  type: Diseños 3D (STL)
+  url: /docentes/impresion-3d/
+  image: ./recursos/docentes-impresion-3d.png
+  order: 2
