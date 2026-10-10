@@ -60,9 +60,9 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │       └── Guías                           (subtítulo)
 │           └── 2.5 Manual EchidnaBlack para FP
 ├── 3. Recursos docentes                   (una sola página)
-│   ├── Proyectos de inicio con EchidnaML   (título dentro de la página)
-│   │   ├── 3.1 Diapositivas
-│   │   └── 3.2 Guía docente
+│   ├── Proyectos de inicio con EchidnaML   (título dentro de la página; tarjeta del material del alumnado, 2.1)
+│   │   ├── 3.1 Diapositivas                (próximamente)
+│   │   └── 3.2 Programación didáctica      (próximamente)
 │   ├── Situaciones de aprendizaje          (un título por SdA)
 │   │   └── 3.3 Recursos docentes de cada SdA
 │   ├── Snap!                               (título; sin contenido de momento)
@@ -135,9 +135,9 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 2.3 Manual de usuario | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
 | 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
 | 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en `echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | — (pendiente de alojarlo fuera de WordPress) |
-| 1 | Recursos docentes | `/docentes/` | Índice de sección (página única con tarjetas agrupadas por material, igual que alumnado) |
-| 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | — (recurso alojado sin plantilla) |
-| 2 | 3.2 Proyectos de inicio con EchidnaML: guía docente | `/docentes/proyectos-inicio-echidnaml/guia-docente/` | — (recurso alojado sin plantilla) |
+| 1 | Recursos docentes | `/docentes/` | Página genérica con `resources: docentes` (página única con tarjetas agrupadas por material, igual que alumnado) |
+| 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas (PDF) | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |
+| 2 | 3.2 Proyectos de inicio con EchidnaML: programación didáctica | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |
 | 2 | 3.3 Situaciones de aprendizaje: recursos de cada una | `/docentes/situaciones-aprendizaje/<recurso>/<tipo>/` (p. ej. `…/sensor-temperatura/guia-docente/`) | — (recurso alojado sin plantilla; mismo `<recurso>` que en alumnado) |
 | 2 | 3.4 Snap!: recursos docentes | `/docentes/snap/<tipo>/` | — (recurso alojado sin plantilla; sin contenido de momento) |
 | 2 | 3.5 Proyectos de inicio con Arduino IDE: recursos docentes | `/docentes/proyectos-inicio-arduino-ide/<tipo>/` | — (recurso alojado sin plantilla) |

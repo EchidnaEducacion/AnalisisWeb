@@ -17,7 +17,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
       <ul class="nav__list">
         <li><a class={"nav__link" + activo("ecosistema")} href={url("ecosistema/")}>Ecosistema</a></li>
         <li><a class={"nav__link" + activo("alumnado")} href={url("alumnado/")}>Alumnado</a></li>
-        <li><a class={"nav__link" + activo("docentes")} href={url("maquetas/docentes/")}>Docentes</a></li>
+        <li><a class={"nav__link" + activo("docentes")} href={url("docentes/")}>Docentes</a></li>
         <li><a class={"nav__link" + activo("blog")} href={url("blog/")}>Blog</a></li>
         <li class="nav__item--has-sub">
           <button class={"nav__link" + activo("nosotros")} type="button" aria-expanded="false" aria-controls="sub-nosotros">
@@ -61,7 +61,7 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
   <ul>
     <li><a href={url("ecosistema/")}><span class="dot" style="--dot:var(--c-ecosistema)"></span>Ecosistema</a></li>
     <li><a href={url("alumnado/")}><span class="dot" style="--dot:var(--c-alumnado)"></span>Alumnado</a></li>
-    <li><a href={url("maquetas/docentes/")}><span class="dot" style="--dot:var(--c-docentes)"></span>Docentes</a></li>
+    <li><a href={url("docentes/")}><span class="dot" style="--dot:var(--c-docentes)"></span>Docentes</a></li>
     <li><a href={url("blog/")}><span class="dot" style="--dot:var(--c-blog)"></span>Blog</a></li>
     <li><a href={url("quienes-somos/")}><span class="dot" style="--dot:var(--c-nosotros)"></span>Quiénes somos</a>
       <ul>

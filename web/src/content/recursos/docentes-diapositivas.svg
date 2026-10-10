@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- Miniatura provisional: diapositivas (pantalla de presentación) -->
+  <rect width="1200" height="600" fill="#ebefff"/>
+  <g fill="none" stroke="#3b5bdb" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="380" y1="130" x2="820" y2="130"/>
+    <rect x="410" y="130" width="380" height="250" rx="14" fill="#fff"/>
+    <line x1="600" y1="380" x2="600" y2="440"/>
+    <line x1="545" y1="490" x2="600" y2="440"/>
+    <line x1="655" y1="490" x2="600" y2="440"/>
+  </g>
+  <g fill="#3b5bdb">
+    <rect x="470" y="290" width="44" height="50" rx="6"/>
+    <rect x="540" y="240" width="44" height="100" rx="6"/>
+    <rect x="610" y="265" width="44" height="75" rx="6"/>
+    <rect x="680" y="200" width="44" height="140" rx="6"/>
+  </g>
+</svg>

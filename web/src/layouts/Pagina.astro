@@ -38,6 +38,8 @@ const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : hr
 // Índice: los h2 del Markdown y, si hay lista de publicaciones, sus años
 const años = publications ? (await publicacionesPorAño(publications)).map((g) => g.año) : [];
 const entornos = resources ? (await recursosPorEntorno(resources)).map((g) => g.entorno) : [];
+// Sin lateral, los recursos salen debajo, a todo el ancho, para que quepan tres tarjetas por fila
+const recursosAncho = Boolean(resources) && !conIndice && summary.length === 0;
 const toc = [
   ...headings.filter((h) => h.depth === 2),
   ...(conIndice ? años.map((a) => ({ slug: `año-${a}`, text: a })) : []),
@@ -73,7 +75,7 @@ const toc = [
         </ul>
       )}
       {publications && <Publicaciones minimo={publications} />}
-      {resources && <Recursos publico={resources} />}
+      {resources && !recursosAncho && <Recursos publico={resources} />}
     </article>
     {summary.length > 0 && toc.length === 0 && (
       <aside class="aside-stack aside-stack--sticky">
@@ -86,5 +88,12 @@ const toc = [
       </aside>
     )}
   </div>
+  {recursosAncho && (
+    <div class="wrap recursos-ancho">
+      <div class="prose prose--ancha">
+        <Recursos publico={resources!} />
+      </div>
+    </div>
+  )}
 </main>
 </Base>

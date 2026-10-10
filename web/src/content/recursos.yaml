@@ -96,3 +96,32 @@
   level: FP
   image: ./recursos/manual-fp-echidnablack.jpg
   order: 1
+
+# Recursos docentes: environment es el material de alumnado al que acompañan; sin group
+- id: docentes-inicio-echidnaml-material
+  title: Material del alumnado
+  description: La guía Proyectos de inicio con EchidnaML, con los proyectos que hará el alumnado en clase.
+  audience: docentes
+  environment: Proyectos de inicio con EchidnaML
+  type: Guía
+  url: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/
+  image: ./recursos/guia-inicio-echidnaml.jpg
+  order: 1
+
+- id: docentes-inicio-echidnaml-diapositivas
+  title: Diapositivas
+  description: Presentaciones para proyectar en el aula mientras se trabajan los proyectos de inicio.
+  audience: docentes
+  environment: Proyectos de inicio con EchidnaML
+  type: Diapositivas (PDF)
+  image: ./recursos/docentes-diapositivas.svg
+  order: 2
+
+- id: docentes-inicio-echidnaml-programacion
+  title: Programación didáctica
+  description: Objetivos, temporización y evaluación para llevar los proyectos de inicio al aula.
+  audience: docentes
+  environment: Proyectos de inicio con EchidnaML
+  type: Programación didáctica
+  image: ./recursos/docentes-programacion.svg
+  order: 3

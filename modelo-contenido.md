@@ -38,7 +38,7 @@ Plantillas: Página genérica, Índice de sección, Contacto y Portada.
 | `toc` | sí/no | No (no) | Índice lateral «En esta página» con los apartados (`##`). Solo para páginas largas: en las cortas quita ancho al texto y no aporta. En los índices de sección añade además, arriba, los enlaces a sus páginas hijas, para que se vean sin bajar hasta las tarjetas (p. ej. Descarga en EchidnaML) |
 | `team` | lista de identificadores de la lista de autores | No | Fichas del equipo al final del texto, en ese orden (en Sobre el proyecto) |
 | `publications` | número del 1 al 5 | No | Lista de la colección `publicaciones` al final del texto, con esa importancia mínima, agrupada por año (en Publicaciones, `3`) |
-| `resources` | `alumnado` · `docentes` | No | Lista de la colección `recursos` de ese público al final del texto, por entorno y grupo (en Materiales alumnado) |
+| `resources` | `alumnado` · `docentes` | No | Lista de la colección `recursos` de ese público al final del texto, por entorno (o material) y grupo. Con `toc`, va en la columna del texto (Materiales alumnado); sin lateral, a todo el ancho, con tres tarjetas por fila (Recursos docentes) |
 | `cards` | lista de `{ title, text, href }` | No | Tarjetas de enlace al final del texto (p. ej. a los Proyectos de inicio con EchidnaML). `href` es una URL externa o una ruta interna sin `base` |
 | `cardsTitle` | texto | No | En los índices, título del apartado de tarjetas de las páginas hijas (p. ej. «Primeros pasos» en EchidnaML); sale también en el índice lateral |
 | `summary` | lista de `{ label, value }` | No | Tarjeta lateral «En resumen», como la ficha rápida de las fichas (p. ej. en Alimentación). Solo en páginas sin `toc`, porque ocupa el mismo lateral |
@@ -83,10 +83,10 @@ Lista de los materiales de `/alumnado/` (y, más adelante, de `/docentes/`) en `
 | `title` | texto no vacío | Sí | Título de la tarjeta |
 | `description` | texto no vacío | Sí | Una frase que describe el material |
 | `audience` | `alumnado` · `docentes` | Sí | Página en la que aparece |
-| `environment` | texto (`EchidnaML`, `Arduino IDE`…) | Sí | Título de entorno bajo el que se agrupa |
-| `group` | texto (`Proyectos`, `Situaciones de aprendizaje`, `Guías`…) | Sí | Subtítulo dentro del entorno |
+| `environment` | texto (`EchidnaML`, `Arduino IDE`…) | Sí | Título bajo el que se agrupa: el entorno en alumnado y el material (`Proyectos de inicio con EchidnaML`…) en docentes |
+| `group` | texto (`Proyectos`, `Situaciones de aprendizaje`, `Guías`…) | No | Subtítulo dentro del entorno; sin él, las tarjetas van directamente bajo el título (docentes) |
 | `type` | texto (`Guía`, `Situación de aprendizaje`, `Manual (PDF, 44 MB)`…) | Sí | Etiqueta de la tarjeta |
-| `url` | dirección externa o ruta interna sin `base` | Sí | Adónde lleva la tarjeta; si es externa, la tarjeta indica el sitio |
+| `url` | dirección externa o ruta interna sin `base` | No | Adónde lleva la tarjeta; si es externa, la tarjeta indica el sitio. Sin `url`, el recurso está en preparación: la tarjeta sale atenuada, con la etiqueta «Próximamente» y sin enlace |
 | `level` | `Primaria` · `Secundaria` · `FP` | No | Etiqueta de nivel educativo |
 | `image` | imagen | No | Miniatura (2:1, en `web/src/content/recursos/`, sin metadatos) |
 | `order` | número | No (0) | Orden dentro de su grupo |

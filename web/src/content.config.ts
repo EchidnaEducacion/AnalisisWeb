@@ -149,9 +149,11 @@ const recursos = defineCollection({
       audience: z.enum(['alumnado', 'docentes']),
       // Título de entorno (EchidnaML, Arduino IDE…) y subtítulo dentro de él (Proyectos, Situaciones de aprendizaje…)
       environment: texto(),
-      group: texto(),
+      // Subtítulo dentro del entorno; sin él, los recursos van directamente bajo el título
+      group: z.string().default(''),
       type: texto(),
-      url: texto(),
+      // Sin url, el recurso aún no está terminado: la tarjeta sale «Próximamente», sin enlace
+      url: z.string().optional(),
       level: z.enum(['Primaria', 'Secundaria', 'FP']).optional(),
       image: image().optional(),
       order: z.number().default(0),

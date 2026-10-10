@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- Miniatura provisional: programación didáctica (documento con lista) -->
+  <rect width="1200" height="600" fill="#ebefff"/>
+  <path d="M480 100 h180 l80 80 v320 a14 14 0 0 1 -14 14 h-246 a14 14 0 0 1 -14 -14 v-386 a14 14 0 0 1 14 -14 z" fill="#fff" stroke="#3b5bdb" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M660 100 v66 a14 14 0 0 0 14 14 h66" fill="none" stroke="#3b5bdb" stroke-width="18" stroke-linejoin="round"/>
+  <g fill="none" stroke="#3b5bdb" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="520,262 538,280 568,248"/>
+    <line x1="600" y1="264" x2="690" y2="264"/>
+    <polyline points="520,342 538,360 568,328"/>
+    <line x1="600" y1="344" x2="690" y2="344"/>
+    <polyline points="520,422 538,440 568,408"/>
+    <line x1="600" y1="424" x2="670" y2="424"/>
+  </g>
+</svg>
