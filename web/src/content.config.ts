@@ -33,6 +33,9 @@ const paginas = defineCollection({
       summary: z.array(z.object({ label: texto(), value: texto() })).default([]),
       // En los índices: título del apartado de tarjetas de las páginas hijas («Primeros pasos»)
       cardsTitle: texto().optional(),
+      // Grupo de la tarjeta de esta página en el índice de su sección: las que comparten grupo salen
+      // juntas bajo ese título, después de las que no tienen («Entornos de programación compatibles»)
+      group: texto().optional(),
       // Lista de publicaciones (colección `publicaciones`) al final del texto, con esta importancia mínima
       publications: z.number().int().min(1).max(5).optional(),
       // Recursos (colección `recursos`) de este público al final del texto, agrupados por entorno y grupo

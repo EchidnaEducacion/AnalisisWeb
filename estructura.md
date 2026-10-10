@@ -45,7 +45,8 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   │   ├── 1.2.15 Documentación
 │   │   └── 1.2.16 Características técnicas
 │   ├── 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield)
-│   └── 1.4 Entornos compatibles
+│   └── Entornos de programación compatibles  (título dentro del índice de Ecosistema)
+│       └── 1.4.1 Arduino IDE
 ├── 2. Materiales alumnado                 (una sola página; todos son enlaces externos)
 │   ├── EchidnaML                           (título dentro de la página)
 │   │   ├── Proyectos y Manual              (subtítulo)
@@ -126,7 +127,7 @@ Pie (fuera del menú, en todas las páginas)
 | 3 | 1.2.16 Características técnicas | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Página genérica (datos técnicos de la placa, del manual) |
 | 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/placas-anteriores/` | Página genérica (resumen de cada placa y descarga de su PDF; sin hijas) |
 | 3 | PDF de EchidnaBlack v1 y EchidnaShield | `/ecosistema/placas-anteriores/echidnablack.pdf`, `/ecosistema/placas-anteriores/echidnashield.pdf` | — (ficheros en `web/public/ecosistema/placas-anteriores/`) |
-| 2 | 1.4 Entornos compatibles | `/ecosistema/entornos-compatibles/` | Página genérica |
+| 2 | 1.4.1 Arduino IDE (en «Entornos de programación compatibles») | `/ecosistema/arduino-ide/` | Página genérica |
 | 1 | Materiales alumnado | `/alumnado/` | Página genérica con la lista de `recursos` (`resources: alumnado`): un título por entorno, un subtítulo por grupo y tarjetas con miniatura |
 | 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` y alias `/guiainicioechidnaml/` (redirección a `echidnaeducacion.github.io/GuiaInicioEchidnaML/`) | — (repo `GuiaInicioEchidnaML`) |
 | 2 | 2.2 Situaciones de aprendizaje (cada una) | `echidnaeducacion.github.io/situaciones-aprendizaje/<recurso>/` y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning, repo `situaciones-aprendizaje`) |

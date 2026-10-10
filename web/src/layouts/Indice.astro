@@ -36,13 +36,24 @@ const hijas: Hija[] = [
 ]
   .filter((h) => esHija(h.ruta) && (!('listed' in h.data) || h.data.listed))
   .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title, 'es'));
-const idTarjetas = 'paginas-hijas';
+// Apartados de tarjetas: primero las hijas sin grupo (con cardsTitle, si lo hay) y después un apartado
+// por cada grupo, en el orden de su primera hija. Con título de apartado, las tarjetas llevan h3.
+const grupo = (h: Hija) => ('group' in h.data ? h.data.group : undefined);
+const anclaGrupo = (g: string) =>
+  g.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const sinGrupo = hijas.filter((h) => !grupo(h));
+const apartados = [
+  ...(sinGrupo.length ? [{ titulo: cardsTitle, id: 'paginas-hijas', lista: sinGrupo }] : []),
+  ...[...new Set(hijas.map(grupo).filter((g): g is string => Boolean(g)))].map((g) => ({
+    titulo: g,
+    id: anclaGrupo(g),
+    lista: hijas.filter((h) => grupo(h) === g),
+  })),
+];
 const toc = [
   ...headings.filter((h) => h.depth === 2),
-  ...(cardsTitle && hijas.length ? [{ slug: idTarjetas, text: cardsTitle }] : []),
+  ...apartados.filter((a) => a.titulo).map((a) => ({ slug: a.id, text: a.titulo! })),
 ];
-// Con título de apartado, los títulos de las tarjetas bajan un nivel
-const TituloTarjeta = cardsTitle ? 'h3' : 'h2';
 const conIndice = headings.length > 0;
 ---
 <Base title={title} description={description} section={section}>
@@ -75,10 +86,13 @@ const conIndice = headings.length > 0;
       <slot />
     </div>
 
-    {hijas.length > 0 && cardsTitle && <h2 class="indice__cards-title" id={idTarjetas}>{cardsTitle}</h2>}
-    {hijas.length > 0 && (
+    {apartados.map(({ titulo, id, lista }) => {
+      const TituloTarjeta = titulo ? 'h3' : 'h2';
+      return (
+      <>
+      {titulo && <h2 class="indice__cards-title" id={id}>{titulo}</h2>}
       <ul class="img-cards grid grid--3">
-        {hijas.map((h) => (
+        {lista.map((h) => (
           <li class="card">
             {h.data.image && (
               <div class="img-cards__img">
@@ -92,7 +106,9 @@ const conIndice = headings.length > 0;
           </li>
         ))}
       </ul>
-    )}
+      </>
+      );
+    })}
     </div>
   </div>
 </main>
