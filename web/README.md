@@ -21,7 +21,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 | # | Plantilla | Archivo | Ejemplo real |
 |---|---|---|---|
 | 1 | Base (cabecera, menú, buscador, pie) | `src/layouts/Base.astro` | todas |
-| 2 | Portada | `src/pages/index.astro` (plantilla real; la maqueta `src/pages/maquetas/portada.astro` se queda para comparar) | `/` |
+| 2 | Portada | `src/pages/index.astro` (plantilla real; maqueta borrada) | `/` |
 | 3 | Índice de sección | `src/layouts/Indice.astro` (plantilla real; maqueta borrada) | `/ecosistema/` |
 | 3 | Índice de sección (agrupado por títulos) | `src/pages/maquetas/alumnado.astro`, `src/pages/maquetas/docentes.astro` | `/alumnado/`, `/docentes/` |
 | 4 | Ficha de hardware | `src/layouts/Ficha.astro` (plantilla real; maqueta borrada) | `/ecosistema/echidnablack2/`, `/ecosistema/echidnablack2/leds/` |
@@ -87,7 +87,7 @@ Cada página indica sus metadatos como *props* del layout:
 
 `section` fija el color de acento y la entrada activa del menú; `bare` usa el título sin añadir « · Echidna Educación». Las llaves `{ }` literales (p. ej. en bloques de código) deben ir en un elemento con `is:raw`.
 
-Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que antepone `base` (`/AnalisisWeb/`): `href={url("maquetas/portada/")}`. Así funcionan igual en local y en GitHub Pages. Las URL son de carpeta (`build.format: 'directory'`): `/politica-privacidad/` se genera como `politica-privacidad/index.html`.
+Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que antepone `base` (`/AnalisisWeb/`): `href={url("ecosistema/")}`. Así funcionan igual en local y en GitHub Pages. Las URL son de carpeta (`build.format: 'directory'`): `/politica-privacidad/` se genera como `politica-privacidad/index.html`.
 
 ## Páginas reales
 
