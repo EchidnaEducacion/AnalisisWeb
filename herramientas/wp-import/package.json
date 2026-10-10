@@ -1,0 +1,14 @@
+{
+  "name": "wp-import",
+  "private": true,
+  "type": "module",
+  "description": "Importa las entradas del blog de WordPress (echidna.es) a la colección blog de web/",
+  "scripts": {
+    "importar": "node wp-import.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}
