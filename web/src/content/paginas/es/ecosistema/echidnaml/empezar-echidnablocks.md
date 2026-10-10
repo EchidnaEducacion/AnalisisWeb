@@ -3,6 +3,7 @@ title: Empezar con EchidnaBlocks
 description: El entorno de EchidnaBlocks, cómo se comunica con la placa, el menú Archivo con los ejemplos y un primer programa, el «Hola, mundo».
 template: pagina
 order: 3
+image: ./empezar-echidnablocks/icono-echidnablocks.png
 toc: true
 cards:
   - title: Proyectos de inicio con EchidnaML

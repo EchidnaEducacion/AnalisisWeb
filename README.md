@@ -154,7 +154,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
-- [ ] **Imágenes de las tarjetas**: buscar una imagen para las tarjetas que hoy salen sin ella, empezando por las páginas de EchidnaML (Descarga, Conectar EchidnaML y EchidnaBlack, Empezar con EchidnaBlocks y Empezar con LearningML). Se pone en el campo `image` de cada página.
+- [ ] **Imágenes de las tarjetas**: buscar una imagen para las tarjetas que hoy salen sin ella, empezando por las páginas de EchidnaML que aún no la tienen (Descarga y Conectar EchidnaML y EchidnaBlack; Empezar con EchidnaBlocks y Empezar con LearningML ya llevan su icono). Se pone en el campo `image` de cada página.
 - [x] **Migrar a GitHub las situaciones de aprendizaje de eXeLearning** de `rea.echidna.es`: están en el repo [`situaciones-aprendizaje`](https://github.com/EchidnaEducacion/situaciones-aprendizaje) y sus tarjetas ya enlazan a GitHub Pages.
 - [ ] **Redirigir `rea.echidna.es`** (quien administre el servidor): 301 de cada carpeta antigua a su copia en GitHub (ver [`redirecciones.md`](redirecciones.md#otros-dominios-y-rutas)) y, después, apagarlo.
 - [ ] **Aclarar con Jorge Lobo la licencia de ¡La Tierra se mueve!**: los créditos dicen CC BY-SA y el pie de algunas páginas, CC BY-NC-SA 4.0.

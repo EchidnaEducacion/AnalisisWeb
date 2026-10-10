@@ -3,6 +3,7 @@ title: Empezar con LearningML
 description: Qué es LearningML, su entorno, las fases para crear un modelo de inteligencia artificial y cómo usarlo después en EchidnaBlocks.
 template: pagina
 order: 4
+image: ./empezar-learningml/icono-learningml.png
 toc: true
 cards:
   - title: Proyectos de inicio con EchidnaML
