@@ -5,7 +5,7 @@ date: 2017-09-14
 updated: 2020-06-20
 author: jorge-lobo
 categories: [recursos/proyectos]
-tags: ["Vehiculos"]
+tags: ["Vehículos"]
 image: ./EchidnaBoat.png
 imageAlt: "El erizo de Echidna imagina una barca en el mar, con el título «EchidnaBoat»."
 ---

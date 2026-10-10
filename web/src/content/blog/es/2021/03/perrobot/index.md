@@ -4,7 +4,7 @@ description: "Un perro robótico que mueve la cola y ladra cuando algo se acerca
 date: 2021-03-21
 author: jorge-lobo
 categories: [recursos/proyectos]
-tags: ["Perrobot", "proyectos", "Servomotor", "SHARP"]
+tags: ["Perrobot", "Servomotor", "SHARP"]
 image: ./perrete.png
 imageAlt: "Un perro corriendo hacia un sensor de distancia por infrarrojos, con el erizo de Echidna."
 ---

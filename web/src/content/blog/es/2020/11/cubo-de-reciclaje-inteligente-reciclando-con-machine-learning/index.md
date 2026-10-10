@@ -4,7 +4,7 @@ description: "Aunque no se haya presentado formalmente, una de las grandes noved
 date: 2020-11-07
 author: jorge-lobo
 categories: [recursos/proyectos]
-tags: ["EchidnaBlack", "EchidnaScratch", "IA", "Machine Learning", "Reciclaje", "Scratch", "STEAM"]
+tags: ["EchidnaBlack", "EchidnaScratch", "Inteligencia Artificial", "Machine Learning", "Reciclaje", "Scratch", "STEAM"]
 image: ./Blog_IA-09-e1604778024424.png
 imageAlt: "El erizo de Echidna se pregunta en qué contenedor de reciclaje tirar un residuo, ayudado por la inteligencia artificial."
 ---

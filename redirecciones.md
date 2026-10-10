@@ -186,6 +186,16 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 | `/AAAA/MM/slug/` | `/AAAA/MM/slug/` | Igual | 61 entradas |
 | `/category/…/`, `/tag/…/`, `/author/…/` | Igual | Igual | Se descarta `/category/sin-categoria/`. Hay subcategorías de dos niveles (`/category/recursos/proyectos/`, `/category/recursos/impresion-3d/`) que deben mantenerse |
 | `/feed/` | `/feed/` (copia de `/rss.xml`) | Igual | Los lectores de RSS no siguen redirecciones HTML |
+| `/tag/machine-lerning/` | `/tag/machine-learning/` | Redirige | Errata corregida |
+| `/tag/construccioniso/` | `/tag/construccionismo/` | Redirige | Errata corregida |
+| `/tag/makeymakey/` | `/tag/makey-makey/` | Redirige | Unificada con «Makey Makey» |
+| `/tag/ia/` | `/tag/inteligencia-artificial/` | Redirige | Unificada con «Inteligencia Artificial» |
+| `/tag/mkmk/` | `/tag/makey-makey/` | Redirige | Unificada con «Makey Makey» |
+| `/tag/ctim/` | `/tag/steam/` | Redirige | Etiqueta quitada; su entrada ya tenía «STEAM» |
+| `/tag/proyectos/` | `/category/recursos/proyectos/` | Redirige | Etiqueta quitada: repetía la categoría |
+| `/tag/recursos/` | `/category/recursos/` | Redirige | Ídem |
+| `/tag/taller/` | `/category/talleres/` | Redirige | Ídem |
+| `/tag/bloques-de-construccion/` | `/category/bloques-de-construccion/` | Redirige | Ídem |
 
 ## Otros dominios y rutas
 

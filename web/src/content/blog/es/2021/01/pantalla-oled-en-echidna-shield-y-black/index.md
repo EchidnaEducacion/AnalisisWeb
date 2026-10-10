@@ -137,7 +137,7 @@ MedidaX = 311,  MedidaY = 384
 
 [Vídeo del ejemplo del círculo (MP4)](/2021/01/pantalla-oled-en-echidna-shield-y-black/Circulo_solve.mp4)
 
-Musica dePatrick de Arteaga [https://patrickdearteaga.com/](https://patrickdearteaga.com/)
+Música de Patrick de Arteaga [https://patrickdearteaga.com/](https://patrickdearteaga.com/)
 
 Aquí se abre la posibilidad de que interactúe la circunferencia con los bordes, detectando la colisión entre las líneas para hacer algún juego tipo laberinto…
 
