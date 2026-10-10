@@ -1,6 +1,14 @@
 # Autores del blog y equipo de «Sobre el proyecto», por orden alfabético de apellido.
+# El equipo de «Sobre el proyecto» se elige en el campo team de quienes-somos.md (Javier no está).
 # El id es el de /author/<id>/.
 # Las fotos están en src/assets/autores/, cuadradas y sin metadatos (EXIF).
+- id: javier
+  name: Javier Álvarez
+  role: Maestro de Educación Primaria
+  description: Colaboró en el proyecto Echidna. Es experto en pensamiento computacional y robótica educativa, y un apasionado de LEGO.
+  image: ../assets/autores/javier.jpg
+  url: https://x.com/fjavier_AJ
+
 - id: jorge-lobo
   name: Jorge Lobo
   role: Maestro de Educación Primaria
