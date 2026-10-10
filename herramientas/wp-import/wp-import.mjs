@@ -371,6 +371,13 @@ const main = async () => {
       console.log(`  ${clave}: ya existe, se deja como está`);
       continue;
     }
+    // Sin su autor en autores.yaml la web no se construye: se deja para cuando esté
+    const autorWp = autorPorId.get(post.author);
+    if (!idsAutores.has(autorWp)) {
+      console.log(`  ${clave}: su autor «${autorWp}» no está en autores.yaml, no se importa`);
+      avisa(clave, `No importada: su autor «${autorWp}» no está en autores.yaml`);
+      continue;
+    }
     console.log(`  ${clave}`);
     const publica = path.join(PUBLIC, año, mes, post.slug);
     const rutaPublica = `/${año}/${mes}/${post.slug}`;
@@ -403,8 +410,7 @@ const main = async () => {
       }
     } else avisa(clave, 'No tiene imagen de portada');
 
-    const autor = autorPorId.get(post.author);
-    if (!idsAutores.has(autor)) avisa(clave, `El autor «${autor}» no está en autores.yaml: añadirlo antes de publicar`);
+    const autor = autorWp;
     const cats = post.categories.map((id) => catPorId.get(id)).filter((c) => c && c.slug !== 'sin-categoria').map(idCategoria);
     if (!cats.length) avisa(clave, 'No tiene categoría: asignar una');
 
