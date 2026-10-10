@@ -1,6 +1,7 @@
 ---
 // Lateral del blog (entradas y listado): todas las categorías con su número de entradas,
-// con las subcategorías bajo su madre, y las 5 entradas más recientes
+// con las subcategorías bajo su madre, las 5 últimas entradas (con la actual resaltada) y las
+// etiquetas con su número de entradas
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { url } from '../lib/url';
 import { fechaLarga, rutaEntrada } from '../lib/blog';
@@ -8,7 +9,7 @@ import { fechaLarga, rutaEntrada } from '../lib/blog';
 interface Props {
   /** Entradas publicadas, de la más reciente a la más antigua */
   todas: CollectionEntry<'blog'>[];
-  /** Entrada actual, si la hay: se destacan sus categorías y no sale en las recientes */
+  /** Entrada actual, si la hay: se destacan sus categorías y se resalta en las últimas entradas */
   actual?: CollectionEntry<'blog'>;
 }
 const { todas, actual } = Astro.props;
@@ -25,7 +26,12 @@ const lista = categorias
     { ...madre, sub: false },
     ...categorias.filter((c) => c.data.parent === madre.id).map((c) => ({ ...c, sub: true })),
   ]);
-const recientes = todas.filter((t) => t.id !== actual?.id).slice(0, 5);
+const recientes = todas.slice(0, 5);
+// Etiquetas de todas las entradas, por orden alfabético, con su número de entradas
+const etiquetas = [...new Set(todas.flatMap((t) => t.data.tags))]
+  .sort((a, b) => a.localeCompare(b, 'es'))
+  .map((tag) => ({ tag, n: todas.filter((t) => t.data.tags.includes(tag)).length }));
+const delActual = new Set(actual?.data.tags ?? []);
 ---
 <aside class="aside-stack aside-stack--sticky" aria-label="Más del blog">
   <section class="factsheet blog-aside" aria-labelledby="cat-t">
@@ -41,10 +47,20 @@ const recientes = todas.filter((t) => t.id !== actual?.id).slice(0, 5);
   </section>
   {recientes.length > 0 && (
     <section class="factsheet blog-aside" aria-labelledby="rec-t">
-      <h2 id="rec-t">Entradas recientes</h2>
+      <h2 id="rec-t">Últimas entradas</h2>
       <ul class="blog-aside__list blog-aside__list--recent">
         {recientes.map((r) => (
-          <li><a href={url(`${rutaEntrada(r)}/`)}>{r.data.title}</a><small>{fechaLarga(r.data.date)}</small></li>
+          <li><a href={url(`${rutaEntrada(r)}/`)} aria-current={r.id === actual?.id ? 'page' : undefined}>{r.data.title}</a><small>{fechaLarga(r.data.date)}</small></li>
+        ))}
+      </ul>
+    </section>
+  )}
+  {etiquetas.length > 0 && (
+    <section class="factsheet blog-aside" aria-labelledby="tag-t">
+      <h2 id="tag-t">Etiquetas</h2>
+      <ul class="blog-aside__tags">
+        {etiquetas.map(({ tag, n }) => (
+          <li><a class="chip chip--outline" href={blog} aria-current={delActual.has(tag) ? 'true' : undefined}>{tag} <span class="blog-aside__count">{n}</span></a></li>
         ))}
       </ul>
     </section>

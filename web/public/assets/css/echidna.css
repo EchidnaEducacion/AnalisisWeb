@@ -660,6 +660,10 @@ ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 .blog-aside__list--recent li { display: grid; gap: 0; padding-block: .35rem; border-bottom: 1px solid var(--line); }
 .blog-aside__list--recent li:last-child { border-bottom: 0; }
 .blog-aside__list--recent small { color: var(--muted); font-size: .82rem; }
+.blog-aside__tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.blog-aside__tags a { text-decoration: none; }
+.blog-aside__tags a[aria-current] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-ink); }
+.blog-aside__tags a[aria-current] .blog-aside__count { color: var(--accent-ink); }
 .author-box { display: flex; gap: 1rem; align-items: start; padding: 1.3rem; border-radius: var(--radius-l); background: var(--surface-2); }
 .author-box p { margin: .25rem 0 0; color: var(--muted); font-size: .95rem; }
 .share { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
