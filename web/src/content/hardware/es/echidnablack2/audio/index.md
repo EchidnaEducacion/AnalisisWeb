@@ -35,11 +35,25 @@ Además, tiene un **potenciómetro** para ajustar el volumen del sonido.
 
 ## Funcionamiento
 
-Las dos salidas están conectadas al pin D10~, que puede reproducir señales de entre 31 Hz y 20 kHz.
+Las dos salidas están conectadas al pin D10~, que puede reproducir señales de entre 31 Hz y 20 kHz. La señal pasa primero por el potenciómetro de volumen y después llega al jack y al zumbador, como se ve en el esquema.
+
+### Zumbador
 
 El **zumbador** vibra y suena al recibir una señal de una frecuencia determinada. Su frecuencia central es de 2,3 kHz, así que, si nos alejamos mucho de ella, no sonará con calidad (como referencia, la nota do central, C4, tiene 262 Hz). Con el volumen muy bajo puede no oírse.
 
-El **jack** permite conectar un equipo de audio externo, que reproduce los sonidos con más calidad. Cuidado con el volumen: demasiado alto puede dañar los auriculares e incluso los oídos.
+### Jack de audio
+
+El **jack** es una toma de 3,5 mm, la misma que la de los auriculares del móvil o del ordenador. Permite conectar unos auriculares o unos altavoces autoamplificados (los que llevan su propia alimentación), que reproducen los sonidos con más calidad que el zumbador. Al enchufar una clavija, el zumbador se desconecta y el sonido sale solo por el jack.
+
+![Dibujo del jack de audio: una pieza negra con forma de caja y, en un lateral, la boca circular gris donde se enchufa la clavija.](./pieza-jack.png)
+
+Cuidado con el volumen: demasiado alto puede dañar los auriculares e incluso los oídos. Conviene bajarlo con el potenciómetro antes de ponerse los auriculares.
+
+### Potenciómetro de volumen
+
+El **potenciómetro** es una resistencia variable: al girar su eje cambia la resistencia y, con ella, la intensidad de la señal que llega a las salidas. Como está antes del jack y del zumbador, regula el volumen de los dos.
+
+![Dibujo del potenciómetro de volumen: una pieza azul cuadrada con un eje blanco en el centro para girarlo.](./pieza-potenciometro.png)
 
 ## Cómo se programa
 

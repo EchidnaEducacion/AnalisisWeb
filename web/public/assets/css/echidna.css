@@ -600,6 +600,8 @@ ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 /* Lupas sobre la placa (lupa-*.png) y detalles de la placa (detalle-*.png): un tercio de la columna,
    centradas; en móvil, 260 px. El nombre va tras «/» en la web publicada y tras «%2F» en el servidor de desarrollo */
 .prose img:is([src*="/lupa-"], [src*="%2Flupa-"], [src*="/detalle-"], [src*="%2Fdetalle-"]) { display: block; margin-inline: auto; width: max(35%, min(100%, 260px)); }
+/* Dibujos de piezas sueltas (pieza-*.png): la mitad que las lupas */
+.prose img:is([src*="/pieza-"], [src*="%2Fpieza-"]) { display: block; margin-inline: auto; width: max(17.5%, min(100%, 130px)); }
 /* Esquema eléctrico en el lateral de la ficha */
 .factsheet--schematic img { display: block; margin-inline: auto; max-height: 260px; width: auto; max-width: 100%; height: auto; border-radius: var(--radius); }
 /* Bloques de EchidnaML (imágenes bloque-*.png): todos a la misma altura, sea cual sea la captura */
