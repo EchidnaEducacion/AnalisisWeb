@@ -120,6 +120,21 @@ const categorias = defineCollection({
   }),
 });
 
+// Etiquetas del blog: vocabulario cerrado, explicado en modelo-contenido.md (Etiquetas del blog).
+// Una etiqueta que no esté aquí hace fallar la publicación; para añadir una, primero en esa lista y aquí.
+const ETIQUETAS = [
+  // Placas
+  'EchidnaShield', 'EchidnaBlack', 'EchidnaBlack2',
+  // Entornos de programación
+  'EchidnaML', 'EchidnaScratch', 'Snap4Arduino', 'IDE Arduino',
+  // Componentes
+  'Servomotor', 'LED', 'Sensor de luz', 'Temperatura', 'Micrófono', 'Joystick', 'Sensores externos',
+  // Temas
+  'Inteligencia Artificial', 'STEAM', 'Makey Makey', 'Música', 'Juegos',
+  // Eventos
+  'OSHWDem', 'esLibre',
+] as const;
+
 // Entradas del blog. La URL sale de la carpeta, no de la fecha:
 // es/2026/05/rotografo/index.md → /2026/05/rotografo/ (las imágenes van en la misma carpeta)
 const blog = defineCollection({
@@ -134,7 +149,9 @@ const blog = defineCollection({
       updated: z.coerce.date().optional(),
       author: reference('autores'),
       categories: z.array(reference('categorias')).min(1, 'Al menos una categoría'),
-      tags: z.array(texto()).default([]),
+      tags: z
+        .array(z.enum(ETIQUETAS, { error: (i) => `Etiqueta «${i.input}» fuera del vocabulario (ver «Etiquetas del blog» en modelo-contenido.md)` }))
+        .default([]),
       image: image().optional(),
       imageAlt: texto().optional(),
       translation: z.string().optional(),
