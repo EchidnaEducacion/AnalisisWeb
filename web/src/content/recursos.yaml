@@ -145,3 +145,13 @@
   url: /docentes/impresion-3d/
   image: ./recursos/docentes-impresion-3d.png
   order: 2
+
+- id: docentes-colabora
+  title: Cómo colaborar
+  description: Cómo aportar al proyecto, con o sin cuenta de GitHub, y qué hay en cada repositorio.
+  audience: docentes
+  environment: Otros recursos
+  type: Guía
+  url: /docentes/colabora/
+  image: ./recursos/docentes-colabora.svg
+  order: 3
