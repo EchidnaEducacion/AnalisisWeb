@@ -45,6 +45,38 @@ const DOCUMENTOS = {
       ]],
     ],
   },
+  echidnablack: {
+    titulo: 'EchidnaBlack',
+    partes: [
+      ['La placa', [
+        ['echidnablack', 'Presentación'],
+        ['puesta-en-marcha-echidna-black', 'Puesta en marcha'],
+        ['alimentacion-echidnablack', 'Alimentación'],
+        ['modo-sensores-modo-mkmk-black', 'Modo sensores / Modo MkMk'],
+      ]],
+      ['Componentes', [
+        ['leds', 'LEDs', ['leds rog']],
+        ['pulsadores', 'Pulsadores'],
+        ['joystick', 'Joystick'],
+        ['sensor-luz-ldr', 'Sensor de luz (LDR)', ['sensor luz ldr']],
+        ['led-rgb', 'LED RGB'],
+        ['audio', 'Audio'],
+        ['microfono', 'Micrófono'],
+        ['sensor-temperatura-lm35', 'Sensor de temperatura LM35', ['sensor temperatura']],
+        ['acelerometro-black', 'Acelerómetro', ['acelerómetro']],
+        ['conexiones-mkmk-black', 'Conexiones MkMk', ['mkmk']],
+      ]],
+      ['Complementos', [
+        ['complementos-echidnablack', 'Complementos'],
+        ['servomotor-posicion-black', 'Servomotor de posición', ['servomotor posición']],
+        ['servomotor-continuo-black', 'Servomotor continuo'],
+        ['bluetooth-black', 'Bluetooth'],
+      ]],
+      ['Documentación', [
+        ['documentacion-echidnablack', 'Documentación técnica'],
+      ]],
+    ],
+  },
 };
 
 const ancla = (s) =>

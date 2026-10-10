@@ -239,7 +239,7 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
   - **Web nueva**: el apartado «Hardware» de la página de licencias dice CERN OHL-S v2 con el nombre y el logo fuera de la licencia (cualquiera puede fabricar y vender); la tabla de Sobre el proyecto y el pie dicen «CERN OHL-S». Ninguno refleja la restricción.
 
   Al decidirlo, corregir la página de licencias, la tabla de Sobre el proyecto, el pie y el repositorio `recursos`.
-- [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Se guardan dentro de la web, en `web/public/ecosistema/placas-anteriores/`.
+- [x] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Están en `web/public/ecosistema/placas-anteriores/`.
 - [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno y subtítulos por grupo, y tarjetas con miniatura. Todos sus materiales son enlaces externos (decisión de octubre de 2026): por ahora, los dos Proyectos de inicio, cuatro situaciones de aprendizaje y el manual para FP. El resto (otros proyectos, Snap!…) está por hacer.
 - [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Redirigir `rea.echidna.es/<recurso>/` a su copia en `situaciones-aprendizaje` (ver `redirecciones.md`).
 - [x] La plantilla «Actividad» ya no hace falta: ni alumnado ni docentes la usan. Se quita de las páginas maestras del README.

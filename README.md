@@ -193,7 +193,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
 - [x] Capturas de 1.1.4 Empezar con LearningML y 1.1.5 Instalar StandardFirmata: se usan las del manual, más actuales que `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`.
 - [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog: `Icono_Scratch-1024x948.png` (*EchidnaScratch, el erizo y el gato se hacen amigos*) y `ObradoiroTadega.png` (*Obradoiro Tadega 2019*, aunque su portada sí está). Al importar se han quitado de las entradas; si aparecen, volver a ponerlas.
-- [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress y guardarlos en `web/public/ecosistema/placas-anteriores/`.
+- [x] Generar los PDF de EchidnaBlack v1 y EchidnaShield (con [`herramientas/placas-anteriores/`](herramientas/placas-anteriores/)), guardados en `web/public/ecosistema/placas-anteriores/`. Falta la página Placas anteriores que los enlace.
 - [ ] **Licencia del hardware**: no se permite su reproducción con fines comerciales; falta que el responsable del diseño electrónico elija una licencia compatible con eso. Hay cuatro incoherencias que resolver (web actual, certificación OSHWA, repositorio `recursos` y web nueva), detalladas en [`estructura.md`](estructura.md#pendiente).
 
 Los puntos pendientes de la estructura están en [`estructura.md`](estructura.md#pendiente).
