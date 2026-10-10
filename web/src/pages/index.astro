@@ -1,5 +1,5 @@
 ---
-// Portada (/): héroe, entradas por perfil, qué es Echidna, la placa y EchidnaML, materiales destacados, últimas
+// Portada (/): héroe, qué es Echidna, la placa y EchidnaML, materiales destacados, últimas
 // entradas del blog y llamada a colaborar. Los textos van aquí; la placa, EchidnaML, los materiales y
 // las entradas salen de sus colecciones, así que se actualizan solos.
 import { Image } from 'astro:assets';
@@ -62,27 +62,6 @@ const ultimas = await Promise.all(
       <div class="hero__art">
         <Image class="board" src={placa.data.image!} alt={placa.data.imageAlt ?? ''} widths={[480, 960]} sizes="(min-width: 900px) 520px, 100vw" loading="eager" />
       </div>
-    </div>
-  </section>
-
-  <!-- Entradas por perfil -->
-  <section class="wrap" aria-label="¿Por dónde empiezo?">
-    <div class="paths">
-      <a class="path" href={url('docentes/')} data-section="docentes">
-        <span class="path__icon"><svg aria-hidden="true"><use href="#i-teacher"/></svg></span>
-        <strong>Soy docente</strong>
-        <span>Guías, diapositivas y programaciones para llevar la placa al aula, organizadas por material.</span>
-      </a>
-      <a class="path" href={url('alumnado/')} data-section="alumnado">
-        <span class="path__icon"><svg aria-hidden="true"><use href="#i-student"/></svg></span>
-        <strong>Soy estudiante</strong>
-        <span>Proyectos de inicio y situaciones de aprendizaje para hacer con la placa.</span>
-      </a>
-      <a class="path" href={url('ecosistema/echidnablack2/')} data-section="ecosistema">
-        <span class="path__icon"><svg aria-hidden="true"><use href="#i-chip"/></svg></span>
-        <strong>Conoce la EchidnaBlack2</strong>
-        <span>La placa con sensores y actuadores integrados, lista para programar.</span>
-      </a>
     </div>
   </section>
 

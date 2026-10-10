@@ -36,7 +36,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 
 - **Continuidad con la marca**: naranja `#e66a00` y titulares en *Exo 2* (como la web actual).
 - **Lectura fácil**: texto en *Atkinson Hyperlegible* (diseñada para baja visión) a 17 px, contraste AA, botones y zonas táctiles de 44–48 px.
-- **Orientación**: cada sección tiene color propio (`body[data-section]`: `ecosistema`, `alumnado`, `docentes`, `blog`, `nosotros`), migas de pan, índice lateral «En esta página» y entradas por perfil en la portada (docente, estudiante, conoce la EchidnaBlack2).
+- **Orientación**: cada sección tiene color propio (`body[data-section]`: `ecosistema`, `alumnado`, `docentes`, `blog`, `nosotros`), migas de pan e índice lateral «En esta página».
 - **Pensado para el aula**: los materiales se agrupan por entorno y enlazan con sus recursos docentes; las fichas tienen **versión imprimible**.
 - **Responsive** desde 320 px, **modo oscuro** (automático o manual), selector **ES/EN** y vídeos/presentaciones que solo cargan el iframe al pulsar. Por debajo de 540 px, el selector de idioma y el de tema pasan de la cabecera al final del menú móvil, para que quepan el logo, la lupa y el menú.
 - **Sin maquetación en el contenido**: las columnas las decide la plantilla; el Markdown solo aporta texto y componentes.
