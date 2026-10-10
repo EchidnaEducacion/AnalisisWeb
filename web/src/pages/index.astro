@@ -1,21 +1,23 @@
 ---
-// Portada (/): héroe, entradas por perfil, qué es Echidna, la placa, materiales destacados, últimas
-// entradas del blog y llamada a colaborar. Los textos van aquí; la placa, los materiales y las
-// entradas salen de sus colecciones, así que se actualizan solos.
+// Portada (/): héroe, entradas por perfil, qué es Echidna, la placa y EchidnaML, materiales destacados, últimas
+// entradas del blog y llamada a colaborar. Los textos van aquí; la placa, EchidnaML, los materiales y
+// las entradas salen de sus colecciones, así que se actualizan solos.
 import { Image } from 'astro:assets';
 import { getCollection, getEntries, getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { url } from '../lib/url';
 import { entradasPublicadas, fechaLarga, rutaEntrada } from '../lib/blog';
 import { sitio } from '../lib/recursos';
-import placaShield from '../content/paginas/es/ecosistema/placas-anteriores/echidnashield.png';
 
 // La placa, con la imagen y la descripción de su ficha
 const placa = await getEntry('hardware', 'es/echidnablack2');
 if (!placa) throw new Error('Falta la ficha de la EchidnaBlack2 (hardware/es/echidnablack2)');
+// El programa, con la imagen y la descripción de su página
+const programa = await getEntry('paginas', 'es/ecosistema/echidnaml');
+if (!programa?.data.image) throw new Error('Falta la página de EchidnaML (paginas/es/ecosistema/echidnaml) o su imagen');
 
 // Materiales destacados, en este orden (ids de recursos.yaml)
-const DESTACADOS = ['guia-inicio-echidnaml', 'hace-calor-aqui', 'del-alba-al-anochecer'];
+const DESTACADOS = ['guia-inicio-echidnaml', 'hace-calor-aqui', 'manual-echidnaml'];
 const recursos = await getCollection('recursos');
 const destacados = DESTACADOS.map((id) => {
   const r = recursos.find((x) => x.id === id);
@@ -119,13 +121,13 @@ const ultimas = await Promise.all(
     </div>
   </section>
 
-  <!-- La placa -->
+  <!-- La placa y el programa -->
   <section class="section section--tint" data-section="ecosistema">
     <div class="wrap">
       <div class="section-head">
         <div>
           <p class="eyebrow">Ecosistema</p>
-          <h2>La placa EchidnaBlack2</h2>
+          <h2>La placa EchidnaBlack2 y el programa EchidnaML</h2>
         </div>
         <a class="btn btn--ghost btn--sm" href={url('ecosistema/')}>Todo el ecosistema <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
@@ -144,16 +146,16 @@ const ultimas = await Promise.all(
           </div>
         </article>
         <article class="board-card">
-          <Image src={placaShield} alt="" widths={[220, 440]} sizes="220px" />
+          <Image src={programa.data.image} alt="" widths={[220, 440]} sizes="220px" />
           <div>
-            <h3>Placas anteriores</h3>
-            <p class="muted">Si tu centro tiene una EchidnaBlack o una EchidnaShield, aquí tienes su documentación.</p>
+            <h3>EchidnaML</h3>
+            <p class="muted">{programa.data.description}</p>
             <ul>
-              <li>EchidnaBlack, la primera placa autónoma</li>
-              <li>EchidnaShield, el escudo para Arduino UNO</li>
-              <li>Documentación archivada en PDF</li>
+              <li>EchidnaBlocks: Scratch con bloques para la placa</li>
+              <li>LearningML: modelos de inteligencia artificial sin salir del programa</li>
+              <li>Para GNU/Linux, Windows y macOS, y funciona sin conexión</li>
             </ul>
-            <a class="btn btn--soft btn--sm" href={url('ecosistema/#placas-anteriores')}>Ver placas anteriores</a>
+            <a class="btn btn--soft btn--sm" href={url('ecosistema/echidnaml/')}>Conocer EchidnaML</a>
           </div>
         </article>
       </div>
@@ -166,7 +168,7 @@ const ultimas = await Promise.all(
       <div class="section-head">
         <div>
           <p class="eyebrow">Para el aula</p>
-          <h2>Materiales para empezar mañana</h2>
+          <h2>Materiales para empezar</h2>
         </div>
         <div class="btn-row">
           <a class="btn btn--ghost btn--sm" href={url('alumnado/')}>Materiales alumnado <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
