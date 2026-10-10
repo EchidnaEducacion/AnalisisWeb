@@ -53,7 +53,7 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   ├── EchidnaML                           (título dentro de la página)
 │   │   ├── Proyectos y Manual              (subtítulo)
 │   │   │   ├── 2.1 Proyectos de inicio con EchidnaML
-│   │   │   └── 2.3 Manual de usuario EchidnaBlack y EchidnaML
+│   │   │   └── 2.3 Manual de usuario EchidnaBlack2 y EchidnaML
 │   │   └── Situaciones de aprendizaje      (subtítulo)
 │   │       └── 2.2 ¿Hace calor aquí?, Andalucía del alba al anochecer, ¡La Tierra se mueve! y Aprendiendo con robots
 │   └── Arduino IDE                         (título)
