@@ -167,11 +167,11 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] **Recursos docentes**: terminar las diapositivas (PDF) y la programación didáctica de Proyectos de inicio con EchidnaML (hoy «Próximamente»; al terminarlas, poner su `url` en `recursos.yaml`) y añadir los demás materiales: situaciones de aprendizaje, Snap!, Proyectos de inicio con Arduino IDE y Otros recursos.
 - [ ] **Materiales alumnado por hacer**: por ahora solo hay 8 materiales; faltan otros proyectos, Snap!, etc.
 - [x] **Formato del blog**: aprobado por el equipo (octubre de 2026), con el lateral de categorías, últimas entradas y etiquetas.
-- [ ] **Migrar las entradas del blog** con el importador de [`herramientas/wp-import/`](herramientas/wp-import/), por años y revisando cada tanda (textos alternativos, descripciones, enlaces). **De 2026 a 2021 hecho** (33 entradas; Rotógrafo, a mano). Quedan 2020, 2019 y 2017 (28). Antes de importar las suyas, añadir a **Javier Álvarez** (3 entradas) a `autores.yaml`: cargo, descripción y foto. Hay 4 entradas sin portada (¡Volvemos a esLibre!, esLibre 2023, Cultura Maker 22 e Inteligencia artificial con Echidna) y varias presentaciones de Google que quedan como enlace.
+- [ ] **Migrar las entradas del blog** con el importador de [`herramientas/wp-import/`](herramientas/wp-import/): **58 de 61 hechas**, de 2017 a 2026, revisadas a mano (textos alternativos, descripciones, enlaces). Faltan las 3 de **Javier Álvarez** (2020: Canal YouTube de EchidnaSTEAM, #EchidnaVsCOVID-19 y Construccionismo y STEAM I): añadirlo a `autores.yaml` (cargo, descripción y foto) e importarlas con `--slug`. Hay 4 entradas sin portada (¡Volvemos a esLibre!, esLibre 2023, Cultura Maker 22 e Inteligencia artificial con Echidna) y varias presentaciones de Google que quedan como enlace.
 - [ ] **Revisar las entradas importadas**:
   - «Posta en marcha e proxectos con EchidnaBlack» (2022) enlaza al manual en gallego (`Manual_EchidnaBlack_001_Gal.pdf`), que ya no está en el repo `recursos`: recuperarlo o quitar el enlace.
   - «ROBÓTICA EDUCATIVA + IA CON ECHIDNA en #eslibre2023» no tenía categoría en WordPress: se le ha puesto Talleres.
-  - Perrobot (2021) enlaza a Placas anteriores, que aún no existe.
+  - Perrobot (2021), Elefante con sensores y Zombiebot (2020) enlazan a Placas anteriores, que aún no existe.
   - Las galerías de WordPress quedan como imágenes seguidas (p. ej. las 6 fotos de la OSHWDem 2024): valorar mostrarlas en rejilla.
   - Varias entradas incrustaban presentaciones de Google (instrucciones de montaje…); ahora son un enlace. Decidir si se incrustan.
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
@@ -190,7 +190,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] Servir las tipografías desde la propia web en lugar de Google Fonts, para no enviar a Google la IP de las visitas. Después, quitar esa línea de la política de privacidad.
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
 - [x] Capturas de 1.1.4 Empezar con LearningML y 1.1.5 Instalar StandardFirmata: se usan las del manual, más actuales que `Aprender-Probar-LML.png` y `StandardFirmata-Echidna-400x263.jpg`.
-- [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog (`Icono_Scratch-1024x948.png` en *EchidnaScratch, el erizo y el gato se hacen amigos* y `ObradoiroTadega.png` en *Obradoiro Tadega 2019*); si no aparecen, sustituirlas o quitarlas.
+- [ ] Buscar en el backup de `wp-content/uploads` las 2 imágenes perdidas del blog: `Icono_Scratch-1024x948.png` (*EchidnaScratch, el erizo y el gato se hacen amigos*) y `ObradoiroTadega.png` (*Obradoiro Tadega 2019*, aunque su portada sí está). Al importar se han quitado de las entradas; si aparecen, volver a ponerlas.
 - [ ] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress y guardarlos en `web/public/ecosistema/placas-anteriores/`.
 - [ ] **Licencia del hardware**: no se permite su reproducción con fines comerciales; falta que el responsable del diseño electrónico elija una licencia compatible con eso. Hay cuatro incoherencias que resolver (web actual, certificación OSHWA, repositorio `recursos` y web nueva), detalladas en [`estructura.md`](estructura.md#pendiente).
 
