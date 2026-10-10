@@ -63,12 +63,13 @@ web/
 │   │   ├── Indice.astro     # plantilla «Índice de sección»: intro + tarjetas de las hijas
 │   │   └── Ficha.astro      # plantilla «Ficha de hardware»
 │   ├── components/          # Cabecera (menú activo según `section`), Pie, Iconos (sprite SVG)
-│   ├── lib/                 # url(): rutas con `base`; paginas.ts y hardware.ts: URL de cada página o ficha
+│   ├── lib/                 # url(): rutas con `base`; paginas.ts y hardware.ts: URL de cada página o ficha; rss.ts: el RSS del blog
 │   └── pages/
 │       ├── [...slug].astro  # genera las páginas de la colección `paginas`
 │       ├── ecosistema/[...slug].astro # genera las fichas de la colección `hardware`
 │       ├── index.astro      # portada: textos fijos; placa, materiales destacados y últimas entradas, de sus colecciones
 │       ├── 404.astro
+│       ├── rss.xml.ts       # RSS del blog en /rss.xml; feed/index.html.ts, la misma copia en /feed/
 │       └── maquetas/        # index.astro: «Propuesta de plantillas»; el resto, maquetas con contenido escrito a mano
 └── public/
     ├── favicon.svg          # erizo del logo; apple-touch-icon.png, su versión en PNG
