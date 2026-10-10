@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- Comprobar la placa: una placa con una marca de verificación -->
+  <rect width="1200" height="600" fill="#ebefff"/>
+  <rect x="390" y="150" width="400" height="290" rx="60" fill="#fff" stroke="#3b5bdb" stroke-width="18"/>
+  <g fill="#3b5bdb"><circle cx="470" cy="400" r="12"/><circle cx="520" cy="400" r="12"/><circle cx="570" cy="400" r="12"/><circle cx="620" cy="400" r="12"/><circle cx="670" cy="400" r="12"/><circle cx="720" cy="400" r="12"/></g>
+  <circle cx="470" cy="250" r="44" fill="none" stroke="#3b5bdb" stroke-width="16"/>
+  <circle cx="790" cy="440" r="92" fill="#3b5bdb"/>
+  <polyline points="745,442 778,475 838,410" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

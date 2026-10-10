@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- Test de sensores con el Arduino IDE: ventana del monitor serie con valores -->
+  <rect width="1200" height="600" fill="#ebefff"/>
+  <rect x="380" y="110" width="440" height="380" rx="18" fill="#fff" stroke="#3b5bdb" stroke-width="18"/>
+  <line x1="380" y1="180" x2="820" y2="180" stroke="#3b5bdb" stroke-width="18"/>
+  <g fill="#3b5bdb"><circle cx="420" cy="145" r="10"/><circle cx="452" cy="145" r="10"/><circle cx="484" cy="145" r="10"/></g>
+  <polyline points="420,380 480,300 540,350 600,250 660,330 720,270 780,320" fill="none" stroke="#3b5bdb" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#3b5bdb" stroke-width="14" stroke-linecap="round"><line x1="420" y1="440" x2="560" y2="440"/><line x1="600" y1="440" x2="680" y2="440"/></g>
+</svg>

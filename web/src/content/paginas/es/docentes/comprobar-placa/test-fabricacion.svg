@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- Test de fabricación: lista de comprobación completa -->
+  <rect width="1200" height="600" fill="#ebefff"/>
+  <rect x="440" y="110" width="320" height="400" rx="18" fill="#fff" stroke="#3b5bdb" stroke-width="18"/>
+  <rect x="530" y="85" width="140" height="56" rx="14" fill="#3b5bdb"/>
+  <g fill="none" stroke="#3b5bdb" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="485,212 503,230 533,198"/><line x1="565" y1="214" x2="715" y2="214"/>
+    <polyline points="485,302 503,320 533,288"/><line x1="565" y1="304" x2="715" y2="304"/>
+    <polyline points="485,392 503,410 533,378"/><line x1="565" y1="394" x2="715" y2="394"/>
+  </g>
+</svg>

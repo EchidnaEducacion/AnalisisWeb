@@ -155,3 +155,13 @@
   url: /docentes/colabora/
   image: ./recursos/docentes-colabora.svg
   order: 3
+
+- id: docentes-comprobar-placa
+  title: Comprobar la placa
+  description: Qué hacer si EchidnaML no detecta la placa o un componente no responde, y herramientas para probarla.
+  audience: docentes
+  environment: Otros recursos
+  type: Guía
+  url: /docentes/comprobar-placa/
+  image: ./recursos/docentes-comprobar-placa.svg
+  order: 4
