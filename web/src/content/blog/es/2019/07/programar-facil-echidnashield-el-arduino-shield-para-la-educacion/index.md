@@ -5,7 +5,7 @@ date: 2019-07-14
 updated: 2020-06-20
 author: jose
 categories: [publicaciones]
-tags: ["Programar Fácil"]
+tags: ["EchidnaShield"]
 image: ./programar-fácil-e1592561106161.png
 imageAlt: "Logotipo de Programar Fácil."
 ---

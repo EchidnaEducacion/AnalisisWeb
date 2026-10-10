@@ -4,6 +4,7 @@ description: "Ya está disponible EchidnaML, el nuevo entorno de escritorio para
 date: 2024-10-23
 author: juanda
 categories: [noticias]
+tags: ["EchidnaML", "Inteligencia Artificial"]
 image: ./AprogramarEchidnaML.png
 imageAlt: "Programa de EchidnaML que enciende y apaga el LED rojo, con el erizo de Echidna y el personaje de LearningML."
 ---

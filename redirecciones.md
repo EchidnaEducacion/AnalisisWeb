@@ -184,18 +184,24 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 |---|---|---|---|
 | `/blog/` | `/blog/` | Igual | |
 | `/AAAA/MM/slug/` | `/AAAA/MM/slug/` | Igual | 61 entradas |
-| `/category/…/`, `/tag/…/`, `/author/…/` | Igual | Igual | Se descarta `/category/sin-categoria/`. Hay subcategorías de dos niveles (`/category/recursos/proyectos/`, `/category/recursos/impresion-3d/`) que deben mantenerse |
+| `/category/…/`, `/tag/…/`, `/author/…/` | Igual | Igual | Se descarta `/category/sin-categoria/`. Hay subcategorías de dos niveles (`/category/recursos/proyectos/`, `/category/recursos/impresion-3d/`) que deben mantenerse. Las etiquetas se han reorganizado en un vocabulario cerrado ([`modelo-contenido.md`](modelo-contenido.md#etiquetas-del-blog)): las que desaparecen están en las filas siguientes; las que se mantienen (EchidnaBlack, Servomotor, STEAM…) conservan su URL |
 | `/feed/` | `/feed/` (copia de `/rss.xml`) | Igual | Los lectores de RSS no siguen redirecciones HTML |
-| `/tag/machine-lerning/` | `/tag/machine-learning/` | Redirige | Errata corregida |
-| `/tag/construccioniso/` | `/tag/construccionismo/` | Redirige | Errata corregida |
-| `/tag/makeymakey/` | `/tag/makey-makey/` | Redirige | Unificada con «Makey Makey» |
-| `/tag/ia/` | `/tag/inteligencia-artificial/` | Redirige | Unificada con «Inteligencia Artificial» |
-| `/tag/mkmk/` | `/tag/makey-makey/` | Redirige | Unificada con «Makey Makey» |
-| `/tag/ctim/` | `/tag/steam/` | Redirige | Etiqueta quitada; su entrada ya tenía «STEAM» |
-| `/tag/proyectos/` | `/category/recursos/proyectos/` | Redirige | Etiqueta quitada: repetía la categoría |
-| `/tag/recursos/` | `/category/recursos/` | Redirige | Ídem |
-| `/tag/taller/` | `/category/talleres/` | Redirige | Ídem |
-| `/tag/bloques-de-construccion/` | `/category/bloques-de-construccion/` | Redirige | Ídem |
+| `/tag/ia/`, `/tag/machine-learning/`, `/tag/machine-lerning/` | `/tag/inteligencia-artificial/` | Redirige | Unificadas (y errata «Machine Lerning») |
+| `/tag/mkmk/`, `/tag/makeymakey/` | `/tag/makey-makey/` | Redirige | Unificadas |
+| `/tag/scratch/` | `/tag/echidnascratch/` | Redirige | Absorbida |
+| `/tag/rgb/`, `/tag/colores/` | `/tag/led/` | Redirige | Absorbidas |
+| `/tag/lm35/` | `/tag/temperatura/` | Redirige | Absorbida |
+| `/tag/analogreference/`, `/tag/oled/`, `/tag/appinventor/`, `/tag/bluetooth/` | `/tag/ide-arduino/` | Redirige | Absorbidas: solo estaban en entradas de este entorno |
+| `/tag/sonido/` | `/tag/musica/` | Redirige | Absorbida |
+| `/tag/openledrace/` | `/tag/juegos/` | Redirige | Absorbida |
+| `/tag/sharp/` | `/tag/sensores-externos/` | Redirige | Absorbida |
+| `/tag/ctim/` | `/tag/steam/` | Redirige | Su entrada ya tenía «STEAM» |
+| `/tag/proyectos/` | `/category/recursos/proyectos/` | Redirige | Repetía la categoría |
+| `/tag/recursos/` | `/category/recursos/` | Redirige | Repetía la categoría |
+| `/tag/taller/` | `/category/talleres/` | Redirige | Repetía la categoría |
+| `/tag/bloques-de-construccion/`, `/tag/lego/` | `/category/bloques-de-construccion/` | Redirige | Repetían la categoría |
+| `/tag/arganbot/`, `/tag/juegos-robotica/`, `/tag/la-hora-maker/`, `/tag/programamos/`, `/tag/programar-facil/` | `/category/publicaciones/` | Redirige | Nombres de medios: sus entradas están en Publicaciones |
+| `/tag/actividades/`, `/tag/arduino/`, `/tag/atmega/`, `/tag/construccioniso/`, `/tag/covid-19/`, `/tag/equipo/`, `/tag/github/`, `/tag/media-lab/`, `/tag/mit/`, `/tag/papert/`, `/tag/perrobot/`, `/tag/presentacion/`, `/tag/printbot/`, `/tag/reciclaje/`, `/tag/resnick/`, `/tag/robotica-educativa/`, `/tag/sensores/`, `/tag/vehiculos/`, `/tag/video/`, `/tag/web/` | `/blog/` | Redirige | Etiquetas de una sola entrada, sin sustituta |
 
 ## Otros dominios y rutas
 

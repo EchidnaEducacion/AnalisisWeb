@@ -4,6 +4,7 @@ description: "En el proyecto Return of the Yodi, un famoso maestro jedi llega a 
 date: 2025-05-27
 author: jorge-lobo
 categories: [didactica, recursos/proyectos]
+tags: ["Servomotor", "Sensor de luz"]
 image: ./ReturnoftheYodi.jpg
 imageAlt: "El maestro Yoda hace levitar cabeza abajo a una asombrada echidna."
 ---

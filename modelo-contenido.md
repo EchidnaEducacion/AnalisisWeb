@@ -9,6 +9,7 @@ Tipos de contenido (colecciones de Astro) de la nueva web y los campos de cada u
 3. [hardware](#hardware)
 4. [recursos](#recursos)
 5. [blog](#blog)
+   - [Etiquetas del blog](#etiquetas-del-blog)
 6. [Listas de datos: autores y categorías](#listas-de-datos-autores-y-categorías)
 7. [Publicaciones](#publicaciones)
 
@@ -109,7 +110,7 @@ Plantillas: Entrada de blog (hecha) y Listado / taxonomía.
 | `updated` | fecha | No | Fecha de la última revisión importante |
 | `author` | identificador de la lista de autores | Sí | Autor; se valida contra la lista |
 | `categories` | lista de identificadores de la lista de categorías (al menos 1) | Sí | Categorías, incluidas subcategorías (`recursos/proyectos`); una errata hace fallar la publicación en vez de crear una categoría nueva |
-| `tags` | lista de texto | No | Etiquetas libres |
+| `tags` | lista de texto | No | Etiquetas del vocabulario cerrado (ver [Etiquetas del blog](#etiquetas-del-blog)); escritas igual que en la lista |
 | `image` | imagen | No | Imagen destacada para listados y redes; en la entrada, portada bajo el título |
 | `imageAlt` | texto | No | Texto alternativo de la imagen destacada |
 | `translation` | ruta | No | Versión en el otro idioma |
@@ -128,9 +129,34 @@ description: Resumen de la entrada en una o dos frases, entre 50 y 160 caractere
 date: 2026-05-01
 author: jose
 categories: [recursos/proyectos, bloques-de-construccion]
-tags: [echidnablack2]
+tags: [EchidnaBlack2, EchidnaML, Servomotor]
 image: ./portada.jpg
 ```
+
+### Etiquetas del blog
+
+Las etiquetas forman un **vocabulario cerrado**: solo se usan las de esta lista, escritas exactamente así (la URL sale del nombre: «Sensor de luz» → `/tag/sensor-de-luz/`). Se revisaron en octubre de 2026 a partir de las heredadas de WordPress; las que desaparecieron, y adónde redirigen, están en [`redirecciones.md`](redirecciones.md#blog-y-rss).
+
+| Grupo | Etiquetas |
+|---|---|
+| Placas | EchidnaShield · EchidnaBlack · EchidnaBlack2 |
+| Entornos de programación | EchidnaML · EchidnaScratch · Snap4Arduino · IDE Arduino |
+| Componentes | Servomotor · LED · Sensor de luz · Temperatura · Micrófono · Joystick · Sensores externos |
+| Temas | Inteligencia Artificial · STEAM · Makey Makey · Música · Juegos |
+| Eventos | OSHWDem · esLibre |
+
+**Criterios para asignarlas:**
+
+- **Solo lo que la entrada dice**: una placa, un entorno o un componente se etiqueta si la entrada lo nombra o lo usa de forma visible, no si se supone. Un proyecto que solo ofrece un `.sb3` sin decir el entorno no lleva EchidnaML.
+- **Placa por su nombre, o por la fecha si el texto es ambiguo**: EchidnaShield (2017–2021), EchidnaBlack (la v1, 2020–2022) y EchidnaBlack2 (desde 2025). Una entrada de 2025 o después que dice «EchidnaBlack» lleva EchidnaBlack2. El prototipo Echidna White no tiene etiqueta.
+- **Las entradas generales no llevan componentes**: un manual o un curso que repasa todos los componentes de la placa no se etiqueta con cada uno.
+- **Sensores externos**: los que no van en la placa (distancia SHARP, infrarrojos, CO₂…).
+- **Inteligencia Artificial**: incluye Machine Learning y LearningML.
+- **Makey Makey**: el modo MkMk de la placa y la conductividad.
+- **STEAM**: solo cuando la entrada une la tecnología con el arte (plástica, literatura, música, arte cinético…), no por ser un proyecto tecnológico.
+- **No repetir una categoría**: nada de «Proyectos», «Talleres» o «Lego» (para eso está la categoría Bloques de construcción). Los medios que publican sobre Echidna van en la categoría Publicaciones, no como etiqueta.
+- **Una etiqueta nueva tiene que servir para al menos dos entradas** y se añade primero a esta lista. Por eso no hay «Acelerómetro» (solo el Helicóptero) ni nombres de proyectos o personas.
+- Una entrada puede quedarse sin etiquetas si ninguna encaja (p. ej. Echidna en el Ártico).
 
 ## Listas de datos: autores y categorías
 

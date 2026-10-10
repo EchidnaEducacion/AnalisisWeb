@@ -5,7 +5,7 @@ date: 2020-09-14
 updated: 2020-11-03
 author: jorge-lobo
 categories: [recursos/proyectos]
-tags: ["LED", "Servomotor", "Snap4Arduino", "STEAM"]
+tags: ["EchidnaBlack", "Snap4Arduino", "Servomotor", "LED", "STEAM"]
 image: ./ZOMBIEBOT.png
 imageAlt: "La placa EchidnaBlack con una figura de zombi de bloques que dice «Zombiebot»."
 ---

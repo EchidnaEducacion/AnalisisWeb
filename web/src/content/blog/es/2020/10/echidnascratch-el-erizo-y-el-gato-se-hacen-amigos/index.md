@@ -5,7 +5,7 @@ date: 2020-10-13
 updated: 2020-11-03
 author: juanda
 categories: [noticias]
-tags: ["Scratch"]
+tags: ["EchidnaScratch"]
 image: ./Aprogramar_scratch-600x400-1.png
 imageAlt: "El gato Scratch y el erizo Echidna caminan juntos"
 ---

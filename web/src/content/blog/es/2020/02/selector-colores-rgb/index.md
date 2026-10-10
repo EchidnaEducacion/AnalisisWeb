@@ -5,7 +5,7 @@ date: 2020-02-04
 updated: 2020-06-28
 author: jose
 categories: [recursos/proyectos]
-tags: ["colores", "LED", "RGB", "Snap4Arduino"]
+tags: ["Snap4Arduino", "LED"]
 image: ./PaletaColores_blog-e1592560622493.jpg
 imageAlt: "Paleta de colores en forma de hexágono, con todos los tonos."
 ---

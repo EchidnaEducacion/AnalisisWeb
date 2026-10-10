@@ -4,6 +4,7 @@ description: "En este proyecto vamos a fabricar un dragón de papel que animarem
 date: 2022-09-29
 author: jorge-lobo
 categories: [recursos/proyectos]
+tags: ["Servomotor"]
 image: ./dragon.png
 imageAlt: "Ilustración de un dragón verde de papel con el título «Dragón de papel animado con Echidna» y el erizo de Echidna."
 ---

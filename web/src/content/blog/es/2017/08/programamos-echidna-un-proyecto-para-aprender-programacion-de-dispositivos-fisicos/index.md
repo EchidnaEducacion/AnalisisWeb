@@ -5,7 +5,7 @@ date: 2017-08-14
 updated: 2020-06-14
 author: jose
 categories: [publicaciones]
-tags: ["Programamos"]
+tags: ["EchidnaShield"]
 image: ./programamos-e1592561124588.jpg
 imageAlt: "Logotipo de Programamos, «Videojuegos y apps»."
 ---

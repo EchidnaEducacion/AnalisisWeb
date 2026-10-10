@@ -4,6 +4,7 @@ description: "Una barrera automática para el control de acceso de vehículos, h
 date: 2026-01-14
 author: jorge-lobo
 categories: [bloques-de-construccion, didactica, programacion, recursos/proyectos]
+tags: ["EchidnaBlack2", "EchidnaML", "Servomotor", "LED", "Sensores externos"]
 image: ./barreraautomaticaportada.jpg
 imageAlt: "El erizo de Echidna con una pieza de construcción naranja, junto a la barrera automática hecha con piezas rojas, blancas y grises y un servomotor."
 ---

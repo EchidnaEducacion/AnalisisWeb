@@ -4,7 +4,7 @@ description: Un dispositivo para crear arte en espiral con la EchidnaBlack2 y un
 date: 2026-05-30
 author: jorge-lobo
 categories: [bloques-de-construccion, didactica, recursos/proyectos]
-tags: [Servomotor, Lego]
+tags: ["EchidnaBlack2", "Servomotor", "STEAM"]
 image: ./rotografo.png
 imageAlt: "El erizo de Echidna con una pieza de construcción, junto al rotógrafo: un disco con espirales de colores sobre un servomotor, montado en una base de piezas."
 ---

@@ -4,7 +4,7 @@ description: "¿Quieres incorporar Inteligencia Artificial a tus proyectos de ro
 date: 2021-05-07
 author: juanda
 categories: [noticias]
-tags: ["EchidnaScratch", "Inteligencia Artificial", "Machine Learning"]
+tags: ["EchidnaScratch", "Inteligencia Artificial"]
 ---
 
 ¿Quieres incorporar Inteligencia Artificial a tus proyectos de robótica educativa con Echidna? Pues ahora es posible gracias a [LearningML](https://learningml.org) y [EchidnaScratch](https://scratch.echidna.es).

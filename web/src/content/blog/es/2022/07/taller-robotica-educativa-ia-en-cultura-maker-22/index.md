@@ -5,6 +5,7 @@ date: 2022-07-23
 updated: 2024-10-23
 author: jorge-lobo
 categories: [talleres]
+tags: ["EchidnaScratch", "Snap4Arduino", "Inteligencia Artificial"]
 ---
 
 ![Logotipos de los Cursos de Verano 2022 y de la Universidad de León, con el título «Cultura Maker IV Edición: Interactúa en el entorno».](./UNILEON.png)

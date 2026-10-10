@@ -4,6 +4,7 @@ description: "En este proyecto os proponemos la construcción de una caja formad
 date: 2026-03-29
 author: jorge-lobo
 categories: [bloques-de-construccion, didactica, recursos/proyectos]
+tags: ["EchidnaML", "Servomotor", "Makey Makey", "Inteligencia Artificial"]
 image: ./cajafuerteportada.png
 imageAlt: "El erizo de Echidna con una pieza de construcción naranja, junto a la caja fuerte hecha con piezas blancas y negras y un engranaje gris."
 ---

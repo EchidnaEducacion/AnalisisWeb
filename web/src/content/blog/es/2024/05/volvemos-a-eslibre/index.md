@@ -4,6 +4,7 @@ description: "Un año más nos acercamos a esLibre para mostrar los avances del 
 date: 2024-05-25
 author: jorge-lobo
 categories: [didactica, talleres]
+tags: ["EchidnaML", "esLibre"]
 ---
 
 Un año más nos acercamos a esLibre para mostrar los avances del proyecto Echidna.

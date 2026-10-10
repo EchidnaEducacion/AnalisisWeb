@@ -4,7 +4,7 @@ description: "En este post os queremos presentar el nuevo Canal de YouTube: Echi
 date: 2020-11-20
 author: javier
 categories: [noticias]
-tags: ["Machine Learning", "Makey Makey", "Presentación"]
+tags: ["EchidnaBlack", "EchidnaScratch", "Inteligencia Artificial"]
 image: ./ECHIDNAchannel-e1605871180270.png
 imageAlt: "Logotipo del canal de YouTube EchidnaSTEAM."
 ---

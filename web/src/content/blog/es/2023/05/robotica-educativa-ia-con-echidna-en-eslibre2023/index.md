@@ -4,6 +4,7 @@ description: "Taller de robótica educativa e inteligencia artificial con Echidn
 date: 2023-05-13
 author: xdesig
 categories: [talleres]
+tags: ["Inteligencia Artificial", "esLibre"]
 ---
 
 Estamos en **esLibre** es un encuentro con personas interesadas en la divulgación de la cultura libre y las tecnologías libres.

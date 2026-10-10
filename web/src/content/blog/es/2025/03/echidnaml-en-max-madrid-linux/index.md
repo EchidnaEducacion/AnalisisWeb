@@ -5,6 +5,7 @@ date: 2025-03-25
 updated: 2025-05-18
 author: jorge-lobo
 categories: [noticias]
+tags: ["EchidnaML", "Inteligencia Artificial"]
 image: ./max.png
 imageAlt: "Tux, el pingüino de Linux, y el erizo de Echidna en la nieve, con las letras de MAX."
 ---

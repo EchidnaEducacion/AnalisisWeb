@@ -5,7 +5,7 @@ date: 2019-11-17
 updated: 2020-11-14
 author: xdesig
 categories: [talleres]
-tags: []
+tags: ["EchidnaShield"]
 image: ./ObradoiroTadega.png
 imageAlt: "Dos personas sentadas ante un mural de retratos, con el lema «Acoller, incluír, acompañar, convivir»."
 ---

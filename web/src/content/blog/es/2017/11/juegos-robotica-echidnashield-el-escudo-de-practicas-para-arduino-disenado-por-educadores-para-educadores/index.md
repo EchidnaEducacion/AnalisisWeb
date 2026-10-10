@@ -5,7 +5,7 @@ date: 2017-11-14
 updated: 2020-06-20
 author: jose
 categories: [publicaciones]
-tags: ["Juegos Robótica"]
+tags: ["EchidnaShield"]
 image: ./JuegosRobotica_tw2-e1592561135673.jpg
 imageAlt: "Logotipo de Juegos Robótica, «Aprender a programar jugando»."
 ---

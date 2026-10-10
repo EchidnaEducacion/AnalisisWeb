@@ -5,7 +5,7 @@ date: 2021-03-07
 updated: 2021-03-10
 author: jose
 categories: [didactica]
-tags: ["AppInventor", "Bluetooth", "IDE Arduino"]
+tags: ["EchidnaShield", "IDE Arduino", "LED"]
 image: ./Blog_Echidna_Appinventor.png
 imageAlt: "Un móvil con App Inventor, el erizo de Echidna con un módulo Bluetooth y la placa EchidnaBlack, con símbolos de Bluetooth."
 ---

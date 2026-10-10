@@ -5,7 +5,7 @@ date: 2019-07-14
 updated: 2020-06-20
 author: jose
 categories: [publicaciones]
-tags: ["La Hora Maker"]
+tags: ["EchidnaShield"]
 image: ./lahoraMaker.jpg
 imageAlt: "Logotipo de La Hora Maker."
 ---

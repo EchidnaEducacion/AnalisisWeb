@@ -5,7 +5,7 @@ date: 2021-01-03
 updated: 2021-03-15
 author: xdesig
 categories: [hardware]
-tags: ["IDE Arduino", "OLED"]
+tags: ["EchidnaShield", "EchidnaBlack", "IDE Arduino", "Joystick"]
 image: ./OLED-Echidna.jpg
 imageAlt: "Pantalla OLED que muestra el erizo de Echidna dibujado en píxeles blancos."
 ---

@@ -5,7 +5,7 @@ date: 2020-07-06
 updated: 2020-11-13
 author: jorge-lobo
 categories: [recursos/proyectos]
-tags: ["Música", "Servomotor", "Snap4Arduino", "Sonido", "STEAM"]
+tags: ["EchidnaBlack", "Snap4Arduino", "Servomotor", "Micrófono", "Música", "STEAM"]
 image: ./Blog_Echidna_Marioneta.jpg
 imageAlt: "La placa EchidnaBlack y una marioneta que grita «Black is black»."
 ---

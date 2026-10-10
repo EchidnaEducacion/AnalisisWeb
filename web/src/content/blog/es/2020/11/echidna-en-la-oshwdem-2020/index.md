@@ -5,7 +5,7 @@ date: 2020-11-10
 updated: 2020-11-14
 author: juanda
 categories: [noticias]
-tags: ["Vídeo"]
+tags: ["EchidnaBlack", "EchidnaScratch", "Inteligencia Artificial", "OSHWDem"]
 image: ./echidna-oshwdem.png
 imageAlt: "Echidna en la OSHWDEM 2020"
 ---

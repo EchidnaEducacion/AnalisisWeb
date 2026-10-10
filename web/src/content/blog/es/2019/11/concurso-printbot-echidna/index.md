@@ -5,7 +5,7 @@ date: 2019-11-30
 updated: 2020-06-16
 author: jorge-lobo
 categories: [recursos/impresion-3d]
-tags: ["printBot"]
+tags: ["EchidnaShield", "Servomotor"]
 image: ./PrintBot-Echidna-e1592560566665.png
 imageAlt: "El erizo de Echidna con ruedas, como un robot."
 ---

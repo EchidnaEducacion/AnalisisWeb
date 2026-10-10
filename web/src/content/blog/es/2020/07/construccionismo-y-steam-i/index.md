@@ -5,7 +5,7 @@ date: 2020-07-20
 updated: 2026-01-14
 author: javier
 categories: [bloques-de-construccion, recursos/impresion-3d]
-tags: ["Construccionismo", "Lego", "Makey Makey", "media lab", "MIT", "papert", "resnick", "robótica educativa", "STEAM"]
+tags: ["EchidnaBlack", "EchidnaScratch", "Makey Makey", "STEAM"]
 image: ./IMG_8235-2-e1604777847611.jpg
 imageAlt: "El erizo de Echidna subiendo una escalera de piezas de LEGO de colores."
 ---

@@ -5,6 +5,7 @@ date: 2026-01-07
 updated: 2026-01-14
 author: jorge-lobo
 categories: [bloques-de-construccion, didactica, programacion, recursos/proyectos]
+tags: ["EchidnaBlack2", "EchidnaML", "Servomotor", "Juegos"]
 image: ./portadahelicopteroacelerometro.jpg
 imageAlt: "El erizo de Echidna con una pieza de construcción naranja, junto a un helicóptero amarillo y rojo de piezas de construcción montado sobre un servomotor."
 ---

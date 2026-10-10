@@ -5,6 +5,7 @@ date: 2025-12-29
 updated: 2026-01-14
 author: jorge-lobo
 categories: [bloques-de-construccion, didactica, programacion, recursos/proyectos]
+tags: ["EchidnaBlack2", "EchidnaML", "Servomotor", "Sensor de luz"]
 image: ./gallo-despertador.png
 imageAlt: "El erizo de Echidna con una pieza de construcción naranja, junto a un gallo de piezas amarillas, rojas y blancas sobre una base gris."
 ---

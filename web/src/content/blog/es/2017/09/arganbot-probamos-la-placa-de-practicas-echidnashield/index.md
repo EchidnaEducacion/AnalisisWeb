@@ -5,7 +5,7 @@ date: 2017-09-20
 updated: 2020-06-20
 author: jose
 categories: [publicaciones]
-tags: ["Arganbot"]
+tags: ["EchidnaShield"]
 image: ./arganbot-logo.png
 imageAlt: "Logotipo de Arganbot, robótica educativa."
 ---

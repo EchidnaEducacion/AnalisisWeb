@@ -4,7 +4,7 @@ description: "Cómo funciona la inteligencia artificial en el parking del superm
 date: 2025-05-18
 author: jorge-lobo
 categories: [didactica, programacion, recursos/proyectos]
-tags: ["EchidnaBlack", "Inteligencia Artificial"]
+tags: ["EchidnaML", "Inteligencia Artificial"]
 image: ./BarreraIA.png
 imageAlt: "Una barrera de aparcamiento levantada y dos erizos de Echidna de colores, uno gris y otro azul, esperando para pasar."
 ---

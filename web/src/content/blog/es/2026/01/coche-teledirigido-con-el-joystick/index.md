@@ -4,6 +4,7 @@ description: "Un coche con dos servomotores de rotación continua, hecho con blo
 date: 2026-01-25
 author: jorge-lobo
 categories: [bloques-de-construccion, didactica, recursos/proyectos]
+tags: ["EchidnaBlack2", "Servomotor", "Joystick"]
 image: ./CocheTeledirigidoPortada.jpg
 imageAlt: "El erizo de Echidna con una pieza de construcción naranja, junto a un coche amarillo, rojo y blanco hecho con piezas de construcción."
 ---

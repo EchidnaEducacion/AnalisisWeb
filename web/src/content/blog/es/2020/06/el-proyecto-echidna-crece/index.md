@@ -5,7 +5,7 @@ date: 2020-06-18
 updated: 2020-06-26
 author: jose
 categories: [noticias]
-tags: ["EchidnaBlack", "EchidnaScratch", "equipo", "Web"]
+tags: ["EchidnaBlack", "EchidnaScratch"]
 image: ./Blog_Echidna-crece.png
 imageAlt: "El gato de Scratch con la placa EchidnaBlack y varios erizos de Echidna delante de un ordenador con la web del proyecto."
 ---

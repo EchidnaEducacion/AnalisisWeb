@@ -5,7 +5,6 @@ date: 2020-07-21
 updated: 2020-07-27
 author: jose
 categories: [noticias]
-tags: ["GitHub"]
 image: ./Artico-Echidna.jpg
 imageAlt: "El erizo de Echidna en un paisaje helado, junto a un iglú y un bloque de hielo con un disco dentro."
 ---

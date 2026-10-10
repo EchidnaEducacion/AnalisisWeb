@@ -4,6 +4,7 @@ description: "Nueva situación de aprendizaje para 4.º de Primaria: los movimie
 date: 2025-09-26
 author: jorge-lobo
 categories: [didactica]
+tags: ["Servomotor"]
 image: ./latierrasemueve.png
 imageAlt: "La Tierra vista desde el espacio y el erizo de Echidna mirándola, con el título «¡La Tierra se mueve!»."
 ---

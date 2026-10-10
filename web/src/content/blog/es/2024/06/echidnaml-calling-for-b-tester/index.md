@@ -5,6 +5,7 @@ date: 2024-06-12
 updated: 2024-10-23
 author: juanda
 categories: [programacion]
+tags: ["EchidnaML", "Inteligencia Artificial"]
 image: ./Iconos_Echida_ML_cara_verde.jpg
 imageAlt: "Icono de EchidnaML."
 ---
