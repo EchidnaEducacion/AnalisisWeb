@@ -69,7 +69,7 @@
   group: Guías
   type: Manual
   url: https://echidnaeducacion.github.io/manual/
-  image: ./recursos/manual-echidnaml.jpg
+  image: ./recursos/manual-echidnaml.png
   order: 1
   featured: true
 
@@ -125,6 +125,16 @@
   type: Programación didáctica
   image: ./recursos/docentes-programacion.svg
   order: 3
+
+- id: docentes-manual-echidnaml
+  title: Manual de usuario EchidnaBlack y EchidnaML
+  description: Manual completo de la placa EchidnaBlack2 y del entorno EchidnaML, con sus componentes, los bloques y la inteligencia artificial con LearningML.
+  audience: docentes
+  environment: Otros recursos
+  type: Manual
+  url: https://echidnaeducacion.github.io/manual/
+  image: ./recursos/manual-echidnaml.png
+  order: 1
 
 - id: docentes-impresion-3d
   title: Modelos e impresión 3D
