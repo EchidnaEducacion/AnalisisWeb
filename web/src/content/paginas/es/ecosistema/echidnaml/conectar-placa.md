@@ -3,6 +3,7 @@ title: Conectar EchidnaML y EchidnaBlack
 description: Cómo conectar la placa al ordenador y empezar a usarla con EchidnaML, que la detecta sola. También, cómo trabajar sin la placa y cómo reconectarla.
 template: pagina
 order: 2
+image: ./conectar-placa/miniatura-conectar.png
 toc: true
 cards:
   - title: Driver CH341
