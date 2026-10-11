@@ -89,7 +89,7 @@
   environment: Arduino IDE
   group: Proyectos y Manual
   type: Manual (PDF, 44 MB)
-  url: https://echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf
+  url: https://github.com/EchidnaEducacion/recursos/releases/download/manual-fp-v2/Manual_EchidnaBlack_002_Es.pdf
   level: FP
   image: ./recursos/manual-fp-echidnablack.jpg
   order: 2

@@ -132,7 +132,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 2.2 Situaciones de aprendizaje (cada una) | `echidnaeducacion.github.io/situaciones-aprendizaje/<recurso>/` y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning, repo `situaciones-aprendizaje`) |
 | 2 | 2.3 Manual de usuario | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
 | 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
-| 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en `echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | — (pendiente de alojarlo fuera de WordPress) |
+| 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en la *release* `manual-fp-v2` del repo `recursos` | — (repo `recursos`) |
 | 1 | Recursos docentes | `/docentes/` | Página genérica con `resources: docentes` (página única con tarjetas agrupadas por material, igual que alumnado) |
 | 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas (PDF) | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |
 | 2 | 3.2 Proyectos de inicio con EchidnaML: programación didáctica | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |

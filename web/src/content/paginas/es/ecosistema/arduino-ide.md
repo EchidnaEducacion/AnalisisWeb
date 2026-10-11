@@ -12,7 +12,7 @@ cards:
     href: https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/
   - title: Manual EchidnaBlack para FP
     text: Un manual extenso de Xabier Rosas para programar la placa en lenguaje C en Formación Profesional.
-    href: https://echidna.es/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf
+    href: https://github.com/EchidnaEducacion/recursos/releases/download/manual-fp-v2/Manual_EchidnaBlack_002_Es.pdf
 ---
 
 **Arduino IDE** es el entorno oficial de programación para placas Arduino y compatibles. Se basa en **programación textual** (C/C++) y permite un control completo y detallado del hardware. El microcontrolador de la EchidnaBlack2 es un **ATmega328P**, el mismo que el de Arduino Nano, así que se puede programar con Arduino IDE.

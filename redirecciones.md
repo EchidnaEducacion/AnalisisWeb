@@ -214,6 +214,7 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 | `/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/` | `/docentes/` | Redirige | Rutas intermedias sin página (p. ej. `/docentes/proyectos-inicio-echidnaml/`) |
 | `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | Repos de las guías | Externa | Alias en minúsculas |
 | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | `echidnaeducacion.github.io/<repo>/` | Externa | |
+| `/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | `github.com/EchidnaEducacion/recursos/releases/download/manual-fp-v2/Manual_EchidnaBlack_002_Es.pdf` | Externa | Manual EchidnaBlack para FP, alojado como *release* del repo `recursos` (octubre de 2026). GitHub Pages no puede redirigir un PDF (solo páginas HTML), así que la dirección antigua dejará de funcionar al apagar WordPress |
 
 ## Pendiente
 
