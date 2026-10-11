@@ -180,19 +180,16 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
 - [x] **Placas anteriores** (1.3): título en el índice de Ecosistema con las tarjetas de los PDF de EchidnaShield y EchidnaBlack v1.
 - [ ] **Snap!** (1.4.2): la página está hecha con la descripción del entorno; faltan la librería de bloques para la EchidnaBlack2 (repo `S4A-EchidnaBlack2C`) y una guía para el aula.
-- [ ] **Correcciones en el [manual](https://github.com/EchidnaEducacion/manual)** (en la web ya está corregido o se sigue lo que se comprueba en la placa):
-  - **Título** (`site_name`): dice «Manual EchidnaBlack y EchidnaML», pero es de la EchidnaBlack2 (en `recursos.yaml` ya está corregido).
-  - **2.1 Clasificación por función**: el diagrama habla de «LED amarillo» en vez de naranja.
-  - **2.2 Modos de funcionamiento**: la lista del modo sensores no incluye el sensor de luz (A3), que también comparte pin con una entrada MkMk.
-  - **4.1.6 Acelerómetro**: la lista de valores dice que el eje Z baja de −2 al subir la placa rápidamente, pero el ejemplo y la física dicen que sube (más de 1,5).
-  - **4.2.1 Servomotor de posición**, el texto del ejemplo no coincide con el programa (nuestra ficha sigue el programa):
-    - dice que con el joystick a más de 600 el ángulo sube, pero el programa lo baja (`sumar -1`), y con menos de 400 al revés;
-    - dice que la espera es de 0,1 s, pero el programa espera 0,01 s;
-    - la imagen de conexión lleva el servo a A2, pero el programa usa D4.
-  - **4.2.2 Servomotor de rotación continua**: usa la misma imagen de conexión, con el servo en A2, y el programa usa D4.
-  - **4.2.3 Sensor de distancia de infrarrojos**: en la lógica del ejemplo, «SI la distancia es menor de 200» debería ser «SI la lectura es menor de 200», porque el valor es inverso a la distancia (menos de 200 es que el objeto está lejos); por lo mismo, los umbrales «Distancia pequeña: 200 · Muy pequeña: 400 · Mínima: 600» se entienden mejor como valores de la lectura.
-  - **4.2.4 Sensor de humedad del suelo**: el texto lo explica como un sensor resistivo (más agua → más conductividad → más tensión), pero el dibujo y la imagen de conexión son de un *Capacitive Soil Moisture Sensor v1.2*, que en general da menos tensión cuanto más húmeda está la tierra. Si es así, el ejemplo (más de 600 → LED verde) encendería el verde con la tierra seca. Comprobarlo con un sensor real y corregir el texto o el ejemplo (nuestra ficha sigue el manual y aconseja medir en seco y en mojado antes de fijar el umbral).
-  - **7 Características técnicas**: el LED RGB da «65 535 colores», cuando son 256 × 256 × 256, más de 16 millones (en nuestra página Características técnicas ya está corregido).
+- [ ] **Correcciones en el [manual](https://github.com/EchidnaEducacion/manual)**: están como *issues* en su repositorio, que es donde se trabajan y se cierran (en la web ya está corregido o se sigue lo que se comprueba en la placa):
+  - [#21](https://github.com/EchidnaEducacion/manual/issues/21) Título (`site_name`): es de la EchidnaBlack2.
+  - [#22](https://github.com/EchidnaEducacion/manual/issues/22) 2.1: el diagrama dice «LED amarillo» en vez de naranja.
+  - [#23](https://github.com/EchidnaEducacion/manual/issues/23) 2.2: falta el sensor de luz en el modo sensores.
+  - [#24](https://github.com/EchidnaEducacion/manual/issues/24) 4.1.6 Acelerómetro: el eje Z sube al elevar la placa.
+  - [#25](https://github.com/EchidnaEducacion/manual/issues/25) 4.2.1 Servomotor de posición: el texto del ejemplo no coincide con el programa (sentido, espera y pin; nuestra ficha sigue el programa).
+  - [#26](https://github.com/EchidnaEducacion/manual/issues/26) 4.2.2 Servomotor de rotación continua: la conexión va a A2 y el programa usa D4.
+  - [#27](https://github.com/EchidnaEducacion/manual/issues/27) 4.2.3 Sensor de infrarrojos: el ejemplo habla de distancia donde es la lectura.
+  - [#28](https://github.com/EchidnaEducacion/manual/issues/28) 4.2.4 Sensor de humedad: el texto explica un sensor resistivo y la imagen es capacitiva; hay que comprobarlo con un sensor real (nuestra ficha sigue el manual).
+  - [#29](https://github.com/EchidnaEducacion/manual/issues/29) 7: el LED RGB da más de 16 millones de colores.
 - [ ] **Ficha Micrófono**: confirmar si la EchidnaBlack2 tiene el puente de soldadura que cambia la señal del micrófono (lo explicaba la web anterior, con su esquema, pero el manual no lo menciona). Si lo tiene, añadir el apartado y el esquema.
 - [ ] **Revisar Modo sensores / Modo MkMk**: (1) el manual (2.2) no incluye el sensor de luz en la lista del modo sensores, aunque A3 se comparte con MkMk3; (2) la web anterior decía que en modo MkMk funcionan «todas las I/O», pero según su propio esquema A2 pasa a ser MkMk2. La página sigue los esquemas; confirmar con la placa.
 - [x] **Ficha Audio** (`/ecosistema/echidnablack2/audio/`, la del zumbador): el jack de audio y el potenciómetro de volumen tienen su apartado en «Funcionamiento», con su imagen (los dibujos de la web anterior) y su explicación.
