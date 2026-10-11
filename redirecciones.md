@@ -70,11 +70,11 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 8 igual
 | `/hardware/componentes/conexiones-mkmk-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/hardware/componentes/sensor-temperatura-lm35/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/hardware/complementos/` | `/ecosistema/echidnablack2/complementos/` | Redirige |  |
-| `/hardware/complementos/bluetooth-black/` | `/ecosistema/echidnablack2/complementos/bluetooth/` | Redirige |  |
+| `/hardware/complementos/bluetooth-black/` | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Redirige | Sin ficha: el manual no lo trata como complemento; el conector Bluetooth está en las características técnicas |
 | `/hardware/complementos/servomotor-continuo-black/` | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Redirige |  |
 | `/hardware/complementos/servomotor-posicion-black/` | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Redirige |  |
 | `/hardware/complementos/infrarrojos-distancia/` | `/ecosistema/echidnablack2/complementos/infrarrojos-distancia/` | Redirige |  |
-| `/hardware/complementos/complementos-conexiones-mkmk/` | `/ecosistema/echidnablack2/complementos/conexiones-mkmk/` | Redirige |  |
+| `/hardware/complementos/complementos-conexiones-mkmk/` | `/ecosistema/echidnablack2/conexiones-mkmk/` | Redirige | Sin ficha: el manual no lo trata como complemento; las conexiones se explican en la ficha del componente |
 | `/hardware/complementos/bluetooth-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/hardware/complementos/sensor-temperatura-lm35-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
 | `/hardware/complementos/servomotor-continuo-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Placa anterior (PDF) |
@@ -161,7 +161,7 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 | `/hardware/echidnablack2/acelerometro-black-i2c` | `/ecosistema/echidnablack2/acelerometro/` | Redirige | Alias de `/hardware/componentes/acelerometro-black-i2c/` |
 | `/hardware/echidnablack2/conexiones-mkmk-black2/` | `/ecosistema/echidnablack2/conexiones-mkmk/` | Redirige | Alias de `/hardware/componentes/conexiones-mkmk-black2/` |
 | `/hardware/echidnablack2/sensor-temperatura-black2/` | `/ecosistema/echidnablack2/sensor-temperatura/` | Redirige | Alias de `/hardware/componentes/sensor-temperatura-black2/` |
-| `/hardware/echidnablack/complementos-echidnablack/bluetooth-black/` | `/ecosistema/echidnablack2/complementos/bluetooth/` | Redirige | Alias de `/hardware/complementos/bluetooth-black/` |
+| `/hardware/echidnablack/complementos-echidnablack/bluetooth-black/` | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Redirige | Alias de `/hardware/complementos/bluetooth-black/` |
 | `/hardware/echidnablack/complementos-echidnablack/servomotor-continuo-black/` | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Redirige | Alias de `/hardware/complementos/servomotor-continuo-black/` |
 | `/hardware/echidnablack/complementos-echidnablack/servomotor-posicion-black/` | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Redirige | Alias de `/hardware/complementos/servomotor-posicion-black/` |
 | `/hardware/echidna-shield/complementos-echidna-shield/bluetooth-shield/` | `/ecosistema/#placas-anteriores` | Redirige | Alias de `/hardware/complementos/bluetooth-shield/` |

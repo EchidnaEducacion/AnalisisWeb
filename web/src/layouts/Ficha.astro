@@ -45,11 +45,12 @@ const toc = [
   ...(apoyo.length ? [{ slug: 'mas-sobre-la-placa', text: 'Más sobre la placa' }] : []),
 ];
 
-// Migas: Ecosistema y las fichas que cuelgan por encima
+// Migas: Ecosistema y las fichas o páginas que cuelgan por encima (p. ej. Complementos)
 const tramos = ruta.split('/').slice(1, -1);
+const paginas = await getCollection('paginas', (p) => p.id.startsWith('es/') && !p.data.draft);
 const crumbs = tramos.map((_, i) => {
   const padre = ['ecosistema', ...tramos.slice(0, i + 1)].join('/');
-  const p = todas.find((t) => rutaHardware(t) === padre);
+  const p = todas.find((t) => rutaHardware(t) === padre) ?? paginas.find((t) => rutaDe(t) === padre);
   return { title: p?.data.title ?? placas[tramos[i]] ?? tramos[i], href: p ? url(`${padre}/`) : undefined };
 });
 

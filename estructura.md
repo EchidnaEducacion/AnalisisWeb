@@ -37,10 +37,9 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   │   ├── 1.2.12 Alimentación
 │   │   ├── 1.2.13 Complementos
 │   │   │   ├── 1.2.13.1 Servomotor de posición
-│   │   │   ├── 1.2.13.2 Servomotor continuo
-│   │   │   ├── 1.2.13.3 Infrarrojos distancia
-│   │   │   ├── 1.2.13.4 Complementos conexiones MkMk
-│   │   │   └── 1.2.13.5 Bluetooth
+│   │   │   ├── 1.2.13.2 Servomotor de rotación continua
+│   │   │   ├── 1.2.13.3 Sensor de distancia de infrarrojos
+│   │   │   └── 1.2.13.4 Sensor de humedad del suelo
 │   │   └── 1.2.14 Características técnicas
 │   ├── Entornos de programación compatibles  (título dentro del índice de Ecosistema)
 │   │   ├── 1.4.1 Arduino IDE
@@ -118,10 +117,9 @@ Pie (fuera del menú, en todas las páginas)
 | 3 | 1.2.12 Alimentación | `/ecosistema/echidnablack2/alimentacion/` | Página genérica |
 | 3 | 1.2.13 Complementos | `/ecosistema/echidnablack2/complementos/` | Índice de sección |
 | 4 | 1.2.13.1 Servomotor de posición | `/ecosistema/echidnablack2/complementos/servomotor-posicion/` | Ficha de hardware |
-| 4 | 1.2.13.2 Servomotor continuo | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Ficha de hardware |
-| 4 | 1.2.13.3 Infrarrojos distancia | `/ecosistema/echidnablack2/complementos/infrarrojos-distancia/` | Ficha de hardware |
-| 4 | 1.2.13.4 Complementos conexiones MkMk | `/ecosistema/echidnablack2/complementos/conexiones-mkmk/` | Ficha de hardware |
-| 4 | 1.2.13.5 Bluetooth | `/ecosistema/echidnablack2/complementos/bluetooth/` | Ficha de hardware |
+| 4 | 1.2.13.2 Servomotor de rotación continua | `/ecosistema/echidnablack2/complementos/servomotor-continuo/` | Ficha de hardware |
+| 4 | 1.2.13.3 Sensor de distancia de infrarrojos | `/ecosistema/echidnablack2/complementos/infrarrojos-distancia/` | Ficha de hardware |
+| 4 | 1.2.13.4 Sensor de humedad del suelo | `/ecosistema/echidnablack2/complementos/sensor-humedad/` | Ficha de hardware |
 | 3 | 1.2.14 Características técnicas | `/ecosistema/echidnablack2/caracteristicas-tecnicas/` | Página genérica (datos técnicos de la placa, del manual) |
 | 2 | 1.3 Placas anteriores (EchidnaBlack v1 y EchidnaShield) | `/ecosistema/#placas-anteriores` | — (título del índice de Ecosistema con dos tarjetas que enlazan a los PDF; sin página propia) |
 | 3 | PDF de EchidnaBlack v1 y EchidnaShield | `/ecosistema/placas-anteriores/echidnablack.pdf`, `/ecosistema/placas-anteriores/echidnashield.pdf` | — (ficheros en `web/public/ecosistema/placas-anteriores/`) |
