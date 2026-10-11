@@ -1,6 +1,6 @@
 ---
 title: "Caja fuerte"
-description: "En este proyecto os proponemos la construcción de una caja formada con bloques de construcciones que se abre mediante un servomotor que, al hacer girar un…"
+description: "Una caja de bloques de construcción que abre un servomotor con tres programas: pulsadores, una contraseña con las entradas MkMk o reconocimiento facial."
 date: 2026-03-29
 author: jorge-lobo
 categories: [bloques-de-construccion, didactica, recursos/proyectos]
