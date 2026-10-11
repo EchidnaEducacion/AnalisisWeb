@@ -173,10 +173,9 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [x] **Formato del blog**: aprobado por el equipo (octubre de 2026), con el lateral de categorías, últimas entradas y etiquetas.
 - [x] **Migrar las entradas del blog**: las 61 entradas de WordPress, de 2017 a 2026, con el importador de [`herramientas/wp-import/`](herramientas/wp-import/) y revisadas a mano (textos alternativos, descripciones, enlaces). Javier Álvarez, antiguo colaborador, está en `autores.yaml` como autor del blog, pero no en el equipo de «Sobre el proyecto».
 - [x] **Revisar las categorías y etiquetas del blog**: las 11 categorías no cambian. Las 59 etiquetas heredadas de WordPress (con erratas, duplicados y 36 de una sola entrada) se han sustituido por un vocabulario cerrado de 21, aplicado a las 61 entradas (solo 3 quedan sin etiqueta); ver [`modelo-contenido.md`](modelo-contenido.md#etiquetas-del-blog). Las 47 URL de etiquetas que desaparecen redirigen a la etiqueta que las absorbe, a su categoría o a `/blog/` ([`redirecciones.md`](redirecciones.md#blog-y-rss)).
-- [ ] **Entradas del blog por completar**: 4 sin portada (¡Volvemos a esLibre!, esLibre 2023, Cultura Maker 22 e Inteligencia artificial con Echidna) y varias presentaciones de Google que quedan como enlace (ver «Revisar las entradas importadas»).
+- [ ] **Entradas del blog por completar**: 4 sin portada (¡Volvemos a esLibre!, esLibre 2023, Cultura Maker 22 e Inteligencia artificial con Echidna).
 - [ ] **Revisar las entradas importadas**:
   - «ROBÓTICA EDUCATIVA + IA CON ECHIDNA en #eslibre2023» no tenía categoría en WordPress: se le ha puesto Talleres.
-  - Varias entradas incrustaban presentaciones de Google (instrucciones de montaje…); ahora son un enlace. Decidir si se incrustan.
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
 - [x] **Placas anteriores** (1.3): título en el índice de Ecosistema con las tarjetas de los PDF de EchidnaShield y EchidnaBlack v1.
 - [ ] **Snap!** (1.4.2): la página está hecha con la descripción del entorno; faltan la librería de bloques para la EchidnaBlack2 (repo `S4A-EchidnaBlack2C`) y una guía para el aula.

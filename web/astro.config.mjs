@@ -14,24 +14,41 @@ const tablasConMarco = {
   },
 };
 
-// Vídeos de YouTube: un párrafo que solo contiene un enlace a YouTube se convierte en el
-// reproductor de las plantillas, que no carga YouTube hasta que se pulsa (privacidad y rendimiento).
-// El texto del enlace es el pie del vídeo: [Rotógrafo con Echidna](https://www.youtube.com/watch?v=…)
-const idYouTube = (href) =>
-  typeof href === 'string'
-    ? (href.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})/) ?? [])[1]
-    : undefined;
+// Vídeos de YouTube y presentaciones de Google: un párrafo que solo contiene un enlace a uno de
+// ellos se convierte en el reproductor de las plantillas, que no carga nada de fuera hasta que se
+// pulsa (privacidad y rendimiento). El texto del enlace es el pie:
+// [Rotógrafo con Echidna](https://www.youtube.com/watch?v=…)
+// [Ver la presentación (Google Slides)](https://docs.google.com/presentation/d/e/…/pub?…)
 const texto = (n) => (n.type === 'text' ? n.value : (n.children ?? []).map(texto).join(''));
-const videosYouTube = {
-  name: 'videos-youtube',
+const incrustable = (href, titulo) => {
+  if (typeof href !== 'string') return undefined;
+  const yt = href.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})/);
+  if (yt) {
+    const pie = titulo || 'Vídeo';
+    return { src: `https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1`, pie, titulo: `Vídeo: ${pie}`, icono: 'i-play', nota: 'YouTube · se carga al pulsar' };
+  }
+  // Publicadas (/d/e/<id>/pub) o compartidas (/d/<id>/edit): las dos se incrustan con /embed
+  const gs = href.match(/docs\.google\.com\/presentation\/d\/(e\/[\w-]+|[\w-]+)/);
+  if (gs) {
+    // «Ver la presentación (Google Slides)» → «Presentación»: lo demás ya lo dice la nota
+    const limpio = titulo.replace(/^(ver|enlace a) la /i, '').replace(/\s*\(Google Slides\)$/i, '');
+    const pie = limpio ? limpio[0].toUpperCase() + limpio.slice(1) : 'Presentación';
+    return {
+      src: `https://docs.google.com/presentation/d/${gs[1]}/embed?start=false&loop=false&delayms=3000`,
+      pie, titulo: `Presentación: ${pie}`, icono: 'i-slides', nota: 'Google Slides · se carga al pulsar',
+    };
+  }
+  return undefined;
+};
+const incrustados = {
+  name: 'incrustados',
   element: {
     filter: ['p'],
     visit(node, ctx) {
       const hijos = (node.children ?? []).filter((n) => !(n.type === 'text' && !n.value.trim()));
       const enlace = hijos.length === 1 && hijos[0].type === 'element' && hijos[0].tagName === 'a' ? hijos[0] : null;
-      const id = enlace && idYouTube(enlace.properties?.href);
-      if (!id) return;
-      const titulo = texto(enlace).trim() || 'Vídeo';
+      const datos = enlace && incrustable(enlace.properties?.href, texto(enlace).trim());
+      if (!datos) return;
       const span = (clase, children) => ({ type: 'element', tagName: 'span', properties: { className: [clase] }, children });
       const icono = (nombre) => ({
         type: 'element', tagName: 'svg', properties: { ariaHidden: 'true' },
@@ -41,15 +58,11 @@ const videosYouTube = {
         type: 'element', tagName: 'div', properties: { className: ['embed'] },
         children: [{
           type: 'element', tagName: 'button',
-          properties: {
-            className: ['embed__poster'], type: 'button',
-            dataSrc: `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`,
-            dataTitle: `Vídeo: ${titulo}`,
-          },
+          properties: { className: ['embed__poster'], type: 'button', dataSrc: datos.src, dataTitle: datos.titulo },
           children: [
-            span('embed__play', [icono('i-play')]),
-            span('embed__caption', [{ type: 'text', value: titulo }]),
-            span('embed__note', [{ type: 'text', value: 'YouTube · se carga al pulsar' }]),
+            span('embed__play', [icono(datos.icono)]),
+            span('embed__caption', [{ type: 'text', value: datos.pie }]),
+            span('embed__note', [{ type: 'text', value: datos.nota }]),
           ],
         }],
       });
@@ -104,5 +117,5 @@ export default defineConfig({
     defaultLocale: 'es',
     routing: { prefixDefaultLocale: false },
   },
-  markdown: { processor: satteri({ hastPlugins: [tablasConMarco, videosYouTube, galerias] }) },
+  markdown: { processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias] }) },
 });

@@ -417,6 +417,8 @@ main { flex: 1; }
 .embed__play { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; background: var(--brand); color: #fff; box-shadow: 0 8px 24px rgb(0 0 0 / .35); transition: transform .15s; }
 .embed__poster:hover .embed__play { transform: scale(1.06); }
 .embed__play svg { width: 34px; height: 34px; margin-left: 4px; }
+/* El margen centra a ojo el triángulo de «play»; el icono de presentación ya está centrado */
+.embed__play svg:has(use[href="#i-slides"]) { margin-left: 0; }
 .embed__caption { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; }
 .embed__note { font-size: .82rem; opacity: .8; }
 
