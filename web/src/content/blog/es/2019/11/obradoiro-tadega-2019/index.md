@@ -16,4 +16,4 @@ Entre outros obradoiros charlas e presentación teremos o obradoiro de **Echidna
 
 Lembra traer ordenador!
 
-[](https://docs.google.com/presentation/d/1BdGC0ATRwDJdrQeGqKbjrpMOZgyD9sVj5eZ8GoHvAOI/edit#slide=id.p)
+[Presentación do obradoiro](https://docs.google.com/presentation/d/1BdGC0ATRwDJdrQeGqKbjrpMOZgyD9sVj5eZ8GoHvAOI/edit#slide=id.p)
