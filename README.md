@@ -176,7 +176,6 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [ ] **Revisar las entradas importadas**:
   - «Posta en marcha e proxectos con EchidnaBlack» (2022) enlaza al manual en gallego (`Manual_EchidnaBlack_001_Gal.pdf`), que ya no está en el repo `recursos`: recuperarlo o quitar el enlace.
   - «ROBÓTICA EDUCATIVA + IA CON ECHIDNA en #eslibre2023» no tenía categoría en WordPress: se le ha puesto Talleres.
-  - Las galerías de WordPress quedan como imágenes seguidas (p. ej. las 6 fotos de la OSHWDem 2024): valorar mostrarlas en rejilla.
   - Varias entradas incrustaban presentaciones de Google (instrucciones de montaje…); ahora son un enlace. Decidir si se incrustan.
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
 - [x] **Placas anteriores** (1.3): título en el índice de Ecosistema con las tarjetas de los PDF de EchidnaShield y EchidnaBlack v1.

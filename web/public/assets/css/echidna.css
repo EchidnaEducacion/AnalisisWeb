@@ -424,6 +424,10 @@ main { flex: 1; }
 .gallery { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); margin: 1.5rem 0; padding: 0; list-style: none; }
 .gallery figure { margin: 0; }
 .gallery figcaption { font-size: .85rem; color: var(--muted); margin-top: .4rem; }
+/* En el Markdown, un párrafo de solo imágenes (ver astro.config.mjs): cada una con su proporción */
+.prose .gallery { padding-left: 0; align-items: start; }
+.prose .gallery li + li { margin-top: 0; }
+.gallery > li img { width: 100%; }
 
 /* Figura */
 figure { margin: 1.75rem 0; }

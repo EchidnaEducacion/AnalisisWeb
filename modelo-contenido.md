@@ -116,7 +116,7 @@ Plantillas: Entrada de blog (hecha) y Listado / taxonomía.
 | `translation` | ruta | No | Versión en el otro idioma |
 | `draft` | sí/no | No (no) | Borrador sin publicar |
 
-**Vídeos de YouTube**: un párrafo que solo contiene un enlace a YouTube (`[Título del vídeo](https://www.youtube.com/watch?v=…)`) se convierte en un reproductor que no carga YouTube hasta que se pulsa. **GIF animados**: van en `web/public/` con la ruta de la entrada (`/2026/05/rotografo/rotografo.gif`), porque Astro los convertiría en imágenes fijas.
+**Vídeos de YouTube**: un párrafo que solo contiene un enlace a YouTube (`[Título del vídeo](https://www.youtube.com/watch?v=…)`) se convierte en un reproductor que no carga YouTube hasta que se pulsa. **Galerías**: las imágenes escritas en líneas seguidas, sin línea en blanco entre ellas, se muestran en rejilla, con el título de cada imagen como pie (`![Texto alternativo](./foto.jpg "Pie")`). **GIF animados**: van en `web/public/` con la ruta de la entrada (`/2026/05/rotografo/rotografo.gif`), porque Astro los convertiría en imágenes fijas.
 
 **La URL sale de la carpeta, no de la fecha**: la entrada `blog/es/2026/05/rotografo/` se publica en `/2026/05/rotografo/`. Si se corrige la fecha, la URL no cambia.
 

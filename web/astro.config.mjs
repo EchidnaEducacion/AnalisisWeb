@@ -57,6 +57,43 @@ const videosYouTube = {
   },
 };
 
+// Galerías: un párrafo que solo contiene imágenes (dos o más, en líneas seguidas sin línea en
+// blanco entre ellas) se convierte en una rejilla .gallery. Las imágenes que ya eran un enlace lo conservan,
+// y el título de la imagen, si lo tiene, es su pie: ![Texto alternativo](./foto.jpg "Pie de la foto")
+const galerias = {
+  name: 'galerias',
+  element: {
+    filter: ['p'],
+    visit(node, ctx) {
+      const hijos = (node.children ?? []).filter((n) => !(n.type === 'text' && !n.value.trim()));
+      const esImagen = (n) => n.type === 'element' && n.tagName === 'img';
+      const esEnlaceConImagen = (n) =>
+        n.type === 'element' && n.tagName === 'a'
+        && (n.children ?? []).filter((h) => !(h.type === 'text' && !h.value.trim())).every(esImagen);
+      if (hijos.length < 2 || !hijos.every((n) => esImagen(n) || esEnlaceConImagen(n))) return;
+      ctx.replaceNode(node, {
+        type: 'element', tagName: 'ul', properties: { className: ['gallery'] },
+        children: hijos.map((n) => {
+          const img = esImagen(n) ? n : (n.children ?? []).find(esImagen);
+          const pie = img?.properties?.title;
+          if (!pie) return { type: 'element', tagName: 'li', properties: {}, children: [n] };
+          // Los nodos no se pueden modificar: se copia la imagen sin el título (y su enlace, si lo tiene)
+          const { title, ...propiedades } = img.properties;
+          const sinTitulo = { ...img, properties: propiedades };
+          const contenido = esImagen(n) ? sinTitulo : { ...n, children: [sinTitulo] };
+          return {
+            type: 'element', tagName: 'li', properties: {},
+            children: [{
+              type: 'element', tagName: 'figure', properties: {},
+              children: [contenido, { type: 'element', tagName: 'figcaption', properties: {}, children: [{ type: 'text', value: pie }] }],
+            }],
+          };
+        }),
+      });
+    },
+  },
+};
+
 export default defineConfig({
   site: 'https://echidnaeducacion.github.io',
   // URL de carpeta: /politica-privacidad/ → politica-privacidad/index.html
@@ -67,5 +104,5 @@ export default defineConfig({
     defaultLocale: 'es',
     routing: { prefixDefaultLocale: false },
   },
-  markdown: { processor: satteri({ hastPlugins: [tablasConMarco, videosYouTube] }) },
+  markdown: { processor: satteri({ hastPlugins: [tablasConMarco, videosYouTube, galerias] }) },
 });

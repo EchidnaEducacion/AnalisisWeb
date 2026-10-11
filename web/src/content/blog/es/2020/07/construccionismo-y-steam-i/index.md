@@ -19,6 +19,12 @@ Este grupo trabajaba en una idea revolucionaria, la conexión de [**Logo**](http
 Fue esa misma idea de **construcción por bloques,** la que inspiró al propio Resnick a crear [**Scratch**](https://scratch.mit.edu/)**.  
 **
 
+![El piano de LEGO conectado a la interfaz de LEGO TC Logo y a un Apple IIe, con la pantalla de inicio de LEGO TC Logo.](./Piano.png "A cualquiera que se haya iniciado en Scratch seguro que le suena el piano interactivo programado. Pues ahí lo tenéis, hecho con LEGO TC Logo hace más de tres décadas. Por cierto, Echidna cuenta con entradas tipo MakeyMakey, por lo que, si no lo habéis hecho nunca...")
+![Un plotter de LEGO con un rotulador sobre una hoja, conectado a la interfaz de LEGO TC Logo, junto a un Apple IIe.](./LEGO_Plotter-1.jpg "Plotter con Lego TC Logo (1987). Un proyecto alucinante realizado con el kit. Si es que está todo inventado.")
+![Los libros del kit LEGO TC Logo: la guía del docente, las guías de instalación y de referencia, y los cuadernos Getting Started, Teaching the Turtle y Making Machines.](./1366_2000-1.jpg "Material didáctico que acompañaba al Kit, Lego TC Logo. El kit incluía una serie de libros didácticos con decenas de proyectos. En los mismos se podía ver trasladada la idea de Resnick de unir la mecánica y la creación de estructuras a la programación. Un ejemplo claro de propuesta didáctica bajo la filosofía constructivista del aprendizaje.")
+![Mitchel Resnick junto a una cara de payaso hecha con LEGO, y Seymour Papert sentado junto a una mesa llena de construcciones de LEGO.](./resnickpapert.png "Mitchel Resnick y Papert junto a distintas construcciones realizadas con Lego. La compañía danesa ha estado vinculada al MIT Media LAB desde su creación en 1985, en parte por la convicción de Resnick de que los bloques de construcción eran un aporte muy positivo al modelo construccionista de Seymour Papert.")
+![Portada del cuaderno Making Machines de LEGO TC Logo, con un tiovivo de LEGO movido por un tornillo sin fin.](./Machines.png "Portada de uno de los libros didácticos que acompañaban al Kit.")
+
 En el [**equipo**](/quienes-somos/) [**EchidnaSTEAM**](/) también estamos convencidos de que ese cóctel puede enriquecer nuestras propuestas didácticas de robótica, ya que en ocasiones, se nos olvida que **la** **parte mecánica y estructural son tan importantes como la** **electrónica o la programación** si queremos realizar una propuesta global **en el ámbito STEAM**.
 
 ## Pero…¿cómo hacerlo?

@@ -25,13 +25,8 @@ Como siempre,queremos agradecer el esfuerzo, el cariño y la dedicación del equ
 ¡Nos vemos en la próxima edición!  
 
 ![Mesa con los carteles de los proyectos participantes en la OSHWDem, entre ellos el de Echidna.](./OSHWDEM2415.jpeg)
-
 ![Entrada al espacio maker de la Domus, en A Coruña, donde se celebró el encuentro.](./OSHWDEM2410.jpeg)
-
 ![El stand de Echidna, con placas, ordenadores y el cartel del proyecto.](./OSHWDEM243.jpeg)
-
 ![Tres miembros de Echidna, con camisetas del proyecto, en su stand.](./OSHWDEM242.jpeg)
-
 ![Charla sobre EchidnaML, con la placa y LearningML proyectados en la pantalla.](./OSHWDEM244.jpeg)
-
 ![Público asistiendo a la charla sobre EchidnaML.](./OSHWDEM241.jpeg)

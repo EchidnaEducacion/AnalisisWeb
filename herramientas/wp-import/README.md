@@ -28,7 +28,7 @@ Sin `--forzar` no toca las entradas que ya existen, para no perder las revisione
 - Limpia el marcado de Avada:
   - Los vídeos de YouTube quedan como un párrafo con solo el enlace y su título real; la web los convierte en reproductor.
   - Las presentaciones de Google quedan como enlace.
-  - Las galerías se convierten en imágenes seguidas.
+  - Las galerías se convierten en imágenes seguidas, cada una en su párrafo. Para mostrarlas en rejilla, hay que juntarlas en un solo párrafo (ver «Galerías» en [`web/README.md`](../../web/README.md)). Los carruseles de Avada con imágenes de fondo (`fusion-slider-container`) no se recogen: sus imágenes y pies hay que recuperarlos a mano.
   - Las imágenes van en su propio párrafo.
 - Aplica las redirecciones de [`redirecciones.md`](../../redirecciones.md): los enlaces a páginas antiguas de la web y a `rea.echidna.es` pasan a su dirección nueva. Los enlaces a otras entradas del blog se dejan igual, porque conservan su dirección.
 - No importa las entradas cuyo autor no está en `web/src/content/autores.yaml` (la web no se construiría); las anota en el informe.

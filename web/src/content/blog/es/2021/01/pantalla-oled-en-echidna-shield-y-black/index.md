@@ -48,11 +48,11 @@ También tenemos la posibilidad de conectar la pantalla en los pines D4 y D7, pe
 
 Necesitamos una librería que nos permita controlar la pantalla, cambiando los pines de comunicaciones, he usado la librería “OLED\_I2C.h” 2019 de Henning Karlsen de Rinky-Dink Electronics con licencia CC BY-NC-SA 3.0.  es una librería muy sencilla, pero no cuenta con todas las soluciones gráficas de la librería de Adafruit “Adafruit\_GFX.h”. Aun así y con un poco de imaginación podemos realizar algunas gráficas interesantes.
 
- ![La pantalla muestra un medidor de aguja con escala de 256 a 768 y el valor 720.](./Med_clasico.png)
-
-![La pantalla muestra un termómetro que marca 20 grados.](./Med_termometro.png) ![La pantalla muestra un gráfico de barras con el nivel del micrófono.](./Med_son.png)
-
-![La pantalla muestra un medidor semicircular de tensión con el valor 249.](./Med_180.png)![La pantalla muestra un gráfico con el registro de la temperatura a lo largo del tiempo.](./Med_rexistro.png)
+![La pantalla muestra un medidor de aguja con escala de 256 a 768 y el valor 720.](./Med_clasico.png)
+![La pantalla muestra un termómetro que marca 20 grados.](./Med_termometro.png)
+![La pantalla muestra un gráfico de barras con el nivel del micrófono.](./Med_son.png)
+![La pantalla muestra un medidor semicircular de tensión con el valor 249.](./Med_180.png)
+![La pantalla muestra un gráfico con el registro de la temperatura a lo largo del tiempo.](./Med_rexistro.png)
 
 Veamos un ejemplo simple, pintaremos un cuadro que marque los límites del visualizador, y una circunferencia que podamos mover con el Joystick.
 
