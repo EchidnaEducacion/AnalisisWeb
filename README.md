@@ -156,7 +156,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 
 ## Próximos pasos
 
-- [ ] **Trasladar la web a la raíz**: renombrar este repo a `EchidnaEducacion.github.io`, archivar la prueba de concepto y quitar el `base` `/AnalisisWeb`, según [`traslado-repo.md`](traslado-repo.md).
+- [x] **Trasladar la web a la raíz** (octubre de 2026): este repo se llama ahora `EchidnaEducacion.github.io`, la prueba de concepto está archivada como `web-prueba-concepto` y la web se sirve en <https://echidnaeducacion.github.io/> sin `base`, según [`traslado-repo.md`](traslado-repo.md).
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] Probar las maquetas publicadas y anotar los ajustes antes del paso 3.
 - [ ] **Imágenes de las tarjetas**: buscar una imagen para las tarjetas que hoy salen sin ella (las de EchidnaML ya la tienen). Se pone en el campo `image` de cada página.
