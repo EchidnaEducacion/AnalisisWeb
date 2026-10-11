@@ -27,7 +27,7 @@ Hay distintos modelos de aprendizaje, pero LML utiliza el modelo de **Aprendizaj
 
 **¿Cómo utilizar EchidnaScratch con LML?**
 
-Por el momento, hasta que esté definitivamente incluido en la web, accederemos desde este enlace: [http://scratch.echidna.es/learningml](http://scratch.echidna.es/learningml)
+Por el momento, hasta que esté definitivamente incluido en la web, accederemos desde scratch.echidna.es/learningml (una versión web del programa que ya no está en funcionamiento)
 
 ![LearningML: pantalla de inicio para elegir entre reconocer textos o imágenes.](./Captura-de-pantalla-de-2020-11-07-00-44-12.png)
 

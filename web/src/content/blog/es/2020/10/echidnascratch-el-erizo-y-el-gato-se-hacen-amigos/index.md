@@ -16,8 +16,7 @@ Por eso, desde que construimos nuestro primer prototipo,  pensamos que sería bu
 
 Así que solo quedaba una solución: copiar el código de Scratch (algo que se puede hacer con todas las de la ley, pues se distribuye con una licencia libre) y modificarlo para hacer nuestro deseo realidad: **programar Echidna desde Scratch**. Aunque la idea parecía complicada, hace aproximadamente un año, nos pusimos manos a la obra y el proyecto fue poco a poco madurando, hasta que finalmente el gatito y el erizo se han hecho muy buenos amigos.
 
-Así que ha llegado el momento de compartir con todos vosotros el resultado y presentaros a [EchidnaScratch:](https://scratch.echidna.es/) ¡nuestra propia versión de Scratch para programar las placas Echidna! Para que te hagas una idea de como se usa esta mezcla explosiva Echidna + Scratch te mostramos este video. Y como seguro que te habrás quedado con ganas de probarlo, te facilitamos este enlace donde se explica todo lo necesario para usarlo: «[Cómo usar EchidnaScratch](/ecosistema/echidnaml/)«.
+Así que ha llegado el momento de compartir con todos vosotros el resultado y presentaros a EchidnaScratch (scratch.echidna.es, una versión web del programa que ya no está en funcionamiento): ¡nuestra propia versión de Scratch para programar las placas Echidna! Para que te hagas una idea de como se usa esta mezcla explosiva Echidna + Scratch te mostramos este video. Y como seguro que te habrás quedado con ganas de probarlo, te facilitamos este enlace donde se explica todo lo necesario para usarlo: «[Cómo usar EchidnaScratch](/ecosistema/echidnaml/)«.
 
 [YouTube video player 3](https://www.youtube.com/watch?v=ahQf3pR-oDQ)
 
-[](https://scratch.echidna.es/)

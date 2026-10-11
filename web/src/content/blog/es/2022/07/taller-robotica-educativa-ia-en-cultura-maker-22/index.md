@@ -16,9 +16,9 @@ En el taller hablamos del Movimiento Maker, Pensamiento Computacional, Inteligen
 
 Enlaces de interés para el curso:
 
-- [scratch.echidna](https://scratch.echidna.es/)
+- scratch.echidna (versión web de EchidnaScratch, que ya no está en funcionamiento)
 - [Echidna Link](/ecosistema/echidnaml/)
-- [scratch.echidna.es/learningml](https://scratch.echidna.es/learningml/)
+- scratch.echidna.es/learningml (versión web de LearningML, que ya no está en funcionamiento)
 - [Snap4Arduino](https://snap4arduino.rocks/)
 
 [Ver la presentación (Google Slides)](https://docs.google.com/presentation/d/e/2PACX-1vRxIoNVsYYa_k0vk-NmwGaBspSqSx_TgJWIGj-29V0j9ucnz3NuFRYJ66TDFJsALZVsirYI9_IYW8pB/pub?start=false&loop=false&delayms=3000)
