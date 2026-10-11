@@ -37,11 +37,11 @@ const iniciales = autor.data.name.split(' ').map((p) => p[0]).slice(0, 2).join('
 
 ---
 <Base title={d.title} description={d.description} section="blog">
-<main id="contenido">
+<main id="contenido" data-pagefind-body>
   <article>
     <header class="page-hero">
       <div class="wrap">
-        <nav class="breadcrumb" aria-label="Migas de pan">
+        <nav class="breadcrumb" aria-label="Migas de pan" data-pagefind-ignore>
           <ol>
             <li><a href={url()}>Inicio</a></li>
             <li><a href={blog}>Blog</a></li>
@@ -55,7 +55,7 @@ const iniciales = autor.data.name.split(' ').map((p) => p[0]).slice(0, 2).join('
             <Image class="avatar" src={autor.data.image} alt="" width={40} height={40} densities={[1, 2]} />
             <a href={url(`${rutaAutor(autor.id)}/`)}>{autor.data.name}</a>
           </span>
-          <span><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> <time datetime={d.date.toISOString().slice(0, 10)}>{fechaLarga(d.date)}</time></span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> <time data-pagefind-meta="fecha" datetime={d.date.toISOString().slice(0, 10)}>{fechaLarga(d.date)}</time></span>
           <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> {minutos} min de lectura</span>
         </div>
       </div>

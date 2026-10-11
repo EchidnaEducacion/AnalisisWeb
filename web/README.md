@@ -12,10 +12,12 @@ bun install
 bun run dev      # http://localhost:4321/
 ```
 
-`bun run build` genera el sitio estático en `web/dist/` y `bun run preview` lo sirve.
+`bun run build` genera el sitio estático en `web/dist/`, con el índice del buscador (Pagefind) en `dist/pagefind/`, y `bun run preview` lo sirve.
+
+- **Buscador en local**: el índice solo se genera con el *build*. `bun run dev` usa el del último `bun run build` (lo sirve en `/pagefind/` desde `dist/pagefind/`), así que el contenido nuevo no aparece en el buscador hasta repetir el *build*; sin ningún *build* previo, el buscador dice que no está disponible.
 
 - **Si Bun no está instalado**: `curl -fsSL https://bun.sh/install | bash` y abrir una terminal nueva.
-- **Sin Bun, con npm**: `npm install --no-package-lock` y `npx astro dev` (o `npx astro build` y `npx astro preview`). Sin *lockfile* de npm, porque el proyecto usa el de Bun.
+- **Sin Bun, con npm**: `npm install --no-package-lock` y `npx astro dev` (o `npx astro build && npx pagefind --site dist` y `npx astro preview`). Sin *lockfile* de npm, porque el proyecto usa el de Bun.
 - **Desde VS Code**: los comandos se ejecutan en la terminal integrada (*Terminal → Nueva terminal*, que se abre en la raíz del repositorio). La URL se abre con `Ctrl+clic` o, dentro del editor, con *Simple Browser: Show* (`Ctrl+Shift+P`). La página se recarga al guardar y el servidor se para con `Ctrl+C`.
 
 | # | Plantilla | Archivo | Ejemplo real |
@@ -134,4 +136,8 @@ Las páginas se migran **de una en una**: se redacta, se revisa en local y se su
 
 No llevan ejemplos de Arduino IDE.
 
-En las maquetas, las imágenes son marcadores (`.ph`). El buscador muestra resultados de ejemplo; se conectará con Pagefind.
+En las maquetas, las imágenes son marcadores (`.ph`).
+
+## Buscador
+
+El índice lo genera Pagefind al final del *build* (`pagefind --site dist`) y lo consulta el diálogo de la cabecera (`public/assets/js/echidna.js`). Solo se indexan las páginas cuyo `<main>` lleva `data-pagefind-body`, es decir, las de los *layouts* `Pagina`, `Indice`, `Contacto`, `Ficha` y `Entrada`; quedan fuera la portada, la 404, los listados del blog y las maquetas. Los resultados se agrupan por sección (`<meta data-pagefind-meta="seccion[content]">` de `Base.astro`) y muestran como contexto las migas de pan (`data-contexto`) o, en el blog, la fecha. Las migas no entran en el texto indexado (`data-pagefind-ignore`). En el servidor de desarrollo, la integración `indiceDelBuscadorEnDev` de `astro.config.mjs` sirve el índice del último *build*.

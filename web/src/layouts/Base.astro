@@ -23,6 +23,7 @@ const fullTitle = bare ? title : `${title} · Echidna Educación`;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{fullTitle}</title>
 <meta name="description" content={description}>
+{section && <meta data-pagefind-meta="seccion[content]" content={section}>}
 <link rel="icon" href={url("favicon.svg")} type="image/svg+xml">
 <link rel="apple-touch-icon" href={url("apple-touch-icon.png")}>
 <link rel="alternate" type="application/rss+xml" title="Blog de Echidna Educación" href={url("rss.xml")}>

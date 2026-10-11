@@ -75,10 +75,11 @@ const descargas = d.downloads.map((dl) => {
 });
 ---
 <Base title={d.title} description={d.description} section="ecosistema">
-<main id="contenido">
+<main id="contenido" data-pagefind-body>
   <header class="page-hero">
     <div class="wrap">
-      <nav class="breadcrumb" aria-label="Migas de pan">
+      <nav class="breadcrumb" aria-label="Migas de pan" data-pagefind-ignore
+        data-contexto={['Ecosistema', ...crumbs.map((c) => c.title)].join(' › ')} data-pagefind-meta="contexto[data-contexto]">
         <ol>
           <li><a href={url()}>Inicio</a></li>
           <li><a href={url('ecosistema/')}>Ecosistema</a></li>

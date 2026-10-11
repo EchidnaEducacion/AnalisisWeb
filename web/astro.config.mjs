@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
+import { createReadStream, existsSync, statSync } from 'node:fs';
+import { extname, join, normalize } from 'node:path';
 
 // Las tablas del Markdown van dentro de .table-wrap, como en las plantillas:
 // borde redondeado y desplazamiento horizontal en móvil en vez de ensanchar la página
@@ -107,6 +109,26 @@ const galerias = {
   },
 };
 
+// Buscador en el servidor de desarrollo: el índice de Pagefind solo se genera al final del build,
+// así que `astro dev` sirve en /pagefind/ el del último build (dist/pagefind/). Si no hay build,
+// no hace nada y el buscador dice que no está disponible. No afecta al build.
+const indiceDelBuscadorEnDev = {
+  name: 'indice-del-buscador-en-dev',
+  hooks: {
+    'astro:server:setup': ({ server }) => {
+      const dir = join(process.cwd(), 'dist', 'pagefind');
+      const tipos = { '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm' };
+      server.middlewares.use('/pagefind/', (req, res, next) => {
+        const ruta = normalize(join(dir, decodeURIComponent((req.url ?? '').split('?')[0])));
+        if (!ruta.startsWith(dir) || !existsSync(ruta) || !statSync(ruta).isFile()) return next();
+        res.setHeader('Content-Type', tipos[extname(ruta)] ?? 'application/octet-stream');
+        res.setHeader('Cache-Control', 'no-store');
+        createReadStream(ruta).pipe(res);
+      });
+    },
+  },
+};
+
 export default defineConfig({
   site: 'https://echidnaeducacion.github.io',
   // URL de carpeta: /politica-privacidad/ → politica-privacidad/index.html
@@ -117,5 +139,6 @@ export default defineConfig({
     defaultLocale: 'es',
     routing: { prefixDefaultLocale: false },
   },
+  integrations: [indiceDelBuscadorEnDev],
   markdown: { processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias] }) },
 });

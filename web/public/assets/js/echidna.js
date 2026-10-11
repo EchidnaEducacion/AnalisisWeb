@@ -44,13 +44,60 @@
     });
   });
 
-  // Buscador (en Astro se conectará con Pagefind)
+  // Buscador: índice de Pagefind, que se genera al hacer el build (pagefind --site dist)
   const dialog = document.getElementById('search-dialog');
   if (dialog) {
+    const input = dialog.querySelector('input');
+    const results = dialog.querySelector('.results');
+    // Rótulos de las secciones, en el orden del menú
+    const secciones = {
+      ecosistema: 'Ecosistema', alumnado: 'Materiales alumnado', docentes: 'Recursos docentes',
+      blog: 'Blog', nosotros: 'Quiénes somos',
+    };
+    const escapar = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+    let pagefind;
+    const cargar = () => {
+      pagefind ??= import(dialog.dataset.pagefind + 'pagefind.js').then(async (pf) => {
+        await pf.options({ excerptLength: 20 });
+        pf.init();
+        return pf;
+      });
+      return pagefind;
+    };
+    const estado = (texto) => { results.innerHTML = `<p class="search-status">${escapar(texto)}</p>`; };
+    const buscar = async () => {
+      const q = input.value.trim();
+      if (!q) { results.innerHTML = ''; return; }
+      let pf;
+      try { pf = await cargar(); } catch { estado('El buscador no está disponible ahora mismo.'); return; }
+      const busqueda = await pf.debouncedSearch(q, {}, 200);
+      if (busqueda === null) return; // la ha sustituido otra búsqueda más reciente
+      const datos = await Promise.all(busqueda.results.slice(0, 10).map((r) => r.data()));
+      if (q !== input.value.trim()) return;
+      if (!datos.length) { estado(`No hay resultados para «${q}».`); return; }
+      const grupos = new Map(Object.keys(secciones).map((k) => [k, []]));
+      datos.forEach((d) => {
+        const k = d.meta.seccion in secciones ? d.meta.seccion : 'otras';
+        if (!grupos.has(k)) grupos.set(k, []);
+        grupos.get(k).push(d);
+      });
+      results.innerHTML = [...grupos].filter(([, lista]) => lista.length).map(([k, lista]) => `
+        <h3>${escapar(secciones[k] || 'Otras páginas')}</h3>
+        <ul>${lista.map((d) => {
+          const contexto = [d.meta.contexto, d.meta.fecha].filter(Boolean).join(' · ');
+          // El extracto lo devuelve Pagefind ya escapado y con <mark> en los términos buscados
+          return `<li><a href="${escapar(d.url)}">${escapar(d.meta.title)}`
+            + (contexto ? ` <small>${escapar(contexto)}</small>` : '')
+            + `<span class="excerpt">${d.excerpt}</span></a></li>`;
+        }).join('')}</ul>`).join('');
+    };
+    input.addEventListener('input', buscar);
     const open = () => {
       if (mobileNav && !mobileNav.hidden) menuBtn.click();
       dialog.showModal();
-      dialog.querySelector('input')?.focus();
+      input.focus();
+      cargar().catch(() => {});
+      buscar();
     };
     document.querySelectorAll('[data-open-search]').forEach((b) => b.addEventListener('click', open));
     document.addEventListener('keydown', (e) => {
@@ -61,8 +108,7 @@
     // Formularios de búsqueda de la página (p. ej. el de la 404): abren el buscador con el texto escrito
     document.querySelectorAll('[data-search-form]').forEach((form) => form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const q = dialog.querySelector('input');
-      if (q) q.value = form.querySelector('input')?.value.trim() || q.value;
+      input.value = form.querySelector('input')?.value.trim() || input.value;
       open();
     }));
   }

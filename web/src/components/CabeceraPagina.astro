@@ -12,7 +12,8 @@ const { title, description, crumbs = [] } = Astro.props;
 ---
 <header class="page-hero">
   <div class="wrap">
-    <nav class="breadcrumb" aria-label="Migas de pan">
+    <nav class="breadcrumb" aria-label="Migas de pan" data-pagefind-ignore
+      data-contexto={crumbs.map((c) => c.title).join(' › ')} data-pagefind-meta={crumbs.length ? 'contexto[data-contexto]' : undefined}>
       <ol>
         <li><a href={url()}>Inicio</a></li>
         {crumbs.map((c) => <li><a href={c.href}>{c.title}</a></li>)}

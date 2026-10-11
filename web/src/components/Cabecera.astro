@@ -84,26 +84,13 @@ const activo = (s: string) => (s === section ? ' is-active' : '');
   </div>
 </nav>
 
-<dialog class="search-dialog" id="search-dialog" aria-label="Buscar">
+<dialog class="search-dialog" id="search-dialog" aria-label="Buscar" data-pagefind={url("pagefind/")}>
   <form method="dialog" role="search">
     <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
     <label class="sr-only" for="q">Buscar en la web</label>
-    <input id="q" type="search" placeholder="Busca componentes, materiales, entradas…" autocomplete="off" value="led">
+    <input id="q" type="search" placeholder="Busca componentes, materiales, entradas…" autocomplete="off">
     <button class="icon-btn" value="cancel" aria-label="Cerrar búsqueda"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
   </form>
-  <div class="results">
-    <!-- Ejemplo de resultados: en Astro los pintará Pagefind -->
-    <h3>Ecosistema</h3>
-    <ul>
-      <li><a href={url("ecosistema/echidnablack2/leds/")}>LEDs ROG <small>Ecosistema › EchidnaBlack2 · Pines D11~, D12 y D13</small></a></li>
-    </ul>
-    <h3>Materiales alumnado</h3>
-    <ul>
-      <li><a href={url("alumnado/")}>Proyectos de inicio con EchidnaML <small>Materiales alumnado › EchidnaML · Enciende tu primer LED</small></a></li>
-    </ul>
-    <h3>Blog</h3>
-    <ul>
-      <li><a href={url("maquetas/entrada-blog/")}>Un semáforo en clase de Tecnología <small>Blog · 12 de marzo de 2024</small></a></li>
-    </ul>
-  </div>
+  <!-- Resultados de Pagefind, agrupados por sección (los pinta assets/js/echidna.js) -->
+  <div class="results" aria-live="polite"></div>
 </dialog>

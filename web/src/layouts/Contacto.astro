@@ -18,7 +18,7 @@ const action = import.meta.env.PUBLIC_CONTACT_FORM_URL ?? '#';
 const cuerpo = (await Astro.slots.render('default')).trim();
 ---
 <Base title={title} description={description} section={section}>
-<main id="contenido">
+<main id="contenido" data-pagefind-body>
   <CabeceraPagina title={title} description={description} crumbs={crumbs} />
 
   <div class="wrap with-aside">

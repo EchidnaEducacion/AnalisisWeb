@@ -327,6 +327,11 @@ body.menu-open { overflow: hidden; }
 .search-dialog .results a { display: block; padding: .6rem .75rem; border-radius: 10px; text-decoration: none; color: var(--ink); }
 .search-dialog .results a:hover { background: var(--surface-2); }
 .search-dialog .results small { display: block; color: var(--muted); }
+.search-dialog .results:empty { display: none; }
+.search-dialog .results a:focus-visible { background: var(--surface-2); }
+.search-dialog .results .excerpt { display: block; margin-top: .2rem; font-size: .9rem; color: var(--muted); }
+.search-dialog .results mark { background: transparent; color: var(--ink); font-weight: 700; }
+.search-dialog .results .search-status { margin: .2rem 0; color: var(--muted); }
 
 /* Pie */
 .site-footer { margin-top: auto; background: #1b1814; color: #e9e3da; padding-top: 3.5rem; }
