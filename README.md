@@ -174,7 +174,6 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [x] **Revisar las categorías y etiquetas del blog**: las 11 categorías no cambian. Las 59 etiquetas heredadas de WordPress (con erratas, duplicados y 36 de una sola entrada) se han sustituido por un vocabulario cerrado de 21, aplicado a las 61 entradas (solo 3 quedan sin etiqueta); ver [`modelo-contenido.md`](modelo-contenido.md#etiquetas-del-blog). Las 47 URL de etiquetas que desaparecen redirigen a la etiqueta que las absorbe, a su categoría o a `/blog/` ([`redirecciones.md`](redirecciones.md#blog-y-rss)).
 - [ ] **Entradas del blog por completar**: 4 sin portada (¡Volvemos a esLibre!, esLibre 2023, Cultura Maker 22 e Inteligencia artificial con Echidna) y varias presentaciones de Google que quedan como enlace (ver «Revisar las entradas importadas»).
 - [ ] **Revisar las entradas importadas**:
-  - «Posta en marcha e proxectos con EchidnaBlack» (2022) enlaza al manual en gallego (`Manual_EchidnaBlack_001_Gal.pdf`), que ya no está en el repo `recursos`: recuperarlo o quitar el enlace.
   - «ROBÓTICA EDUCATIVA + IA CON ECHIDNA en #eslibre2023» no tenía categoría en WordPress: se le ha puesto Talleres.
   - Varias entradas incrustaban presentaciones de Google (instrucciones de montaje…); ahora son un enlace. Decidir si se incrustan.
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.

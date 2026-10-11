@@ -8,9 +8,9 @@ categories: [programacion]
 tags: ["EchidnaBlack"]
 ---
 
-[![Portada do manual de posta en marcha de EchidnaBlack en galego.](./Portada_gal.png)](https://github.com/EchidnaShield/Recursos/blob/master/Didactica/Manual/Manual_EchidnaBlack_001_Gal.pdf)
+![Portada do manual de posta en marcha de EchidnaBlack en galego.](./Portada_gal.png)
 
-[Publicamos o manual  de posta en marcha de EchidnaBlack  Redactado en Galego.](https://github.com/EchidnaShield/Recursos/blob/master/Didactica/Manual/Manual_EchidnaBlack_001_Gal.pdf)
+Publicamos o manual  de posta en marcha de EchidnaBlack  Redactado en Galego.
 
 [Contando con  unha colección de proxectos de exemplo.](https://github.com/EchidnaEducacion/recursos/tree/master/Didactica/Manual/Firmware_Gal)
 
