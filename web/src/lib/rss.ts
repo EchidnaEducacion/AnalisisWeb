@@ -10,7 +10,7 @@ const escapar = (texto: string) =>
   texto.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 export async function rss(site: URL) {
-  // Dirección absoluta, con base: https://…/AnalisisWeb/blog/
+  // Dirección absoluta, con base si la hay: https://echidnaeducacion.github.io/blog/
   const absoluta = (ruta: string) => new URL(import.meta.env.BASE_URL.replace(/\/?$/, '/') + ruta, site).href;
   const entradas = (await entradasPublicadas()).slice(0, EN_EL_RSS);
 

@@ -18,7 +18,7 @@ GitHub Pages no admite redirecciones 301: se generan con `redirects` en `astro.c
 
 ## Páginas de WordPress
 
-Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 iguales, 74 redirigen y 1 externa.
+Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 8 iguales y 74 redirigen.
 
 | URL antigua | URL nueva | Estado | Nota |
 |---|---|---|---|
@@ -103,7 +103,7 @@ Las 82 páginas del sitemap de páginas de echidna.es (octubre de 2026): 7 igual
 | `/quienes-somos/publicaciones/` | `/quienes-somos/publicaciones/` | Igual |  |
 | `/quiero-una/` | `/quiero-una/` | Igual |  |
 | `/politica-privacidad/` | `/politica-privacidad/` | Igual |  |
-| `/manual/` | `echidnaeducacion.github.io/manual/` | Externa | Redirección al repo `manual` |
+| `/manual/` | `/manual/` | Igual | Lo publica el repo `manual` con GitHub Pages, en la misma raíz que la web |
 
 ## Páginas no indexadas
 
@@ -212,11 +212,12 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 | `rea.echidna.es/P4LaTierraSeMueve/` | `echidnaeducacion.github.io/situaciones-aprendizaje/la-tierra-se-mueve/` | Externa | Ídem |
 | `rea.echidna.es/nocheydia/` | `echidnaeducacion.github.io/situaciones-aprendizaje/del-alba-al-anochecer/` | Externa | Ídem |
 | `/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/` | `/docentes/` | Redirige | Rutas intermedias sin página (p. ej. `/docentes/proyectos-inicio-echidnaml/`) |
-| `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | Repos de las guías | Externa | Alias en minúsculas |
-| `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | `echidnaeducacion.github.io/<repo>/` | Externa | |
+| `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | Redirige | Alias en minúsculas |
+| `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | Las mismas | Igual | Las publican sus repos con GitHub Pages, en la misma raíz que la web |
 | `/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | `github.com/EchidnaEducacion/recursos/releases/download/manual-fp-v2/Manual_EchidnaBlack_002_Es.pdf` | Externa | Manual EchidnaBlack para FP, alojado como *release* del repo `recursos` (octubre de 2026). GitHub Pages no puede redirigir un PDF (solo páginas HTML), así que la dirección antigua dejará de funcionar al apagar WordPress |
 
 ## Pendiente
 
+- [x] Rutas de los repos con Pages (octubre de 2026): la web es el sitio de la organización (`EchidnaEducacion.github.io`), así que `/manual/`, `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` y `/situaciones-aprendizaje/` las sirve GitHub desde sus repos en la misma raíz, también con el dominio echidna.es. No necesitan redirección, y la web no puede usar esos nombres (ver [«Criterio para los recursos externos»](estructura.md#criterio-para-los-recursos-externos)).
 - [x] Páginas no indexadas: las actividades `s01`–`s10` y `p01` van a las diapositivas de la Guía de inicio EchidnaML; las subpáginas de EchidnaScratch, a 1.1.
 - [x] Las situaciones de aprendizaje de `rea.echidna.es` no se alojan en la web nueva: se migraron a GitHub en octubre de 2026, al repo `situaciones-aprendizaje`, con carpetas nombradas por el título en minúsculas y con guiones (`hace-calor-aqui`, `del-alba-al-anochecer`, `la-tierra-se-mueve`).

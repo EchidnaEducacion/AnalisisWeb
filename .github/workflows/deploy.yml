@@ -1,5 +1,5 @@
 # Publica la web (proyecto Astro en web/) en GitHub Pages:
-# https://echidnaeducacion.github.io/AnalisisWeb/
+# https://echidnaeducacion.github.io/
 name: Publicar la web en GitHub Pages
 
 on:

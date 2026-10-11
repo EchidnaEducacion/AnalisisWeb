@@ -2,14 +2,14 @@
 
 Prototipos estáticos de las **9 páginas maestras** definidas en el [plan de implementación](../README.md#plan-de-implementación), con los menús, el pie y los nombres de la estructura de [`estructura.md`](../estructura.md). Sirven para cerrar el diseño y son el punto de partida de la web, que se irá construyendo en este directorio.
 
-Es un proyecto **Astro**: un layout `Base`, las **maquetas** (una página por plantilla, publicadas en `/maquetas/`) y las primeras **páginas reales**, que salen de las colecciones de contenido (ver [Páginas reales](#páginas-reales)). Se publica automáticamente en **<https://echidnaeducacion.github.io/AnalisisWeb/>** con cada *push* a `main` que toque `web/`.
+Es un proyecto **Astro**: un layout `Base`, las **maquetas** (una página por plantilla, publicadas en `/maquetas/`) y las primeras **páginas reales**, que salen de las colecciones de contenido (ver [Páginas reales](#páginas-reales)). Se publica automáticamente en **<https://echidnaeducacion.github.io/>** con cada *push* a `main` que toque `web/`.
 
 Para verlas en local se usa [Bun](https://bun.sh) (los scripts ejecutan Astro con el *runtime* de Bun, así que no depende de la versión de Node instalada):
 
 ```sh
 cd web
 bun install
-bun run dev      # http://localhost:4321/AnalisisWeb/
+bun run dev      # http://localhost:4321/
 ```
 
 `bun run build` genera el sitio estático en `web/dist/` y `bun run preview` lo sirve.
@@ -45,7 +45,7 @@ bun run dev      # http://localhost:4321/AnalisisWeb/
 
 ```
 web/
-├── astro.config.mjs         # base /AnalisisWeb y salida en ficheros *.html
+├── astro.config.mjs         # salida en carpetas y plugins del Markdown (tablas, vídeos)
 ├── src/
 │   ├── assets/logo/         # SVG original del logo (Illustrator, con todas sus variantes)
 │   ├── assets/autores/      # fotos de los autores (cuadradas y sin EXIF)
@@ -88,15 +88,15 @@ Cada página indica sus metadatos como *props* del layout:
 
 `section` fija el color de acento y la entrada activa del menú; `bare` usa el título sin añadir « · Echidna Educación». Las llaves `{ }` literales (p. ej. en bloques de código) deben ir en un elemento con `is:raw`.
 
-Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que antepone `base` (`/AnalisisWeb/`): `href={url("ecosistema/")}`. Así funcionan igual en local y en GitHub Pages. Las URL son de carpeta (`build.format: 'directory'`): `/politica-privacidad/` se genera como `politica-privacidad/index.html`.
+Los enlaces internos se escriben con el helper `url()` de `src/lib/url.ts`, que antepone `base` (hoy `/`, porque la web está en la raíz): `href={url("ecosistema/")}`. Se mantiene por si la web volviera a servirse en una subcarpeta. Las URL son de carpeta (`build.format: 'directory'`): `/politica-privacidad/` se genera como `politica-privacidad/index.html`.
 
 ## Páginas reales
 
 El contenido está en `src/content/`, validado por el esquema de `src/content.config.ts` (si falta un campo o no cumple el formato, el *build* falla e indica el fichero). Por ahora existen la colección `paginas`, con las plantillas «Página genérica», «Contacto» e «Índice de sección»; la colección `hardware`, con la «Ficha de hardware»; y la lista `autores`.
 
 - **La ruta del fichero es la URL**, dentro de la carpeta del idioma: `src/content/paginas/es/politica-privacidad.md` → `/politica-privacidad/`; `es/quienes-somos/licencias.md` → `/quienes-somos/licencias/`. Las fichas de hardware cuelgan de `/ecosistema/` y cada una es una carpeta con sus imágenes: `src/content/hardware/es/echidnablack2/leds/index.md` → `/ecosistema/echidnablack2/leds/`. Sus descargas (PDF…) van en `public/` con la misma ruta.
-- **Enlaces en el Markdown**: los internos se escriben sin `base` (`[contacto](/contacta/)`); un plugin de Sätteri (el procesador de Markdown de Astro 7), definido en `astro.config.mjs`, se lo añade al compilar.
-- **Tablas en el Markdown**: otro plugin de Sätteri las mete en un `div.table-wrap`, como en las plantillas, para que tengan marco y se desplacen dentro de él en móvil en vez de ensanchar la página.
+- **Enlaces en el Markdown**: los internos se escriben desde la raíz (`[contacto](/contacta/)`).
+- **Tablas en el Markdown**: un plugin de Sätteri (el procesador de Markdown de Astro 7), definido en `astro.config.mjs`, las mete en un `div.table-wrap`, como en las plantillas, para que tengan marco y se desplacen dentro de él en móvil en vez de ensanchar la página.
 - **Bloques de EchidnaML**: las capturas de bloques se llaman `bloque-*.png` (p. ej. `bloque-led-verde.png`) y la web las muestra todas a la misma altura, aunque se hayan capturado a escalas distintas.
 - **Lupas sobre la placa**: las imágenes que amplían un componente en la placa se llaman `lupa-*.png` (p. ej. `lupa-leds.png`) y se muestran centradas, a un tercio de la columna (260 px en móvil).
 - **Vídeos de YouTube**: un párrafo que solo contiene un enlace a YouTube se convierte (con un plugin de `astro.config.mjs`) en un reproductor que no carga YouTube hasta que se pulsa; el texto del enlace es el pie del vídeo.

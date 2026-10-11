@@ -6,8 +6,7 @@ Contexto y normas de trabajo para cualquier asistente (o persona) que trabaje en
 
 Planificación e implementación de la nueva web de [echidna.es](https://echidna.es/) (Echidna Educación, asociación sin ánimo de lucro): una web estática en Markdown, generada con **Astro** y alojada en **GitHub Pages**, que sustituye a la actual en WordPress.
 
-- La web está en [`web/`](web/) y se publica en <https://echidnaeducacion.github.io/AnalisisWeb/> con cada *push* a `main` que toque `web/`.
-- El repo se llama `AnalisisWeb` porque empezó como estudio de viabilidad; hoy es planificación e implementación.
+- La web está en [`web/`](web/) y se publica en <https://echidnaeducacion.github.io/> con cada *push* a `main` que toque `web/`.
 
 ## Mapa de documentos
 
@@ -41,11 +40,11 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 
 ## El proyecto `web/`
 
-- Astro con Bun: `cd web && bun install && bun run dev` (<http://localhost:4321/AnalisisWeb/>). Sin Bun, `npm install --no-package-lock` y `npx astro build`.
-- Los enlaces internos se escriben con el helper `url()` de `web/src/lib/url.ts`, que antepone el `base` (`/AnalisisWeb/`).
+- Astro con Bun: `cd web && bun install && bun run dev` (<http://localhost:4321/>). Sin Bun, `npm install --no-package-lock` y `npx astro build`.
+- Los enlaces internos se escriben con el helper `url()` de `web/src/lib/url.ts`, que antepone el `base` (hoy `/`, porque la web está en la raíz).
 - Claves de sección (`section` del layout y `data-section`, que fijan el color): `ecosistema`, `alumnado`, `docentes`, `blog` y `nosotros`.
 - Menú: Ecosistema, Alumnado, Docentes y Blog son enlaces directos; solo Quiénes somos es desplegable. «Alumnado» y «Docentes» son los rótulos cortos de Materiales alumnado y Recursos docentes, que mantienen el nombre completo en el resto de la web. «Quiero una» no va en el menú.
 - Los materiales del alumnado (y, en principio, los recursos docentes) son **enlaces externos**: la web solo los describe con tarjetas de la colección `recursos` (`web/src/content/recursos.yaml`). Las situaciones de aprendizaje propias están en el repo `EchidnaEducacion/situaciones-aprendizaje` (GitHub Pages).
 - Las **maquetas** (contenido escrito a mano) están en `web/src/pages/maquetas/` y se publican en `/maquetas/`. Se van sustituyendo por plantillas reales alimentadas por las colecciones (paso 3 del plan en el README).
-- El **contenido** va en `web/src/content/<colección>/es/`, y la ruta del fichero es la URL (`paginas/es/politica-privacidad.md` → `/politica-privacidad/`). En el Markdown, los enlaces internos se escriben sin `base` (`/contacta/`); se lo añade un plugin de `astro.config.mjs`.
+- El **contenido** va en `web/src/content/<colección>/es/`, y la ruta del fichero es la URL (`paginas/es/politica-privacidad.md` → `/politica-privacidad/`). En el Markdown, los enlaces internos se escriben desde la raíz (`/contacta/`).
 - Las **fichas de hardware** van en `web/src/content/hardware/es/` y cuelgan de `/ecosistema/` (`echidnablack2/leds/index.md` → `/ecosistema/echidnablack2/leds/`), cada una en su carpeta con sus imágenes.

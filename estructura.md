@@ -128,10 +128,10 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 1.4.1 Arduino IDE (en «Entornos de programación compatibles») | `/ecosistema/arduino-ide/` | Página genérica |
 | 2 | 1.4.2 Snap! (en «Entornos de programación compatibles») | `/ecosistema/snap/` | Página genérica |
 | 1 | Materiales alumnado | `/alumnado/` | Página genérica con la lista de `recursos` (`resources: alumnado`): un título por entorno, un subtítulo por grupo y tarjetas con miniatura |
-| 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` y alias `/guiainicioechidnaml/` (redirección a `echidnaeducacion.github.io/GuiaInicioEchidnaML/`) | — (repo `GuiaInicioEchidnaML`) |
-| 2 | 2.2 Situaciones de aprendizaje (cada una) | `echidnaeducacion.github.io/situaciones-aprendizaje/<recurso>/` y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning, repo `situaciones-aprendizaje`) |
-| 2 | 2.3 Manual de usuario | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
-| 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` y alias `/guiainicioarduinoide/` (redirección a `echidnaeducacion.github.io/GuiaInicioArduinoIDE/`) | — (repo `GuiaInicioArduinoIDE`) |
+| 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` (la publica su repo) y alias `/guiainicioechidnaml/` (redirige a ella) | — (repo `GuiaInicioEchidnaML`) |
+| 2 | 2.2 Situaciones de aprendizaje (cada una) | `/situaciones-aprendizaje/<recurso>/` (las publica su repo) y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning, repo `situaciones-aprendizaje`) |
+| 2 | 2.3 Manual de usuario | `/manual/` (lo publica su repo) | — (repo `manual`) |
+| 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` (la publica su repo) y alias `/guiainicioarduinoide/` (redirige a ella) | — (repo `GuiaInicioArduinoIDE`) |
 | 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en la *release* `manual-fp-v2` del repo `recursos` | — (repo `recursos`) |
 | 1 | Recursos docentes | `/docentes/` | Página genérica con `resources: docentes` (página única con tarjetas agrupadas por material, igual que alumnado) |
 | 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas (PDF) | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |
@@ -139,7 +139,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 3.3 Situaciones de aprendizaje: recursos de cada una | `/docentes/situaciones-aprendizaje/<recurso>/<tipo>/` (p. ej. `…/sensor-temperatura/guia-docente/`) | — (recurso alojado sin plantilla; mismo `<recurso>` que en alumnado) |
 | 2 | 3.4 Snap!: recursos docentes | `/docentes/snap/<tipo>/` | — (recurso alojado sin plantilla; sin contenido de momento) |
 | 2 | 3.5 Proyectos de inicio con Arduino IDE: recursos docentes | `/docentes/proyectos-inicio-arduino-ide/<tipo>/` | — (recurso alojado sin plantilla) |
-| 2 | 3.6 Manual de usuario | `/manual/` (redirección a `echidnaeducacion.github.io/manual/`) | — (repo `manual`) |
+| 2 | 3.6 Manual de usuario | `/manual/` (lo publica su repo) | — (repo `manual`) |
 | 2 | 3.7 Modelos e impresión 3D | `/docentes/impresion-3d/` | Página genérica |
 | 2 | 3.8 Cómo colaborar | `/docentes/colabora/` | Página genérica (incluye resumen de repositorios) |
 | 2 | 3.9 Comprobar la placa | `/docentes/comprobar-placa/` | Página genérica (enlaces a los repos de pruebas: `echidna-sensor-test`, `echidna-firmata-test`…) |
@@ -172,11 +172,12 @@ Recursos docentes se organiza **por material, no por tipo de recurso**: el docen
 
 ### Criterio para los recursos externos
 
-El manual y las guías de inicio son **redirecciones a recursos externos**, no páginas de la web. Por eso su URL va en la **raíz** (`echidna.es/<repo>/`) y no se anida bajo la sección donde aparecen:
+El manual y las guías de inicio **los publica su propio repositorio** con GitHub Pages; no son páginas de la web. Como la web es el sitio de la organización (repo `EchidnaEducacion.github.io`), GitHub sirve cada repo con Pages en `<raíz>/<repo>/`, y así seguirá con el dominio (`echidna.es/<repo>/`). Por eso su URL va en la **raíz** y no se anida bajo la sección donde aparecen:
 
 - **La URL no depende del menú**: el menú puede colgar la guía de Materiales alumnado › EchidnaML aunque su URL esté en la raíz, igual que `/manual/` aparece en dos apartados.
 - **Estabilidad**: si se reorganiza el árbol (por ejemplo, Sistema → Ecosistema), una URL anidada se rompe y la de la raíz no. Es importante porque estas direcciones se imprimen en material físico y en códigos QR.
 - **Coherencia**: los tres recursos siguen el mismo patrón.
+- **Rutas reservadas**: ninguna ruta de la web puede llamarse como un repo de la organización con Pages, porque el repo tiene prioridad y taparía la página. Hoy son `manual`, `GuiaInicioEchidnaML`, `GuiaInicioArduinoIDE`, `situaciones-aprendizaje` y `echidna-firmata-test`. Al activar Pages en un repo nuevo, comprobar que su nombre no choca con una ruta de la web.
 
 ### Criterio de navegación
 

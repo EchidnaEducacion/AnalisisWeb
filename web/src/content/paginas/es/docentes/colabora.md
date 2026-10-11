@@ -57,7 +57,7 @@ Algunas normas: escribe en castellano, haz una propuesta por cada cambio y ten e
 
 | Repositorio | Qué contiene |
 |---|---|
-| [AnalisisWeb](https://github.com/EchidnaEducacion/AnalisisWeb) | Esta web y su planificación |
+| [EchidnaEducacion.github.io](https://github.com/EchidnaEducacion/EchidnaEducacion.github.io) | Esta web y su planificación |
 | [manual](https://github.com/EchidnaEducacion/manual) | El manual de usuario de la EchidnaBlack2 y EchidnaML |
 | [GuiaInicioEchidnaML](https://github.com/EchidnaEducacion/GuiaInicioEchidnaML) | Proyectos de inicio con EchidnaML |
 | [GuiaInicioArduinoIDE](https://github.com/EchidnaEducacion/GuiaInicioArduinoIDE) | Proyectos de inicio con Arduino IDE |

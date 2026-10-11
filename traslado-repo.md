@@ -50,7 +50,7 @@ Solo se publica `web/`. Pages está en modo «GitHub Actions» (no sirve fichero
 
 ### 1. Preparar el código
 
-En local, sin publicar aún.
+En local, sin publicar aún. **Hecho** (octubre de 2026): se ha eliminado el plugin `enlaces-con-base`, que con la web en la raíz ya no hacía nada.
 
 - `web/astro.config.mjs`: quitar `base` (o `base: '/'`) y adaptar `conBase` del plugin `enlaces-con-base` para que no haga nada con base vacía (con `base = ''` la condición `startsWith(base + '/')` ya devuelve el valor tal cual; comprobarlo y, si queda limpio, eliminar el plugin o dejarlo condicionado). `site` sigue siendo `https://echidnaeducacion.github.io`.
 - `web/src/lib/url.ts`: no cambia (usa `import.meta.env.BASE_URL`); actualizar solo el comentario. Se mantiene el helper `url()` para no tocar las plantillas y poder volver a usar `base` si hiciera falta.
@@ -82,7 +82,7 @@ En GitHub; difícil de deshacer, se confirma antes.
 
 ### 5. A tener en cuenta
 
-Se apunta en `estructura.md` y `redirecciones.md`.
+Se apunta en `estructura.md` y `redirecciones.md`. **Hecho** (octubre de 2026): «Rutas reservadas» en el [criterio para los recursos externos](estructura.md#criterio-para-los-recursos-externos), y `/manual/` y las guías pasan a «Igual» en `redirecciones.md`.
 
 - Los demás repos con Pages de la organización (`GuiaInicioEchidnaML`, `GuiaInicioArduinoIDE`, `manual`, `situaciones-aprendizaje`…) cuelgan de la misma raíz: **ninguna ruta de la web puede llamarse como ellos** (p. ej. `/manual/`). Cuando el sitio tenga el dominio echidna.es, esas guías pasarán a `echidna.es/<repo>/` automáticamente, lo que hay que tener en cuenta en `redirecciones.md`.
 - El dominio echidna.es (CNAME, DNS) **no** se configura ahora: es el paso final, al sustituir WordPress.
