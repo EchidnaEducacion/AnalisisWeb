@@ -151,6 +151,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [x] **Rótulos cortos en el menú**: «Alumnado» y «Docentes» en lugar de «Materiales alumnado» y «Recursos docentes», para que el menú quepa junto al logo. Las páginas, las migas de pan y el pie mantienen el nombre completo.
 - [x] **Licencias**: contenidos y materiales con CC BY-SA 4.0; software con la licencia de cada programa (GPL-3.0 EchidnaML, AGPL-3.0 el editor de LearningML, BSD-3-Clause los componentes de Scratch). La del hardware está pendiente (ver «Próximos pasos»).
 - [x] **Etiquetas del blog con vocabulario cerrado** (octubre de 2026): 21 etiquetas en cinco grupos (placas, entornos, componentes, temas y eventos), cada una en al menos dos entradas y sin repetir categorías. La lista y los criterios para asignarlas están en [`modelo-contenido.md`](modelo-contenido.md#etiquetas-del-blog).
+- [x] **Recursos externos en una pestaña nueva** (octubre de 2026): las tarjetas de la colección `recursos` que enlazan fuera de la web (situaciones de aprendizaje, guías, manual, PDF…) se abren con `target="_blank"`, para no perder la página de la web; las que enlazan a páginas propias se abren en la misma pestaña.
 
 ## Próximos pasos
 

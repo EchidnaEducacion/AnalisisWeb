@@ -12,6 +12,8 @@ interface Props {
 const entornos = await recursosPorEntorno(Astro.props.publico);
 // Las rutas internas llevan base; las URL externas, no
 const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
+// Los recursos externos se abren en una pestaña nueva
+const pestana = (href: string) => (href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' });
 ---
 {entornos.map(({ entorno, grupos }) => (
   <>
@@ -32,7 +34,7 @@ const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : hr
                   {r.url ? <span class="chip">{r.type}</span> : <span class="chip chip--outline">Próximamente</span>}
                   {r.level && <span class="chip chip--outline">{r.level}</span>}
                 </p>
-                <h4 class="card__title">{r.url ? <a class="card__link" href={enlace(r.url)}>{r.title}</a> : r.title}</h4>
+                <h4 class="card__title">{r.url ? <a class="card__link" href={enlace(r.url)} {...pestana(r.url)}>{r.title}</a> : r.title}</h4>
                 <p class="card__text">{r.description}</p>
                 {sitio(r.url) && <p class="recursos__sitio">{sitio(r.url)} ↗</p>}
               </div>
