@@ -3,7 +3,7 @@
 Correspondencia entre las URL de la web actual en WordPress y las de la nueva web, según [`estructura.md`](estructura.md). Sirve para que no se rompan los enlaces existentes (buscadores, material impreso, otras webs).
 
 **Estado**: *Igual* = la URL no cambia; *Redirige* = la URL antigua lleva a la nueva; *Externa* = redirige a otro sitio.
-GitHub Pages no admite redirecciones 301: se generan con `redirects` en `astro.config.mjs` (página HTML con redirección inmediata).
+GitHub Pages no admite redirecciones 301: se generan con `redirects` en `astro.config.mjs` (página HTML con redirección inmediata), que toma la lista de [`web/redirecciones.mjs`](web/redirecciones.mjs). Están montadas las 182 URL antiguas de las filas *Redirige* que son de esta web; al cambiar una fila aquí, hay que cambiarla también allí.
 
 ## Índice
 
@@ -218,6 +218,9 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 
 ## Pendiente
 
+- [ ] Rutas intermedias de `/docentes/` (fila «`/docentes/<material>/`» de [Otros dominios y rutas](#otros-dominios-y-rutas)): se añadirán a `web/redirecciones.mjs` cuando existan sus materiales.
+- [ ] `/docentes/proyectos-inicio-echidnaml/diapositivas/`, destino de las actividades antiguas, aún no existe: hasta que se migre, esas redirecciones acaban en la página 404.
+- [x] Redirecciones montadas (octubre de 2026): `redirects` en `web/astro.config.mjs`, con la lista de `web/redirecciones.mjs`. Se publican ya en echidnaeducacion.github.io, para que funcionen desde el primer momento al cambiar el DNS de echidna.es.
 - [x] Rutas de los repos con Pages (octubre de 2026): la web es el sitio de la organización (`EchidnaEducacion.github.io`), así que `/manual/`, `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` y `/situaciones-aprendizaje/` las sirve GitHub desde sus repos en la misma raíz, también con el dominio echidna.es. No necesitan redirección, y la web no puede usar esos nombres (ver [«Criterio para los recursos externos»](estructura.md#criterio-para-los-recursos-externos)).
 - [x] Páginas no indexadas: las actividades `s01`–`s10` y `p01` van a las diapositivas de la Guía de inicio EchidnaML; las subpáginas de EchidnaScratch, a 1.1.
 - [x] Las situaciones de aprendizaje de `rea.echidna.es` no se alojan en la web nueva: se migraron a GitHub en octubre de 2026, al repo `situaciones-aprendizaje`, con carpetas nombradas por el título en minúsculas y con guiones (`hace-calor-aqui`, `del-alba-al-anochecer`, `la-tierra-se-mueve`).

@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
+import redirecciones from './redirecciones.mjs';
 
 // Las tablas del Markdown van dentro de .table-wrap, como en las plantillas:
 // borde redondeado y desplazamiento horizontal en móvil en vez de ensanchar la página
@@ -140,5 +141,7 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   integrations: [indiceDelBuscadorEnDev],
+  // URL de la web anterior (ver redirecciones.mjs y ../redirecciones.md)
+  redirects: redirecciones,
   markdown: { processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias] }) },
 });
