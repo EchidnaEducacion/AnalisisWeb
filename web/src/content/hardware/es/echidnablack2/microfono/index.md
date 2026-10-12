@@ -34,13 +34,31 @@ La señal del micrófono reproduce directamente el sonido recibido, así que cam
 - **procesarla**, por ejemplo calculando la media de varias lecturas;
 - o usarla solo para detectar la **intensidad** del sonido.
 
+### Puente de soldadura
+
+La señal del micrófono pasa por un preamplificador antes de llegar a la entrada A7. Entre los dos hay un **puente de soldadura**, en paralelo con un condensador, que permite elegir cómo llega la señal:
+
+![Esquema: el micrófono MK1 va al preamplificador y de ahí a A7, a través de un condensador con un puente de soldadura en paralelo, rotulado «Soldar para no fijar a cero».](./esquema-puente.png)
+
+**Sin soldar** (así viene la placa), la señal pasa por el condensador y queda fijada a cero: con silencio, la lectura es 0, y con sonido solo aparecen picos hacia arriba.
+
+![Gráfica de la lectura del micrófono sin el puente: la mayor parte del tiempo vale 0, con picos sueltos de hasta 10.](./senal-sin-puente.png)
+
+**Soldando el puente**, el condensador queda anulado y la señal pasa a estar centrada en 1,75 V, que en la entrada analógica son unos 360. El sonido la hace subir y bajar alrededor de ese valor, así que se ve la onda completa.
+
+![Gráfica de la lectura del micrófono con el puente soldado: la señal oscila entre 340 y 380, alrededor de 360.](./senal-con-puente.png)
+
+El puente está en la cara inferior de la placa, entre las patas delanteras del equidna dibujado.
+
+![Cara inferior de una placa EchidnaBlack con el dibujo del equidna; entre sus patas delanteras está el puente de soldadura del micrófono.](./puente-soldadura.png)
+
 ## Cómo se programa
 
 En **EchidnaML**, el micrófono se lee con este bloque. Si marcas su casilla, verás el valor en pantalla:
 
 ![Bloque de EchidnaML «leer micrófono».](./bloque-microfono.png)
 
-Devuelve valores **bajos con silencio o poco sonido** y **altos con sonidos intensos**, entre 0 (sin sonido) y 1023 (sonido muy intenso).
+Devuelve valores **bajos con silencio o poco sonido** y **altos con sonidos intensos**, entre 0 (sin sonido) y 1023 (sonido muy intenso). Con el [puente de soldadura](#puente-de-soldadura) soldado, el silencio da unos 360 y el sonido hace variar la lectura por encima y por debajo de ese valor.
 
 ## Ejemplos
 
