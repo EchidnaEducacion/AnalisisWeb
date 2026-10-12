@@ -1,6 +1,6 @@
 # Web de Echidna (Astro)
 
-Prototipos estáticos de las **9 páginas maestras** definidas en el [plan de implementación](../README.md#plan-de-implementación), con los menús, el pie y los nombres de la estructura de [`estructura.md`](../estructura.md). Sirven para cerrar el diseño y son el punto de partida de la web, que se irá construyendo en este directorio.
+Proyecto de la web de Echidna, con las **9 plantillas** (páginas maestras) de la tabla de abajo y el árbol de páginas, los menús y el pie de [`estructura.md`](../estructura.md).
 
 Es un proyecto **Astro**: un layout `Base`, las **maquetas** (una página por plantilla, publicadas en `/maquetas/`) y las primeras **páginas reales**, que salen de las colecciones de contenido (ver [Páginas reales](#páginas-reales)). Se publica automáticamente en **<https://echidnaeducacion.github.io/>** con cada *push* a `main` que toque `web/`.
 
@@ -108,7 +108,7 @@ El contenido está en `src/content/`, validado por el esquema de `src/content.co
 - **Índice lateral** «En esta página»: solo sale si la página lleva `toc: true` en el *front matter* (para páginas largas); se genera con sus `h2`. En los índices de sección, encima lleva también los enlaces a las páginas hijas.
 - **Del menú y del pie** se enlaza la maqueta mientras no exista la página real; al crearla, se cambia el enlace por su URL definitiva.
 
-Páginas hechas (el avance por plantilla está en «Progreso» del [README](../README.md#progreso)):
+Páginas hechas:
 
 - **Quiénes somos y pie**: Política de privacidad, Contacta, Sobre el proyecto (`quienes-somos.md`, con las fichas del equipo que salen de `src/content/autores.yaml` gracias al campo `team`) Licencias (`quienes-somos/licencias.md`) y Publicaciones (`quienes-somos/publicaciones.md`, con `publications: 3`: las tarjetas salen de `src/content/publicaciones.yaml`, agrupadas por año).
 - **Materiales alumnado** (`alumnado.md`, con `resources: alumnado`): las tarjetas salen de `src/content/recursos.yaml` (miniaturas en `src/content/recursos/`), agrupadas por entorno y grupo con `components/Recursos.astro`.
@@ -126,7 +126,7 @@ Las páginas se migran **de una en una**: se redacta, se revisa en local y se su
 2. **Preparar las imágenes** en la carpeta de la página, sin metadatos (`convert -strip`) y con nombres descriptivos: `lupa-*`, `bloque-*`, `esquema-*`, `programa-*` y `pieza-*` (dibujos de piezas sueltas, que salen a la mitad de tamaño que las lupas). Los diagramas transparentes con texto oscuro se pasan a fondo blanco para que se vean en modo oscuro. Las descargas (hojas de características…) van en `public/` con la ruta de la página. La **imagen principal** de una ficha (`image`) también es la miniatura de su tarjeta, que la muestra a una altura fija: se le quita el margen transparente (`convert -trim +repage`) para que los dibujos se vean de un tamaño parecido, y a los muy alargados se les deja algo de margen arriba y abajo (`-gravity center -extent`) para que no parezcan más grandes que los demás.
 3. **Redactar el Markdown** con su *front matter* (`modelo-contenido.md` explica cada campo) y `toc: true` si la página es larga.
 4. **Comprobar**: `npx astro build` sin errores; la página en el **servidor de desarrollo** (`npx astro dev`), que sirve las imágenes con otras direcciones que el *build*; móvil y modo oscuro; y que nada se salga de la pantalla de 320 a 1280 px.
-5. **Documentar** en el mismo commit: «Progreso» del README y la lista de páginas hechas de arriba.
+5. **Documentar** en el mismo commit: la lista de páginas hechas de arriba y, si se cierra una tarea, «Próximos pasos» del README.
 
 **Fichas de componentes**: se hacen en el orden del manual (LED, pulsadores, zumbador, sensor de luz, joystick, acelerómetro, temperatura, LED RGB, micrófono, entradas MkMk). Cada una lleva:
 

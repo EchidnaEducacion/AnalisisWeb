@@ -90,7 +90,7 @@ Pie (fuera del menú, en todas las páginas)
 ## Tabla
 
 **Nivel**: «Fuera del menú» = página enlazada desde otras páginas, sin entrada en el menú; «Pie» = enlazada solo desde el pie, fuera del menú; 0 = portada, 1 = sección, 2 = subsección, 3 = página dentro de una subsección, 4 = página dentro de una página de nivel 3.
-**Plantilla**: nombres de las páginas maestras del [README (Fase 5, paso 2)](README.md#paso-2--páginas-maestras).
+**Plantilla**: nombres de las páginas maestras (plantillas) de [`web/README.md`](web/README.md).
 
 | Nivel | Nombre | URL (propuesta) | Plantilla (propuesta) |
 |---|---|---|---|

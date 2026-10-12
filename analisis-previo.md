@@ -162,7 +162,7 @@ Datos obtenidos de los sitemaps de la web (octubre de 2026) y de la revisión de
 | 7 | **Listado / taxonomía**: listado paginado | Blog, 11 categorías, 59 etiquetas, 5 autores | ~76 (generadas automáticamente) |
 | 8 | **Error 404** | — | 1 |
 
-> Esta propuesta inicial se ha refinado en el [plan de implementación](README.md#plan-de-implementación) y en [`estructura.md`](estructura.md), separando ficha de hardware y actividad como maestras propias.
+> Esta propuesta inicial se ha refinado en [`estructura.md`](estructura.md) y en las plantillas de [`web/README.md`](web/README.md), separando ficha de hardware y actividad como maestras propias.
 
 Además se necesitan algunos componentes reutilizables (componentes MDX) para sustituir elementos de Avada: vídeo de YouTube, galería, botón de descarga, aviso destacado y tarjeta.
 

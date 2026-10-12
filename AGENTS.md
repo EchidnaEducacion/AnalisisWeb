@@ -12,7 +12,7 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 
 | Documento | Qué va ahí |
 |---|---|
-| [`README.md`](README.md) | Tecnología elegida, plan de implementación, **progreso**, **decisiones tomadas** y **próximos pasos** |
+| [`README.md`](README.md) | Qué es la web, cómo arrancarla, tecnología, **decisiones tomadas** y **próximos pasos** |
 | [`estructura.md`](estructura.md) | Árbol de páginas, URL, plantillas, criterios (navegación, pie, recursos sin plantilla) y pendientes de la estructura |
 | [`modelo-contenido.md`](modelo-contenido.md) | Colecciones (`paginas`, `hardware`, `recursos`, `blog`) y sus campos |
 | [`escribir-blog.md`](escribir-blog.md) | Cómo escribir y publicar una entrada nueva del blog (rama, script `nueva-entrada`, *pull request*) |
@@ -26,7 +26,7 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 
 - Todo en **castellano**.
 - Las decisiones se apuntan en «Decisiones tomadas» del README; las tareas, en «Próximos pasos» o en el «Pendiente» de cada documento.
-- El avance de las plantillas y páginas se registra en «Progreso» del README, en el mismo commit en el que se terminan.
+- Las páginas que se terminan se apuntan en la lista de páginas hechas de `web/README.md`, en el mismo commit; las tareas cerradas se quitan de «Próximos pasos» (el historial queda en git).
 - `estructura.md` describe **solo la web nueva**: no menciona la web antigua («URL actual», «como en WordPress»…). Todo lo que relaciona lo antiguo con lo nuevo va en `redirecciones.md`.
 - Cada documento tiene índice al principio y los enlaces entre documentos deben seguir funcionando al renombrar apartados.
 
@@ -47,6 +47,6 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 - Claves de sección (`section` del layout y `data-section`, que fijan el color): `ecosistema`, `alumnado`, `docentes`, `blog` y `nosotros`.
 - Menú: Ecosistema, Alumnado, Docentes y Blog son enlaces directos; solo Quiénes somos es desplegable. «Alumnado» y «Docentes» son los rótulos cortos de Materiales alumnado y Recursos docentes, que mantienen el nombre completo en el resto de la web. «Quiero una» no va en el menú.
 - Los materiales del alumnado (y, en principio, los recursos docentes) son **enlaces externos**: la web solo los describe con tarjetas de la colección `recursos` (`web/src/content/recursos.yaml`). Las situaciones de aprendizaje propias están en el repo `EchidnaEducacion/situaciones-aprendizaje` (GitHub Pages).
-- Las **maquetas** (contenido escrito a mano) están en `web/src/pages/maquetas/` y se publican en `/maquetas/`. Se van sustituyendo por plantillas reales alimentadas por las colecciones (paso 3 del plan en el README).
+- Las **maquetas** (contenido escrito a mano) están en `web/src/pages/maquetas/` y se publican en `/maquetas/`. Se borran cuando la plantilla real alimentada por su colección las iguala.
 - El **contenido** va en `web/src/content/<colección>/es/`, y la ruta del fichero es la URL (`paginas/es/politica-privacidad.md` → `/politica-privacidad/`). En el Markdown, los enlaces internos se escriben desde la raíz (`/contacta/`).
 - Las **fichas de hardware** van en `web/src/content/hardware/es/` y cuelgan de `/ecosistema/` (`echidnablack2/leds/index.md` → `/ecosistema/echidnablack2/leds/`), cada una en su carpeta con sus imágenes.
