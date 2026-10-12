@@ -2,7 +2,7 @@
 
 Correspondencia entre las URL de la web actual en WordPress y las de la nueva web, según [`estructura.md`](estructura.md). Sirve para que no se rompan los enlaces existentes (buscadores, material impreso, otras webs).
 
-**Estado**: *Igual* = la URL no cambia; *Redirige* = la URL antigua lleva a la nueva; *Externa* = redirige a otro sitio.
+**Estado**: *Igual* = la URL no cambia; *Redirige* = la URL antigua lleva a la nueva; *Externa* = redirige a otro sitio; *—* = sin redirección (la URL antigua dejará de funcionar).
 GitHub Pages no admite redirecciones 301: se generan con `redirects` en `astro.config.mjs` (página HTML con redirección inmediata), que toma la lista de [`web/redirecciones.mjs`](web/redirecciones.mjs). Están montadas las 182 URL antiguas de las filas *Redirige* que son de esta web; al cambiar una fila aquí, hay que cambiarla también allí.
 
 ## Índice
@@ -207,11 +207,10 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 
 | URL antigua | URL nueva | Estado | Nota |
 |---|---|---|---|
-| `rea.echidna.es/` | `/alumnado/` | Redirige | Desde octubre de 2026, `rea.echidna.es` lo sirve el repo `situaciones-aprendizaje` (GitHub Pages, `CNAME` en el DNS de OVH); su `index.html` lleva a Materiales alumnado |
-| `rea.echidna.es/02_SensorTemperatura/` | `rea.echidna.es/hace-calor-aqui/` | Redirige | Carpeta de redirección en el repo `situaciones-aprendizaje`; sus páginas interiores (`…/3_el_reto.html`) las redirige su `404.html` a la misma página de la carpeta nueva |
-| `rea.echidna.es/P4LaTierraSeMueve/` | `rea.echidna.es/la-tierra-se-mueve/` | Redirige | Ídem |
-| `rea.echidna.es/nocheydia/` | `rea.echidna.es/del-alba-al-anochecer/` | Redirige | Ídem |
-| `echidnaeducacion.github.io/situaciones-aprendizaje/…` | `rea.echidna.es/…` | Redirige | La hace GitHub, porque el repo tiene dominio propio. Era la dirección de las situaciones hasta octubre de 2026 |
+| `rea.echidna.es/` | `/alumnado/` | — | Sin redirección: `rea.echidna.es` sigue en el servidor de OVH hasta que `echidna.es` pase a GitHub Pages, y entonces se apaga (decisión de octubre de 2026). Mientras tanto, su `meta refresh` apunta a `kuku.es`: corregir ya |
+| `rea.echidna.es/02_SensorTemperatura/` | `echidnaeducacion.github.io/situaciones-aprendizaje/hace-calor-aqui/` | — | Copia migrada. Sin redirección (ver la fila anterior); la correspondencia la usa `herramientas/wp-import` para reescribir los enlaces |
+| `rea.echidna.es/P4LaTierraSeMueve/` | `echidnaeducacion.github.io/situaciones-aprendizaje/la-tierra-se-mueve/` | — | Ídem |
+| `rea.echidna.es/nocheydia/` | `echidnaeducacion.github.io/situaciones-aprendizaje/del-alba-al-anochecer/` | — | Ídem |
 | `/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/` | `/docentes/` | Redirige | Rutas intermedias sin página. Montada la de `/docentes/proyectos-inicio-echidnaml/`; las demás, cuando su material tenga recursos docentes |
 | `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | Redirige | Alias en minúsculas |
 | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | Las mismas | Igual | Las publican sus repos con GitHub Pages, en la misma raíz que la web |
@@ -222,6 +221,7 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 - [ ] Rutas intermedias de `/docentes/` (fila «`/docentes/<material>/`» de [Otros dominios y rutas](#otros-dominios-y-rutas)): se añadirán a `web/redirecciones.mjs` cuando existan sus materiales. Ya está la de `/docentes/proyectos-inicio-echidnaml/`.
 - [x] `/docentes/proyectos-inicio-echidnaml/diapositivas/`, destino de las actividades antiguas, existe desde octubre de 2026 (con las diapositivas de 2.1 a 2.5).
 - [x] Redirecciones montadas (octubre de 2026): `redirects` en `web/astro.config.mjs`, con la lista de `web/redirecciones.mjs`. Se publican ya en echidnaeducacion.github.io, para que funcionen desde el primer momento al cambiar el DNS de echidna.es.
-- [x] Rutas de los repos con Pages (octubre de 2026): la web es el sitio de la organización (`EchidnaEducacion.github.io`), así que `/manual/`, `/GuiaInicioEchidnaML/` y `/GuiaInicioArduinoIDE/` las sirve GitHub desde sus repos en la misma raíz (`/situaciones-aprendizaje/` también, pero redirige a `rea.echidna.es`, el dominio propio de su repo), también con el dominio echidna.es. No necesitan redirección, y la web no puede usar esos nombres (ver [«Criterio para los recursos externos»](estructura.md#criterio-para-los-recursos-externos)).
+- [x] Rutas de los repos con Pages (octubre de 2026): la web es el sitio de la organización (`EchidnaEducacion.github.io`), así que `/manual/`, `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` y `/situaciones-aprendizaje/` las sirve GitHub desde sus repos en la misma raíz, también con el dominio echidna.es. No necesitan redirección, y la web no puede usar esos nombres (ver [«Criterio para los recursos externos»](estructura.md#criterio-para-los-recursos-externos)).
 - [x] Páginas no indexadas: las actividades `s01`–`s10` y `p01` van a las diapositivas de la Guía de inicio EchidnaML; las subpáginas de EchidnaScratch, a 1.1.
-- [x] Las situaciones de aprendizaje de `rea.echidna.es` no se alojan en la web nueva: se migraron a GitHub en octubre de 2026, al repo `situaciones-aprendizaje`, con carpetas nombradas por el título en minúsculas y con guiones (`hace-calor-aqui`, `del-alba-al-anochecer`, `la-tierra-se-mueve`). Ese repo sirve también el dominio `rea.echidna.es`, con las redirecciones de las carpetas antiguas, así que el servidor de OVH ya no hace falta para él.
+- [x] Las situaciones de aprendizaje de `rea.echidna.es` no se alojan en la web nueva: se migraron a GitHub en octubre de 2026, al repo `situaciones-aprendizaje`, con carpetas nombradas por el título en minúsculas y con guiones (`hace-calor-aqui`, `del-alba-al-anochecer`, `la-tierra-se-mueve`).
+- [x] `rea.echidna.es` no se redirige (octubre de 2026): sigue en el servidor de OVH hasta que `echidna.es` pase a GitHub Pages y entonces se apaga. Se llegó a servir unas horas desde el repo `situaciones-aprendizaje`, pero se descartó.

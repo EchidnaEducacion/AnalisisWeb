@@ -11,7 +11,7 @@ imageAlt: "Portada de la situación de aprendizaje «Andalucía, del alba al ano
 
 ¡Ampliamos la sección de [Recursos Educativos Abiertos (REA)](/alumnado/) en la web!
 
-Hoy añadimos **Andalucía, del alba al anochecer**, una propuesta que integra las **Ciencias Sociales** con la **Educación Artística**, la **Programación** y la **Robótica**. Puedes visitarla en este [enlace](https://rea.echidna.es/del-alba-al-anochecer/).
+Hoy añadimos **Andalucía, del alba al anochecer**, una propuesta que integra las **Ciencias Sociales** con la **Educación Artística**, la **Programación** y la **Robótica**. Puedes visitarla en este [enlace](https://echidnaeducacion.github.io/situaciones-aprendizaje/del-alba-al-anochecer/).
 
 Este recurso invita al alumnado a explorar la riqueza monumental de las ocho provincias andaluzas y a comprender cómo la tecnología puede interactuar con el entorno físico a través de sensores. Para conseguirlo, combina el conocimiento de la historia y el arte con actividades prácticas de programación, permitiendo que el alumnado vea cómo sus creaciones «cobran vida» y reaccionan a los cambios de luz ambiental.
 
