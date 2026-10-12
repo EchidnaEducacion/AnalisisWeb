@@ -19,6 +19,8 @@ const fullTitle = bare ? title : `${title} · Echidna Educación`;
 // Para compartir en redes (Open Graph): direcciones absolutas, con el dominio de `site`
 const canonica = new URL(Astro.url.pathname, Astro.site).href;
 const imagenRedes = new URL(url('imagen-redes.png'), Astro.site).href;
+// Código del sitio en GoatCounter (estadísticas de visitas); sin él, no se carga su script
+const goatcounter = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
 ---
 <!doctype html>
 <html lang="es">
@@ -52,6 +54,7 @@ const imagenRedes = new URL(url('imagen-redes.png'), Astro.site).href;
 <Font cssVariable="--font-mono" />
 <Font cssVariable="--font-brand" />
 <link rel="stylesheet" href={url("assets/css/echidna.css")}>
+{goatcounter && <script is:inline async data-goatcounter={`https://${goatcounter}.goatcounter.com/count`} src="https://gc.zgo.at/count.js"></script>}
 </head>
 <body data-section={section}>
 <div class="page">

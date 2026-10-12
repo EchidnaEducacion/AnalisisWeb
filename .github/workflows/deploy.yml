@@ -32,6 +32,8 @@ jobs:
           # Clave de Web3Forms para el formulario de /contacta/ (variable del repositorio, no secreto:
           # es pública porque va en el HTML). Settings → Secrets and variables → Actions → Variables
           PUBLIC_WEB3FORMS_KEY: ${{ vars.PUBLIC_WEB3FORMS_KEY }}
+          # Código del sitio en GoatCounter (estadísticas de visitas), también variable del repositorio
+          PUBLIC_GOATCOUNTER_CODE: ${{ vars.PUBLIC_GOATCOUNTER_CODE }}
         with:
           path: web
           package-manager: bun@latest
