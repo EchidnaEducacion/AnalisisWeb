@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
@@ -144,6 +144,18 @@ const indiceDelBuscadorEnDev = {
   },
 };
 
+// Tipografías: Astro las descarga de Google Fonts al hacer el build y las sirve desde la propia web,
+// para que las visitas no se conecten a Google (y no le envíen su IP). Cada una define su variable CSS
+// (--font-head…), que usa echidna.css; las familias de reserva son las del sistema.
+const tipografias = [
+  { name: 'Exo 2', cssVariable: '--font-head', weights: [600, 700, 800], styles: ['normal'], fallbacks: ['system-ui', 'sans-serif'] },
+  { name: 'Atkinson Hyperlegible', cssVariable: '--font-body', weights: [400, 700], styles: ['normal'], fallbacks: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'] },
+  { name: 'Atkinson Hyperlegible', cssVariable: '--font-body', weights: [400], styles: ['italic'], fallbacks: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'] },
+  { name: 'JetBrains Mono', cssVariable: '--font-mono', weights: [400, 700], styles: ['normal'], fallbacks: ['ui-monospace', 'SFMono-Regular', 'Consolas', 'monospace'] },
+  // Solo para el nombre «EchidnaEducación» de la cabecera, como en el logo
+  { name: 'Open Sans', cssVariable: '--font-brand', weights: [400], styles: ['normal'], fallbacks: ['system-ui', 'sans-serif'] },
+].map((t) => ({ provider: fontProviders.google(), subsets: ['latin'], ...t }));
+
 export default defineConfig({
   site: 'https://echidnaeducacion.github.io',
   // URL de carpeta: /politica-privacidad/ → politica-privacidad/index.html
@@ -155,6 +167,7 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   integrations: [indiceDelBuscadorEnDev],
+  fonts: tipografias,
   // URL de la web anterior (ver redirecciones.mjs y ../redirecciones.md)
   redirects: redirecciones,
   markdown: { processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias, enlacesExternos] }) },

@@ -48,7 +48,7 @@ bun run dev      # http://localhost:4321/
 
 ```
 web/
-├── astro.config.mjs         # salida en carpetas, plugins del Markdown (tablas, vídeos), redirecciones e índice del buscador en dev
+├── astro.config.mjs         # salida en carpetas, tipografías, plugins del Markdown (tablas, vídeos), redirecciones e índice del buscador en dev
 ├── redirecciones.mjs        # URL de la web anterior → nuevas (la tabla de ../redirecciones.md)
 ├── src/
 │   ├── assets/logo/         # SVG original del logo (Illustrator, con todas sus variantes)

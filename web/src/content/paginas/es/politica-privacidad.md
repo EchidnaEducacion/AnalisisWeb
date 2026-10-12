@@ -29,7 +29,6 @@ Si eliges el modo claro u oscuro, la web lo recuerda guardándolo en tu propio n
 ## Servicios de terceros
 
 - **Alojamiento**: la web está alojada en GitHub Pages. Como cualquier servidor, GitHub registra la dirección IP de las visitas por motivos de seguridad. Consulta la [declaración de privacidad de GitHub](https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement).
-- **Tipografías**: las fuentes de letra se cargan desde Google Fonts, que recibe la dirección IP de quien visita la web.
 - **Vídeos y presentaciones**: algunas páginas incluyen vídeos de YouTube u otros contenidos de otras webs. No se cargan hasta que pulsas sobre ellos; a partir de ese momento, ese servicio puede usar sus propias *cookies*.
 - **Enlaces**: la web enlaza a otros sitios (repositorios, guías, distribuidores). Al visitarlos se aplica su propia política de privacidad.
 

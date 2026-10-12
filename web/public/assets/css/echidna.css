@@ -43,10 +43,7 @@
   --tip: #2b8a3e;    --tip-soft: #e8f6eb;
   --warn: #b35c00;   --warn-soft: #fff4e0;
 
-  /* Tipografía */
-  --font-head: "Exo 2", system-ui, sans-serif;
-  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  /* Tipografía: --font-head, --font-body, --font-mono y --font-brand las define Astro (ver astro.config.mjs) */
   --fs-base: 1.0625rem;      /* 17px: lectura cómoda en proyector y móvil */
 
   /* Formas */
@@ -223,7 +220,7 @@ a.chip:hover { border-color: currentColor; color: var(--accent-ink); }
 .brand:hover { color: var(--ink); }
 /* Logo: erizo (nariz en el color del texto) y «EchidnaEducación» en Open Sans, como el logo original */
 .brand__mark { width: 57px; height: 32px; flex: none; }
-.brand__name { font-family: "Open Sans", var(--font-body); font-weight: 400; font-size: 1.25rem; letter-spacing: -.01em; line-height: 1; white-space: nowrap; }
+.brand__name { font-family: var(--font-brand); font-weight: 400; font-size: 1.25rem; letter-spacing: -.01em; line-height: 1; white-space: nowrap; }
 .brand__echidna { color: #fe6d04; }
 
 .nav { display: none; }

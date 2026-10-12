@@ -60,6 +60,7 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 - [x] **Habrá versión en inglés**: el modelo de contenido y las plantillas deben contemplar ES/EN desde el principio (campo `translation`, selector de idioma, rutas `/en/…`, menús y textos de interfaz traducibles).
 - [x] **Redirecciones antes del cambio de DNS**: las URL antiguas de la web (la lista, en [`redirecciones.md`](redirecciones.md)) redirigen a las nuevas con `redirects` en `web/astro.config.mjs` (la lista está en `web/redirecciones.mjs`), para que funcionen desde el primer momento.
 - [x] **Licencias**: contenidos y materiales con CC BY-SA 4.0; software con la licencia de cada programa (GPL-3.0 EchidnaML, AGPL-3.0 el editor de LearningML, BSD-3-Clause los componentes de Scratch). La del hardware está pendiente (ver [Próximos pasos](#próximos-pasos)).
+- [x] **Tipografías servidas desde la propia web** (octubre de 2026): Astro las descarga de Google Fonts al hacer el *build* (`fonts` en `web/astro.config.mjs`), así que las visitas no se conectan a Google ni le envían su IP, y la política de privacidad no tiene que mencionarlo.
 - [x] **Analítica con GoatCounter**: gratuito para proyectos sin ánimo de lucro, de código abierto y sin cookies, así que no necesita aviso de consentimiento. Mide visitas, páginas más vistas y procedencia sin datos personales. Se descarta GA4 por las cookies y el envío de datos a Google.
 - [x] **Formulario de contacto con Web3Forms** (octubre de 2026): servicio externo con cuenta de la asociación que reenvía los mensajes por correo. Su clave de acceso es pública (va en el HTML) y se guarda como variable del repositorio, `PUBLIC_WEB3FORMS_KEY`. Como cualquiera podría usarla y la restricción por dominio es de pago, el formulario lleva **hCaptcha** (gratuito en Web3Forms): sin él resuelto, Web3Forms rechaza el envío.
 
@@ -87,7 +88,6 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 - [ ] **Redirigir `rea.echidna.es`** (quien administre el servidor): 301 de cada carpeta antigua a su copia en GitHub (ver [`redirecciones.md`](redirecciones.md#otros-dominios-y-rutas)) y, después, apagarlo.
 - [ ] **Clave del formulario de contacto**: crear la variable `PUBLIC_WEB3FORMS_KEY` del repositorio (*Settings → Secrets and variables → Actions → Variables*) con la clave de Web3Forms. Hasta entonces, el formulario de `/contacta/` avisa de que no está configurado y no envía. Además, **activar hCaptcha** en el panel de Web3Forms (protección antispam del formulario): si no, Web3Forms no lo exige y la clave sigue sirviendo sin *captcha*.
 - [ ] Dar de alta la web en GoatCounter y añadir su script en el layout `Base` (`web/src/layouts/Base.astro`). La política de privacidad ya lo menciona.
-- [ ] Servir las tipografías desde la propia web en lugar de Google Fonts, para no enviar a Google la IP de las visitas. Después, quitar esa línea de la política de privacidad.
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
 
 ### Contenido
