@@ -132,7 +132,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` (la publica su repo) y alias `/guiainicioarduinoide/` (redirige a ella) | — (repo `GuiaInicioArduinoIDE`) |
 | 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en la *release* `manual-fp-v2` del repo `recursos` | — (repo `recursos`) |
 | 1 | Recursos docentes | `/docentes/` | Página genérica con `resources: docentes` (página única con tarjetas agrupadas por material, igual que alumnado) |
-| 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas (PDF) | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |
+| 2 | 3.1 Proyectos de inicio con EchidnaML: diapositivas (PDF) | `/docentes/proyectos-inicio-echidnaml/diapositivas/` | Página genérica con una tarjeta por proyecto (miniatura de la portada); los PDF los publica el repo `GuiaInicioEchidnaML` en `/GuiaInicioEchidnaML/diapositivas/` |
 | 2 | 3.2 Proyectos de inicio con EchidnaML: programación didáctica | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |
 | 2 | 3.3 Situaciones de aprendizaje: recursos de cada una | `/docentes/situaciones-aprendizaje/<recurso>/<tipo>/` (p. ej. `…/sensor-temperatura/guia-docente/`) | — (recurso alojado sin plantilla; mismo `<recurso>` que en alumnado) |
 | 2 | 3.4 Snap!: recursos docentes | `/docentes/snap/<tipo>/` | — (recurso alojado sin plantilla; sin contenido de momento) |
@@ -162,7 +162,7 @@ Las URL del blog siguen el formato `/AAAA/MM/slug/`. El RSS se publica en `/rss.
 
 Los materiales del alumnado son **enlaces externos**: la web solo los describe con una tarjeta (colección `recursos`). Las situaciones de aprendizaje propias son exportaciones de eXeLearning publicadas con GitHub Pages desde el repo [`situaciones-aprendizaje`](https://github.com/EchidnaEducacion/situaciones-aprendizaje), una carpeta por situación; las nuevas se añaden ahí.
 
-Lo mismo vale para los recursos docentes: por ejemplo, las diapositivas de la Guía de inicio EchidnaML van en `web/public/docentes/proyectos-inicio-echidnaml/diapositivas/`. Las rutas intermedias (`/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/`) no son páginas y redirigen a `/docentes/`.
+Lo mismo vale para los recursos docentes: se alojan en el repo de su material siempre que se pueda. Las diapositivas de la Guía de inicio EchidnaML, por ejemplo, las genera y publica el repo `GuiaInicioEchidnaML` (`/GuiaInicioEchidnaML/diapositivas/`), y la página `/docentes/proyectos-inicio-echidnaml/diapositivas/` las enlaza con una miniatura de cada portada. Las rutas intermedias (`/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/`) no son páginas y redirigen a `/docentes/`.
 
 ### Criterio de la sección 3
 

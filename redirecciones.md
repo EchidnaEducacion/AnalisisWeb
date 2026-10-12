@@ -211,15 +211,15 @@ WordPress acepta otras URL para algunas páginas (rutas antiguas, sin la categor
 | `rea.echidna.es/02_SensorTemperatura/` | `echidnaeducacion.github.io/situaciones-aprendizaje/hace-calor-aqui/` | Externa | Copia migrada; falta la 301 en el servidor de `rea.echidna.es` |
 | `rea.echidna.es/P4LaTierraSeMueve/` | `echidnaeducacion.github.io/situaciones-aprendizaje/la-tierra-se-mueve/` | Externa | Ídem |
 | `rea.echidna.es/nocheydia/` | `echidnaeducacion.github.io/situaciones-aprendizaje/del-alba-al-anochecer/` | Externa | Ídem |
-| `/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/` | `/docentes/` | Redirige | Rutas intermedias sin página (p. ej. `/docentes/proyectos-inicio-echidnaml/`) |
+| `/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/` | `/docentes/` | Redirige | Rutas intermedias sin página. Montada la de `/docentes/proyectos-inicio-echidnaml/`; las demás, cuando su material tenga recursos docentes |
 | `/guiainicioechidnaml/`, `/guiainicioarduinoide/` | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | Redirige | Alias en minúsculas |
 | `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` | Las mismas | Igual | Las publican sus repos con GitHub Pages, en la misma raíz que la web |
 | `/wp-content/uploads/2025/02/Manual_EchidnaBlack_002_Es.pdf` | `github.com/EchidnaEducacion/recursos/releases/download/manual-fp-v2/Manual_EchidnaBlack_002_Es.pdf` | Externa | Manual EchidnaBlack para FP, alojado como *release* del repo `recursos` (octubre de 2026). GitHub Pages no puede redirigir un PDF (solo páginas HTML), así que la dirección antigua dejará de funcionar al apagar WordPress |
 
 ## Pendiente
 
-- [ ] Rutas intermedias de `/docentes/` (fila «`/docentes/<material>/`» de [Otros dominios y rutas](#otros-dominios-y-rutas)): se añadirán a `web/redirecciones.mjs` cuando existan sus materiales.
-- [ ] `/docentes/proyectos-inicio-echidnaml/diapositivas/`, destino de las actividades antiguas, aún no existe: hasta que se migre, esas redirecciones acaban en la página 404.
+- [ ] Rutas intermedias de `/docentes/` (fila «`/docentes/<material>/`» de [Otros dominios y rutas](#otros-dominios-y-rutas)): se añadirán a `web/redirecciones.mjs` cuando existan sus materiales. Ya está la de `/docentes/proyectos-inicio-echidnaml/`.
+- [x] `/docentes/proyectos-inicio-echidnaml/diapositivas/`, destino de las actividades antiguas, existe desde octubre de 2026 (con las diapositivas de 2.1 a 2.5).
 - [x] Redirecciones montadas (octubre de 2026): `redirects` en `web/astro.config.mjs`, con la lista de `web/redirecciones.mjs`. Se publican ya en echidnaeducacion.github.io, para que funcionen desde el primer momento al cambiar el DNS de echidna.es.
 - [x] Rutas de los repos con Pages (octubre de 2026): la web es el sitio de la organización (`EchidnaEducacion.github.io`), así que `/manual/`, `/GuiaInicioEchidnaML/`, `/GuiaInicioArduinoIDE/` y `/situaciones-aprendizaje/` las sirve GitHub desde sus repos en la misma raíz, también con el dominio echidna.es. No necesitan redirección, y la web no puede usar esos nombres (ver [«Criterio para los recursos externos»](estructura.md#criterio-para-los-recursos-externos)).
 - [x] Páginas no indexadas: las actividades `s01`–`s10` y `p01` van a las diapositivas de la Guía de inicio EchidnaML; las subpáginas de EchidnaScratch, a 1.1.

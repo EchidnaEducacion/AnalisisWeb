@@ -107,11 +107,12 @@
 
 - id: docentes-inicio-echidnaml-diapositivas
   title: Diapositivas
-  description: Presentaciones para proyectar en el aula mientras se trabajan los proyectos de inicio.
+  description: Presentaciones para proyectar en el aula mientras se trabajan los proyectos de inicio, una por proyecto.
   audience: docentes
   environment: Proyectos de inicio con EchidnaML
   type: Diapositivas (PDF)
-  image: ./recursos/docentes-diapositivas.svg
+  url: /docentes/proyectos-inicio-echidnaml/diapositivas/
+  image: ./recursos/docentes-diapositivas-inicio.png
   order: 2
 
 - id: docentes-inicio-echidnaml-programacion
