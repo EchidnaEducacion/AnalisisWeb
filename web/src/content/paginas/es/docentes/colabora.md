@@ -1,6 +1,6 @@
 ---
 title: Cómo colaborar
-description: Todo Echidna es libre y lo hace una comunidad de docentes. Cómo aportar, con o sin cuenta de GitHub, y qué hay en cada repositorio.
+description: Echidna es un proyecto libre realizado por docentes. En esta página se explica cómo colaborar con o sin cuenta de GitHub, y qué hay en cada repositorio.
 template: pagina
 toc: true
 cards:
