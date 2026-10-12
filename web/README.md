@@ -50,6 +50,7 @@ bun run dev      # http://localhost:4321/
 web/
 ├── astro.config.mjs         # salida en carpetas, tipografías, plugins del Markdown (tablas, vídeos), redirecciones e índice del buscador en dev
 ├── redirecciones.mjs        # URL de la web anterior → nuevas (la tabla de ../redirecciones.md)
+├── scripts/                 # nueva-entrada.ts (entrada nueva del blog) e imagen-redes.ts (genera public/imagen-redes.png)
 ├── src/
 │   ├── assets/logo/         # SVG original del logo (Illustrator, con todas sus variantes)
 │   ├── assets/autores/      # fotos de los autores (cuadradas y sin EXIF)
@@ -77,6 +78,7 @@ web/
 │       └── maquetas/        # index.astro: «Propuesta de plantillas»; el resto, maquetas con contenido escrito a mano
 └── public/
     ├── favicon.svg          # erizo del logo; apple-touch-icon.png, su versión en PNG
+    ├── imagen-redes.png     # imagen al compartir en redes (og:image), 1200 × 630; se regenera con `bun run imagen-redes`
     └── assets/
         ├── css/echidna.css  # tokens, componentes y estilos de cada plantilla
         └── js/echidna.js    # menú, tema, buscador, filtros, embebidos

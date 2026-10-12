@@ -6,7 +6,8 @@
     "dev": "bun --bun astro dev",
     "build": "bun --bun astro build && pagefind --site dist",
     "preview": "bun --bun astro preview",
-    "nueva-entrada": "bun scripts/nueva-entrada.ts"
+    "nueva-entrada": "bun scripts/nueva-entrada.ts",
+    "imagen-redes": "bun scripts/imagen-redes.ts"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.2",

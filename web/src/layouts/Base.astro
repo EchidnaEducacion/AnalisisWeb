@@ -16,6 +16,9 @@ interface Props {
 }
 const { title, description = '', section, bare = false } = Astro.props;
 const fullTitle = bare ? title : `${title} · Echidna Educación`;
+// Para compartir en redes (Open Graph): direcciones absolutas, con el dominio de `site`
+const canonica = new URL(Astro.url.pathname, Astro.site).href;
+const imagenRedes = new URL(url('imagen-redes.png'), Astro.site).href;
 ---
 <!doctype html>
 <html lang="es">
@@ -24,6 +27,19 @@ const fullTitle = bare ? title : `${title} · Echidna Educación`;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{fullTitle}</title>
 <meta name="description" content={description}>
+<link rel="canonical" href={canonica}>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Echidna Educación">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content={canonica}>
+<meta property="og:title" content={fullTitle}>
+{description && <meta property="og:description" content={description}>}
+<!-- Imagen al compartir (1200 × 630): la genera `bun run imagen-redes` a partir del logo -->
+<meta property="og:image" content={imagenRedes}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo de Echidna: un equidna naranja con el nombre «Echidna»">
+<meta name="twitter:card" content="summary_large_image">
 {section && <meta data-pagefind-meta="seccion[content]" content={section}>}
 <link rel="icon" href={url("favicon.svg")} type="image/svg+xml">
 <link rel="apple-touch-icon" href={url("apple-touch-icon.png")}>
