@@ -28,6 +28,7 @@ Cómo está organizado el proyecto, cómo migrar una página y cómo funciona el
 | [`estructura.md`](estructura.md) | Árbol de páginas, URL, plantillas, criterios de navegación y puntos pendientes de la estructura |
 | [`modelo-contenido.md`](modelo-contenido.md) | Colecciones de contenido y sus campos (`paginas`, `hardware`, `recursos`, `blog`) |
 | [`escribir-blog.md`](escribir-blog.md) | Cómo escribir y publicar una entrada nueva del blog |
+| [`diseno.md`](diseno.md) | Hoja de ruta para personalizar el diseño de la web y cómo proponer cambios de diseño |
 | [`publicaciones.md`](publicaciones.md) | Listado de trabajo de publicaciones sobre Echidna (página Publicaciones) |
 | [`redirecciones.md`](redirecciones.md) | Correspondencia entre las URL de WordPress y las de la nueva web |
 | [`web/README.md`](web/README.md) | Proyecto Astro: cómo ejecutarlo, cómo está organizado y cómo migrar una página |
@@ -102,6 +103,10 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
   - «ROBÓTICA EDUCATIVA + IA CON ECHIDNA en #eslibre2023» no tenía categoría en WordPress: se le ha puesto Talleres.
   - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
 - [ ] Buscar la imagen perdida del blog `Icono_Scratch-1024x948.png` (*EchidnaScratch, el erizo y el gato se hacen amigos*): no está en la caché de la importación (`herramientas/wp-import/.cache/`) ni ya en WordPress; queda el backup de `wp-content/uploads`. Al importar se quitó de la entrada; si aparece, volver a ponerla.
+
+### Diseño
+
+- [ ] **Personalizar el diseño** con la diseñadora, según la hoja de ruta de [`diseno.md`](diseno.md). Lo primero, por parte del equipo: confirmar Figma, darle acceso a GitHub con la etiqueta `diseño`, y preparar la guía de estilo (`/maquetas/guia-estilo/`), las páginas en Figma y el fichero base con las variables de `echidna.css` ([fase 1](diseno.md#fase-1--material-de-partida)).
 
 ### Comprobaciones con el equipo o con la placa
 
