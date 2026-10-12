@@ -127,7 +127,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 1.4.2 Snap! (en «Entornos de programación compatibles») | `/ecosistema/snap/` | Página genérica |
 | 1 | Materiales alumnado | `/alumnado/` | Página genérica con la lista de `recursos` (`resources: alumnado`): un título por entorno, un subtítulo por grupo y tarjetas con miniatura |
 | 2 | 2.1 Proyectos de inicio con EchidnaML | `/GuiaInicioEchidnaML/` (la publica su repo) y alias `/guiainicioechidnaml/` (redirige a ella) | — (repo `GuiaInicioEchidnaML`) |
-| 2 | 2.2 Situaciones de aprendizaje (cada una) | `/situaciones-aprendizaje/<recurso>/` (las publica su repo) y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning, repo `situaciones-aprendizaje`) |
+| 2 | 2.2 Situaciones de aprendizaje (cada una) | `https://rea.echidna.es/<recurso>/` (las publica su repo, con ese dominio propio) y el INTEF (Aprendiendo con robots) | — (exportaciones de eXeLearning, repo `situaciones-aprendizaje`) |
 | 2 | 2.3 Manual de usuario | `/manual/` (lo publica su repo) | — (repo `manual`) |
 | 2 | 2.4 Proyectos de inicio con Arduino IDE | `/GuiaInicioArduinoIDE/` (la publica su repo) y alias `/guiainicioarduinoide/` (redirige a ella) | — (repo `GuiaInicioArduinoIDE`) |
 | 2 | 2.5 Manual EchidnaBlack para FP (Xabier Rosas) | PDF en la *release* `manual-fp-v2` del repo `recursos` | — (repo `recursos`) |
@@ -160,7 +160,7 @@ Las URL del blog siguen el formato `/AAAA/MM/slug/`. El RSS se publica en `/rss.
 
 ### Recursos alojados sin plantilla
 
-Los materiales del alumnado son **enlaces externos**: la web solo los describe con una tarjeta (colección `recursos`). Las situaciones de aprendizaje propias son exportaciones de eXeLearning publicadas con GitHub Pages desde el repo [`situaciones-aprendizaje`](https://github.com/EchidnaEducacion/situaciones-aprendizaje), una carpeta por situación; las nuevas se añaden ahí.
+Los materiales del alumnado son **enlaces externos**: la web solo los describe con una tarjeta (colección `recursos`). Las situaciones de aprendizaje propias son exportaciones de eXeLearning publicadas con GitHub Pages desde el repo [`situaciones-aprendizaje`](https://github.com/EchidnaEducacion/situaciones-aprendizaje) en `https://rea.echidna.es/`, una carpeta por situación; las nuevas se añaden ahí.
 
 Lo mismo vale para los recursos docentes: se alojan en el repo de su material siempre que se pueda. Las diapositivas de la Guía de inicio EchidnaML, por ejemplo, las genera y publica el repo `GuiaInicioEchidnaML` (`/GuiaInicioEchidnaML/diapositivas/`), y la página `/docentes/proyectos-inicio-echidnaml/diapositivas/` las enlaza con una miniatura de cada portada. Las rutas intermedias (`/docentes/<material>/`, `/docentes/situaciones-aprendizaje/<recurso>/`) no son páginas y redirigen a `/docentes/`.
 
@@ -175,7 +175,7 @@ El manual y las guías de inicio **los publica su propio repositorio** con GitHu
 - **La URL no depende del menú**: el menú puede colgar la guía de Materiales alumnado › EchidnaML aunque su URL esté en la raíz, igual que `/manual/` aparece en dos apartados.
 - **Estabilidad**: si se reorganiza el árbol (por ejemplo, Sistema → Ecosistema), una URL anidada se rompe y la de la raíz no. Es importante porque estas direcciones se imprimen en material físico y en códigos QR.
 - **Coherencia**: los tres recursos siguen el mismo patrón.
-- **Rutas reservadas**: ninguna ruta de la web puede llamarse como un repo de la organización con Pages, porque el repo tiene prioridad y taparía la página. Hoy son `manual`, `GuiaInicioEchidnaML`, `GuiaInicioArduinoIDE`, `situaciones-aprendizaje` y `echidna-firmata-test`. Al activar Pages en un repo nuevo, comprobar que su nombre no choca con una ruta de la web.
+- **Rutas reservadas**: ninguna ruta de la web puede llamarse como un repo de la organización con Pages, porque el repo tiene prioridad y taparía la página. Hoy son `manual`, `GuiaInicioEchidnaML`, `GuiaInicioArduinoIDE`, `situaciones-aprendizaje` (que redirige a su dominio, `rea.echidna.es`) y `echidna-firmata-test`. Al activar Pages en un repo nuevo, comprobar que su nombre no choca con una ruta de la web.
 
 ### Criterio de navegación
 
@@ -237,7 +237,6 @@ Igual en todas las páginas. No repite el menú principal: lleva a las páginas 
   Al decidirlo, corregir la página de licencias, la tabla de Sobre el proyecto, el pie y el repositorio `recursos`.
 - [x] Generar los PDF de EchidnaBlack v1 y EchidnaShield antes de apagar WordPress. Están en `web/public/ecosistema/placas-anteriores/`.
 - [x] Materiales alumnado es una sola página (`/alumnado/`) con títulos por entorno y subtítulos por grupo, y tarjetas con miniatura. Todos sus materiales son enlaces externos (decisión de octubre de 2026): por ahora, los dos Proyectos de inicio, cuatro situaciones de aprendizaje y el manual para FP. El resto (otros proyectos, Snap!…) está por hacer.
-- [ ] Corregir la raíz de `rea.echidna.es`: su `meta refresh` apunta a `kuku.es`, un dominio ajeno. Redirigir `rea.echidna.es/<recurso>/` a su copia en `situaciones-aprendizaje` (ver `redirecciones.md`).
 - [x] La plantilla «Actividad» ya no hace falta: ni alumnado ni docentes la usan. Se quita de las páginas maestras del README.
 - [x] Cada situación de aprendizaje usa el mismo `<recurso>` en `/alumnado/situaciones-aprendizaje/` y en `/docentes/situaciones-aprendizaje/`.
 - [x] Quiénes somos es un menú desplegable con 5.1, 5.2 y 5.3. 5.1 Sobre el proyecto usa `/quienes-somos/`, así que no hay índice duplicado.

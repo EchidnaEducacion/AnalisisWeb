@@ -3,7 +3,7 @@
 // al cambiar una fila allí, se cambia también aquí.
 // GitHub Pages no admite redirecciones 301: Astro genera en cada URL antigua una página HTML
 // que redirige al instante (meta refresh y enlace canónico a la nueva).
-// No están aquí las que la web no puede resolver: las de rea.echidna.es (otro servidor),
+// No están aquí las que la web no puede resolver: las de rea.echidna.es (las sirve el repo situaciones-aprendizaje),
 // el PDF de /wp-content/ (no es una página) y las rutas intermedias de /docentes/ de los
 // materiales que aún no tienen recursos docentes (se añaden cuando los tienen).
 export default {

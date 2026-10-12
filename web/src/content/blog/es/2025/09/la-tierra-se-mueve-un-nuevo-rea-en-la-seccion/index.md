@@ -13,7 +13,7 @@ imageAlt: "La Tierra vista desde el espacio y el erizo de Echidna mirándola, co
 
 Hoy añadimos *¡La Tierra se mueve!*, una propuesta pensada para **4.º de Primaria en el área de Ciencias Sociales**, con conexiones directas con Educación Artística y Programación y Robótica.
 
-Puedes visitarla en [este enlace](https://echidnaeducacion.github.io/situaciones-aprendizaje/la-tierra-se-mueve/).
+Puedes visitarla en [este enlace](https://rea.echidna.es/la-tierra-se-mueve/).
 
 Este recurso invita al alumnado a descubrir los **movimientos de la Tierra** —rotación y traslación— y a comprender cómo de ellos surgen fenómenos cotidianos como los días y las noches o las estaciones del año. Para conseguirlo, combina explicaciones sencillas con actividades variadas, juegos interactivos y propuestas creativas para que el alumnado vea, manipule y descubra en primera persona.
 
