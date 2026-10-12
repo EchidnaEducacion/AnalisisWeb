@@ -14,7 +14,7 @@ El responsable de los datos es **Echidna Educación**. Para cualquier consulta s
 
 ### Formulario de contacto
 
-Si nos escribes desde el formulario de contacto, recibimos tu nombre, tu correo electrónico y tu mensaje. Los usamos solo para responderte y no los cedemos a nadie. El formulario se envía a través de un servicio externo de formularios, que nos hace llegar el mensaje por correo.
+Si nos escribes desde el formulario de contacto, recibimos tu nombre, tu correo electrónico y tu mensaje. Los usamos solo para responderte y no los cedemos a nadie. El formulario se envía a través de [Web3Forms](https://web3forms.com/), un servicio externo de formularios que nos hace llegar el mensaje por correo. Para frenar el *spam*, el formulario usa [hCaptcha](https://www.hcaptcha.com/privacy), que solo se carga en la página de contacto y puede tratar datos técnicos de tu navegador (como la dirección IP) para comprobar que quien escribe es una persona.
 
 Conservamos los mensajes mientras sean necesarios para atender tu consulta.
 

@@ -113,6 +113,45 @@
     }));
   }
 
+  // Formulario de contacto: se envía a Web3Forms sin salir de la página (sin JS, Web3Forms muestra su propia página de confirmación)
+  document.querySelectorAll('[data-contact-form]').forEach((form) => {
+    const boton = form.querySelector('button[type="submit"]');
+    const estado = form.querySelector('.form-status');
+    const avisar = (texto, tipo) => {
+      estado.textContent = texto;
+      estado.className = `form-status form-status--${tipo}`;
+      estado.hidden = false;
+    };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // hCaptcha: el script de Web3Forms rellena h-captcha-response al marcar la casilla
+      if (form.querySelector('.h-captcha') && !form.elements['h-captcha-response']?.value) {
+        avisar('Marca la casilla «Soy humano» antes de enviar el mensaje.', 'error');
+        return;
+      }
+      boton.disabled = true;
+      avisar('Enviando el mensaje…', 'info');
+      try {
+        const respuesta = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          // El asunto elegido va también en el asunto del correo
+          body: JSON.stringify({ ...Object.fromEntries(new FormData(form)), subject: `Contacto web: ${form.elements.asunto?.value ?? ''}` }),
+        });
+        const datos = await respuesta.json().catch(() => ({}));
+        if (!respuesta.ok || !datos.success) throw new Error(datos.message || respuesta.statusText);
+        form.reset();
+        avisar('¡Gracias! Hemos recibido tu mensaje y te responderemos lo antes posible.', 'ok');
+      } catch (error) {
+        console.error('Formulario de contacto:', error);
+        avisar('No se ha podido enviar el mensaje. Inténtalo de nuevo dentro de un rato.', 'error');
+      } finally {
+        boton.disabled = false;
+        window.hcaptcha?.reset(); // cada respuesta del captcha solo vale para un envío
+      }
+    });
+  });
+
   // Vídeos/presentaciones: el iframe solo se carga al pulsar (privacidad y rendimiento)
   document.querySelectorAll('.embed__poster[data-src]').forEach((btn) => {
     btn.addEventListener('click', () => {

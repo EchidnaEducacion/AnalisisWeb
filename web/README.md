@@ -14,6 +14,7 @@ bun run dev      # http://localhost:4321/
 
 `bun run build` genera el sitio estático en `web/dist/`, con el índice del buscador (Pagefind) en `dist/pagefind/`, y `bun run preview` lo sirve.
 
+- **Formulario de contacto en local**: necesita la clave de Web3Forms en `web/.env` (`PUBLIC_WEB3FORMS_KEY=…`; el fichero está en `.gitignore`). Sin ella, el formulario avisa de que no está configurado y no envía. Con ella, carga el hCaptcha de Web3Forms (`web3forms.com/client/script.js`), que hay que marcar antes de enviar. En la web publicada, la clave sale de la variable `PUBLIC_WEB3FORMS_KEY` del repositorio (ver `.github/workflows/deploy.yml`).
 - **Buscador en local**: el índice solo se genera con el *build*. `bun run dev` usa el del último `bun run build` (lo sirve en `/pagefind/` desde `dist/pagefind/`), así que el contenido nuevo no aparece en el buscador hasta repetir el *build*; sin ningún *build* previo, el buscador dice que no está disponible.
 
 - **Si Bun no está instalado**: `curl -fsSL https://bun.sh/install | bash` y abrir una terminal nueva.

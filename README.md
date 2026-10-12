@@ -43,7 +43,7 @@ Cómo está organizado el proyecto, cómo migrar una página y cómo funciona el
 | Alojamiento | **GitHub Pages**, con el dominio `echidna.es` (fichero `CNAME` + DNS) |
 | Despliegue | **GitHub Actions**: `deploy.yml` compila y publica con cada *push* a `main`; `comprobar.yml` compila cada *pull request* |
 | Buscador | **Pagefind** |
-| Formulario de contacto | Servicio externo: **Formspree** o **Web3Forms** |
+| Formulario de contacto | **Web3Forms** (servicio externo que envía los mensajes por correo), con **hCaptcha** contra el *spam* |
 | Analítica | **GoatCounter**, sin cookies |
 | Imágenes | Procesado de imágenes de Astro (redimensionado, WebP) |
 | Manual y guías de inicio | Repos propios en GitHub Pages, enlazados desde `echidna.es` con redirecciones |
@@ -61,7 +61,7 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 - [x] **Redirecciones antes del cambio de DNS**: las URL antiguas de la web (la lista, en [`redirecciones.md`](redirecciones.md)) redirigen a las nuevas con `redirects` en `web/astro.config.mjs` (la lista está en `web/redirecciones.mjs`), para que funcionen desde el primer momento.
 - [x] **Licencias**: contenidos y materiales con CC BY-SA 4.0; software con la licencia de cada programa (GPL-3.0 EchidnaML, AGPL-3.0 el editor de LearningML, BSD-3-Clause los componentes de Scratch). La del hardware está pendiente (ver [Próximos pasos](#próximos-pasos)).
 - [x] **Analítica con GoatCounter**: gratuito para proyectos sin ánimo de lucro, de código abierto y sin cookies, así que no necesita aviso de consentimiento. Mide visitas, páginas más vistas y procedencia sin datos personales. Se descarta GA4 por las cookies y el envío de datos a Google.
-- [x] **Formulario de contacto necesario**, mediante un servicio externo (Formspree o Web3Forms).
+- [x] **Formulario de contacto con Web3Forms** (octubre de 2026): servicio externo con cuenta de la asociación que reenvía los mensajes por correo. Su clave de acceso es pública (va en el HTML) y se guarda como variable del repositorio, `PUBLIC_WEB3FORMS_KEY`. Como cualquiera podría usarla y la restricción por dominio es de pago, el formulario lleva **hCaptcha** (gratuito en Web3Forms): sin él resuelto, Web3Forms rechaza el envío.
 
 **Diseño y contenido**
 
@@ -85,10 +85,7 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 
 - [ ] **Urgente**: corregir la raíz de `rea.echidna.es`, cuyo `meta refresh` apunta a `kuku.es`, un dominio ajeno.
 - [ ] **Redirigir `rea.echidna.es`** (quien administre el servidor): 301 de cada carpeta antigua a su copia en GitHub (ver [`redirecciones.md`](redirecciones.md#otros-dominios-y-rutas)) y, después, apagarlo.
-- [ ] **Envío del formulario de contacto**: elegir el servicio, crear la cuenta con el correo de la asociación y poner su dirección en `PUBLIC_CONTACT_FORM_URL`. Hasta entonces, el formulario de `/contacta/` se ve pero no envía.
-  - **Formspree** (recomendado): encaja con el formulario actual, porque solo pide su dirección (`https://formspree.io/f/…`) y ya entiende el campo antispam `_gotcha`. Guarda los mensajes en un panel. Plan gratuito: unos 50 mensajes al mes.
-  - **Web3Forms**: no pide crear cuenta, solo un correo para obtener la clave. Habría que añadir un campo oculto con la clave y cambiar el antispam por `botcheck`. Plan gratuito: unos 250 mensajes al mes.
-  - Antes de decidir, comprobar en sus webs los límites gratuitos actuales.
+- [ ] **Clave del formulario de contacto**: crear la variable `PUBLIC_WEB3FORMS_KEY` del repositorio (*Settings → Secrets and variables → Actions → Variables*) con la clave de Web3Forms. Hasta entonces, el formulario de `/contacta/` avisa de que no está configurado y no envía. Además, **activar hCaptcha** en el panel de Web3Forms (protección antispam del formulario): si no, Web3Forms no lo exige y la clave sigue sirviendo sin *captcha*.
 - [ ] Dar de alta la web en GoatCounter y añadir su script en el layout `Base` (`web/src/layouts/Base.astro`). La política de privacidad ya lo menciona.
 - [ ] Servir las tipografías desde la propia web en lugar de Google Fonts, para no enviar a Google la IP de las visitas. Después, quitar esa línea de la política de privacidad.
 - [ ] Crear la imagen que se muestra al compartir la web en redes (`og:image`) a partir del logo con texto, y añadirla en el layout `Base`.
