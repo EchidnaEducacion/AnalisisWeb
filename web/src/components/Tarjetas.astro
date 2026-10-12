@@ -12,6 +12,8 @@ interface Props {
 const { cards, columnas = 2 } = Astro.props;
 // Las rutas internas llevan base; las URL externas, no
 const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
+// Los enlaces externos se abren en una pestaña nueva
+const pestana = (href: string) => (href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' });
 ---
 <ul class={`img-cards grid grid--${columnas}`}>
   {cards.map((c) => (
@@ -22,7 +24,7 @@ const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : hr
         </div>
       )}
       <div class="card__body">
-        <h2 class="card__title"><a class="card__link" href={enlace(c.href)}>{c.title}</a></h2>
+        <h2 class="card__title"><a class="card__link" href={enlace(c.href)} {...pestana(c.href)}>{c.title}</a></h2>
         <p class="card__text">{c.text}</p>
       </div>
     </li>

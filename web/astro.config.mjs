@@ -110,6 +110,20 @@ const galerias = {
   },
 };
 
+// Enlaces externos (http/https) del Markdown: se abren en una pestaña nueva, como las tarjetas
+const enlacesExternos = {
+  name: 'enlaces-externos',
+  element: {
+    filter: ['a'],
+    visit(node, ctx) {
+      const href = node.properties?.href;
+      if (typeof href !== 'string' || !/^https?:\/\//.test(href)) return;
+      // Los nodos no se pueden modificar: se sustituye por una copia con los atributos
+      ctx.replaceNode(node, { ...node, properties: { ...node.properties, target: '_blank', rel: ['noopener'] } });
+    },
+  },
+};
+
 // Buscador en el servidor de desarrollo: el índice de Pagefind solo se genera al final del build,
 // así que `astro dev` sirve en /pagefind/ el del último build (dist/pagefind/). Si no hay build,
 // no hace nada y el buscador dice que no está disponible. No afecta al build.
@@ -143,5 +157,5 @@ export default defineConfig({
   integrations: [indiceDelBuscadorEnDev],
   // URL de la web anterior (ver redirecciones.mjs y ../redirecciones.md)
   redirects: redirecciones,
-  markdown: { processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias] }) },
+  markdown: { processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias, enlacesExternos] }) },
 });
