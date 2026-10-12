@@ -139,6 +139,10 @@ No llevan ejemplos de Arduino IDE.
 
 En las maquetas, las imágenes son marcadores (`.ph`).
 
+## Cómo escribir una entrada del blog
+
+El procedimiento está en [`escribir-blog.md`](../escribir-blog.md), en la raíz del repositorio: rama propia, `bun run nueva-entrada`, borrador en el servidor de desarrollo y publicación por *pull request*, que el workflow «Comprobar la web» (`.github/workflows/comprobar.yml`) construye antes de fusionar.
+
 ## Buscador
 
 El índice lo genera Pagefind al final del *build* (`pagefind --site dist`) y lo consulta el diálogo de la cabecera (`public/assets/js/echidna.js`). Solo se indexan las páginas cuyo `<main>` lleva `data-pagefind-body`, es decir, las de los *layouts* `Pagina`, `Indice`, `Contacto`, `Ficha` y `Entrada`; quedan fuera la portada, la 404, los listados del blog y las maquetas. Los resultados se agrupan por sección (`<meta data-pagefind-meta="seccion[content]">` de `Base.astro`) y muestran como contexto las migas de pan (`data-contexto`) o, en el blog, la fecha. Las migas no entran en el texto indexado (`data-pagefind-ignore`). En el servidor de desarrollo, la integración `indiceDelBuscadorEnDev` de `astro.config.mjs` sirve el índice del último *build*.

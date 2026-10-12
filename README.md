@@ -21,6 +21,7 @@ La web está en [`web/`](web/) y se puede ver publicada en **<https://echidnaedu
 |---|---|
 | [`estructura.md`](estructura.md) | Árbol de páginas, URL, plantillas, criterios de navegación y puntos pendientes de la estructura |
 | [`modelo-contenido.md`](modelo-contenido.md) | Colecciones de contenido y sus campos (`paginas`, `hardware`, `recursos`, `blog`) |
+| [`escribir-blog.md`](escribir-blog.md) | Cómo escribir y publicar una entrada nueva del blog |
 | [`redirecciones.md`](redirecciones.md) | Correspondencia entre las URL de WordPress y las de la nueva web |
 | [`traslado-repo.md`](traslado-repo.md) | Plan para servir la web en la raíz (<https://echidnaeducacion.github.io/>) desde el repo `EchidnaEducacion.github.io` |
 | [`analisis-previo.md`](analisis-previo.md) | Estudio de viabilidad inicial: situación de partida, ventajas e inconvenientes, tecnologías, inventario y análisis de la prueba de concepto anterior |
@@ -147,6 +148,7 @@ Avance de los pasos 3 y 4, por plantilla. Se actualiza en el mismo commit en el 
 - [x] **Habrá versión en inglés**: el modelo de contenido y las plantillas deben contemplar ES/EN desde el principio (campo `translation`, selector de idioma, rutas `/en/…`, menús y textos de interfaz traducibles).
 - [x] La web se construye **en este repositorio**, en el directorio `web/` (proyecto Astro con Bun), partiendo de las plantillas propuestas, y se publica en GitHub Pages en <https://echidnaeducacion.github.io/>.
 - [x] **Traslado a la raíz renombrando repositorios** (octubre de 2026): este repositorio (antes `AnalisisWeb`, porque empezó como estudio de viabilidad) pasa a llamarse `EchidnaEducacion.github.io` y la web se sirve en la raíz, sin `base`. La prueba de concepto que ocupaba ese nombre se archiva como `web-prueba-concepto`. Así se conservan el historial y los ajustes de Pages; el plan está en [`traslado-repo.md`](traslado-repo.md).
+- [x] **Entradas nuevas del blog por *pull request*** (octubre de 2026): cada entrada se escribe en local en su rama, creada con `bun run nueva-entrada` (en borrador, que solo se ve en el servidor de desarrollo), y se publica al fusionar la PR después de que otra persona del equipo la revise. El workflow `comprobar.yml` construye la web en cada PR para detectar errores de validación. Sin publicación programada por ahora. El flujo está en [`escribir-blog.md`](escribir-blog.md).
 - [x] **Sin comentarios en el blog**: solo hay 9 en 6 años y Giscus obligaría a tener cuenta de GitHub. Los 9 comentarios antiguos se descartan. Al final de cada entrada se invita a escribir desde `/contacta/`.
 - [x] **Analítica con GoatCounter**: gratuito para proyectos sin ánimo de lucro, de código abierto y sin cookies, así que no necesita aviso de consentimiento. Mide visitas, páginas más vistas y procedencia sin datos personales. Se descarta GA4 por las cookies y el envío de datos a Google.
 - [x] **Rótulos cortos en el menú**: «Alumnado» y «Docentes» en lugar de «Materiales alumnado» y «Recursos docentes», para que el menú quepa junto al logo. Las páginas, las migas de pan y el pie mantienen el nombre completo.

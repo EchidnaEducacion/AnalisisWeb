@@ -25,10 +25,10 @@ const blog = url('blog/');
 const palabras = (entry.body ?? '').split(/\s+/).filter(Boolean).length;
 const minutos = Math.max(1, Math.round(palabras / 200));
 
-// Anterior (más antigua) y siguiente (más reciente)
+// Anterior (más antigua) y siguiente (más reciente); un borrador (solo en dev) no tiene
 const i = todas.findIndex((t) => t.id === entry.id);
-const siguiente = todas[i - 1];
-const anterior = todas[i + 1];
+const siguiente = i > 0 ? todas[i - 1] : undefined;
+const anterior = i >= 0 ? todas[i + 1] : undefined;
 
 const enlace = new URL(Astro.url.pathname, Astro.site).href;
 const compartirX = `https://x.com/intent/post?text=${encodeURIComponent(d.title)}&url=${encodeURIComponent(enlace)}`;

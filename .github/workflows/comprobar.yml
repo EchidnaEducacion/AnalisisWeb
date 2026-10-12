@@ -1,0 +1,25 @@
+# Comprueba que la web se construye en cada pull request que toque web/ (sin publicar nada):
+# un campo vacío, una etiqueta o categoría mal escrita o una imagen que falta hacen fallar la PR.
+# La publicación la hace deploy.yml al fusionar en main.
+name: Comprobar la web
+
+on:
+  pull_request:
+    paths:
+      - 'web/**'
+      - '.github/workflows/comprobar.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v7
+      - name: Instalar y construir el sitio
+        uses: withastro/action@v6
+        with:
+          path: web
+          package-manager: bun@latest

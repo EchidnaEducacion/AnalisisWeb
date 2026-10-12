@@ -15,6 +15,7 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 | [`README.md`](README.md) | Tecnología elegida, plan de implementación, **progreso**, **decisiones tomadas** y **próximos pasos** |
 | [`estructura.md`](estructura.md) | Árbol de páginas, URL, plantillas, criterios (navegación, pie, recursos sin plantilla) y pendientes de la estructura |
 | [`modelo-contenido.md`](modelo-contenido.md) | Colecciones (`paginas`, `hardware`, `recursos`, `blog`) y sus campos |
+| [`escribir-blog.md`](escribir-blog.md) | Cómo escribir y publicar una entrada nueva del blog (rama, script `nueva-entrada`, *pull request*) |
 | [`publicaciones.md`](publicaciones.md) | Listado de trabajo de publicaciones sobre Echidna para la página 5.3 |
 | [`redirecciones.md`](redirecciones.md) | Correspondencia entre las URL de WordPress y las nuevas |
 | [`traslado-repo.md`](traslado-repo.md) | Plan para servir la web en la raíz desde el repo `EchidnaEducacion.github.io` |
@@ -35,6 +36,7 @@ Planificación e implementación de la nueva web de [echidna.es](https://echidna
 - **Una pregunta cada vez** cuando haya que decidir algo, con una opción recomendada. Antes de proponer, revisar el contenido real (la web actual, los repos de la organización).
 - **Commits en castellano**, con un resumen en la primera línea y el detalle debajo.
 - **Commit y push solo cuando se pidan.** Antes de cada commit, comprobar el remoto.
+- **Entradas nuevas del blog**: en una rama propia y por *pull request*, nunca directamente en `main`; se crean con `bun run nueva-entrada` y el flujo está en [`escribir-blog.md`](escribir-blog.md).
 - **Una página cada vez**: se migra, se revisa en local (también en el servidor de desarrollo, no solo con el *build*) y se sube cuando el usuario la da por buena. El flujo completo y el patrón de las fichas de componentes están en [«Cómo migrar una página»](web/README.md#cómo-migrar-una-página).
 - **Avisar de las incoherencias** que aparezcan al migrar (pines, valores, licencias…) y apuntarlas en el documento que corresponda.
 

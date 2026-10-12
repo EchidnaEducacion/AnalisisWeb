@@ -1,12 +1,15 @@
 ---
 // Genera una página por cada entrada del blog en su URL de siempre: /AAAA/MM/slug/
-import { render } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Entrada from '../../../layouts/Entrada.astro';
 import { entradasPublicadas, rutaEntrada } from '../../../lib/blog';
 
 export async function getStaticPaths() {
   const todas = await entradasPublicadas();
-  return todas.map((entry) => {
+  // En el servidor de desarrollo, los borradores también tienen su página para revisarlos,
+  // pero no salen en los listados ni en el lateral
+  const borradores = import.meta.env.DEV ? await getCollection('blog', (e) => e.id.startsWith('es/') && e.data.draft) : [];
+  return [...todas, ...borradores].map((entry) => {
     const [anio, mes, entrada] = rutaEntrada(entry).split('/');
     return { params: { anio, mes, entrada }, props: { entry, todas } };
   });

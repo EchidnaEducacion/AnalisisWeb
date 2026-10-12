@@ -118,6 +118,8 @@ Plantillas: Entrada de blog (hecha) y Listado / taxonomía.
 
 **Vídeos de YouTube**: un párrafo que solo contiene un enlace a YouTube (`[Título del vídeo](https://www.youtube.com/watch?v=…)`) se convierte en un reproductor que no carga YouTube hasta que se pulsa; lo mismo con un enlace a una presentación de Google (`[Ver la presentación (Google Slides)](https://docs.google.com/presentation/…)`). **Galerías**: las imágenes escritas en líneas seguidas, sin línea en blanco entre ellas, se muestran en rejilla, con el título de cada imagen como pie (`![Texto alternativo](./foto.jpg "Pie")`). **GIF animados**: van en `web/public/` con la ruta de la entrada (`/2026/05/rotografo/rotografo.gif`), porque Astro los convertiría en imágenes fijas.
 
+Las entradas nuevas se crean con `bun run nueva-entrada`; el flujo completo está en [`escribir-blog.md`](escribir-blog.md).
+
 **La URL sale de la carpeta, no de la fecha**: la entrada `blog/es/2026/05/rotografo/` se publica en `/2026/05/rotografo/`. Si se corrige la fecha, la URL no cambia.
 
 Ejemplo (valores ilustrativos):
@@ -135,7 +137,7 @@ image: ./portada.jpg
 
 ### Etiquetas del blog
 
-Las etiquetas forman un **vocabulario cerrado**: solo se usan las de esta lista, escritas exactamente así (la URL sale del nombre: «Sensor de luz» → `/tag/sensor-de-luz/`). La lista está también en `web/src/content.config.ts` (`ETIQUETAS`), y una etiqueta que no esté en ella hace fallar la publicación con un error que indica la entrada. Se revisaron en octubre de 2026 a partir de las heredadas de WordPress; las que desaparecieron, y adónde redirigen, están en [`redirecciones.md`](redirecciones.md#blog-y-rss).
+Las etiquetas forman un **vocabulario cerrado**: solo se usan las de esta lista, escritas exactamente así (la URL sale del nombre: «Sensor de luz» → `/tag/sensor-de-luz/`). La lista está también en `web/src/lib/etiquetas.ts` (`ETIQUETAS`), y una etiqueta que no esté en ella hace fallar la publicación con un error que indica la entrada. Se revisaron en octubre de 2026 a partir de las heredadas de WordPress; las que desaparecieron, y adónde redirigen, están en [`redirecciones.md`](redirecciones.md#blog-y-rss).
 
 | Grupo | Etiquetas |
 |---|---|
@@ -155,7 +157,7 @@ Las etiquetas forman un **vocabulario cerrado**: solo se usan las de esta lista,
 - **Makey Makey**: el modo MkMk de la placa y la conductividad.
 - **STEAM**: solo cuando la entrada une la tecnología con el arte (plástica, literatura, música, arte cinético…), no por ser un proyecto tecnológico.
 - **No repetir una categoría**: nada de «Proyectos», «Talleres» o «Lego» (para eso está la categoría Bloques de construcción). Los medios que publican sobre Echidna van en la categoría Publicaciones, no como etiqueta.
-- **Una etiqueta nueva tiene que servir para al menos dos entradas** y se añade a esta lista y a `ETIQUETAS` en `web/src/content.config.ts`. Por eso no hay «Acelerómetro» (solo el Helicóptero) ni nombres de proyectos o personas.
+- **Una etiqueta nueva tiene que servir para al menos dos entradas** y se añade a esta lista y a `ETIQUETAS` en `web/src/lib/etiquetas.ts`. Por eso no hay «Acelerómetro» (solo el Helicóptero) ni nombres de proyectos o personas.
 - Una entrada puede quedarse sin etiquetas si ninguna encaja (p. ej. Echidna en el Ártico).
 
 ## Listas de datos: autores y categorías
