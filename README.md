@@ -99,9 +99,7 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 - [ ] **Modelos e impresión 3D**: Soportes 90º no tiene README en el repo `recursos`.
 - [ ] **Enlace roto en ¿Hace calor aquí?**: en «Créditos», la descarga «Ficha XY-Grid» apunta a `Alhambra2.sb3`, que no existe; hay que conseguir el fichero o quitar el enlace en el `.elp` y volver a exportar.
 - [ ] **Entradas del blog por completar**: 4 sin portada (¡Volvemos a esLibre!, esLibre 2023, Cultura Maker 22 e Inteligencia artificial con Echidna).
-- [ ] **Revisar las entradas importadas**:
-  - «ROBÓTICA EDUCATIVA + IA CON ECHIDNA en #eslibre2023» no tenía categoría en WordPress: se le ha puesto Talleres.
-  - En Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
+- [ ] **Revisar las entradas importadas**: en Arte cinético, «Archivo sb3» enlaza al PDF de la plantilla (error de la web anterior): falta el enlace al `.sb3`.
 - [ ] Buscar la imagen perdida del blog `Icono_Scratch-1024x948.png` (*EchidnaScratch, el erizo y el gato se hacen amigos*): no está en la caché de la importación (`herramientas/wp-import/.cache/`) ni ya en WordPress; queda el backup de `wp-content/uploads`. Al importar se quitó de la entrada; si aparece, volver a ponerla.
 
 ### Diseño
