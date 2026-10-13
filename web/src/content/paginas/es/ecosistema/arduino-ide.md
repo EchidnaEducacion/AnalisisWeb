@@ -48,7 +48,7 @@ Conecta la EchidnaBlack2 al ordenador con el cable USB-C y abre Arduino IDE. Ant
 - **Procesador**: **ATmega328P**.
 - **Puerto**: el puerto USB al que está conectada la placa. Su nombre depende del sistema operativo y el número puede cambiar según los dispositivos conectados: `/dev/ttyUSB0` en GNU/Linux, `COM3` en Windows o `/dev/cu.usbserial-1410` en macOS.
 
-![Un portátil con Arduino IDE conectado a la EchidnaBlack2 por USB, con la placa Arduino Nano, el procesador ATmega328P y el puerto /dev/ttyUSB0 elegidos.](./arduino-ide/placa-procesador-puerto.png)
+![Un portátil con Arduino IDE conectado a la EchidnaBlack2 por USB, con la ventana Seleccionar otra placa y puerto abierta: la placa Arduino Nano y el puerto /dev/ttyUSB0 elegidos.](./arduino-ide/placa-procesador-puerto.png)
 
 ## Estructura de un programa
 
