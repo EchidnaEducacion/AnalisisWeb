@@ -5,6 +5,21 @@ import { createReadStream, existsSync, statSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
 import redirecciones from './redirecciones.mjs';
 
+// Colores del tema claro de Arduino IDE, como en la GuiaInicioArduinoIDE: el código se ve como en el editor
+const temaArduino = {
+  name: 'arduino-ide',
+  type: 'light',
+  colors: { 'editor.background': '#ffffff', 'editor.foreground': '#434f54' },
+  tokenColors: [
+    { settings: { foreground: '#434f54' } },
+    { scope: ['comment', 'punctuation.definition.comment'], settings: { foreground: '#95a5a6' } },
+    { scope: ['storage.type', 'storage.modifier', 'constant.language'], settings: { foreground: '#00979d' } },
+    { scope: ['keyword.control', 'keyword.other'], settings: { foreground: '#5e6d03' } },
+    { scope: ['entity.name.function', 'support.function'], settings: { foreground: '#d35400' } },
+    { scope: ['string', 'punctuation.definition.string'], settings: { foreground: '#005c5f' } },
+  ],
+};
+
 // Las tablas del Markdown van dentro de .table-wrap, como en las plantillas:
 // borde redondeado y desplazamiento horizontal en móvil en vez de ensanchar la página
 const tablasConMarco = {
@@ -170,5 +185,10 @@ export default defineConfig({
   fonts: tipografias,
   // URL de la web anterior (ver redirecciones.mjs y ../redirecciones.md)
   redirects: redirecciones,
-  markdown: { processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias, enlacesExternos] }) },
+  markdown: {
+    processor: satteri({ hastPlugins: [tablasConMarco, incrustados, galerias, enlacesExternos] }),
+    // ```arduino se resalta como C++. Cada token lleva también el color del tema de Arduino IDE en
+    // --shiki-arduino, que echidna.css aplica a pre[data-language="arduino"]; el resto usa github-dark
+    shikiConfig: { themes: { oscuro: 'github-dark', arduino: temaArduino }, defaultColor: 'oscuro', langAlias: { arduino: 'cpp' } },
+  },
 });

@@ -54,7 +54,7 @@ Conecta la EchidnaBlack2 al ordenador con el cable USB-C y abre Arduino IDE. Ant
 
 Un programa de Arduino se llama ***sketch*** y siempre tiene, como mínimo, dos funciones: `setup()` y `loop()`. Es lo que aparece al crear un programa nuevo en Arduino IDE:
 
-```cpp
+```arduino
 // aquí van las constantes y las variables
 
 void setup() {

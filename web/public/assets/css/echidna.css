@@ -130,6 +130,10 @@ code, kbd, pre { font-family: var(--font-mono); font-size: .9em; font-variant-li
 :not(pre) > code { background: var(--surface-2); border: 1px solid var(--line); padding: .08em .38em; border-radius: 6px; }
 kbd { background: var(--surface); border: 1px solid var(--line-strong); border-bottom-width: 3px; border-radius: 6px; padding: .05em .4em; font-size: .82em; }
 pre { background: #1d1a16; color: #f3eee7; padding: 1.1rem 1.25rem; border-radius: var(--radius); overflow-x: auto; line-height: 1.55; }
+/* Código Arduino (```arduino): colores y números de línea de Arduino IDE (ver temaArduino en astro.config.mjs) */
+pre[data-language="arduino"] { background: #fff !important; color: #434f54 !important; border: 1px solid #dae3e3; counter-reset: linea; }
+pre[data-language="arduino"] span { color: var(--shiki-arduino) !important; }
+pre[data-language="arduino"] .line::before { counter-increment: linea; content: counter(linea); display: inline-block; width: 2ch; margin-right: 1.25rem; text-align: right; color: #95a5a6; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 
 .skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: var(--bg); padding: .6rem 1rem; border-radius: var(--radius-s); font-weight: 700; }
