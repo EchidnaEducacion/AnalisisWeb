@@ -92,7 +92,7 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 
 ### Contenido
 
-- [ ] **Recursos docentes** (`/docentes/`), material a material: terminar las diapositivas (PDF) y la programación didáctica de Proyectos de inicio con EchidnaML (hoy «Próximamente»; al terminarlas, poner su `url` en `recursos.yaml`) y añadir los demás materiales: situaciones de aprendizaje, Snap!, Proyectos de inicio con Arduino IDE y Otros recursos. Al añadirlos, montar las rutas intermedias de `/docentes/` que faltan en las redirecciones ([pendiente](redirecciones.md#pendiente)).
+- [ ] **Recursos docentes** (`/docentes/`), material a material: terminar las diapositivas (PDF) y la programación didáctica de Proyectos de inicio con EchidnaML (hoy «Próximamente»; al terminarlas, poner su `url` en `recursos.yaml`) y añadir los demás materiales: situaciones de aprendizaje, Snap! y Otros recursos. Al añadirlos, montar las rutas intermedias de `/docentes/` que faltan en las redirecciones ([pendiente](redirecciones.md#pendiente)).
 - [ ] **Materiales alumnado por hacer**: por ahora solo hay 8 materiales; faltan otros proyectos, Snap!, etc.
 - [ ] **Snap!** (1.4.2): la página está hecha con la descripción del entorno; faltan la librería de bloques para la EchidnaBlack2 (repo `S4A-EchidnaBlack2C`) y una guía para el aula.
 - [ ] **Imágenes de las tarjetas**: buscar una imagen para las tarjetas que hoy salen sin ella (las de EchidnaML ya la tienen). Se pone en el campo `image` de cada página.

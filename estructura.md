@@ -65,8 +65,8 @@ Estructura propuesta para la nueva web de Echidna. Las **URL** y las **plantilla
 │   │   └── 3.3 Recursos docentes de cada SdA
 │   ├── Snap!                               (título; sin contenido de momento)
 │   │   └── 3.4 Recursos docentes de Snap!
-│   ├── Proyectos de inicio con Arduino IDE (título)
-│   │   └── 3.5 Recursos docentes de Arduino IDE
+│   ├── Proyectos de inicio con Arduino IDE (título; tarjeta del material del alumnado, 2.4)
+│   │   └── 3.5 Guía docente (PDF)
 │   └── Otros recursos                      (título)
 │       ├── 3.6 Manual de usuario
 │       ├── 3.7 Modelos e impresión 3D
@@ -136,7 +136,7 @@ Pie (fuera del menú, en todas las páginas)
 | 2 | 3.2 Proyectos de inicio con EchidnaML: programación didáctica | Por decidir | — (en preparación: la tarjeta sale «Próximamente») |
 | 2 | 3.3 Situaciones de aprendizaje: recursos de cada una | `/docentes/situaciones-aprendizaje/<recurso>/<tipo>/` (p. ej. `…/sensor-temperatura/guia-docente/`) | — (recurso alojado sin plantilla; mismo `<recurso>` que en alumnado) |
 | 2 | 3.4 Snap!: recursos docentes | `/docentes/snap/<tipo>/` | — (recurso alojado sin plantilla; sin contenido de momento) |
-| 2 | 3.5 Proyectos de inicio con Arduino IDE: recursos docentes | `/docentes/proyectos-inicio-arduino-ide/<tipo>/` | — (recurso alojado sin plantilla) |
+| 2 | 3.5 Proyectos de inicio con Arduino IDE: guía docente (PDF) | `/GuiaInicioArduinoIDE/guia-docente.pdf` (lo publica su repo) | — (repo `GuiaInicioArduinoIDE`) |
 | 2 | 3.6 Manual de usuario | `/manual/` (lo publica su repo) | — (repo `manual`) |
 | 2 | 3.7 Modelos e impresión 3D | `/docentes/impresion-3d/` | Página genérica |
 | 2 | 3.8 Cómo colaborar | `/docentes/colabora/` | Página genérica (incluye resumen de repositorios) |

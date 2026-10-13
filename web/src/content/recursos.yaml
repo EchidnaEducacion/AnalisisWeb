@@ -124,6 +124,26 @@
   image: ./recursos/docentes-programacion.svg
   order: 3
 
+- id: docentes-inicio-arduino-ide-material
+  title: Material del alumnado
+  description: La guía Proyectos de inicio con Arduino IDE, con los proyectos que hará el alumnado en clase.
+  audience: docentes
+  environment: Proyectos de inicio con Arduino IDE
+  type: Guía
+  url: https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/
+  image: ./recursos/guia-inicio-arduino-ide.jpg
+  order: 1
+
+- id: docentes-inicio-arduino-ide-guia-docente
+  title: Guía docente
+  description: Una posible solución de cada propuesta de los apartados Mejóralo, que en la guía del alumnado solo traen una pista.
+  audience: docentes
+  environment: Proyectos de inicio con Arduino IDE
+  type: Guía docente (PDF)
+  url: https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/guia-docente.pdf
+  image: ./recursos/docentes-guia-docente-arduino-ide.png
+  order: 2
+
 - id: docentes-manual-echidnaml
   title: Manual de usuario EchidnaBlack2 y EchidnaML
   description: Manual completo de la placa EchidnaBlack2 y del entorno EchidnaML, con sus componentes, los bloques y la inteligencia artificial con LearningML.
