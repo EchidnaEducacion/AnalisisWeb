@@ -22,7 +22,7 @@ interface Props {
   /** Equipo que se muestra después del texto */
   team?: { collection: 'autores'; id: string }[];
   /** Tarjetas de enlace que se muestran después del texto */
-  cards?: { title: string; text: string; href: string; image?: ImageMetadata }[];
+  cards?: { title: string; text: string; href: string; image?: ImageMetadata; group?: string }[];
   /** Título del apartado de tarjetas; sin él, las tarjetas van sin título */
   cardsTitle?: string;
   /** Importancia mínima de las publicaciones que se listan al final; sin valor, no hay lista */

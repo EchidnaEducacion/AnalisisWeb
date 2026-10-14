@@ -48,9 +48,14 @@ cards:
     text: Al inclinar la placa el echidna se mueve por la pantalla, y salta al levantarla de golpe.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/11-movemos-el-echidna.pdf
     image: ./diapositivas/portada-movemos-el-echidna.png
+  - title: 3.1 Asistente virtual
+    text: Un modelo de texto entrenado con LearningML entiende nuestras órdenes para encender y apagar la luz.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/01-asistente-virtual.pdf
+    image: ./diapositivas/portada-asistente-virtual.png
+    group: Proyectos con IA
 ---
 
-Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo, con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
+Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo (en los de IA, además, entrenamos el modelo), con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
 
 Pulsa la miniatura o el título de un proyecto para abrir su PDF. Iremos añadiendo las del resto de proyectos.
 

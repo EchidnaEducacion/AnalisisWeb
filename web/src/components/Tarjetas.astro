@@ -5,32 +5,43 @@ import { Image } from 'astro:assets';
 import { url } from '../lib/url';
 
 interface Props {
-  cards: { title: string; text: string; href: string; image?: ImageMetadata }[];
+  cards: { title: string; text: string; href: string; image?: ImageMetadata; group?: string }[];
   /** Columnas: 2 (en la columna del texto) o 3 (a todo el ancho) */
   columnas?: 2 | 3;
   /** Título del apartado de tarjetas; con él, las tarjetas llevan h3 */
   titulo?: string;
 }
 const { cards, columnas = 2, titulo } = Astro.props;
-const TituloTarjeta = titulo ? 'h3' : 'h2';
+// Las tarjetas sin `group` van bajo `titulo`; las demás, bajo el título de su grupo
+const grupos = [{ titulo, cards: cards.filter((c) => !c.group) }];
+for (const c of cards.filter((c) => c.group)) {
+  const g = grupos.find((g) => g.titulo === c.group);
+  if (g) g.cards.push(c);
+  else grupos.push({ titulo: c.group, cards: [c] });
+}
+const TituloTarjeta = grupos.some((g) => g.titulo) ? 'h3' : 'h2';
 // Las rutas internas llevan base; las URL externas, no
 const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
 // Los enlaces externos se abren en una pestaña nueva
 const pestana = (href: string) => (href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' });
 ---
-{titulo && <h2 class="tarjetas__titulo">{titulo}</h2>}
-<ul class={`img-cards grid grid--${columnas}`}>
-  {cards.map((c) => (
-    <li class="card">
-      {c.image && (
-        <div class="img-cards__img">
-          <Image src={c.image} alt="" widths={[320, 640]} sizes="320px" />
-        </div>
-      )}
-      <div class="card__body">
-        <TituloTarjeta class="card__title"><a class="card__link" href={enlace(c.href)} {...pestana(c.href)}>{c.title}</a></TituloTarjeta>
-        <p class="card__text">{c.text}</p>
-      </div>
-    </li>
-  ))}
-</ul>
+{grupos.filter((g) => g.cards.length > 0).map((g) => (
+  <>
+    {g.titulo && <h2 class="tarjetas__titulo">{g.titulo}</h2>}
+    <ul class={`img-cards grid grid--${columnas}`}>
+      {g.cards.map((c) => (
+        <li class="card">
+          {c.image && (
+            <div class="img-cards__img">
+              <Image src={c.image} alt="" widths={[320, 640]} sizes="320px" />
+            </div>
+          )}
+          <div class="card__body">
+            <TituloTarjeta class="card__title"><a class="card__link" href={enlace(c.href)} {...pestana(c.href)}>{c.title}</a></TituloTarjeta>
+            <p class="card__text">{c.text}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </>
+))}
