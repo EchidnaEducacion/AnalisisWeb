@@ -31,6 +31,10 @@ cards:
     text: Al pulsar una tecla, el echidna dice en un bocadillo la temperatura que mide la placa.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/07-echidna-dice-temperatura.pdf
     image: ./diapositivas/portada-echidna-dice-temperatura.png
+  - title: 2.8 Termómetro de colores
+    text: El LED RGB se enciende en azul, verde o rojo según la temperatura.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/08-termometro-de-colores.pdf
+    image: ./diapositivas/portada-termometro-de-colores.png
 ---
 
 Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo, con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
