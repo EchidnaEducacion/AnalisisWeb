@@ -19,7 +19,7 @@
 - id: jose
   name: Jose Pujol
   role: Profesor de Tecnología en Secundaria
-  description: Lleva programación y robótica con hardware libre a sus clases desde 2006. Desarrolló el proyecto Kiwibot. Imparte formación sobre robótica educativa.
+  description: Lleva la programación y la robótica libre a las aulas desde 2006. Creador del proyecto Kiwibot y formador de docentes en robótica educativa.
   image: ../assets/autores/jose.jpg
   url: https://tecnopujol.wordpress.com/
 
