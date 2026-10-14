@@ -157,6 +157,10 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .grid--2 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
 .grid--3 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
 .grid--4 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); }
+/* Cuatro tarjetas que pasan a 2 × 2 y a una columna, sin dejar una sola en la última fila */
+.grid--4-2 { grid-template-columns: 1fr; }
+@media (min-width: 540px) { .grid--4-2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .grid--4-2 { grid-template-columns: repeat(4, 1fr); } }
 
 /* Botones */
 .btn {

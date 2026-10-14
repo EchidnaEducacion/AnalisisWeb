@@ -17,7 +17,7 @@ const programa = await getEntry('paginas', 'es/ecosistema/echidnaml');
 if (!programa?.data.image) throw new Error('Falta la página de EchidnaML (paginas/es/ecosistema/echidnaml) o su imagen');
 
 // Materiales destacados, en este orden (ids de recursos.yaml)
-const DESTACADOS = ['guia-inicio-echidnaml', 'hace-calor-aqui', 'manual-echidnaml'];
+const DESTACADOS = ['manual-echidnaml', 'guia-inicio-echidnaml', 'docentes-impresion-3d', 'hace-calor-aqui'];
 const recursos = await getCollection('recursos');
 const destacados = DESTACADOS.map((id) => {
   const r = recursos.find((x) => x.id === id);
@@ -123,12 +123,12 @@ const ultimas = await Promise.all(
           <a class="btn btn--ghost btn--sm" href={url('docentes/')}>Recursos docentes <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
-      <ul class="img-cards recursos grid grid--3">
+      <ul class="img-cards recursos grid grid--4-2">
         {destacados.map((r) => (
           <li class="card post-card">
             {r.image && (
               <div class="post-thumb">
-                <Image src={r.image} alt="" widths={[400, 800]} sizes="(min-width: 960px) 380px, 100vw" />
+                <Image src={r.image} alt="" widths={[400, 800]} sizes="(min-width: 1040px) 280px, (min-width: 540px) 50vw, 100vw" />
               </div>
             )}
             <div class="card__body">
