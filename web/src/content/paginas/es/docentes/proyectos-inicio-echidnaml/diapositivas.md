@@ -53,6 +53,11 @@ cards:
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/01-asistente-virtual.pdf
     image: ./diapositivas/portada-asistente-virtual.png
     group: Proyectos con IA
+  - title: 3.2 Clasificador de residuos
+    text: Un modelo de imágenes reconoce con la cámara a qué contenedor va cada residuo y abre su tapa con un servo.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/02-clasificador-residuos.pdf
+    image: ./diapositivas/portada-clasificador-residuos.png
+    group: Proyectos con IA
 ---
 
 Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo (en los de IA, además, entrenamos el modelo), con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
