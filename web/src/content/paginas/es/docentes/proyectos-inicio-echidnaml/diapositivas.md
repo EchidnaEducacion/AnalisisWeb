@@ -23,6 +23,10 @@ cards:
     text: El LED se enciende solo cuando el sensor de luz detecta poca luz.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/05-interruptor-crepuscular.pdf
     image: ./diapositivas/portada-interruptor-crepuscular.png
+  - title: 2.6 Piano de frutas
+    text: Una fruta conectada en modo MkMk se convierte en una tecla de piano.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/06-piano-de-frutas.pdf
+    image: ./diapositivas/portada-piano-de-frutas.png
 ---
 
 Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo, con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
