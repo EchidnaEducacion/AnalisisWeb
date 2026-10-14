@@ -4,6 +4,10 @@ description: Presentaciones en PDF para proyectar en clase con cada uno de los P
 template: pagina
 cardsTitle: Proyectos con EchidnaBlocks
 cards:
+  - title: 2. Introducción a EchidnaBlocks
+    text: Qué son EchidnaML y la placa EchidnaBlack2, sus componentes, el entorno EchidnaBlocks y cómo se ponen en marcha.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/00-introduccion.pdf
+    image: ./diapositivas/portada-introduccion-echidnablocks.png
   - title: 2.1 Hola Mundo
     text: El primer programa, que hace parpadear el LED rojo de la placa.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/01-hola-mundo.pdf
