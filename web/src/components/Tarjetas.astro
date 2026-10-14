@@ -8,13 +8,17 @@ interface Props {
   cards: { title: string; text: string; href: string; image?: ImageMetadata }[];
   /** Columnas: 2 (en la columna del texto) o 3 (a todo el ancho) */
   columnas?: 2 | 3;
+  /** Título del apartado de tarjetas; con él, las tarjetas llevan h3 */
+  titulo?: string;
 }
-const { cards, columnas = 2 } = Astro.props;
+const { cards, columnas = 2, titulo } = Astro.props;
+const TituloTarjeta = titulo ? 'h3' : 'h2';
 // Las rutas internas llevan base; las URL externas, no
 const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
 // Los enlaces externos se abren en una pestaña nueva
 const pestana = (href: string) => (href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' });
 ---
+{titulo && <h2 class="tarjetas__titulo">{titulo}</h2>}
 <ul class={`img-cards grid grid--${columnas}`}>
   {cards.map((c) => (
     <li class="card">
@@ -24,7 +28,7 @@ const pestana = (href: string) => (href.startsWith('/') ? {} : { target: '_blank
         </div>
       )}
       <div class="card__body">
-        <h2 class="card__title"><a class="card__link" href={enlace(c.href)} {...pestana(c.href)}>{c.title}</a></h2>
+        <TituloTarjeta class="card__title"><a class="card__link" href={enlace(c.href)} {...pestana(c.href)}>{c.title}</a></TituloTarjeta>
         <p class="card__text">{c.text}</p>
       </div>
     </li>

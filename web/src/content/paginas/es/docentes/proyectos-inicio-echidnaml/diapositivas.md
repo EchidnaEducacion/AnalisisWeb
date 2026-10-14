@@ -2,6 +2,7 @@
 title: Diapositivas de Proyectos de inicio con EchidnaML
 description: Presentaciones en PDF para proyectar en clase con cada uno de los Proyectos de inicio con EchidnaML, con pistas, ayudas y autoevaluación.
 template: pagina
+cardsTitle: Proyectos con EchidnaBlocks
 cards:
   - title: 2.1 Hola Mundo
     text: El primer programa, que hace parpadear el LED rojo de la placa.

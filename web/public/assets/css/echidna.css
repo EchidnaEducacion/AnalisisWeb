@@ -588,6 +588,8 @@ ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 .publicaciones__fecha { margin: auto 0 0; padding-top: .4rem; color: var(--muted); font-size: .88rem; }
 .indice .img-cards { margin-top: 2.5rem; }
 .indice__cards-title { margin-top: 2.5rem; }
+/* Título del apartado de tarjetas de la página genérica (cardsTitle) */
+.tarjetas__titulo + .img-cards { margin-top: 1.25rem; }
 .indice .indice__cards-title + .img-cards { margin-top: 1.25rem; }
 .indice.with-aside { padding-block: .75rem 4rem; }
 /* Índice lateral de los índices de sección: páginas hijas y apartados, juntos y fijos al bajar */
