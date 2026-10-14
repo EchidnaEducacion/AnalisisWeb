@@ -35,6 +35,10 @@ cards:
     text: El LED RGB se enciende en azul, verde o rojo según la temperatura.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/08-termometro-de-colores.pdf
     image: ./diapositivas/portada-termometro-de-colores.png
+  - title: 2.9 Vúmetro
+    text: Los tres LED muestran cuánto ruido capta el micrófono, como un semáforo de ruido.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/09-vumetro.pdf
+    image: ./diapositivas/portada-vumetro.png
 ---
 
 Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo, con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
