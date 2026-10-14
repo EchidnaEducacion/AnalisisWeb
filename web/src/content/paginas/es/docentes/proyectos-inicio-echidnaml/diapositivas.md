@@ -43,6 +43,10 @@ cards:
     text: El joystick de la placa mueve el lápiz para dibujar en el escenario.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/10-telesketch.pdf
     image: ./diapositivas/portada-telesketch.png
+  - title: 2.11 Movemos el echidna
+    text: Al inclinar la placa el echidna se mueve por la pantalla, y salta al levantarla de golpe.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/11-movemos-el-echidna.pdf
+    image: ./diapositivas/portada-movemos-el-echidna.png
 ---
 
 Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo, con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
