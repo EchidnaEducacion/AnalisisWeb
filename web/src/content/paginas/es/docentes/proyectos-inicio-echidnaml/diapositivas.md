@@ -39,6 +39,10 @@ cards:
     text: Los tres LED muestran cuánto ruido capta el micrófono, como un semáforo de ruido.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/09-vumetro.pdf
     image: ./diapositivas/portada-vumetro.png
+  - title: 2.10 Telesketch
+    text: El joystick de la placa mueve el lápiz para dibujar en el escenario.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/10-telesketch.pdf
+    image: ./diapositivas/portada-telesketch.png
 ---
 
 Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo, con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
