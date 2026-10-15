@@ -52,11 +52,15 @@ cards:
     text: Al inclinar la placa el echidna se mueve por la pantalla, y salta al levantarla de golpe.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/11-movemos-el-echidna.pdf
     image: ./diapositivas/portada-movemos-el-echidna.png
+  - title: 3. Introducción a LearningML
+    text: Qué es LearningML, los conceptos clave del machine learning, las fases para crear un modelo y su entorno.
+    href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/00-introduccion.pdf
+    image: ./diapositivas/portada-introduccion-learningml.png
+    group: Proyectos con IA
   - title: 3.1 Asistente virtual
     text: Un modelo de texto entrenado con LearningML entiende nuestras órdenes para encender y apagar la luz.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/01-asistente-virtual.pdf
     image: ./diapositivas/portada-asistente-virtual.png
-    group: Proyectos con IA
   - title: 3.2 Clasificador de residuos
     text: Un modelo de imágenes reconoce con la cámara a qué contenedor va cada residuo y abre su tapa con un servo.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/02-clasificador-residuos.pdf
