@@ -30,6 +30,8 @@ const paginas = defineCollection({
       // o una ruta interna sin base (/ecosistema/)
       // En los índices, `group` pone la tarjeta bajo ese título, junto a las hijas del mismo grupo
       cards: z.array(z.object({ title: texto(), text: texto(), href: texto(), image: image().optional(), group: texto().optional() })).default([]),
+      // Tarjetas por fila cuando van a todo el ancho (con imagen y sin lateral): 3 si no se indica
+      cardsColumns: z.union([z.literal(3), z.literal(4)]).optional(),
       // Tarjeta lateral de resumen (como la ficha rápida de las fichas): { label, value }. Solo en
       // páginas sin `toc`, porque ocupa el mismo lateral
       summary: z.array(z.object({ label: texto(), value: texto() })).default([]),

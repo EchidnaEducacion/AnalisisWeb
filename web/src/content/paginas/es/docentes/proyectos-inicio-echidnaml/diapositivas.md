@@ -3,6 +3,7 @@ title: Diapositivas de Proyectos de inicio con EchidnaML
 description: Presentaciones en PDF para proyectar en clase con cada uno de los Proyectos de inicio con EchidnaML, con pistas, ayudas y autoevaluación.
 template: pagina
 cardsTitle: Proyectos con EchidnaBlocks
+cardsColumns: 4
 cards:
   - title: 2. Introducción a EchidnaBlocks
     text: Qué son EchidnaML y la placa EchidnaBlack2, sus componentes, el entorno EchidnaBlocks y cómo se ponen en marcha.
@@ -61,6 +62,7 @@ cards:
     text: Un modelo de texto entrenado con LearningML entiende nuestras órdenes para encender y apagar la luz.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/01-asistente-virtual.pdf
     image: ./diapositivas/portada-asistente-virtual.png
+    group: Proyectos con IA
   - title: 3.2 Clasificador de residuos
     text: Un modelo de imágenes reconoce con la cámara a qué contenedor va cada residuo y abre su tapa con un servo.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/03-ia/02-clasificador-residuos.pdf

@@ -25,6 +25,8 @@ interface Props {
   cards?: { title: string; text: string; href: string; image?: ImageMetadata; group?: string }[];
   /** Título del apartado de tarjetas; sin él, las tarjetas van sin título */
   cardsTitle?: string;
+  /** Tarjetas por fila cuando van a todo el ancho */
+  cardsColumns?: 3 | 4;
   /** Importancia mínima de las publicaciones que se listan al final; sin valor, no hay lista */
   publications?: number;
   /** Público de los recursos que se listan al final, agrupados por entorno; sin valor, no hay lista */
@@ -34,13 +36,13 @@ interface Props {
   /** Tarjeta lateral de resumen; solo en páginas sin índice lateral */
   summary?: { label: string; value: string }[];
 }
-const { title, description, section, crumbs = [], headings, team, cards = [], cardsTitle, publications, resources, conIndice = false, summary = [] } = Astro.props;
+const { title, description, section, crumbs = [], headings, team, cards = [], cardsTitle, cardsColumns = 3, publications, resources, conIndice = false, summary = [] } = Astro.props;
 // Índice: los h2 del Markdown y, si hay lista de publicaciones, sus años
 const años = publications ? (await publicacionesPorAño(publications)).map((g) => g.año) : [];
 const entornos = resources ? (await recursosPorEntorno(resources)).map((g) => g.entorno) : [];
 // Sin lateral, los recursos salen debajo, a todo el ancho, para que quepan tres tarjetas por fila
 const recursosAncho = Boolean(resources) && !conIndice && summary.length === 0;
-// Igual con las tarjetas con imagen (Modelos e impresión 3D): a todo el ancho, tres por fila
+// Igual con las tarjetas con imagen (Modelos e impresión 3D): a todo el ancho, tres por fila (o las de `cardsColumns`)
 const tarjetasAncho = cards.some((c) => c.image) && !conIndice && summary.length === 0;
 const toc = [
   ...headings.filter((h) => h.depth === 2),
@@ -81,7 +83,7 @@ const toc = [
   </div>
   {tarjetasAncho && (
     <div class="wrap recursos-ancho">
-      <Tarjetas cards={cards} columnas={3} titulo={cardsTitle} />
+      <Tarjetas cards={cards} columnas={cardsColumns} titulo={cardsTitle} />
     </div>
   )}
   {recursosAncho && (

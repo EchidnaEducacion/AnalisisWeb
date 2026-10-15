@@ -6,8 +6,8 @@ import { url } from '../lib/url';
 
 interface Props {
   cards: { title: string; text: string; href: string; image?: ImageMetadata; group?: string }[];
-  /** Columnas: 2 (en la columna del texto) o 3 (a todo el ancho) */
-  columnas?: 2 | 3;
+  /** Columnas: 2 (en la columna del texto) o 3 o 4 (a todo el ancho) */
+  columnas?: 2 | 3 | 4;
   /** Título del apartado de tarjetas; con él, las tarjetas llevan h3 */
   titulo?: string;
 }
