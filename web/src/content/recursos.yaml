@@ -79,6 +79,7 @@
   group: Proyectos y Manual
   type: Guía
   url: https://echidnaeducacion.github.io/GuiaInicioArduinoIDE/
+  level: Secundaria
   image: ./recursos/guia-inicio-arduino-ide.jpg
   order: 1
 
