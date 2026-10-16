@@ -16,7 +16,7 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 
 - **Entran** las publicaciones de otros (medios, blogs, pódcast, vídeos, trabajos académicos, cursos, congresos y talleres) que hablan de Echidna como tema principal o con un apartado propio.
 - **Fecha**: la de publicación en el medio, no la de la entrada que la recogía en el blog de Echidna.
-- **Origen**: «web actual» si ya estaba en la página de Publicaciones de echidna.es; «búsqueda» si es nueva; «propuesta» si la ha propuesto alguien de Echidna.
+- **Origen**: «web actual» si ya estaba en la página de Publicaciones de echidna.es; «búsqueda» si es nueva.
 - **Enlace**: comprobado en octubre de 2026 (responde y menciona Echidna), salvo que se indique otra cosa.
 - No entran las páginas propias de Echidna (echidna.es, el manual, GitHub) ni las tiendas.
 - **Importancia** (de 1 a 5), según el alcance del medio y cuánto se centra en Echidna:
@@ -30,7 +30,6 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 
 | Fecha | Medio | Título | Importancia | Tipo | Origen | Notas |
 |---|---|---|---|---|---|---|
-| 2026-05-26 | CP Juan de Lanuza (YouTube) | [Echidna - Unboxing y primeros pasos](https://www.youtube.com/watch?v=FI3wk4qrt8M) | 2 | Vídeo | Propuesta | Vídeo de un colegio que abre la placa y da los primeros pasos. Fecha de estreno en YouTube |
 | 2026-04-28 | Hisparob | [Conociendo Echidna](https://robotica-educativa.hisparob.es/conociendo-echidna/) | 3 | Artículo | Búsqueda | Escrito por GM Technology (distribuidor): la EchidnaBlack2 con sus situaciones de aprendizaje |
 | 2026-04 | Junta de Andalucía (eAprendizaje) | [Ficha técnica EchidnaBlack2](https://www.juntadeandalucia.es/educacion/eaprendizaje/wp-content/uploads/2026/04/L2P09-PLaca-componentes-IA.pdf) | 4 | Recurso educativo (REA) | Búsqueda | PDF de un REA con la placa y la IA. Ojo: da la licencia «CERN Open Hardware Licence -W- V2-M» con restricción comercial (ver el pendiente de la licencia del hardware en `estructura.md`) |
 | 2026-02-06 | Educación 3.0 | [Echidna educación: el proyecto que usa herramientas de código abierto para llevar la programación y la robótica al aula](https://www.educaciontrespuntocero.com/tecnologia/echidna-educacion/) | 5 | Artículo | Búsqueda | Revista educativa de ámbito nacional. La fecha puede ser la de actualización |
@@ -76,6 +75,7 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 - **OSHWA**, certificados ES000007 y ES000010: son certificaciones, no publicaciones (podrían citarse en otra página).
 - **Microlog** y otras tiendas: venta de la placa.
 - **Webs de centros** (p. ej. Google Sites de un colegio): materiales internos de aula.
+- **CP Juan de Lanuza, «[Echidna - Unboxing y primeros pasos](https://www.youtube.com/watch?v=FI3wk4qrt8M)»** (2026, YouTube): canal de un colegio, medio de poca importancia.
 
 ## Formato de la página
 
