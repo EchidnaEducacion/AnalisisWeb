@@ -14,6 +14,8 @@ const entornos = await recursosPorEntorno(Astro.props.publico);
 const enlace = (href: string) => (href.startsWith('/') ? url(href.slice(1)) : href);
 // Los recursos externos se abren en una pestaña nueva
 const pestana = (href: string) => (href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' });
+// Las situaciones de aprendizaje van cuatro por fila en ordenador; el resto, tres
+const columnas = (grupo?: string) => (grupo === 'Situaciones de aprendizaje' ? 4 : 3);
 ---
 {entornos.map(({ entorno, grupos }) => (
   <>
@@ -21,7 +23,7 @@ const pestana = (href: string) => (href.startsWith('/') ? {} : { target: '_blank
     {grupos.map(({ grupo, lista }) => (
       <>
         {grupo && <h3>{grupo}</h3>}
-        <ul class="img-cards recursos grid grid--3">
+        <ul class={`img-cards recursos grid grid--${columnas(grupo)}`}>
           {lista.map((r) => (
             <li class:list={['card post-card', { recursos__destacado: r.featured, recursos__proximamente: !r.url }]}>
               {r.image && (
