@@ -77,6 +77,6 @@ cards:
 
 Se proyectan en clase mientras el alumnado trabaja los [Proyectos de inicio con EchidnaML](https://echidnaeducacion.github.io/GuiaInicioEchidnaML/). Hay una por proyecto y siguen sus mismas fases: qué vamos a hacer, programamos y mejóralo (en los de IA, además, entrenamos el modelo), con una pista o una ayuda para cada reto. Terminan con una evaluación: preguntas para comprobar lo aprendido y una lista para que el alumnado marque lo que ha conseguido.
 
-Pulsa la miniatura o el título de un proyecto para abrir su PDF. Iremos añadiendo las del resto de proyectos.
+Pulsa la miniatura o el título de un proyecto para abrir su PDF.
 
 Encontrarás más materiales para el aula en [Recursos docentes](/docentes/).
