@@ -19,6 +19,7 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 - **Origen**: «web actual» si ya estaba en la página de Publicaciones de echidna.es; «búsqueda» si es nueva.
 - **Enlace**: comprobado en octubre de 2026 (responde y menciona Echidna), salvo que se indique otra cosa.
 - No entran las páginas propias de Echidna (echidna.es, el manual, GitHub) ni las tiendas.
+- **LearningML**: no entran las publicaciones solo sobre LearningML, que es otro proyecto; la página enlaza a su listado propio ([Estudios sobre LearningML](https://learningml.org/trabajos-sobre-learningml/)). Sí entran las que tratan su integración con Echidna (EchidnaML, proyectos con la placa).
 - **Importancia** (de 1 a 5), según el alcance del medio y cuánto se centra en Echidna:
   - **5**: medio de referencia nacional en educación, con un artículo dedicado a Echidna.
   - **4**: institución educativa (administración, centro de formación del profesorado) o medio especializado de mucha audiencia, con contenido dedicado.
