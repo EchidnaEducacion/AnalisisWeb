@@ -145,6 +145,15 @@
   importance: 3
   summary: Prueban el prototipo Echidna White, que después sería la EchidnaBlack.
 
+- id: oshwdem-2019-echidnashield
+  title: OSHWDem 2019 - Echidna Shield
+  medium: OSHWDEM 2019
+  date: "2019-12-20"
+  type: Vídeo
+  url: https://www.youtube.com/watch?v=1o3yRVKM69Q
+  importance: 3
+  summary: Grabación de la presentación de la EchidnaShield en la feria de hardware abierto de A Coruña.
+
 - id: la-hora-maker-echidnashield
   title: Echidna Shield - una placa diseñada para la educación
   medium: La Hora Maker
