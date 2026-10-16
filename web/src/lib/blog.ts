@@ -25,6 +25,8 @@ export const slugEtiqueta = (etiqueta: string) =>
 export const rutaCategoria = (id: string) => `category/${id}`;
 export const rutaEtiqueta = (etiqueta: string) => `tag/${slugEtiqueta(etiqueta)}`;
 export const rutaAutor = (id: string) => `author/${id}`;
+// Archivo de un año: /2024/, como en WordPress
+export const rutaAnio = (anio: number) => `${anio}`;
 
 // Páginas de un listado: la primera en <base>/ y las siguientes en <base>/page/2/…, como en WordPress.
 // Devuelve, para cada página, el tramo que sigue a la base (vacío en la primera) y sus entradas.

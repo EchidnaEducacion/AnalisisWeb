@@ -1,0 +1,29 @@
+---
+// Archivo de un año del blog: /2024/ y sus páginas siguientes (/2024/page/2/…), como en WordPress
+import ListadoBlog from '../../components/ListadoBlog.astro';
+import { url } from '../../lib/url';
+import { entradasPublicadas, paginar, rutaAnio } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const todas = await entradasPublicadas();
+  const anios = [...new Set(todas.map((e) => e.data.date.getFullYear()))];
+  return anios.flatMap((anio) =>
+    paginar(todas.filter((e) => e.data.date.getFullYear() === anio)).map((p) => ({
+      params: { anio: rutaAnio(anio), pagina: p.tramo },
+      props: { ...p, todas, anio },
+    })),
+  );
+}
+const { entradas, pagina, total, todas, anio } = Astro.props;
+---
+<ListadoBlog
+  title={`Entradas de ${anio}`}
+  lead={`Entradas del blog publicadas en ${anio}.`}
+  crumbs={[{ title: 'Blog', href: url('blog/') }]}
+  entradas={entradas}
+  todas={todas}
+  base={rutaAnio(anio)}
+  pagina={pagina}
+  total={total}
+  anio={anio}
+/>

@@ -22,8 +22,10 @@ interface Props {
   base: string;
   pagina: number;
   total: number;
+  /** Año, si es el archivo de un año: se resalta en el lateral */
+  anio?: number;
 }
-const { title, lead, crumbs = [], entradas, todas, base, pagina, total } = Astro.props;
+const { title, lead, crumbs = [], entradas, todas, base, pagina, total, anio } = Astro.props;
 const conDatos = await Promise.all(
   entradas.map(async (e) => ({
     entry: e,
@@ -84,7 +86,7 @@ const titulo = pagina > 1 ? `${title} (página ${pagina})` : title;
       )}
     </section>
 
-    <BlogLateral todas={todas} />
+    <BlogLateral todas={todas} anio={anio} />
   </div>
 </main>
 </Base>

@@ -144,6 +144,7 @@ Pie (fuera del menú, en todas las páginas)
 | 1 | Blog | `/blog/` | Listado / taxonomía |
 | 2 | Entradas | `/AAAA/MM/slug/` | Entrada de blog |
 | 2 | Categorías, etiquetas y autores | `/category/…/` (con subcategorías de dos niveles, p. ej. `/category/recursos/proyectos/`), `/tag/…/`, `/author/…/` | Listado / taxonomía |
+| 2 | Archivo por años | `/AAAA/` (p. ej. `/2024/`), enlazado desde la tarjeta «Archivo» del lateral del blog | Listado / taxonomía |
 | 2 | Talleres (categoría) | `/category/talleres/` | Listado / taxonomía |
 | 2 | RSS del blog | `/rss.xml` y copia en `/feed/` | — (generado por Astro) |
 | 1 | Quiénes somos | (menú desplegable, sin página propia) | — |

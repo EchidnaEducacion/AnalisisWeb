@@ -1,16 +1,18 @@
 ---
 // Lateral del blog (entradas y listado): todas las categorías con su número de entradas,
 // con las subcategorías bajo su madre, las 5 últimas entradas (con la actual resaltada) y las
-// etiquetas con su número de entradas
+// etiquetas con su número de entradas y los años del archivo
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { url } from '../lib/url';
-import { fechaLarga, rutaCategoria, rutaEntrada, rutaEtiqueta } from '../lib/blog';
+import { fechaLarga, rutaAnio, rutaCategoria, rutaEntrada, rutaEtiqueta } from '../lib/blog';
 
 interface Props {
   /** Entradas publicadas, de la más reciente a la más antigua */
   todas: CollectionEntry<'blog'>[];
   /** Entrada actual, si la hay: se destacan sus categorías y se resalta en las últimas entradas */
   actual?: CollectionEntry<'blog'>;
+  /** Año del archivo que se está viendo, si es el caso, para resaltarlo */
+  anio?: number;
 }
 const { todas, actual } = Astro.props;
 
@@ -30,6 +32,11 @@ const etiquetas = [...new Set(todas.flatMap((t) => t.data.tags))]
   .sort((a, b) => a.localeCompare(b, 'es'))
   .map((tag) => ({ tag, n: todas.filter((t) => t.data.tags.includes(tag)).length }));
 const delActual = new Set(actual?.data.tags ?? []);
+// Años con entradas, del más reciente al más antiguo, con su número de entradas
+const anios = [...new Set(todas.map((t) => t.data.date.getFullYear()))]
+  .sort((a, b) => b - a)
+  .map((anio) => ({ anio, n: todas.filter((t) => t.data.date.getFullYear() === anio).length }));
+const anioActual = Astro.props.anio ?? actual?.data.date.getFullYear();
 ---
 <aside class="aside-stack aside-stack--sticky" aria-label="Más del blog">
   <section class="factsheet blog-aside" aria-labelledby="cat-t">
@@ -59,6 +66,19 @@ const delActual = new Set(actual?.data.tags ?? []);
       <ul class="blog-aside__tags">
         {etiquetas.map(({ tag, n }) => (
           <li><a class="chip chip--outline" href={url(`${rutaEtiqueta(tag)}/`)} aria-current={delActual.has(tag) ? 'true' : undefined}>{tag} <span class="blog-aside__count">{n}</span></a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+  {anios.length > 0 && (
+    <section class="factsheet blog-aside" aria-labelledby="anio-t">
+      <h2 id="anio-t">Archivo</h2>
+      <ul class="blog-aside__list">
+        {anios.map(({ anio, n }) => (
+          <li>
+            <a href={url(`${rutaAnio(anio)}/`)} aria-current={anio === anioActual ? 'true' : undefined}>{anio}</a>
+            <span class="blog-aside__count">{n}</span>
+          </li>
         ))}
       </ul>
     </section>

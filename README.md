@@ -79,7 +79,7 @@ Las alternativas valoradas y los motivos de la elección están en [`analisis-pr
 
 **Blog**
 
-- [x] **Formato del blog** aprobado por el equipo (octubre de 2026): listado en dos columnas de tarjetas, paginado de 12 en 12, y un lateral con categorías, últimas entradas y etiquetas.
+- [x] **Formato del blog** aprobado por el equipo (octubre de 2026): listado en dos columnas de tarjetas, paginado de 12 en 12, y un lateral con categorías, últimas entradas, etiquetas y archivo por años (`/AAAA/`).
 - [x] **Entradas nuevas del blog por *pull request*** (octubre de 2026): cada entrada se escribe en local en su rama, creada con `bun run nueva-entrada` (en borrador, que solo se ve en el servidor de desarrollo), y se publica al fusionar la PR después de que otra persona del equipo la revise. El workflow `comprobar.yml` construye la web en cada PR para detectar errores de validación. Sin publicación programada por ahora. El flujo está en [`escribir-blog.md`](escribir-blog.md).
 - [x] **Etiquetas del blog con vocabulario cerrado** (octubre de 2026): 21 etiquetas en cinco grupos (placas, entornos, componentes, temas y eventos), cada una en al menos dos entradas y sin repetir categorías. La lista y los criterios para asignarlas están en [`modelo-contenido.md`](modelo-contenido.md#etiquetas-del-blog).
 - [x] **Sin comentarios en el blog**: solo hubo 9 en 6 años y Giscus obligaría a tener cuenta de GitHub. Los 9 comentarios antiguos se descartan. Al final de cada entrada se invita a escribir desde `/contacta/`.
