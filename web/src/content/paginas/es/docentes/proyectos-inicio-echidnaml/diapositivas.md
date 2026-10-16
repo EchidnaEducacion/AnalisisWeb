@@ -6,7 +6,7 @@ cardsTitle: Proyectos con EchidnaBlocks
 cardsColumns: 4
 cards:
   - title: 2. Introducción a EchidnaBlocks
-    text: Qué son EchidnaML y la placa EchidnaBlack2, sus componentes, el entorno EchidnaBlocks y cómo se ponen en marcha.
+    text: Qué es EchidnaML y la placa EchidnaBlack, y cómo programarla en EchidnaBlocks.
     href: https://echidnaeducacion.github.io/GuiaInicioEchidnaML/diapositivas/02-echidnablocks/00-introduccion.pdf
     image: ./diapositivas/portada-introduccion-echidnablocks.png
   - title: 2.1 Hola Mundo
