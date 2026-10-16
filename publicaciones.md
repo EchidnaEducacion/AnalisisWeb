@@ -16,7 +16,7 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 
 - **Entran** las publicaciones de otros (medios, blogs, pódcast, vídeos, trabajos académicos, cursos, congresos y talleres) que hablan de Echidna como tema principal o con un apartado propio.
 - **Fecha**: la de publicación en el medio, no la de la entrada que la recogía en el blog de Echidna.
-- **Origen**: «web actual» si ya estaba en la página de Publicaciones de echidna.es; «búsqueda» si es nueva.
+- **Origen**: «web actual» si ya estaba en la página de Publicaciones de echidna.es; «búsqueda» si es nueva; «propuesta» si la ha propuesto alguien de Echidna.
 - **Enlace**: comprobado en octubre de 2026 (responde y menciona Echidna), salvo que se indique otra cosa.
 - No entran las páginas propias de Echidna (echidna.es, el manual, GitHub) ni las tiendas.
 - **Importancia** (de 1 a 5), según el alcance del medio y cuánto se centra en Echidna:
@@ -30,6 +30,7 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 
 | Fecha | Medio | Título | Importancia | Tipo | Origen | Notas |
 |---|---|---|---|---|---|---|
+| 2026-05-26 | CP Juan de Lanuza (YouTube) | [Echidna - Unboxing y primeros pasos](https://www.youtube.com/watch?v=FI3wk4qrt8M) | 2 | Vídeo | Propuesta | Vídeo de un colegio que abre la placa y da los primeros pasos. Fecha de estreno en YouTube |
 | 2026-04-28 | Hisparob | [Conociendo Echidna](https://robotica-educativa.hisparob.es/conociendo-echidna/) | 3 | Artículo | Búsqueda | Escrito por GM Technology (distribuidor): la EchidnaBlack2 con sus situaciones de aprendizaje |
 | 2026-04 | Junta de Andalucía (eAprendizaje) | [Ficha técnica EchidnaBlack2](https://www.juntadeandalucia.es/educacion/eaprendizaje/wp-content/uploads/2026/04/L2P09-PLaca-componentes-IA.pdf) | 4 | Recurso educativo (REA) | Búsqueda | PDF de un REA con la placa y la IA. Ojo: da la licencia «CERN Open Hardware Licence -W- V2-M» con restricción comercial (ver el pendiente de la licencia del hardware en `estructura.md`) |
 | 2026-02-06 | Educación 3.0 | [Echidna educación: el proyecto que usa herramientas de código abierto para llevar la programación y la robótica al aula](https://www.educaciontrespuntocero.com/tecnologia/echidna-educacion/) | 5 | Artículo | Búsqueda | Revista educativa de ámbito nacional. La fecha puede ser la de actualización |
@@ -46,6 +47,7 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 | 2022-04-11 | Hisparob | [Paneles interactivos con Echidna](https://robotica-educativa.hisparob.es/en-el-blog-de-microlog_tecno-paneles-interactivos-con-echidna/) | 2 | Tutorial | Búsqueda | Reproduce una entrada del blog de Microlog, cuyo original ya no existe (404) |
 | 2020-11-15 | Programamos | [Novedades del proyecto Echidna](https://programamos.es/novedades-del-proyecto-echidna/) | 4 | Artículo | Búsqueda | |
 | 2020-02-25 | Juegos Robótica | [Robótica educativa #42: Echidna White, computación física en clase](https://juegosrobotica.es/podcast-042/) | 3 | Pódcast | Web actual | Prototipo Echidna White (después EchidnaBlack) |
+| 2019-06-20 | La Hora Maker (Make Space Madrid) | [Echidna Shield - una placa diseñada para la educación](https://www.youtube.com/watch?v=n14cTubcW8U) | 3 | Vídeo | Web actual | Episodio del canal de YouTube de La Hora Maker. La web actual solo enlazaba a la portada de La Hora Maker |
 | 2019-06-04 | Programar Fácil | [EchidnaShield, el Arduino Shield para la educación](https://programarfacil.com/blog/arduino-blog/echidnashield-arduino-shield-para-educacion/) | 4 | Artículo (con vídeo) | Web actual | Incluye tutorial con IoT y el [vídeo](https://www.youtube.com/watch?v=vbXfh24BOwE). La web actual cita también un pódcast que no se ha localizado |
 | 2018-09-03 | Descubre Arduino | [Echidna Shield, una placa destinada a enseñar compatible con Arduino](https://descubrearduino.com/echidna-shield/) | 2 | Artículo | Búsqueda | |
 | 2017-11-11 | OSHWDEM 2017 | [Taller EchidnaShield: programando sistemas físicos en entornos gráficos](https://www.oshwdem.org/talleres-2017/) | 3 | Taller en congreso | Búsqueda | Ponentes: Jorge Lobo, José Pujol y Xabier Rosas |
@@ -62,7 +64,6 @@ Listado de trabajo para la página 5.3 Publicaciones (`/quienes-somos/publicacio
 | 2022-03 | Buen Educador (blog) | [Estas son las cinco placas de programación más utilizadas en educación](https://buen-educador.blogspot.com/2022/03/estas-son-las-cinco-placas-de.html) | 1 | Echidna es una de las cinco; parece reproducir un artículo de otro medio, que habría que localizar |
 | 2021-07-01 | SlideShare (Jorge Lobo) | [Robótica educativa + IA con Echidna](https://www.slideshare.net/slideshow/20210701-robtica-educativa-ia-con-echidna-jorge-lobo/249578716) | 2 | Presentación de un miembro de Echidna; decidir si las charlas propias entran |
 | 2017-10-20 | Código 21 (Gobierno de Navarra) | «EchidnaShield, programación gráfica con Arduino» | 4 | El [enlace](https://codigo21.educacion.navarra.es/2017/10/20/echidnashield-programacion-grafica-con-arduino/) da error 404; buscar si hay copia archivada |
-| ? | La Hora Maker (Make Space Madrid) | «Echidna Shield – una placa diseñada para la educación» | 3 | Está en la web actual (fecha de la entrada: 14/07/2019), pero solo enlaza a la portada de La Hora Maker y no se ha encontrado el episodio |
 | ? | CATEDU | [Echidna (libro del curso «Programa Arduino con Echidna»)](https://libros.catedu.es/books/echidna) | 4 | Curso completo sobre Echidna; falta la fecha |
 
 ## Descartadas

@@ -145,6 +145,15 @@
   importance: 3
   summary: Prueban el prototipo Echidna White, que después sería la EchidnaBlack.
 
+- id: la-hora-maker-echidnashield
+  title: Echidna Shield - una placa diseñada para la educación
+  medium: La Hora Maker
+  date: "2019-06-20"
+  type: Vídeo
+  url: https://www.youtube.com/watch?v=n14cTubcW8U
+  importance: 3
+  summary: Episodio de La Hora Maker dedicado a la EchidnaShield, una placa pensada para la educación.
+
 - id: programar-facil-echidnashield
   title: EchidnaShield, el Arduino Shield para la educación
   medium: Programar Fácil
