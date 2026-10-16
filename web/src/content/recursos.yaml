@@ -147,7 +147,7 @@
 
 - id: docentes-manual-echidnaml
   title: Manual de usuario EchidnaBlack2 y EchidnaML
-  description: Manual completo de la placa EchidnaBlack2 y del entorno EchidnaML, con sus componentes, los bloques y la inteligencia artificial con LearningML.
+  description: Manual completo de la placa EchidnaBlack2 y del entorno EchidnaML.
   audience: docentes
   environment: Otros recursos
   type: Manual
