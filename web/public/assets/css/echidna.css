@@ -613,6 +613,8 @@ ul.img-cards { list-style: none; padding: 0; margin-top: 1.25rem; }
 .prose img:is([src*="/lupa-"], [src*="%2Flupa-"], [src*="/detalle-"], [src*="%2Fdetalle-"]) { display: block; margin-inline: auto; width: max(35%, min(100%, 260px)); }
 /* Dibujos de piezas sueltas (pieza-*.png): la mitad que las lupas */
 .prose img:is([src*="/pieza-"], [src*="%2Fpieza-"]) { display: block; margin-inline: auto; width: max(17.5%, min(100%, 130px)); }
+/* Aviso de placa conectada de EchidnaML: dos tercios de su tamaño (638 px) */
+.prose img:is([src*="/placa-conectada"], [src*="%2Fplaca-conectada"]) { width: min(100%, 425px); }
 /* Esquema eléctrico en el lateral de la ficha */
 .factsheet--schematic img { display: block; margin-inline: auto; max-height: 260px; width: auto; max-width: 100%; height: auto; border-radius: var(--radius); }
 /* Bloques de EchidnaML (imágenes bloque-*.png): todos a la misma altura, sea cual sea la captura */
